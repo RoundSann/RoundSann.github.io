@@ -1006,22 +1006,3 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 0;
   }
 }
-
-.wrapper,
-.container,
-.main-content,
-div.post-content {
-    max-width: 98% !important; /* 强制占满 98% */
-    width: 98% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    box-sizing: border-box !important;
-}
-
-/* 2. 确保文章本身不被限制 */
-.post,
-article {
-    max-width: 100% !important;
-}
