@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>倍角公式及和差角公式的几何推导 | 缘神</title>
+  <title>三次方程求根公式 | 缘神</title>
   
   <!-- Favicon 配置 -->
   
@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1765121521926">
+  <link rel="stylesheet" href="../css/post.css?v=1765121521925">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -161,7 +161,7 @@
         <span>TABLE OF CONTENTS</span>
       </div>
       <div class="section-content">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#test"><span class="toc-text">test</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E6%A0%B9%E5%85%AC%E5%BC%8F"><span class="toc-text">三次方程求根公式</span></a></li></ol>
       </div>
     </div>
     
@@ -177,14 +177,14 @@
     <div class="tab-bar">
       <div class="tab active">
         <i class="fas fa-file-alt"></i>
-        <span>倍角公式及和差角公式的几何推导.md</span>
+        <span>三次方程求根公式.md</span>
       </div>
     </div>
     
     <div class="content-area">
       <article class="post-content">
         <div class="post-header">
-          <h1>倍角公式及和差角公式的几何推导</h1>
+          <h1>三次方程求根公式</h1>
           <div class="post-meta">
             <span class="date">
               <i class="fas fa-calendar-alt"></i>
@@ -195,7 +195,35 @@
         </div>
         
         <div class="post-body vscode-markdown">
-          <h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2>
+          <h1 id="三次方程求根公式"><a href="#三次方程求根公式" class="headerlink" title="三次方程求根公式"></a>三次方程求根公式</h1><p>考虑方程<br>$$ ax^3+bx^2+cx+d&#x3D;0 \quad (a\neq 0) $$</p>
+<p>我们先把最高次项系数化为 $1$，则化为<br>$$ x^3+Ax^2+Bx+C&#x3D;0 $$</p>
+<p>我们先设法消去二次项，我们不妨设当 $x&#x3D;y+m$ 时，二次项恰被消去，那么就有：<br>$$ (y+m)^3+A(y+m)^2+B(y+m)+C&#x3D;0 $$</p>
+<p>将其展开：<br>$$ y^3+(3m+A)y^2+(3m^2+2Am+B)y+Bm+C+m^3&#x3D;0 $$</p>
+<p>别忘了我们是要消去二次项的，从而我们令 $3m+A&#x3D;0$，即令 $m&#x3D;-\frac{A}{3}$。从而原式可化为<br>$$ y^3+\left(\frac{A^2}{3}-\frac{2A^2}{3}+B\right)y-\frac{AB}{3}+C-\frac{A^3}{27}&#x3D;0 $$</p>
+<p>也就是：<br>$$ y^3+\left(B-\frac{A^2}{3}\right)y+\frac{27C-9AB-A^3}{27}&#x3D;0 $$</p>
+<p>我们令 $p&#x3D;B-\frac{A^2}{3}$，$q&#x3D;\frac{27C-9AB-A^3}{27}$ 来化简式子（注：此处原文 $q$ 定义中 $A$ 的次数修正为3以匹配上文）。原式化为<br>$$ y^3+py+q&#x3D;0 $$</p>
+<p>接下来我们想办法消去一次项。</p>
+<p>我们令 $y&#x3D;u+v$，$u, v\in\mathbb{C}$，则原式化为<br>$$ (u+v)^3+p(u+v)+q&#x3D;0 $$</p>
+<p>也就是：<br>$$ u^3+v^3+(u+v)(3uv+p)+q&#x3D;0 $$</p>
+<p>我们令 $3uv+p&#x3D;0$，此时就有 $u^3+v^3&#x3D;-q$</p>
+<p>即 $u$ 和 $v$ 是如下方程组的解<br>$$<br>\begin{cases}<br>    u^3+v^3&#x3D;-q\<br>    u^3v^3&#x3D;-\frac{p^3}{27}<br>\end{cases}<br>$$</p>
+<p>最终解得<br>$$ u^3&#x3D;v^3&#x3D;\frac{-q\pm\sqrt{q^2+\frac{4p^3}{27}}}{2} $$</p>
+<p>则现在只需解出 $x^3&#x3D;n$ 的全部解即可。</p>
+<p><strong>三次单位根的探究:</strong></p>
+<p>解法 1：显然其中一个根为 $x_1&#x3D;\sqrt[3]{n}$。</p>
+<p>不妨设另外两根为 $x_2,x_3&#x3D;a+b\mathrm{i}$，$a,b\in\mathbb{R}$。</p>
+<p>那么就有 $(a+b\mathrm{i})^3&#x3D;n$</p>
+<p>展开：<br>$$ a^3-b^3\mathrm{i}+3a^2b\mathrm{i}-3ab^3&#x3D;n $$</p>
+<p>对比等号两端实虚部：<br>$$<br>\begin{cases}<br>    a^3-3ab^2&#x3D;n\<br>    3a^2b&#x3D;b^3<br>\end{cases}<br>$$</p>
+<p>解得<br>$$<br>\begin{cases}<br>    a&#x3D;-\frac{\sqrt[3]{n}}{2}\<br>    b&#x3D;\pm\frac{\sqrt{3}\cdot\sqrt[3]{n}}{2}<br>\end{cases}<br>$$</p>
+<p>从而 $x^3&#x3D;n$ 的解为：<br>$$<br>\begin{cases}<br>    x_1&#x3D;\sqrt[3]{n}\<br>    x_2&#x3D;\frac{-1+\sqrt{3}\mathrm{i}}{2}\sqrt[3]{n}\<br>    x_3&#x3D;\frac{-1-\sqrt{3}\mathrm{i}}{2}\sqrt[3]{n}<br>\end{cases}<br>$$</p>
+<p>我们记 $\omega&#x3D;\frac{-1+\sqrt{3}\mathrm{i}}{2}$，则可发现 $\omega^2&#x3D;\frac{-1-\sqrt{3}\mathrm{i}}{2}$（注：原文此处 $\omega^2$ 分子符号有误，已修正为 $-1-\sqrt{3}\mathrm{i}$），$\omega^3&#x3D;1$。</p>
+<p>从而在此记号下，通解即可写为<br>$$<br>\begin{cases}<br>    x_1&#x3D;\omega^1\sqrt[3]{n}\<br>    x_2&#x3D;\omega^2\sqrt[3]{n}\<br>    x_3&#x3D;\omega^3\sqrt[3]{n}<br>\end{cases}<br>$$</p>
+<p>解法 2：在复平面上利用乘方与辐角关系即可得出 $x^3&#x3D;1$ 的全部解，再乘上 $\sqrt[3]{n}$ 即可得出通解，此处略。</p>
+<p>由此，我们可以解出 $u, v$ 的值，对应的有 $3\times 3&#x3D;9$ 种排列组合，逐个带入验证记得得出方程的解，此处略去验证过程。最终得到求根公式为：</p>
+<p>$$<br>\begin{cases}<br>    x_1&#x3D;\sqrt[3]{-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}+\sqrt[3]{-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}\<br>    x_2&#x3D;\omega\sqrt[3]{-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}+\omega^2\sqrt[3]{-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}\<br>    x_3&#x3D;\omega^2\sqrt[3]{-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}+\omega\sqrt[3]{-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}}\<br>\end{cases}<br>$$<br>(注：已将根号内的 $\frac{q^2}{2}$ 修正为 $\frac{q^2}{4}$ 以符合标准卡尔丹公式推导)</p>
+<p>此处 $\omega&#x3D;\frac{-1+\sqrt{3}\mathrm{i}}{2}$</p>
+
         </div>
         
         <!-- 文章导航 - 只在同分类有多篇文章时显示 -->
@@ -218,6 +246,39 @@
   <div class="vs-recommended-grid">
     
       <div class="vs-recommended-item" data-index="0" tabindex="0">
+        <a href="../%E5%80%8D%E8%A7%92%E5%85%AC%E5%BC%8F%E5%8F%8A%E5%92%8C%E5%B7%AE%E8%A7%92%E5%85%AC%E5%BC%8F%E7%9A%84%E5%87%A0%E4%BD%95%E6%8E%A8%E5%AF%BC/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>倍角公式及和差角公式的几何推导</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              test
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  12月 07
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  1 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="1" tabindex="0">
         <a href="../race/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -250,7 +311,7 @@
         </a>
       </div>
     
-      <div class="vs-recommended-item" data-index="1" tabindex="0">
+      <div class="vs-recommended-item" data-index="2" tabindex="0">
         <a href="../hello-world/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -261,39 +322,6 @@
             
             <div class="vs-recommended-excerpt">
               Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex...
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  12月 07
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  1 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="2" tabindex="0">
-        <a href="../%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E6%A0%B9%E5%85%AC%E5%BC%8F/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>三次方程求根公式</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              三次方程求根公式考虑方程$$ ax^3+bx^2+cx+d&amp;#x3D;0 \quad (a\neq 0) $$ 我们先把最高次项系数化为 $1$，则化为$$ x^3+Ax^2+Bx+C&amp;#x3D;0 $$ 我们先设法消去二次项，我们不妨设当...
             </div>
             
             <div class="vs-recommended-meta">
@@ -605,7 +633,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/search.js"></script>
 <script src="../js/theme-switch.js"></script>
 
-<script src="../js/password-protect.js?v=1765121521927"></script>
+<script src="../js/password-protect.js?v=1765121521925"></script>
 
     <script>
       // 移动端菜单切换
