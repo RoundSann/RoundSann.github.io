@@ -1006,3 +1006,16 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 0;
   }
 }
+
+.post-content svg {
+  /* 1. 简单的反色：黑变白，白变黑，红变青 */
+  filter: invert(1); 
+  
+  /* 
+     2. (进阶) 如果你的图里有彩色线条，想保留原色只把黑色变白：
+     使用反色 + 色相旋转180度
+     filter: invert(1) hue-rotate(180deg);
+  */
+  
+  background-color: transparent !important; /* 确保背景透明 */
+}
