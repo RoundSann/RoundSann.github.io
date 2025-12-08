@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1765202498200">
+  <link rel="stylesheet" href="../../css/post.css?v=1765203982773">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -262,6 +262,8 @@ mjx-container[display="true"] + br {
   });
 </script>
 
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
 
 <div class="vscode-container">
   <!-- 左侧资源管理器 -->
@@ -477,27 +479,8 @@ mjx-container[display="true"] + br {
           <div class="archive-year">
             <div class="folder">
               <i class="fas fa-folder"></i>
-              <span>2023</span>
-              <span class="count">(1)</span>
-            </div>
-            <div class="archive-posts">
-              
-                <div class="file ">
-                  <i class="fas fa-file-alt"></i>
-                  <a href="../../%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E6%A0%B9%E5%85%AC%E5%BC%8F/">
-                    06-22 三次方程求根公式
-                    
-                  </a>
-                </div>
-              
-            </div>
-          </div>
-        
-          <div class="archive-year">
-            <div class="folder">
-              <i class="fas fa-folder"></i>
               <span>2021</span>
-              <span class="count">(1)</span>
+              <span class="count">(2)</span>
             </div>
             <div class="archive-posts">
               
@@ -505,6 +488,14 @@ mjx-container[display="true"] + br {
                   <i class="fas fa-file-alt"></i>
                   <a href="../../%CE%B3%E5%87%BD%E6%95%B0%E7%AE%80%E5%8D%95%E6%8E%A8%E5%AF%BC/">
                     11-10 Γ函数简单推导
+                    
+                  </a>
+                </div>
+              
+                <div class="file ">
+                  <i class="fas fa-file-alt"></i>
+                  <a href="../../%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E6%A0%B9%E5%85%AC%E5%BC%8F/">
+                    11-05 三次方程求根公式
                     
                   </a>
                 </div>
@@ -939,46 +930,8 @@ mjx-container[display="true"] + br {
           <div class="timeline-year">
             <div class="year-header">
               <i class="fas fa-calendar-alt"></i>
-              2023
-              <span class="year-count">(1 posts)</span>
-            </div>
-            <div class="year-posts">
-              
-                <div class="timeline-post">
-                  <div class="post-date">
-                    <i class="fas fa-clock"></i>
-                    06-22
-                  </div>
-                  <div class="post-info">
-                    <a href="../../%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E6%A0%B9%E5%85%AC%E5%BC%8F/">
-                      三次方程求根公式
-                      
-                    </a>
-                    <div class="post-meta">
-                      
-                        <span class="category">
-                          <i class="fas fa-folder"></i>
-                          <a class="category-link" href="../../categories/Math/">Math</a>
-                        </span>
-                      
-                      
-                        <span class="tags">
-                          <i class="fas fa-tags"></i>
-                          <a class="tag-none-link" href="../../tags/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/" rel="tag">初等数学</a>
-                        </span>
-                      
-                    </div>
-                  </div>
-                </div>
-              
-            </div>
-          </div>
-        
-          <div class="timeline-year">
-            <div class="year-header">
-              <i class="fas fa-calendar-alt"></i>
               2021
-              <span class="year-count">(1 posts)</span>
+              <span class="year-count">(2 posts)</span>
             </div>
             <div class="year-posts">
               
@@ -1003,6 +956,33 @@ mjx-container[display="true"] + br {
                         <span class="tags">
                           <i class="fas fa-tags"></i>
                           <a class="tag-none-link" href="../../tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a>
+                        </span>
+                      
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="timeline-post">
+                  <div class="post-date">
+                    <i class="fas fa-clock"></i>
+                    11-05
+                  </div>
+                  <div class="post-info">
+                    <a href="../../%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E6%A0%B9%E5%85%AC%E5%BC%8F/">
+                      三次方程求根公式
+                      
+                    </a>
+                    <div class="post-meta">
+                      
+                        <span class="category">
+                          <i class="fas fa-folder"></i>
+                          <a class="category-link" href="../../categories/Math/">Math</a>
+                        </span>
+                      
+                      
+                        <span class="tags">
+                          <i class="fas fa-tags"></i>
+                          <a class="tag-none-link" href="../../tags/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/" rel="tag">初等数学</a>
                         </span>
                       
                     </div>
@@ -1117,7 +1097,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     language: "zh-CN",
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "result",
+    search_result: "نتيجة",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -1155,7 +1135,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1765202498201"></script>
+<script src="../../js/password-protect.js?v=1765203982773"></script>
 
     <script>
       // 移动端菜单切换
