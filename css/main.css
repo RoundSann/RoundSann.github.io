@@ -1007,7 +1007,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.post-content svg {
+.post-content .tikzjax svg {
   /* 1. 简单的反色：黑变白，白变黑，红变青 */
   filter: invert(1); 
   
