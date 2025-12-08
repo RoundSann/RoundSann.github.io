@@ -1008,7 +1008,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-content .tikzjax svg {
-  /* 1. 简单的反色：黑变白，白变黑，红变青 */
-  filter: invert(1); 
-  /* background-color: transparent !important; 确保背景透明 */
+  /* 使用反色 + 色相旋转180度 把tikz黑白问题解决 */
+  filter: invert(1) hue-rotate(180deg);
+  background-color: transparent !important;
 }
