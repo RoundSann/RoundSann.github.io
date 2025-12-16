@@ -2,23 +2,23 @@
 title Hexo Blog Deploy Tool
 echo.
 echo ==========================================
-echo       æ­£åœ¨æ‰§è¡Œ Hexo è‡ªåŠ¨åŒ–éƒ¨ç½²...
+echo       ÕýÔÚÖ´ÐÐ Hexo ×Ô¶¯»¯²¿Êð...
 echo ==========================================
 echo.
 
-echo [1/3] æ­£åœ¨æ¸…ç†ç¼“å­˜ (hexo clean)...
+echo [1/3] ÕýÔÚÇåÀí»º´æ (hexo clean)...
 call hexo clean
 
 echo.
-echo [2/3] æ­£åœ¨ç”Ÿæˆé™æ€ç½‘é¡µ (hexo g)...
+echo [2/3] ÕýÔÚÉú³É¾²Ì¬ÍøÒ³ (hexo g)...
 call hexo g
 
 echo.
-echo [3/3] æ­£åœ¨éƒ¨ç½²å¹¶å¤‡ä»½æºç  (hexo d)...
+echo [3/3] ÕýÔÚ²¿Êð²¢±¸·ÝÔ´Âë (hexo d)...
 call hexo d
 
 echo.
 echo ==========================================
-echo       æ­å–œï¼å…¨éƒ¨æ“ä½œå·²å®Œæˆã€‚
+echo       ¹§Ï²£¡È«²¿²Ù×÷ÒÑÍê³É¡£
 echo ==========================================
 pause
