@@ -126,3 +126,7 @@ tikzjax:
   # See: https://github.com/prinsss/node-tikzjax/#usage
   tikzjax_options:
     showConsole: true
+
+marked:
+  prependRoot: true
+  postAsset: true
