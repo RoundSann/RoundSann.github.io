@@ -130,10 +130,10 @@ tikzjax:
 markdown:
   preset: 'default'
   render:
-    html: true           # 允许在 md 里写 html
+    html: true
     xhtmlOut: false
-    # breaks: true         # 【关键】开启后，回车就是换行，不需要加两个空格！
-    linkify: true        # 自动识别网址
+    breaks: true
+    linkify: true
     typographer: true
   plugins:
-    - markdown-it-mathjax  # <--- 改成这个！
+    - markdown-it-texmath
