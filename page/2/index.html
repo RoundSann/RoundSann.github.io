@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1766257481813">
+  <link rel="stylesheet" href="../../css/post.css?v=1766257833537">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -613,32 +613,8 @@ mjx-container[display="true"] + br {
             </div>
             
             <div class="post-excerpt">
-              定理(拉格朗日插值公式):对于区间上的某函数,若已知其在点处的个值,设
-
-则多项式
-
-满足条件,其称为拉格朗日插值多项式
-特别地,若令,则该公式可紧凑地写为
-
-证:
-我们已知个点,所以我们不妨设用一个次函数进行拟合,即设满足题设
-分别带入这个点,得到以为未知数的线性方程组:
-$$
-\mathbf{B}=
-
-
-
-$$
-其解为:
-
-我们考虑将沿第列展开
-
-
-
-我们拆开,先对计算,再把单独拆进去:
-
-
-...
+              定理(拉格朗日插值公式):对于区间[a,b][a,b][a,b]上的某函数f(x)f(x)f(x),若已知其在点x0,…,xnx_0,\dots,x_nx0​,…,xn​处的n+1n+1n+1个值f(x0),…,f(xn)f(x_0),\dots,f(x_n)f(x0​),…,f(xn​),设
+lk(x)=(x−x0)⋯(x−xk−1)(x−xk+1)⋯(x−xn)(xk−x0)⋯(xk−xk−1...
             </div>
             
             <div class="post-footer">
@@ -731,7 +707,7 @@ $$
             </div>
             
             <div class="post-excerpt">
-              <p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.414ex" height="1.538ex" role="img" focusable="false" viewBox="0 -680 625 680"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="393" d="M128 619Q121 626 117 628T101 631T58 634H25V680H554V676Q556 670 568 560T582 444V440H542V444Q542 445 538 478T523 545T492 598Q454 634 349 634H334Q264 634 249 633T233 621Q232 618 232 339L233 61Q240 54 245 52T270 48T333 46H360V0H348Q324 3 182 3Q51 3 36 0H25V46H58Q100 47 109 49T128 61V619Z"></path></g></g></g></svg></mjx-container> 的简单且略微初等的推导方式,并不严谨但很直观</p>...
+              <p><eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Γ</mi></mrow><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Γ</span></span></span></span></eq> 的简单且略微初等的推导方式,并不严谨但很直观</p>...
             </div>
             
             <div class="post-footer">
@@ -764,24 +740,9 @@ $$
             <div class="post-excerpt">
               三次方程求根公式
 我们考虑方程
-
-我们先把最高次项系数化为,即化为:
-
-设法消去二次项,我们不妨设当时,二次项恰被消去,那么此时我们有:
-
-将其展开:
-
-我们是为了消去二次项,即令,即令.从而原式子化
-
-也就是:
-
-我们令,来化简式子,此时原式子化为
-
-我们令,其中,,则原式化为
-
-也就是:
-
-由于只有是固定的,而可以取任意值,所以此处我们取合适的,使得来消去一次项,那么此时就变为了,结合先前的,...
+ax3+bx2+cx+d=0(a≠0)ax^3+bx^2+cx+d=0(a\neq 0)ax3+bx2+cx+d=0(a=0)我们先把最高次项系数化为111,即化为:
+x3+Ax2+Bx+C=0x^3+Ax^2+Bx+C=0x3+Ax2+Bx+C=0设法消去二次项,我们不妨设当x=y+mx=y+mx=y+m时,二次项恰被消去,那么此时我们有:
+(y+m)3+A(y...
             </div>
             
             <div class="post-footer">
@@ -964,7 +925,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1766257481813"></script>
+<script src="../../js/password-protect.js?v=1766257833537"></script>
 
     <script>
       // 移动端菜单切换
