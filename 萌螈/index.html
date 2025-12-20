@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>萌螈 | 缘神</title>
+  
+  <!-- Favicon 配置 -->
+  
+    
+      <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    
+    
+      <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    
+    
+      <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    
+    
+      <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
+    
+    
+      <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/theme-colors.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- 添加代码高亮样式 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+  <!-- 添加highlight.js库 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <!-- 添加mermaid.js库 -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <link rel="stylesheet" href="../css/code.css">
+  <link rel="stylesheet" href="../css/code-custom.css">
+  <link rel="stylesheet" href="../css/code-languages.css">
+  <link rel="stylesheet" href="../css/mermaid.css">
+
+  <link rel="stylesheet" href="../css/vs-code.css">
+  <link rel="stylesheet" href="../css/post.css?v=1766257301034">
+  <link rel="stylesheet" href="../css/tag.css">
+  <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/archive.css">
+  <link rel="stylesheet" href="../css/search.css">
+  <link rel="stylesheet" href="../css/mobile.css">  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/elements.css">
+
+  <!-- 添加 JetBrains Mono 字体 -->  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Add any custom head content here -->
+
+  <script src="../js/explorer.js"></script>
+  <script src="../js/code-copy.js"></script>
+  <script src="../js/code-enhance.js"></script>
+<meta name="generator" content="Hexo 8.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+  <body>
+    <div class="wrapper">
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <header class="vs-header">
+  <nav class="vs-nav">
+    <div class="nav-left">
+      <a href="/" class="nav-brand">
+        <i class="fas fa-terminal"></i>
+        缘神
+      </a>
+    </div>
+    
+    <div class="nav-right">
+      <a href="/" class="nav-item ">
+        <i class="fas fa-home"></i>
+        <span>首页</span>
+      </a>
+      <a href="/archives/" class="nav-item ">
+        <i class="fas fa-archive"></i>
+        <span>归档</span>
+      </a>
+      <a href="/categories/" class="nav-item ">
+        <i class="fas fa-folder"></i>
+        <span>分类</span>
+      </a>
+      <a href="/tags/" class="nav-item ">
+        <i class="fas fa-tags"></i>
+        <span>标签</span>
+      </a>
+      <a href="/search/" class="nav-item ">
+        <i class="fas fa-search"></i>
+        <span>搜索</span>
+      </a>
+      <a href="/about/" class="nav-item ">
+        <i class="fas fa-info-circle"></i>
+        <span>关于</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function smoothScroll(event, target) {
+    event.preventDefault();
+    const targetId = target.substring(target.indexOf('#') + 1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 50, // 调整偏移量
+        behavior: 'smooth'
+      });
+    } else {
+      window.location.href = target;
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.vs-header');
+    const nav = document.querySelector('.vs-nav');
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    nav.style.setProperty('--scroll-percent', `${scrollPercent}%`);
+    
+    if (window.scrollY > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // 添加标签页切换动画
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      const ripple = document.createElement('span');
+      ripple.classList.add('nav-ripple');
+      this.appendChild(ripple);
+      
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      setTimeout(() => ripple.remove(), 1000);
+    });
+  });
+</script>
+
+
+<div class="vscode-container">
+  <!-- 左侧资源管理器 -->
+  <div class="sidebar-explorer">
+    <!-- TOC导航 -->
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-list"></i>
+        <span>TABLE OF CONTENTS</span>
+      </div>
+      <div class="section-content">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%A6%E7%B1%8D%E6%95%88%E6%9E%9C"><span class="toc-text">书籍效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E6%B4%BE%E6%95%88%E6%9E%9C"><span class="toc-text">流派效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E6%B4%BE%E6%8A%80%E8%83%BD"><span class="toc-text">流派技能</span></a></li></ol>
+      </div>
+    </div>
+    
+    <!-- 同分类文章 -->
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-folder"></i>
+        <span>CATEGORY POSTS</span>
+      </div>
+      <div class="section-content">
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%8E%9F%E7%89%88%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">原版相关内容</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E4%BD%BF%E7%94%A8%E9%A1%BB%E7%9F%A5%E5%8F%8A%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95mod%E5%86%B2%E7%AA%81/">使用须知及个人记录Mod冲突</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E9%98%BF%E5%B0%94%E6%B3%95%E4%B9%A6%E7%B1%8D/">阿尔法书籍</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E6%82%A0%E5%85%B0/">悠兰</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/">溪谷联邦</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/">异象扩展</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/">(尚未完工)失能机关</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E7%8E%9B%E9%B2%81%E6%AD%A6%E5%99%A8%E5%AF%B9%E7%85%A7/">玛鲁武器对照</a>
+          </div>
+        
+      </div>
+    </div>
+    
+    
+    <!-- 标签列表 -->
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-tags"></i>
+        <span>ARTICLE TAGS</span>
+      </div>
+      <div class="section-content">
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/rimworld/">rimworld</a>
+            <span class="count">(15)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E6%AD%A3%E4%B9%89/">正义</a>
+            <span class="count">(2)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
+            <span class="count">(8)</span>
+          </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- 主要内容区域 -->
+  <div class="editor-content">
+    <div class="tab-bar">
+      <div class="tab active">
+        <i class="fas fa-file-alt"></i>
+        <span>萌螈.md</span>
+      </div>
+    </div>
+    
+    <div class="content-area">
+      <article class="post-content">
+        <div class="post-header">
+          <h1>萌螈</h1>
+          <div class="post-meta">
+            <span class="date">
+              <i class="fas fa-calendar-alt"></i>
+              2025-11-21
+            </span>            
+              <span class="categories">
+                <i class="fas fa-folder"></i>
+                <div class="categories-list">
+                  <ul class="category-item-post-list"><li class="category-item-post-list-item"><a class="category-item-post-list-link" href="../categories/rimworld/">rimworld</a></li></ul>
+                </div>
+              </span>
+            
+            
+              <span class="tags">
+                <i class="fas fa-tags"></i>
+                <div class="tags-list">
+                  <ul class="tag-item-post-list" itemprop="keywords"><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/rimworld/" rel="tag">rimworld</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E6%AD%A3%E4%B9%89/" rel="tag">正义</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E7%A7%8D%E6%97%8F/" rel="tag">种族</a></li></ul>
+                </div>
+              </span>
+            
+          </div>
+        </div>
+        
+        <div class="post-body vscode-markdown">
+          <p>萌螈的技能效果及其书籍效果<br>
+不考虑流派技能的话整体很贴近原版,奈何流派技能(尤其是百花)实在是强而有力,只能给到正义了</p>
+<span id="more"></span>
+<h2 id="书籍效果">书籍效果</h2>
+<table>
+<thead>
+<tr>
+<th>所属</th>
+<th>名字</th>
+<th>效果</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外功</td>
+<td>御剑诀</td>
+<td>10+格斗*2%概率抵消并反击</td>
+<td>4脉6格斗</td>
+</tr>
+<tr>
+<td>外功</td>
+<td>蓄势决</td>
+<td>近战伤害+30%近战命中+2近战冷却*1.3</td>
+<td>3脉4格斗</td>
+</tr>
+<tr>
+<td>外功</td>
+<td>碧影决</td>
+<td>近战闪避+1近战冷却*0.8</td>
+<td>3脉4格斗</td>
+</tr>
+<tr>
+<td>外功</td>
+<td>控弦术</td>
+<td>射击精度+3瞄准时间*0.9</td>
+<td>3脉6射击</td>
+</tr>
+<tr>
+<td>内功</td>
+<td>止水法</td>
+<td>最大螈+100再生-0.5</td>
+<td>3脉不兼容燃心</td>
+</tr>
+<tr>
+<td>内功</td>
+<td>燃心法</td>
+<td>最大螈-100再生+0.5</td>
+<td>3脉不兼容止水</td>
+</tr>
+<tr>
+<td>内功</td>
+<td>先天罡气</td>
+<td>最大护盾+15护盾消耗90%</td>
+<td>3脉</td>
+</tr>
+<tr>
+<td>内功</td>
+<td>聚气法</td>
+<td>最大螈+50再生+0.3</td>
+<td>2脉</td>
+</tr>
+<tr>
+<td>轻功</td>
+<td>云来踪</td>
+<td>浮云渡cd+3s落地给1s隐身</td>
+<td>2脉</td>
+</tr>
+<tr>
+<td>轻功</td>
+<td>神行千里</td>
+<td>浮云渡距离+3</td>
+<td>2脉</td>
+</tr>
+<tr>
+<td>轻功</td>
+<td>无量步</td>
+<td>浮云渡cd+5s落地给3s移速<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 1.5</td>
+<td>2脉</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>异物志</td>
+<td>动物收集速度+25%动物收集效率+10%</td>
+<td>4驯兽</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>诗赋经</td>
+<td>全局学习系数+10%文化传播系数+25%</td>
+<td>4社交</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>渔具诗</td>
+<td>钓鱼速度+30% 钓鱼效率+10%</td>
+<td>6驯兽</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>商君书</td>
+<td>社交效果+15% 交易改善+10%</td>
+<td>6社交</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>考工记</td>
+<td>建造速度+20% 建造成功率+20%</td>
+<td>4建造</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>冶铸真传</td>
+<td>熔炼速度+15% 普通工作速度+15%</td>
+<td>8手工</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>五谷学</td>
+<td>种植速度+10% 植物收获效率+10%</td>
+<td>4种植</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>农耕学</td>
+<td>种植速度+15% 植物成瘾品收获效率+5%</td>
+<td>4种植</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>本草纲目</td>
+<td>植物成瘾品收获效率+5% 治疗质量+15% 制药速度+15%</td>
+<td>6种植医疗</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>石工策</td>
+<td>采矿速度+20% 打磨速度+20% 采矿效率+10%</td>
+<td>4采矿</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>太学经</td>
+<td>全局学习速度+15% 研究速度+10%</td>
+<td>8智识</td>
+</tr>
+<tr>
+<td>研学</td>
+<td>黄帝内经</td>
+<td>手术速度+25% 手术成功率+25% 治疗质量+10%</td>
+<td>10医疗</td>
+</tr>
+</tbody>
+</table>
+<h2 id="流派效果">流派效果</h2>
+<table>
+<thead>
+<tr>
+<th>所属</th>
+<th>名字</th>
+<th>效果</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>—</td>
+<td>灵螈脉络</td>
+<td>呼吸能力+10%承伤<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 0.9(二脉)<br>崩溃临界值<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 90%疼痛休克阈值<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 110%(三脉)<br>视觉移动能力+10%(四脉)<br>血液循环过滤+10%进食能力+10%休息效率乘数<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 110%(五脉)</td>
+<td></td>
+</tr>
+<tr>
+<td>—</td>
+<td>魔化脉络</td>
+<td>疼痛-5/10/15/20/25%<br>意识+10/13/15/18/20%<br>承伤<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 95/90/90/85/80%<br>崩溃临界<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 105/110/115/120/125%<br>疼痛休克阈值<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 105/110/110/115/120%<br>呼吸能力-0/5/5/10/10%移动能力+0/5/5/10/15%<br>血液循环过滤-0/0/0/5/10%<br>心灵敏感度 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 0</td>
+<td></td>
+</tr>
+<tr>
+<td>流派</td>
+<td>灼炎灵脉</td>
+<td>疼痛休克阈值+5/10/15/20/25%<br>近战伤害系数+5/10/15/20/30%<br>近战命中+0/1/1/2/2<br>易燃性<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 80/60/40/20/0%</td>
+<td></td>
+</tr>
+<tr>
+<td>内功</td>
+<td>灼炎心法</td>
+<td>最大螈+5/10/15/20/25<br>再生+0.1/0.2/0.3/0.4/0.5<br>近战伤害系数+2/4/6/8/10%</td>
+<td></td>
+</tr>
+<tr>
+<td>流派</td>
+<td>雷霆灵脉</td>
+<td>移动能力+5/10/15/20/30%<br>远程冷却<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 100/95/92/88/85%<br>近战冷却<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 100/95/92/88/85%</td>
+<td></td>
+</tr>
+<tr>
+<td>内功</td>
+<td>雷霆心法</td>
+<td>最大螈+5/10/15/20/25<br>再生+0.1/0.2/0.3/0.4/0.5<br>移速+0.05/0.1/0.15/0.2/0.3</td>
+<td></td>
+</tr>
+<tr>
+<td>流派</td>
+<td>源流灵脉</td>
+<td>近战闪避<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 105/110/115/120/133%<br>治疗速度质量<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 100/105/110/115/120%<br>易燃<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 50/60/70/60/50%</td>
+<td></td>
+</tr>
+<tr>
+<td>内功</td>
+<td>源流心法</td>
+<td>最大螈+5/10/15/20/25<br>再生+0.1/0.2/0.3/0.4/0.5<br>治疗质量+6/12/18/24/30%</td>
+<td></td>
+</tr>
+<tr>
+<td>流派</td>
+<td>百花灵脉</td>
+<td>移动能力+5/15/30/30/40%<br>近战闪避<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 100/115/120/125/130%</td>
+<td></td>
+</tr>
+<tr>
+<td>内功</td>
+<td>百花心法</td>
+<td>最大螈+5/10/15/20/25<br>再生+0.1/0.2/0.3/0.4/0.5<br>近战闪避+0/0/0.1/0.1/0.1</td>
+<td></td>
+</tr>
+<tr>
+<td>流派</td>
+<td>磐岩灵脉</td>
+<td>疼痛休克阈值+5/10/15/20/25%<br>抑止时间乘数<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 90/80/70/60/50%<br>承伤系数<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 100/95/90/85/80%</td>
+<td></td>
+</tr>
+<tr>
+<td>内功</td>
+<td>磐岩心法</td>
+<td>最大螈+5/10/15/20/25<br>再生+0.1/0.2/0.3/0.4/0.5<br>疼痛休克阈值+2/4/6/8/10%</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="流派技能">流派技能</h2>
+<table>
+<thead>
+<tr>
+<th>流派</th>
+<th>技能</th>
+<th>cd</th>
+<th>消耗</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通用</td>
+<td>螈气斩</td>
+<td>2s</td>
+<td>15</td>
+<td>17释放半径32伤害单体技能</td>
+</tr>
+<tr>
+<td>通用</td>
+<td>浮云渡</td>
+<td>1s</td>
+<td>20</td>
+<td>11半径位移不穿墙</td>
+</tr>
+<tr>
+<td>通用</td>
+<td>仙螈斩</td>
+<td>10s</td>
+<td>100</td>
+<td>19释放半径柱形aoe 44伤,且有20秒意识<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 90%移动能力<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 80%</td>
+</tr>
+<tr>
+<td>雷</td>
+<td>雷霆斩</td>
+<td>2s</td>
+<td>25</td>
+<td>27释放半径32伤害单体技能(理论附emp但我没测出来)</td>
+</tr>
+<tr>
+<td>雷</td>
+<td>雷霆万钧</td>
+<td>10s</td>
+<td>100</td>
+<td>自身圆心10半径爆炸,48灼伤,建筑1伤害</td>
+</tr>
+<tr>
+<td>雷</td>
+<td>疾雷略阵</td>
+<td>1h</td>
+<td>200</td>
+<td>自身圆心4半径爆炸,48灼伤,建筑1伤害<br>自身移速<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 3 远程冷却<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 75% 近战冷却<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container> 75%(配合自带buff为64%)</td>
+</tr>
+<tr>
+<td>水</td>
+<td>断流击</td>
+<td>2s</td>
+<td>25</td>
+<td>41释放半径55伤害单体技能</td>
+</tr>
+<tr>
+<td>水</td>
+<td>镜花水月</td>
+<td>5s</td>
+<td>100</td>
+<td>10秒隐身+1000hp/日回复(全部位回复10血)</td>
+</tr>
+<tr>
+<td>水</td>
+<td>清流运转</td>
+<td>1h</td>
+<td>200</td>
+<td>17半径内己方好螈+1000hp/日回复(全部位回复15血)</td>
+</tr>
+<tr>
+<td>火</td>
+<td>绝炎刀</td>
+<td>2s</td>
+<td>25</td>
+<td>21释放半径47单体伤害技能,火焰附加</td>
+</tr>
+<tr>
+<td>火</td>
+<td>阳焰环锢</td>
+<td>10s</td>
+<td>100</td>
+<td>11半径内放火烧山,10秒,一秒烧一次,1次20伤</td>
+</tr>
+<tr>
+<td>火</td>
+<td>燎炎八荒</td>
+<td>1h</td>
+<td>200</td>
+<td>25半径大方形aoe,20伤害,根据距离20/15/10秒持续燃烧(原版火)</td>
+</tr>
+<tr>
+<td>花</td>
+<td>玲珑闪</td>
+<td>2s</td>
+<td>25</td>
+<td>21半径22单体伤害+小aoe12伤害,附百花印</td>
+</tr>
+<tr>
+<td>花</td>
+<td>暗香飞渡</td>
+<td>8s</td>
+<td>100</td>
+<td>16半径内放七波必中流弹,总之伤害爆炸高,每次射击附二级百花印</td>
+</tr>
+<tr>
+<td>花</td>
+<td>残花疏影</td>
+<td>0.5h</td>
+<td>200</td>
+<td>27释放半径,对11有效半径圆内生物每人造成54.5伤害并附加五级百花印并爆炸</td>
+</tr>
+<tr>
+<td>岩</td>
+<td>碎石散</td>
+<td>2s</td>
+<td>25</td>
+<td>27释放半径24单体伤害,附赠扬沙</td>
+</tr>
+<tr>
+<td>岩</td>
+<td>重峦叠嶂</td>
+<td>2h</td>
+<td>100</td>
+<td>叫下来个1000血90%掩体效果的柱子(持续2h),越过柱子时极慢,并造成2伤害一秒击晕</td>
+</tr>
+<tr>
+<td>岩</td>
+<td>磐岩附体</td>
+<td>1h</td>
+<td>200</td>
+<td>自身7半径内每隔一秒造成3伤害0.2眩晕,持续30秒</td>
+</tr>
+</tbody>
+</table>
+<p>百花叠层:单层2.3伤害,双层4.6伤害,三层6.9伤害,四层9.2,五层11.5</p>
+<p>计算公式<br>
+一个单位受到的疼痛程度是其通过所有途径产生的疼痛值之和，并且由下列两个因素影响：</p>
+<p>体型因素：最终疼痛值=疼痛值/体型。该公式对所有体型不为1的单位生效；成年人类的体型为1.0，因此该因素不会参与到计算中。<br>
+疼痛倍率因素：最终疼痛值=疼痛值x疼痛倍率。疼痛倍率是单位通过麻醉、成瘾品、植入物等途径获得的额外乘数。</p>
+<p>单个伤口产生的疼痛值为伤口对部位造成的伤害数值与对应伤口类型产生疼痛值的乘积。例：</p>
+<p>30点烧伤=30(伤害值)x1.875%(每点烧伤的疼痛严重度)=56.25%疼痛<br>
+30点割伤=30(伤害值)x1.25%(每点割伤的疼痛严重度)=37.5%疼痛</p>
+
+        </div>
+        
+        <!-- 文章导航 - 只在同分类有多篇文章时显示 -->
+        
+        
+        
+        <nav class="post-nav">
+          
+            <a class="prev" href="../%E4%BD%BF%E7%94%A8%E9%A1%BB%E7%9F%A5%E5%8F%8A%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95mod%E5%86%B2%E7%AA%81/">
+              <i class="fas fa-chevron-left"></i>
+              使用须知及个人记录Mod冲突
+            </a>
+          
+          
+            <a class="next" href="../%E9%98%BF%E5%B0%94%E6%B3%95%E4%B9%A6%E7%B1%8D/">
+              阿尔法书籍
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          
+        </nav>
+        
+        
+        <!-- 推荐文章 -->
+        
+
+
+<div class="vs-recommended-posts">
+  <div class="vs-recommended-header">
+    <div class="section-header">
+      <i class="fas fa-lightbulb"></i>
+      <span>相关文章</span>
+    </div>
+  </div>
+  
+  <div class="vs-recommended-grid">
+    
+      <div class="vs-recommended-item" data-index="0" tabindex="0">
+        <a href="../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>异象扩展</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              这个是真恶心👎🤮 绝大部分内容都是原版等级强度的,但有一两个强度极高 仅包含了血肉内容的表格
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 负正义, 正义
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 03
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  1 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="1" tabindex="0">
+        <a href="../%E8%8C%89%E7%BA%A6%E6%97%8F%E8%8D%AF%E7%89%A9/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>茉约族药物</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              moyo1.0药物的相关统计及简评 整体强度非常贴近原版,并不正义也不负正义
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 原版向, 种族
+                  
+                    <span class="vs-more-tags">+1</span>
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  11月 03
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  2 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="2" tabindex="0">
+        <a href="../%E6%82%A0%E5%85%B0/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>悠兰</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              内容不多,很原版的种族 前期护甲会优于原版,后期乏力,正义度几乎没有甚至更弱
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 原版向, 种族
+                  
+                    <span class="vs-more-tags">+1</span>
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 19
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  3 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="3" tabindex="0">
+        <a href="../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>溪谷联邦</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              施工中~
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 原版向, 种族
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 16
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  1 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="4" tabindex="0">
+        <a href="../%E5%85%BD%E8%80%B3%E5%B1%8B/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>兽耳屋</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              上古之作了,仅供参考吧,当时还很青嫩(难视 整体来说正义但还不算多,单刷1w点还是不太行的
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 微正义, 种族
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  6月 11
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  2 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="5" tabindex="0">
+        <a href="../%E4%BA%BA%E5%B7%A5%E7%A7%8D%E6%97%8F/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>人工种族</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              全力之作!对aya人工种族的数值/技能/光之奴/获取方式等的全面介绍 很有趣的系列mod,强度相当高,但是整体还算是自洽的.正义度毫无疑问神仙斗法了
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 神仙斗法
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  5月 28
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  14 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+  </div>
+  
+  <!-- 查看更多 -->
+  <div class="vs-recommended-footer">
+    <a href="../archives/" class="vs-view-more">
+      <i class="fas fa-folder-open"></i>
+      <span>查看更多文章</span>
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+// 键盘导航支持
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.vs-recommended-item');
+  let currentIndex = -1;
+  
+  // 键盘事件
+  document.addEventListener('keydown', function(e) {
+    if (!items.length) return;
+    
+    if (e.key === 'Tab') {
+      // Tab键导航由浏览器处理
+      return;
+    }
+    
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      
+      // 移除当前高亮
+      if (currentIndex >= 0) {
+        items[currentIndex].classList.remove('vs-focused');
+      }
+      
+      // 更新索引
+      if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % items.length;
+      } else {
+        currentIndex = currentIndex <= 0 ? items.length - 1 : currentIndex - 1;
+      }
+      
+      // 添加新高亮
+      items[currentIndex].classList.add('vs-focused');
+      items[currentIndex].focus();
+    }
+    
+    if (e.key === 'Enter' && currentIndex >= 0) {
+      const link = items[currentIndex].querySelector('a');
+      if (link) link.click();
+    }
+  });
+  
+  // 鼠标悬停时更新当前索引
+  items.forEach((item, index) => {
+    item.addEventListener('mouseenter', function() {
+      currentIndex = index;
+      items.forEach(i => i.classList.remove('vs-focused'));
+      item.classList.add('vs-focused');
+    });
+  });
+});
+</script>
+
+        
+        <!-- 评论区 -->
+        
+  <div class="vs-comments-section">
+    <div class="section-header">
+      <i class="fas fa-comments"></i>
+      <span>评论</span>
+    </div>
+    
+    
+      <!-- Waline 评论系统 -->
+      <div id="waline"></div>
+      <script>
+        // 加载 Waline CSS
+        const walineCSS = document.createElement('link');
+        walineCSS.rel = 'stylesheet';
+        walineCSS.href = 'https://unpkg.com/@waline/client@v3/dist/waline.css';
+        document.head.appendChild(walineCSS);
+        
+        // 加载 Waline JS
+        const walineScript = document.createElement('script');
+        walineScript.type = 'module';
+        walineScript.onload = function() {
+          // 确保 Waline 加载后再初始化
+          import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
+            const waline = init({
+              el: '#waline',
+              serverURL: 'https://vsc4tblackcat1337.vercel.app/',
+              lang: 'zh-CN',
+              locale: {},
+              emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus"],
+              requiredMeta: [],
+              login: 'disable',
+              wordLimit: 0,
+              pageSize: 10,
+              imageUploader: false,
+              highlighter: true,
+              texRenderer: false,
+              search: false,
+              pageview: false,
+              comment: true,
+              copyright: false,
+              
+              // 自动适配主题
+              dark: document.documentElement.getAttribute('data-theme') === 'dark' ? 'auto' : false,
+              
+              // 评论框占位符
+              placeholder: '欢迎留言，无需登录即可评论~',
+              
+              // 元数据配置
+              meta: ['nick', 'mail', 'link'],
+              
+              // 表情配置
+              emojiCDN: 'https://unpkg.com/@waline/emojis@1.2.0/',
+            });
+            
+            // 监听主题变化
+            const observer = new MutationObserver((mutations) => {
+              mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                  // Waline 会自动处理主题切换
+                  if (waline) {
+                    waline.update({ dark: isDark ? 'auto' : false });
+                  }
+                }
+              });
+            });
+            
+            observer.observe(document.documentElement, {
+              attributes: true,
+              attributeFilter: ['data-theme']
+            });
+          });
+        };
+        walineScript.src = 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+        document.body.appendChild(walineScript);
+      </script>
+    
+    
+  </div>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <footer class="footer">
+  <div class="status-bar">
+    <div class="status-item">
+      <i class="fas fa-code-branch"></i>
+      master
+    </div>
+    <div class="status-item">
+      <i class="fas fa-sync"></i>
+      Round
+    </div>
+    <div class="status-item">
+      <i class="fas fa-clock"></i>
+      2025-12-21
+    </div>
+    <div class="status-item">
+      Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
+    </div>
+    <div class="status-item github">
+      <a href="#" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+    
+    <!-- 全局配置 -->
+    <script>
+      window.HEXO_CONFIG = {
+        language: "zh-CN",
+        root: "/",
+        
+        theme_switch: {
+          enabled: false,
+          light_start: "06:00",
+          light_end: "18:00"
+        }
+        
+      };
+
+      // 特定于搜索的配置
+      window.VSC4T_SEARCH = {
+        root: "/"
+      };
+    </script>
+    
+    <script src="//cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/highlight.js@11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <!-- 这里可以放置自定义脚本 -->
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Apply smooth scroll to non-TOC anchor links
+  document.querySelectorAll('a[href^="#"]:not(.toc-link)').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      // Check if querySelector is valid before using it
+      try {
+        const targetSelector = this.getAttribute('href');
+        // Basic check for potentially invalid selectors (though not exhaustive)
+        if (targetSelector && targetSelector.length > 1) { 
+          const targetElement = document.querySelector(targetSelector);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          } else {
+            console.warn('Smooth scroll target not found:', targetSelector);
+          }
+        } else {
+           console.warn('Invalid href for smooth scroll:', targetSelector);
+        }
+      } catch (error) {
+        console.error('Error during smooth scroll:', error, 'Selector:', this.getAttribute('href'));
+        // Fallback or alternative behavior if needed
+        // For example, try getElementById if it's just an ID
+        const targetId = this.getAttribute('href').slice(1);
+        try {
+            const targetElementById = document.getElementById(decodeURIComponent(targetId));
+            if (targetElementById) {
+                targetElementById.scrollIntoView({ behavior: 'smooth' });
+            }
+        } catch (idError) {
+             console.error('Fallback getElementById also failed:', idError);
+        }
+      }
+    });
+  });
+});
+</script>
+
+<!-- Scripts -->
+<script>
+  // 将语言文件中的翻译传递给前端
+  window.HEXO_CONFIG = {
+    language: "zh-CN",
+    search_placeholder: "输入关键词搜索...",
+    search_no_results: "未找到相关结果",
+    search_result: "نتيجة",
+    search_results: "搜索结果",
+    search_results_found: "找到 undefined 个结果",
+    search_in: "搜索范围",
+    search_in_title: "标题",
+    search_in_content: "内容",
+    search_in_tags: "标签",
+    search_in_categories: "分类",
+    search_filters: "搜索过滤器",
+    search_recent: "最近搜索",
+    search_clear: "清除",
+    search_loading: "加载中...",
+    search_error: "加载搜索数据时出错",
+    // Encryption i18n strings
+    encrypt_badge: "受保护",
+    encrypt_title: "受保护的内容",
+    encrypt_description: "请输入密码以解锁本文，密码会在本设备本地保存，直到你选择重新加密。",
+    encrypt_label: "密码",
+    encrypt_placeholder: "输入密码解锁内容",
+    encrypt_button: "解锁",
+    encrypt_button_loading: "解锁中...",
+    encrypt_hint: "按 Enter 提交，密码会在本设备上记住。",
+    encrypt_success: "内容解锁成功！",
+    encrypt_unlocked_note: "内容已解锁，可随时重新加密。",
+    encrypt_again: "重新加密",
+    encrypt_wrong_password: "密码错误，请重试。",
+    encrypt_show_password: "显示密码",
+    encrypt_hide_password: "隐藏密码"
+  };
+</script>
+
+
+
+<!-- 添加所有需要的脚本 -->
+<script src="../js/main.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/theme-switch.js"></script>
+
+<script src="../js/password-protect.js?v=1766257301034"></script>
+
+    <script>
+      // 移动端菜单切换
+      $(document).ready(function() {
+        $('.mobile-menu-toggle').click(function() {
+          $('.sidebar-explorer').toggleClass('show');
+        });
+      });
+    </script>
+  </body>
+</html>
