@@ -136,4 +136,4 @@ markdown:
     linkify: true        # 自动识别网址
     typographer: true
   plugins:
-    - markdown-it-texmath # 加载数学插件
+    - markdown-it-mathjax  # <--- 改成这个！
