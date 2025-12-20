@@ -138,7 +138,3 @@ markdown:
   plugins:
     - markdown-it-texmath
 
-inject:
-  head:
-    # 引入 KaTeX 的官方样式表 (必须加，否则公式是乱码)
-    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
