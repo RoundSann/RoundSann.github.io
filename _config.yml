@@ -112,7 +112,7 @@ mathjax:
   cjk_width: 0.9
   normal_width: 1
   append_css: true
-  every_page: true
+  # every_page: true
 
 tikzjax:
   # Enable TikZ rendering for all posts and pages.
