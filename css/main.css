@@ -1048,112 +1048,102 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   Excel 风格表格 v6.0 (最终防御版)
+   Flex 布局防爆补丁 + 表格最终修复 (v7.0)
    ========================================= */
 
-/* 1. 【核心修复】锁死文章容器，禁止被撑开 */
+/* 1. 【核心修复】斩断 Flex 连锁反应 */
+/* 这里的类名来自于你之前提供的 vs-code.css */
+.editor-content, 
+.content-area,
+.wrapper {
+    /* 告诉 Flex 容器：忽略子元素的宽度，你自己该多宽就多宽 */
+    min-width: 0 !important; 
+    
+    /* 这是一个保险，防止某些浏览器不听话 */
+    width: 100%; 
+}
+
+/* 2. 限制文章容器 */
 .post-content {
-  /* 强制宽度跟随父级，不跟随子级 */
-  width: 100% !important; 
-  /* 这一行是关键：告诉浏览器，如果里面东西太宽，不要撑大我 */
-  overflow-x: hidden; 
-  box-sizing: border-box;
+    /* 强制继承父级宽度 */
+    width: 100%;
+    max-width: 100%; 
+    
+    /* 再次加锁，防止溢出 */
+    overflow-x: hidden; 
 }
 
-/* 2. 表格的外层包裹容器 (由 JS 生成) */
+/* 3. 表格包裹容器 (配合之前的 JS 脚本) */
 .table-container {
-  display: block;
-  /* 容器宽度占满文章区域，绝不多占 1px */
-  width: 100%; 
-  
-  /* 开启容器内部滚动 */
-  overflow-x: auto;
-  overflow-y: hidden;
-  
-  margin-bottom: 1.5rem;
-  padding-bottom: 5px; /* 预留滚动条空间 */
-  
-  /* 移动端优化 */
-  -webkit-overflow-scrolling: touch;
-  
-  /* 边框盒模型 */
-  box-sizing: border-box;
-  
-  /* 美化滚动条 */
-  scrollbar-width: thin;
-  scrollbar-color: var(--vscode-active) var(--vscode-sidebar);
+    display: block;
+    width: 100%;
+    
+    /* 这里的 auto 是产生滚动条的关键 */
+    overflow-x: auto; 
+    overflow-y: hidden;
+    
+    margin-bottom: 1.5rem;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    
+    /* 移动端优化 */
+    -webkit-overflow-scrolling: touch;
+    
+    /* 美化滚动条 */
+    scrollbar-width: thin;
+    scrollbar-color: var(--vscode-active) var(--vscode-sidebar);
 }
 
-/* 3. 内层表格：负责横向生长 */
+/* 4. 表格本身 */
 .post-content table {
-  /* 让表格根据内容自动撑开宽度，这样才能触发外层 div 的滚动 */
-  width: max-content; 
-  /* 如果内容很少，至少也要占满一行 */
-  min-width: 100%;    
-  
-  border-collapse: separate; 
-  border-spacing: 0;
-  margin: 0;
-  white-space: nowrap; /* 强制不换行 */
+    /* 让表格自然撑开，不要限制为 100%，这样才能比容器宽，才能触发滚动 */
+    width: max-content; 
+    min-width: 100%;
+    
+    border-collapse: separate; 
+    border-spacing: 0;
+    margin: 0;
+    white-space: nowrap; /* 保持不换行 */
 }
 
-/* 4. 单元格样式 */
+/* 5. 单元格样式 */
 .post-content table th,
 .post-content table td {
-  padding: 10px 15px;
-  border: 1px solid var(--vscode-active);
-  background-color: var(--vscode-bg); 
-  box-sizing: border-box;
-  vertical-align: middle;
+    padding: 10px 15px;
+    border: 1px solid var(--vscode-active);
+    background-color: var(--vscode-bg);
+    box-sizing: border-box;
+    vertical-align: middle;
 }
 
 /* =========================================
- 首列冻结逻辑 (Sticky)
- ========================================= */
-
-/* 第一列 (普通行) - 冻结 */
+   首列冻结逻辑
+   ========================================= */
+/* 第一列 */
 .post-content table td:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 10;
-  background-color: var(--vscode-bg);
-  box-shadow: 2px 0 0 var(--vscode-active); /* 右侧阴影分割线 */
-  border-right: 0;
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    background-color: var(--vscode-bg);
+    box-shadow: 2px 0 0 var(--vscode-active);
+    border-right: 0;
 }
 
-/* 表头行 */
+/* 表头 */
 .post-content table th {
-  background-color: var(--vscode-sidebar);
-  font-weight: bold;
-  border-bottom: 2px solid var(--vscode-active);
-  z-index: 5;
-  text-align: left;
+    background-color: var(--vscode-sidebar);
+    font-weight: bold;
+    border-bottom: 2px solid var(--vscode-active);
+    z-index: 5;
+    text-align: left;
 }
 
-/* 左上角交汇格 (王中王) - 冻结 */
+/* 左上角 */
 .post-content table th:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 20; /* 最高层级 */
-  background-color: var(--vscode-sidebar);
-  box-shadow: 2px 0 0 var(--vscode-active);
-  border-right: 0;
-}
-
-/* =========================================
- 滚动条美化
- ========================================= */
-.table-container::-webkit-scrollbar {
-  height: 10px;
-}
-.table-container::-webkit-scrollbar-track {
-  background: var(--vscode-sidebar);
-  border-radius: 4px;
-}
-.table-container::-webkit-scrollbar-thumb {
-  background: var(--vscode-active);
-  border-radius: 4px;
-}
-.table-container::-webkit-scrollbar-thumb:hover {
-  background: var(--vscode-text-light);
+    position: sticky;
+    left: 0;
+    z-index: 20;
+    background-color: var(--vscode-sidebar);
+    box-shadow: 2px 0 0 var(--vscode-active);
+    border-right: 0;
 }
