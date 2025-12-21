@@ -1048,102 +1048,66 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   Excel 风格超级表格 v2.0 (终极修复版)
+   Excel 风格超级表格 v2.0 (横向滚动 + 首列冻结)
    ========================================= */
 
-/* 1. 表格容器：强制限制在文章框内，溢出出滚动条 */
+/* 1. 容器控制：取消竖向限制，开启横向滚动 */
 .post-content table {
-  display: block;            /* 变成块级盒子，才能接受 max-width */
-  width: 100%;               /* 宽度撑满父容器 */
-  max-width: 100%;           /* 【关键】绝对不允许超出去 */
+  display: block;             /* 块级显示，允许设置 overflow */
+  width: 100%;
+  overflow-x: auto;           /* 开启横向滚动 */
+  overflow-y: hidden;         /* 取消表格内部的竖向滚动，让页面自然滚动 */
+  -webkit-overflow-scrolling: touch; /* 移动端顺滑滚动 */
   
-  /* 开启滚动 */
-  overflow: auto;            
+  /* 关键：强制不换行，否则列会自动变窄，就不会触发横向滚动了 */
+  white-space: nowrap;        
   
-  /* 限制最大高度，让表头能吸顶 */
-  max-height: 70vh;          
-  
-  /* 样式重置，配合 sticky 必须用 separate */
-  border-collapse: separate; 
+  border-collapse: separate;  /* 为了支持 sticky，不能用 collapse */
   border-spacing: 0;
   margin-bottom: 1.5rem;
-  
-  /* 去掉默认可能存在的边框，改在单元格上加 */
-  border: none;
 }
 
 /* 2. 单元格通用样式 */
 .post-content table th,
 .post-content table td {
-  /* 【关键】强制不换行，这是横向滚动条出现的前提 */
-  /* 只有内容撑破了容器，overflow: auto 才会生效 */
-  white-space: nowrap;       
-  
-  padding: 12px 15px;
-  border-right: 1px solid var(--vscode-active);
-  border-bottom: 1px solid var(--vscode-active);
-  background-color: var(--vscode-bg); /* 必须不透明 */
+  padding: 10px 15px;
+  border: 1px solid var(--vscode-active);
+  background-color: var(--vscode-bg); /* 必须给背景色，否则滚动时字会重叠 */
   box-sizing: border-box;
 }
 
-/* 给左边和上边补个边框 */
-.post-content table tr:first-child th {
-  border-top: 1px solid var(--vscode-active);
-}
-.post-content table tr th:first-child,
-.post-content table tr td:first-child {
-  border-left: 1px solid var(--vscode-active);
-}
-
-
 /* =========================================
- 核心逻辑：层级 (z-index) 金字塔
- 普通单元格 < 第一列 (10) < 第一行 (20) < 左上角 (30)
+ 核心逻辑：三层金字塔 (Z-Index)
  ========================================= */
 
-/* A. 普通的第一行表头 (吸顶) */
-.post-content table thead th {
-  position: sticky;
-  top: 0;
-  z-index: 20; 
-  background-color: var(--vscode-sidebar); /* 深色背景区分 */
-}
-
-/* B. 普通的第一列 (吸左) */
-.post-content table tbody td:first-child {
+/* 层级 1: 普通第一列 (冻结在左侧) */
+.post-content table td:first-child {
   position: sticky;
   left: 0;
-  z-index: 10;
-  background-color: var(--vscode-bg); 
+  z-index: 10; 
   
-  /* 这一句是为了防止第一列滚动时挡不住后面的字 */
-  /* 右边加个阴影模拟分割线 */
-  box-shadow: 2px 0 0 -1px var(--vscode-active); 
+  /* 为了区分冻结列，加个右边框阴影 */
+  box-shadow: 2px 0 0 var(--vscode-active); 
 }
 
-/* C. 【修正逻辑】左上角那个格子 (既是第一行，也是第一列) */
-/* 在 Markdown 表格中，第一行通常全是 th，所以我们要找第一行的第一个 th */
-.post-content table thead th:first-child {
+/* 层级 2: 表头行 (虽然全屏滚动无法吸顶，但样式要保留) */
+.post-content table th {
+  /* position: sticky; */ /* 注意：在 overflow-x: auto 的容器里，纯CSS无法实现对浏览器窗口的吸顶，所以这里注释掉，避免逻辑混乱 */
+  background-color: var(--vscode-sidebar); /* 深色背景 */
+  font-weight: bold;
+  z-index: 20;
+  border-bottom: 2px solid var(--vscode-active);
+}
+
+/* 层级 3: 左上角交汇格 (王中王) */
+/* 这个格子既是第一行，又是第一列，必须拥有最高层级 */
+.post-content table th:first-child {
   position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 30; /* 【关键】层级最高，压住所有人 */
-  background-color: var(--vscode-sidebar);
+  left: 0;            /* 必须吸附左边 */
+  z-index: 30;        /* 最高层级！压住所有 */
   
-  /* 加上边框修饰 */
-  box-shadow: 2px 0 0 -1px var(--vscode-active); 
-}
-
-/* 4. 滚动条美化 */
-.post-content table::-webkit-scrollbar {
-  width: 10px;
-  height: 10px; /* 横向滚动条高度 */
-}
-.post-content table::-webkit-scrollbar-thumb {
-  background: var(--vscode-active);
-  border-radius: 5px;
-  border: 2px solid var(--vscode-bg);
-}
-.post-content table::-webkit-scrollbar-corner {
-  background: var(--vscode-bg);
+  background-color: var(--vscode-sidebar); /* 用表头的颜色 */
+  
+  /* 同时拥有右边框阴影和下边框 */
+  box-shadow: 2px 0 0 var(--vscode-active); 
 }
