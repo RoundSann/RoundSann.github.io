@@ -1048,43 +1048,56 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   Excel 风格表格 v5.0 (修正版 - 完美适配容器)
+   Excel 风格表格 v6.0 (最终防御版)
    ========================================= */
 
-/* 1. 外层容器：核心修复 */
+/* 1. 【核心修复】锁死文章容器，禁止被撑开 */
+.post-content {
+  /* 强制宽度跟随父级，不跟随子级 */
+  width: 100% !important; 
+  /* 这一行是关键：告诉浏览器，如果里面东西太宽，不要撑大我 */
+  overflow-x: hidden; 
+  box-sizing: border-box;
+}
+
+/* 2. 表格的外层包裹容器 (由 JS 生成) */
 .table-container {
-  display: block;        /* 块级元素 */
-  width: 100%;           /* 填满父容器 */
-  max-width: 100%;       /* 【关键修复】绝对不能超过父容器宽度 */
+  display: block;
+  /* 容器宽度占满文章区域，绝不多占 1px */
+  width: 100%; 
   
-  overflow-x: auto;      /* 内容超宽时，容器内部出现滚动条 */
+  /* 开启容器内部滚动 */
+  overflow-x: auto;
   overflow-y: hidden;
-  margin-bottom: 1.5rem;
-  padding-bottom: 5px;   /* 预留一点空间给滚动条，防止遮挡最后一行 */
   
-  /* 移动端顺滑滚动 */
+  margin-bottom: 1.5rem;
+  padding-bottom: 5px; /* 预留滚动条空间 */
+  
+  /* 移动端优化 */
   -webkit-overflow-scrolling: touch;
   
-  /* 盒模型修正，防止 padding 撑破 */
-  box-sizing: border-box; 
+  /* 边框盒模型 */
+  box-sizing: border-box;
   
   /* 美化滚动条 */
   scrollbar-width: thin;
   scrollbar-color: var(--vscode-active) var(--vscode-sidebar);
 }
 
-/* 2. 内层表格：负责横向生长 */
+/* 3. 内层表格：负责横向生长 */
 .post-content table {
-  width: max-content;    /* 【技巧】让表格宽度等于内容总宽度，确保每一列都不换行 */
-  min-width: 100%;       /* 如果内容少，至少占满容器 */
+  /* 让表格根据内容自动撑开宽度，这样才能触发外层 div 的滚动 */
+  width: max-content; 
+  /* 如果内容很少，至少也要占满一行 */
+  min-width: 100%;    
   
   border-collapse: separate; 
   border-spacing: 0;
   margin: 0;
-  white-space: nowrap;   /* 强制不换行 */
+  white-space: nowrap; /* 强制不换行 */
 }
 
-/* 3. 单元格通用样式 */
+/* 4. 单元格样式 */
 .post-content table th,
 .post-content table td {
   padding: 10px 15px;
@@ -1098,19 +1111,17 @@ h1, h2, h3, h4, h5, h6 {
  首列冻结逻辑 (Sticky)
  ========================================= */
 
-/* 第一列 (普通行) - 冻结在左侧 */
+/* 第一列 (普通行) - 冻结 */
 .post-content table td:first-child {
   position: sticky;
   left: 0;
-  z-index: 10; 
-  
+  z-index: 10;
   background-color: var(--vscode-bg);
-  /* 右侧阴影，制造层次感 */
-  box-shadow: 2px 0 0 var(--vscode-active);
-  border-right: 0; 
+  box-shadow: 2px 0 0 var(--vscode-active); /* 右侧阴影分割线 */
+  border-right: 0;
 }
 
-/* 表头行 - 样式 */
+/* 表头行 */
 .post-content table th {
   background-color: var(--vscode-sidebar);
   font-weight: bold;
@@ -1119,12 +1130,11 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
-/* 左上角那个格子 (既是首列又是表头) - 冻结在左侧 */
+/* 左上角交汇格 (王中王) - 冻结 */
 .post-content table th:first-child {
   position: sticky;
   left: 0;
   z-index: 20; /* 最高层级 */
-  
   background-color: var(--vscode-sidebar);
   box-shadow: 2px 0 0 var(--vscode-active);
   border-right: 0;
@@ -1134,7 +1144,7 @@ h1, h2, h3, h4, h5, h6 {
  滚动条美化
  ========================================= */
 .table-container::-webkit-scrollbar {
-  height: 10px; /* 滚动条高度 */
+  height: 10px;
 }
 .table-container::-webkit-scrollbar-track {
   background: var(--vscode-sidebar);
