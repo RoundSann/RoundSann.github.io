@@ -1048,102 +1048,75 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   Flex 布局防爆补丁 + 表格最终修复 (v7.0)
+   Excel 风格超级表格 v2.0 (横向滚动优先)
    ========================================= */
 
-/* 1. 【核心修复】斩断 Flex 连锁反应 */
-/* 这里的类名来自于你之前提供的 vs-code.css */
-.editor-content, 
-.content-area,
-.wrapper {
-    /* 告诉 Flex 容器：忽略子元素的宽度，你自己该多宽就多宽 */
-    min-width: 0 !important; 
-    
-    /* 这是一个保险，防止某些浏览器不听话 */
-    width: 100%; 
-}
-
-/* 2. 限制文章容器 */
-.post-content {
-    /* 强制继承父级宽度 */
-    width: 100%;
-    max-width: 100%; 
-    
-    /* 再次加锁，防止溢出 */
-    overflow-x: hidden; 
-}
-
-/* 3. 表格包裹容器 (配合之前的 JS 脚本) */
-.table-container {
-    display: block;
-    width: 100%;
-    
-    /* 这里的 auto 是产生滚动条的关键 */
-    overflow-x: auto; 
-    overflow-y: hidden;
-    
-    margin-bottom: 1.5rem;
-    padding-bottom: 5px;
-    box-sizing: border-box;
-    
-    /* 移动端优化 */
-    -webkit-overflow-scrolling: touch;
-    
-    /* 美化滚动条 */
-    scrollbar-width: thin;
-    scrollbar-color: var(--vscode-active) var(--vscode-sidebar);
-}
-
-/* 4. 表格本身 */
+/* 1. 表格容器：强制横向滚动，取消竖向高度限制 */
 .post-content table {
-    /* 让表格自然撑开，不要限制为 100%，这样才能比容器宽，才能触发滚动 */
-    width: max-content; 
-    min-width: 100%;
-    
-    border-collapse: separate; 
-    border-spacing: 0;
-    margin: 0;
-    white-space: nowrap; /* 保持不换行 */
+  display: block;              /* 变成块级，允许设置宽高 */
+  width: 100%;                 /* 宽度撑满父容器 */
+  max-width: 100%;             /* 严禁超出 */
+  
+  /* 核心交互更改： */
+  overflow-x: auto;            /* 开启横向滚动 */
+  overflow-y: visible;         /* 取消竖向滚动，高度自动撑开 */
+  max-height: none;            /* 取消高度限制，让文档滚动 */
+  
+  /* 样式重置 */
+  border-collapse: separate;   /* 必须 separate 才能让 sticky 生效 */
+  border-spacing: 0;
+  margin-bottom: 1.5rem;
+  white-space: nowrap;         /* 强制不换行，触发横向滚动 */
+  
+  /* 移动端优化 */
+  -webkit-overflow-scrolling: touch;
 }
 
-/* 5. 单元格样式 */
+/* 2. 单元格通用样式 */
 .post-content table th,
 .post-content table td {
-    padding: 10px 15px;
-    border: 1px solid var(--vscode-active);
-    background-color: var(--vscode-bg);
-    box-sizing: border-box;
-    vertical-align: middle;
+  padding: 12px 15px;
+  border: 1px solid var(--vscode-active);
+  background-color: var(--vscode-bg);
+  box-sizing: border-box;
 }
 
 /* =========================================
-   首列冻结逻辑
-   ========================================= */
-/* 第一列 */
+ 核心：三层 Z-Index 优先级控制
+ 层级越高越在上层：交汇点(30) > 表头(20) > 首列(10) > 普通(0)
+ ========================================= */
+
+/* A. 普通首列 (z-index: 10) */
+/* 作用于每一行的第一个 td */
 .post-content table td:first-child {
-    position: sticky;
-    left: 0;
-    z-index: 10;
-    background-color: var(--vscode-bg);
-    box-shadow: 2px 0 0 var(--vscode-active);
-    border-right: 0;
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  background-color: var(--vscode-bg); /* 跟随背景 */
+  border-right: 2px solid var(--vscode-active); /* 加粗分割线 */
 }
 
-/* 表头 */
+/* B. 表头行 (z-index: 20) */
+/* 作用于第一行的所有 th */
 .post-content table th {
-    background-color: var(--vscode-sidebar);
-    font-weight: bold;
-    border-bottom: 2px solid var(--vscode-active);
-    z-index: 5;
-    text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: var(--vscode-sidebar); /* 深色背景区分 */
+  border-bottom: 2px solid var(--vscode-active); /* 加粗分割线 */
 }
 
-/* 左上角 */
+/* C. 【修复逻辑冲突】左上角交汇格 (z-index: 30) */
+/* 它是 th，且是 first-child，所以它必须压过上面两个 */
 .post-content table th:first-child {
-    position: sticky;
-    left: 0;
-    z-index: 20;
-    background-color: var(--vscode-sidebar);
-    box-shadow: 2px 0 0 var(--vscode-active);
-    border-right: 0;
+  position: sticky;
+  left: 0; 
+  top: 0;
+  z-index: 30 !important; /* 最高优先级，确保压住首列和表头 */
+  
+  background-color: var(--vscode-sidebar); /* 深色背景 */
+  
+  /* 打造一个这种格子独有的边框，防止滚动时漏出 */
+  border-right: 2px solid var(--vscode-active);
+  border-bottom: 2px solid var(--vscode-active);
 }
