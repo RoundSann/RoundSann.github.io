@@ -1048,76 +1048,69 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   Excel 风格超级表格 V2.0 (横向滚动优先版)
+   Excel 风格超级表格 V2.0 (横向滚动 + 首列冻结)
    ========================================= */
 
-/* 1. 表格容器：负责限制宽度和横向滚动 */
+/* 1. 表格容器：强制变成块级，允许横向滚动 */
 .post-content table {
-  display: block;              /* 变成块级元素，接受宽度限制 */
-  width: 100%;                 /* 强制宽度跟随文章容器 */
-  max-width: 100%;             /* 严禁溢出 */
+  display: block;              /* 变成块级盒子，才能限制宽度 */
+  width: 100%;                 /* 宽度强制跟随文章 */
+  max-width: 100%;             /* 严禁撑破大 box */
   
-  /* 核心改动： */
-  overflow-x: auto;            /* 开启横向滚动条 */
-  overflow-y: visible;         /* 关闭竖向滚动条(随页面滚动) */
-  white-space: nowrap;         /* 强制内容不换行，撑开宽度 */
+  overflow-x: auto;            /* 【核心】开启横向滚动 */
+  overflow-y: visible;         /* 纵向不限制，全展示 */
   
-  /* 样式重置，为了配合 sticky */
-  border-collapse: separate;   
+  border-collapse: separate;   /* 配合 sticky 必须用 separate */
   border-spacing: 0;
   margin-bottom: 1.5rem;
+  white-space: nowrap;         /* 强制内容不换行，确保列够宽 */
 }
 
-/* 2. 单元格通用样式 */
+/* 2. 单元格通用美化 */
 .post-content table th,
 .post-content table td {
-  padding: 10px 15px;
+  padding: 12px 15px;
   border: 1px solid var(--vscode-active);
   background-color: var(--vscode-bg);
   box-sizing: border-box;
-  vertical-align: middle;
 }
 
-/* =========================================
- 吸附逻辑与优先级 (Z-Index)
- 优先级规则: 左上角 > 表头 > 首列 > 普通格
- ========================================= */
-
-/* 3. 普通表头 (第一行) */
-/* 注意：由于开启了横向滚动，纯CSS下表头只能吸附在表格顶部 */
-.post-content table thead th {
-  position: sticky;
-  top: 0;
-  z-index: 20;  /* 优先级：中 */
-  background-color: var(--vscode-sidebar);
-  box-shadow: 0 1px 0 var(--vscode-active); /* 修复下边框 */
-}
-
-/* 4. 普通首列 (第一列) */
-.post-content table tbody td:first-child {
+/* 3. 【首列冻结】逻辑 (优先级 Z=10) */
+/* 让第一列的所有单元格吸附在左侧 */
+.post-content table td:first-child,
+.post-content table th:first-child {
   position: sticky;
   left: 0;
-  z-index: 10;  /* 优先级：低 */
-  background-color: var(--vscode-bg);
-  box-shadow: 1px 0 0 var(--vscode-active); /* 修复右边框 */
-}
-
-/* 5. 【核心修复】左上角交叉点 (表头的第一个格子) */
-/* 这个格子必须同时吸顶和吸左，且层级最高 */
-.post-content table thead th:first-child {
-  position: sticky;
-  left: 0;
-  top: 0;
-  z-index: 30;  /* 优先级：高 (覆盖普通表头和普通首列) */
-  background-color: var(--vscode-sidebar);
+  z-index: 10;
   
+  /* 给首列加一个底色，防止透明 */
+  background-color: var(--vscode-bg); 
+  /* 右边框阴影，制造层次感 */
+  box-shadow: 1px 0 0 var(--vscode-active); 
+}
+
+/* 4. 【表头样式】 (注意：由于开启了 overflow-x，表头无法吸附屏幕顶部) */
+.post-content table th {
+  background-color: var(--vscode-sidebar);
+  font-weight: bold;
+  border-bottom: 2px solid var(--vscode-active);
+}
+
+/* 5. 【左上角交汇格】终极修复 (优先级 Z=30) */
+/* 这个格子既是第一行又是第一列，必须比上面两个都高 */
+.post-content table th:first-child {
+  z-index: 30 !important; /* 强制最高层级 */
+  left: 0;
+  top: 0;
+  
+  background-color: var(--vscode-sidebar);
   /* 同时修复右边框和下边框 */
-  box-shadow: 1px 0 0 var(--vscode-active), 0 1px 0 var(--vscode-active);
+  box-shadow: 1px 1px 0 var(--vscode-active); 
 }
 
 /* 6. 滚动条美化 */
 .post-content table::-webkit-scrollbar {
-  height: 8px; /* 只有横向滚动条 */
+  height: 8px; /* 横向滚动条高度 */
 }
 .post-content table::-webkit-scrollbar-thumb {
   background: var(--vscode-active);
