@@ -1048,79 +1048,90 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   终极表格修复 (横向滚动 + 首列冻结 + 布局保护)
+   Excel 风格超级表格 (冻结窗格)
    ========================================= */
 
-/* 1. 表格容器：强制开启横向滚动，取消竖向限制 */
-.post-content table {
-  display: block;              /* 变成块级容器，允许设置宽 */
-  width: 100%;                 /* 宽度占满父容器 */
-  max-width: 100%;             /* 严禁溢出撑破页面 */
+/* 1. 外层容器：负责横向滚动，限制宽度 */
+.table-container {
+  overflow-x: auto;       /* 内容太宽时出现横向滚动条 */
+  max-width: 100%;        /* 绝不超过父容器宽度，防止撑破布局 */
+  margin-bottom: 1.5rem;
   
-  overflow-x: auto;            /* 开启横向滚动 */
-  overflow-y: visible;         /* 竖向不剪裁，随页面滚动 */
+  /* 优化滚动体验 */
+  -webkit-overflow-scrolling: touch;
   
-  border-collapse: separate;   /* 必须分离边框，sticky 才能生效 */
-  border-spacing: 0;
-  margin-bottom: 20px;
-  
-  /* 强制不换行，确保列宽足够，触发横向滚动 */
-  white-space: nowrap;         
+  /* 关键：为了让 sticky 生效，不能有 overflow-y: hidden */
+  overflow-y: visible; 
 }
 
-/* 2. 单元格通用样式 */
+/* 2. 表格本身 */
+.post-content table {
+  border-collapse: separate; /* 必须是 separate，否则 sticky 边框会失效 */
+  border-spacing: 0;
+  width: 100%; /* 撑满容器 */
+  margin: 0;   /* 去除默认边距，由容器控制 */
+}
+
+/* 3. 单元格通用样式 */
 .post-content table th,
 .post-content table td {
-  padding: 12px 15px;
-  border: 1px solid var(--vscode-active);
-  background-color: var(--vscode-bg); /* 必须不透明 */
-  box-sizing: border-box;
-  vertical-align: middle;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--vscode-active);
+  border-right: 1px solid var(--vscode-active);
+  /* 必须设置背景色，否则滚动时文字会重叠 */
+  background-color: var(--vscode-sidebar); 
+  white-space: nowrap; /* 核心：禁止文字换行，强制表格横向延伸 */
 }
 
-/* 3. 表头样式 (注意：因横向滚动限制，无法实现浏览器吸顶，但保留样式) */
-.post-content table th {
-  background-color: var(--vscode-sidebar);
-  font-weight: bold;
-  border-bottom: 2px solid var(--vscode-active); /* 加粗表头下边框 */
+/* =========================================
+ 冻结魔法区域 (Sticky)
+ ========================================= */
+
+/* A. 冻结表头 (第一行) - 竖向滚动时吸顶 */
+.post-content table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 20; /* 层级较高 */
+  border-bottom: 2px solid var(--vscode-accent); /* 加粗下边框区分 */
+  background-color: var(--vscode-active); /* 表头颜色稍微亮一点 */
+  color: var(--vscode-text);
 }
 
-/* 4. 【核心】固定首列 (优先级：中) */
-.post-content table td:first-child,
-.post-content table th:first-child {
+/* B. 冻结第一列 - 横向滚动时吸左 */
+.post-content table tbody td:first-child,
+.post-content table thead th:first-child {
   position: sticky;
   left: 0;
-  z-index: 10; /* 比普通格子高 */
-  
-  /* 首列必须有背景色遮挡后面滑过来的字 */
-  background-color: var(--vscode-bg); 
-  border-right: 2px solid var(--vscode-active); /* 加粗首列右边框 */
+  z-index: 10; /* 层级中等 */
+  border-right: 2px solid var(--vscode-active); /* 加粗右边框区分 */
+  background-color: var(--vscode-sidebar); /* 保持背景色，防止透视 */
 }
 
-/* 5. 【核心】修复左上角交叉点 (优先级：最高) */
-/* 这个格子既是第一行又是第一列，必须压住所有东西 */
-.post-content table th:first-child {
-  z-index: 30; /* 比普通首列(10)更高！ */
-  background-color: var(--vscode-sidebar); /* 保持表头颜色 */
+/* C. 左上角那个单元格 (交叉点) - 永远固定 */
+.post-content table thead th:first-child {
+  z-index: 30; /* 层级最高！压在表头和第一列上面 */
+  background-color: var(--vscode-active);
 }
 
-/* 6. 滚动条美化 */
-.post-content table::-webkit-scrollbar {
-  height: 10px; /* 横向滚动条高度 */
+/* =========================================
+ 细节微调
+ ========================================= */
+
+/* 去除最右侧和最底部的多余边框 */
+.post-content table tr:last-child td {
+  border-bottom: none;
 }
-.post-content table::-webkit-scrollbar-thumb {
-  background: var(--vscode-active);
-  border-radius: 5px;
-}
-.post-content table::-webkit-scrollbar-track {
-  background: var(--vscode-sidebar);
+.post-content table th:last-child,
+.post-content table td:last-child {
+  border-right: none;
 }
 
-/* 7. 移动端优化：取消部分粘性定位防止遮挡太严重 */
-@media (max-width: 480px) {
-  .post-content table td:first-child,
-  .post-content table th:first-child {
-      position: static; /* 手机屏幕太窄，取消首列固定，改为自由滑动 */
-      border-right: 1px solid var(--vscode-active);
-  }
-}
+/* 强制文字不换行会导致表格很宽，
+ 如果你希望某些长文本该换行还是换行，
+ 可以给特定列设置 min-width，或者全局放宽一点： */
+/* 
+.post-content table td {
+  white-space: pre-wrap; 
+  min-width: 100px;
+} 
+*/
