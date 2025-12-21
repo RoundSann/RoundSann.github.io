@@ -1015,29 +1015,72 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   排版一致性修复 v2.0 (柔和版)
+   终极布局修复：找回侧边栏 + 防止撑破屏幕
    ========================================= */
 
-/* 核心逻辑：只解除"紧箍咒" (max-width)，但不强制"撑破衣服" (width) */
-.post-content p,           /* 段落 */
-.post-content ul,          /* 列表 */
-.post-content ol,          /* 列表 */
-.post-content dl,          /* 定义列表 */
-.post-content blockquote,  /* 引用块 */
-.post-content .katex-display {
-    max-width: none !important; /* 关键：取消 700px 的限制，允许它自然生长 */
-    width: auto !important;     /* 关键：让浏览器自己计算宽度，不要强制 100% */
-    box-sizing: border-box;     /* 确保内边距包含在尺寸内 */
+/* 1. 修正主容器布局 (Flexbox) */
+/* 假设你的主题外层容器叫 .vscode-container 或 body */
+.vscode-container {
+  display: flex !important;
+  width: 100% !important;
+  overflow-x: hidden !important; /* 禁止整个页面出现横向滚动条 */
 }
 
-/* 针对公式的额外保护，防止公式本身过长撑破 */
-.katex-display {
-    max-width: 100% !important; /* 公式最大只能占满屏幕 */
-    overflow-x: auto;           /* 如果公式真的特别长，允许公式内部滚动，不要撑破页面 */
+/* 2. 保护侧边栏 (Sidebar) */
+/* 强制给侧边栏一个固定地盘，禁止它被压缩 */
+.sidebar-explorer {
+  width: 250px !important;    /* 固定宽度 */
+  min-width: 250px !important;
+  flex-shrink: 0 !important;  /* 关键：绝对不允许被挤压！ */
+  position: sticky !important; /* 保持原来的吸附效果 */
+  left: 0;
 }
 
-/* 列表缩进微调：防止列表太靠左 */
-.post-content ul, 
-.post-content ol {
-    padding-left: 2em; /* 保持标准的 Markdown 缩进 */
+/* 3. 修正右侧内容区域 */
+.editor-content {
+  flex-grow: 1 !important;    /* 自动占据剩余空间 */
+  flex-shrink: 1 !important;  /* 空间不够时允许收缩 */
+  width: 0 !important;        /* 【核心黑魔法】让 Flex 子元素能正确处理内部溢出 */
+  min-width: 0 !important;    /* 【核心黑魔法】防止被长公式撑开 */
+  padding: 0 !important;
+}
+
+/* 4. 修正文章包裹层 */
+.wrapper {
+  width: 100% !important;     /* 占满右侧区域 */
+  max-width: 100% !important; /* 不要限制像素宽度 */
+  padding: 20px 40px !important; /* 增加一点内边距，呼吸感 */
+  box-sizing: border-box;
+  margin: 0 !important;
+}
+
+/* 5. 移动端适配 (手机/小平板) */
+@media (max-width: 768px) {
+  /* 变成垂直排列 */
+  .vscode-container {
+      flex-direction: column !important;
+  }
+
+  /* 手机上隐藏侧边栏 (或者变成顶部菜单，通常隐藏体验更好) */
+  .sidebar-explorer {
+      display: none !important; 
+      /* 如果你想在手机上也显示，就把上面这行删掉，改为 width: 100% */
+  }
+
+  /* 内容区域占满 */
+  .editor-content {
+      width: 100% !important;
+  }
+
+  .wrapper {
+      padding: 10px !important; /* 手机上减小边距 */
+  }
+  
+  /* 强制表格和公式滚动，防止撑破手机屏幕 */
+  table, .katex-display, pre {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+  }
 }
