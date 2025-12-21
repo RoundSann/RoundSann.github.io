@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1766315967109">
+  <link rel="stylesheet" href="../../css/post.css?v=1766315967103">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -73,7 +73,7 @@
     </div>
     
     <div class="nav-right">
-      <a href="/" class="nav-item ">
+      <a href="/" class="nav-item active">
         <i class="fas fa-home"></i>
         <span>首页</span>
       </a>
@@ -85,7 +85,7 @@
         <i class="fas fa-folder"></i>
         <span>分类</span>
       </a>
-      <a href="/tags/" class="nav-item active">
+      <a href="/tags/" class="nav-item ">
         <i class="fas fa-tags"></i>
         <span>标签</span>
       </a>
@@ -152,96 +152,156 @@
 
 
 <div class="vscode-container">
-  <!-- 左侧资源管理器 -->
   <div class="sidebar-explorer">
+    <div class="explorer-header">
+      <span class="explorer-title">
+        <i class="fas fa-folder-open"></i> EXPLORER
+      </span>
+    </div>
+    
     <div class="explorer-section">
       <div class="section-header">
-        <i class="fas fa-tags"></i>
-        <span>ALL TAGS</span>
+        <i class="fas fa-chevron-down"></i>
+        <span>BLOG CONTENTS</span>
       </div>
+      
+      <div class="section-content">
+          <div class="folder">
+            <i class="fas fa-folder"></i>
+            <a href="../../categories/rimworld/" class="category-link">
+              <span>rimworld</span>
+              <span class="count">(16)</span>
+            </a>
+          </div>
+          <div class="folder">
+            <i class="fas fa-folder"></i>
+            <a href="../../categories/Math/" class="category-link">
+              <span>Math</span>
+              <span class="count">(5)</span>
+            </a>
+          </div>
+      </div>
+    </div>
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-chevron-down"></i>
+        <span>RECENT POSTS</span>
+      </div>
+      
+      <div class="section-content">
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../%E5%8E%9F%E7%89%88%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">原版相关内容</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../%E4%BD%BF%E7%94%A8%E9%A1%BB%E7%9F%A5%E5%8F%8A%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95mod%E5%86%B2%E7%AA%81/">使用须知及个人记录Mod冲突</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/">边缘世界种族数据提取器</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../%E8%90%8C%E8%9E%88/">萌螈</a>
+          </div>
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../../%E9%98%BF%E5%B0%94%E6%B3%95%E4%B9%A6%E7%B1%8D/">阿尔法书籍</a>
+          </div>
+      </div>
+    </div>
+
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-chevron-down"></i>
+        <span>TAGS</span>
+      </div>
+      
       <div class="section-content">
         
-          <div class="tag-item active">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="">VE扩展</a>
+            <a href="../../tags/VE%E6%89%A9%E5%B1%95/">VE扩展</a>
             <span class="count">(1)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../rimworld/">rimworld</a>
+            <a href="../../tags/rimworld/">rimworld</a>
             <span class="count">(16)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/">初等数学</a>
+            <a href="../../tags/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/">初等数学</a>
             <span class="count">(3)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E5%8E%9F%E7%89%88/">原版</a>
+            <a href="../../tags/%E5%8E%9F%E7%89%88/">原版</a>
             <span class="count">(1)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E5%8E%9F%E7%89%88%E5%90%91/">原版向</a>
+            <a href="../../tags/%E5%8E%9F%E7%89%88%E5%90%91/">原版向</a>
             <span class="count">(6)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E5%BE%AE%E6%AD%A3%E4%B9%89/">微正义</a>
+            <a href="../../tags/%E5%BE%AE%E6%AD%A3%E4%B9%89/">微正义</a>
             <span class="count">(3)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/">数学分析</a>
+            <a href="../../tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/">数学分析</a>
             <span class="count">(1)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E6%AD%A3%E4%B9%89/">正义</a>
+            <a href="../../tags/%E6%AD%A3%E4%B9%89/">正义</a>
             <span class="count">(2)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E7%A5%9E%E4%BB%99%E6%96%97%E6%B3%95/">神仙斗法</a>
+            <a href="../../tags/%E7%A5%9E%E4%BB%99%E6%96%97%E6%B3%95/">神仙斗法</a>
             <span class="count">(2)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E7%A7%8D%E6%97%8F/">种族</a>
+            <a href="../../tags/%E7%A7%8D%E6%97%8F/">种族</a>
             <span class="count">(9)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E7%B2%BE%E5%93%81/">精品</a>
+            <a href="../../tags/%E7%B2%BE%E5%93%81/">精品</a>
             <span class="count">(4)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E8%B4%9F%E6%AD%A3%E4%B9%89/">负正义</a>
+            <a href="../../tags/%E8%B4%9F%E6%AD%A3%E4%B9%89/">负正义</a>
             <span class="count">(3)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E9%98%BF%E5%B0%94%E6%B3%95%E7%B3%BB%E5%88%97/">阿尔法系列</a>
+            <a href="../../tags/%E9%98%BF%E5%B0%94%E6%B3%95%E7%B3%BB%E5%88%97/">阿尔法系列</a>
             <span class="count">(1)</span>
           </div>
         
-          <div class="tag-item ">
+          <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/">高等代数</a>
+            <a href="../../tags/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0/">高等代数</a>
             <span class="count">(1)</span>
           </div>
         
@@ -249,63 +309,85 @@
     </div>
   </div>
 
-  <!-- 主要内容区域 -->
   <div class="editor-content">
     <div class="tab-bar">
       <div class="tab active">
-        <i class="fas fa-tag"></i>
-        <span>tag: VE%u6269%u5C55.md</span>
+        <i class="fas fa-home"></i>
+        <span>welcome.md</span>
       </div>
     </div>
     
     <div class="content-area">
-      <div class="tag-header">
-        <h1>
-          <i class="fas fa-tag"></i>
-          Tag: VE扩展
-        </h1>
-        <span class="tag-count">1 posts</span>
-      </div>
-
       <div class="posts-container">
-        
           <div class="post-card">
             <div class="post-header">
               <i class="fas fa-file-alt"></i>
               <span class="post-title">
-                <a href="../../%E5%8E%9F%E7%89%88%E8%99%AB%E6%97%8F%E6%89%A9%E5%B1%952/">原版虫族扩展2</a>
+                <a href="../../%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E6%A0%B9%E5%85%AC%E5%BC%8F/">三次方程求根公式</a>
+                
               </span>
             </div>
             
             <div class="post-meta">
               <span class="date">
                 <i class="fas fa-calendar-alt"></i>
-                2025-04-23
+                2021-11-05
               </span>
-              
                 <span class="category">
                   <i class="fas fa-folder"></i>
-                  <a class="category-link" href="../../categories/rimworld/">rimworld</a>
+                  <a class="category-link" href="../../categories/Math/">Math</a>
                 </span>
-              
             </div>
             
             <div class="post-excerpt">
-              <p>虫族扩展2的数值一览表<br>
-完完全全就是原版级别的数值我只能说</p>...
+              三次方程求根公式
+我们考虑方程
+ax3+bx2+cx+d=0(a≠0)ax^3+bx^2+cx+d=0(a\neq 0)ax3+bx2+cx+d=0(a=0)我们先把最高次项系数化为111,即化为:
+x3+Ax2+Bx+C=0x^3+Ax^2+Bx+C=0x3+Ax2+Bx+C=0设法消去二次项,我们不妨设当x=y+mx=y+mx=y+m时,二次项恰被消去,那么此时我们有:
+(y+m)3+A(y...
             </div>
             
             <div class="post-footer">
-              <a href="../../%E5%8E%9F%E7%89%88%E8%99%AB%E6%97%8F%E6%89%A9%E5%B1%952/" class="read-more">
+              <a href="../../%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B%E6%B1%82%E6%A0%B9%E5%85%AC%E5%BC%8F/" class="read-more">
                 <i class="fas fa-code"></i>
                 Read More
               </a>
             </div>
           </div>
-        
       </div>
-
       
+      
+<nav class="pagination-container" aria-label="Page navigation">
+  <span class="pagination-info">Page 3 of 3</span>
+  <div class="pagination">
+    
+      <a class="page-btn" href="../2/" aria-label="Previous page">
+        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      
+        <a class="page-btn" href="../../index.html">1</a>
+      
+    
+      
+        <a class="page-btn" href="../2/">2</a>
+      
+    
+      
+        <span class="page-btn current" aria-current="page">3</span>
+      
+    
+
+    
+      <span class="page-btn disabled" aria-hidden="true">
+        <i class="fas fa-chevron-right"></i>
+      </span>
+    
+  </div>
+</nav>
+
 
     </div>
   </div>
@@ -449,7 +531,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1766315967109"></script>
+<script src="../../js/password-protect.js?v=1766315967103"></script>
 
     <script>
       // 移动端菜单切换
