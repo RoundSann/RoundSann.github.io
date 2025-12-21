@@ -1084,3 +1084,18 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
   }
   
+/* 防止文章内容把大 box 撑破 */
+.post-content {
+  max-width: 100%;
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+.post-content th:first-child,
+.post-content td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: var(--vscode-bg);
+  z-index: 2;
+  box-shadow: 2px 0 0 var(--vscode-border);
+}
