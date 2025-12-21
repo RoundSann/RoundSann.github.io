@@ -1048,75 +1048,81 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   Excel 风格超级表格 v2.0 (横向滚动优先)
+   Excel 风格超级表格 V2.0 (横向滚动优先版)
    ========================================= */
 
-/* 1. 表格容器：强制横向滚动，取消竖向高度限制 */
+/* 1. 表格容器：负责限制宽度和横向滚动 */
 .post-content table {
-  display: block;              /* 变成块级，允许设置宽高 */
-  width: 70%;                 /* 宽度撑满父容器 */
-  max-width: 90%;             /* 严禁超出 */
+  display: block;              /* 变成块级元素，接受宽度限制 */
+  width: 100%;                 /* 强制宽度跟随文章容器 */
+  max-width: 100%;             /* 严禁溢出 */
   
-  /* 核心交互更改： */
-  overflow-x: auto;            /* 开启横向滚动 */
-  overflow-y: visible;         /* 取消竖向滚动，高度自动撑开 */
-  max-height: none;            /* 取消高度限制，让文档滚动 */
+  /* 核心改动： */
+  overflow-x: auto;            /* 开启横向滚动条 */
+  overflow-y: visible;         /* 关闭竖向滚动条(随页面滚动) */
+  white-space: nowrap;         /* 强制内容不换行，撑开宽度 */
   
-  /* 样式重置 */
-  border-collapse: separate;   /* 必须 separate 才能让 sticky 生效 */
+  /* 样式重置，为了配合 sticky */
+  border-collapse: separate;   
   border-spacing: 0;
   margin-bottom: 1.5rem;
-  white-space: nowrap;         /* 强制不换行，触发横向滚动 */
-  
-  /* 移动端优化 */
-  -webkit-overflow-scrolling: touch;
 }
 
 /* 2. 单元格通用样式 */
 .post-content table th,
 .post-content table td {
-  padding: 12px 15px;
+  padding: 10px 15px;
   border: 1px solid var(--vscode-active);
   background-color: var(--vscode-bg);
   box-sizing: border-box;
+  vertical-align: middle;
 }
 
 /* =========================================
- 核心：三层 Z-Index 优先级控制
- 层级越高越在上层：交汇点(30) > 表头(20) > 首列(10) > 普通(0)
+ 吸附逻辑与优先级 (Z-Index)
+ 优先级规则: 左上角 > 表头 > 首列 > 普通格
  ========================================= */
 
-/* A. 普通首列 (z-index: 10) */
-/* 作用于每一行的第一个 td */
-.post-content table td:first-child {
+/* 3. 普通表头 (第一行) */
+/* 注意：由于开启了横向滚动，纯CSS下表头只能吸附在表格顶部 */
+.post-content table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 20;  /* 优先级：中 */
+  background-color: var(--vscode-sidebar);
+  box-shadow: 0 1px 0 var(--vscode-active); /* 修复下边框 */
+}
+
+/* 4. 普通首列 (第一列) */
+.post-content table tbody td:first-child {
   position: sticky;
   left: 0;
-  z-index: 10;
-  background-color: var(--vscode-bg); /* 跟随背景 */
-  border-right: 2px solid var(--vscode-active); /* 加粗分割线 */
+  z-index: 10;  /* 优先级：低 */
+  background-color: var(--vscode-bg);
+  box-shadow: 1px 0 0 var(--vscode-active); /* 修复右边框 */
 }
 
-/* B. 表头行 (z-index: 20) */
-/* 作用于第一行的所有 th */
-.post-content table th {
+/* 5. 【核心修复】左上角交叉点 (表头的第一个格子) */
+/* 这个格子必须同时吸顶和吸左，且层级最高 */
+.post-content table thead th:first-child {
   position: sticky;
+  left: 0;
   top: 0;
-  z-index: 20;
-  background-color: var(--vscode-sidebar); /* 深色背景区分 */
-  border-bottom: 2px solid var(--vscode-active); /* 加粗分割线 */
+  z-index: 30;  /* 优先级：高 (覆盖普通表头和普通首列) */
+  background-color: var(--vscode-sidebar);
+  
+  /* 同时修复右边框和下边框 */
+  box-shadow: 1px 0 0 var(--vscode-active), 0 1px 0 var(--vscode-active);
 }
 
-/* C. 【修复逻辑冲突】左上角交汇格 (z-index: 30) */
-/* 它是 th，且是 first-child，所以它必须压过上面两个 */
-.post-content table th:first-child {
-  position: sticky;
-  left: 0; 
-  top: 0;
-  z-index: 30 !important; /* 最高优先级，确保压住首列和表头 */
-  
-  background-color: var(--vscode-sidebar); /* 深色背景 */
-  
-  /* 打造一个这种格子独有的边框，防止滚动时漏出 */
-  border-right: 2px solid var(--vscode-active);
-  border-bottom: 2px solid var(--vscode-active);
+/* 6. 滚动条美化 */
+.post-content table::-webkit-scrollbar {
+  height: 8px; /* 只有横向滚动条 */
+}
+.post-content table::-webkit-scrollbar-thumb {
+  background: var(--vscode-active);
+  border-radius: 4px;
+}
+.post-content table::-webkit-scrollbar-track {
+  background: var(--vscode-sidebar);
 }
