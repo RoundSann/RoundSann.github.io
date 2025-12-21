@@ -1048,84 +1048,87 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   Excel 风格超级表格 (固定表头 + 固定首列)
+   Excel 风格超级表格 (修复溢出 + 双向冻结)
    ========================================= */
 
-/* 1. 表格的外层容器 */
-.table-container {
-  max-width: 100%;
-  /* 限制表格显示区域的高度，超过这个高度会出现竖向滚动条 */
-  /* 你可以根据需要改成 60vh (屏幕高度的60%) 或 500px */
-  max-height: 70vh; 
-  overflow: auto; /* 关键：同时允许横向和纵向滚动 */
+/* 1. 表格容器控制：防止撑破页面，开启滚动 */
+.post-content table {
+  display: block;              /* 关键：让表格变成块级容器 */
+  width: 100%;                 /* 宽度占满文章区域 */
+  max-width: 100%;             /* 严禁超出 */
   
-  margin: 1.5rem 0;
-  border: 1px solid var(--vscode-active);
-  border-radius: 4px;
-  background-color: var(--vscode-sidebar); /* 防止滚动时背景透明 */
+  /* 开启双向滚动 */
+  overflow: auto;              
   
-  /* 优化滚动条样式 (Chrome/Edge) */
-  scrollbar-width: thin;
-  scrollbar-color: var(--vscode-active) transparent;
+  /* 限制最大高度，实现“表头固定”的效果 */
+  /* 如果表格超过屏幕 70% 高度，就会出现竖向滚动条 */
+  max-height: 70vh;            
+  
+  /* 样式重置，为了配合 sticky */
+  border-collapse: separate;   
+  border-spacing: 0;
+  margin-bottom: 1.5rem;
+  
+  /* 强制不换行，确保列宽足够，才会有横向滚动条 */
+  white-space: nowrap;         
 }
 
-/* 2. 表格基础样式 */
-.table-container table {
-  width: 100%; /* 占满容器 */
-  border-collapse: separate; /* 关键：sticky 必须配合 separate 或 collapse，但在某些浏览器 collapse 会有边框渲染bug，separate 更稳 */
-  border-spacing: 0; /* 去掉单元格间隙 */
-  margin: 0;
-  
-  /* 强制内容不换行，确保表格足够宽以触发横向滚动 (可选) */
-  /* 如果你想让文字自动换行，把下面这行删掉即可 */
-  white-space: nowrap; 
-}
-
-/* 单元格通用样式 */
-.table-container th, 
-.table-container td {
+/* 2. 单元格通用样式 */
+.post-content table th,
+.post-content table td {
   padding: 10px 15px;
-  border-bottom: 1px solid var(--vscode-active);
-  border-right: 1px solid var(--vscode-active); /* 竖线 */
-  background-color: var(--vscode-sidebar); /* 必须有背景色，否则滚动时文字会重叠 */
+  border: 1px solid var(--vscode-active); /* 边框颜色 */
+  background-color: var(--vscode-bg);     /* 默认背景色(必须不透明) */
   box-sizing: border-box;
 }
 
-/* 3. 【核心】固定表头 (冻结首行) */
-.table-container thead th {
+/* 3. 【核心】固定表头 (第一行) */
+.post-content table th {
   position: sticky;
   top: 0;
-  z-index: 2; /* 层级：比普通单元格高 */
-  background-color: var(--vscode-active); /* 表头颜色稍微亮一点 */
-  color: var(--vscode-text);
+  z-index: 20; /* 层级要比普通单元格高 */
+  
+  /* 表头背景色，用深一点的侧边栏颜色 */
+  background-color: var(--vscode-sidebar); 
   font-weight: bold;
-  border-bottom: 2px solid var(--vscode-accent); /* 表头下加粗线 */
+  
+  /* 修复 sticky 状态下边框丢失的问题 */
+  box-shadow: 0 1px 0 var(--vscode-active); 
 }
 
-/* 4. 【核心】固定第一列 (冻结首列) */
-.table-container tr td:first-child,
-.table-container tr th:first-child {
+/* 4. 【核心】固定首列 (第一列) */
+.post-content table td:first-child,
+.post-content table th:first-child {
   position: sticky;
   left: 0;
-  z-index: 1; /* 层级：比普通单元格高，但比表头低 */
-  background-color: var(--vscode-sidebar); /* 必须和背景一致 */
-  border-right: 2px solid var(--vscode-active); /* 第一列右侧加粗分割线 */
+  z-index: 10; /* 层级比普通单元格高，但比表头低 */
+  
+  /* 首列背景色 */
+  background-color: var(--vscode-bg); 
+  
+  /* 修复右侧边框 */
+  box-shadow: 1px 0 0 var(--vscode-active); 
 }
 
-/* 5. 【核心】左上角那个格 (表头的第一列) */
-/* 这个格子既在最上面，又在最左边，所以层级必须最高 */
-.table-container thead tr th:first-child {
-  z-index: 3;
-  background-color: var(--vscode-active);
-  left: 0;
-  top: 0;
+/* 5. 【核心】左上角那个格子的特殊处理 */
+/* 这个格子既是表头又是首列，所以层级必须最高 */
+.post-content table th:first-child {
+  z-index: 30; 
+  background-color: var(--vscode-sidebar);
+  
+  /* 同时修复下边框和右边框 */
+  box-shadow: 1px 1px 0 var(--vscode-active); 
 }
 
-/* 6. 修复: 最后一列和最后一行的边框 */
-.table-container tr:last-child td {
-  border-bottom: none;
+/* 6. 滚动条美化 (Webkit内核) */
+.post-content table::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-.table-container tr td:last-child,
-.table-container tr th:last-child {
-  border-right: none;
+.post-content table::-webkit-scrollbar-thumb {
+  background: var(--vscode-active);
+  border-radius: 4px;
+}
+.post-content table::-webkit-scrollbar-track {
+  background: var(--vscode-sidebar);
 }
