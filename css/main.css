@@ -1054,8 +1054,8 @@ h1, h2, h3, h4, h5, h6 {
 /* 1. 表格容器：强制横向滚动，取消竖向高度限制 */
 .post-content table {
   display: block;              /* 变成块级，允许设置宽高 */
-  width: 95%;                 /* 宽度撑满父容器 */
-  max-width: 98%;             /* 严禁超出 */
+  width: 70%;                 /* 宽度撑满父容器 */
+  max-width: 90%;             /* 严禁超出 */
   
   /* 核心交互更改： */
   overflow-x: auto;            /* 开启横向滚动 */
