@@ -1015,32 +1015,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   排版一致性修复 (让文字、列表、公式宽度统一)
+   排版一致性修复 v2.0 (柔和版)
    ========================================= */
 
-/* 1. 强制统一所有内容元素的宽度行为 */
+/* 核心逻辑：只解除"紧箍咒" (max-width)，但不强制"撑破衣服" (width) */
 .post-content p,           /* 段落 */
-.post-content ul,          /* 无序列表 */
-.post-content ol,          /* 有序列表 */
+.post-content ul,          /* 列表 */
+.post-content ol,          /* 列表 */
 .post-content dl,          /* 定义列表 */
 .post-content blockquote,  /* 引用块 */
-.post-content .katex-display { /* 块级公式 */
-    max-width: 100% !important; /* 解除 700px 之类的限制 */
-    width: 100% !important;     /* 强制占满容器 */
-    margin-right: 0 !important; /* 清除右侧强制留白 */
-    box-sizing: border-box;     /* 确保 padding 不会撑破宽度 */
+.post-content .katex-display {
+    max-width: none !important; /* 关键：取消 700px 的限制，允许它自然生长 */
+    width: auto !important;     /* 关键：让浏览器自己计算宽度，不要强制 100% */
+    box-sizing: border-box;     /* 确保内边距包含在尺寸内 */
 }
 
-/* 2. 单独微调列表的缩进 (可选) */
-/* 有时候列表铺满后，左边的点点会太靠边，稍微加点内边距 */
+/* 针对公式的额外保护，防止公式本身过长撑破 */
+.katex-display {
+    max-width: 100% !important; /* 公式最大只能占满屏幕 */
+    overflow-x: auto;           /* 如果公式真的特别长，允许公式内部滚动，不要撑破页面 */
+}
+
+/* 列表缩进微调：防止列表太靠左 */
 .post-content ul, 
 .post-content ol {
-    padding-left: 2em !important; /* 保证列表项的黑点/数字不贴在最左边 */
-}
-
-/* 3. 修复公式可能的溢出 */
-.katex-display {
-    overflow-x: auto;       /* 公式太长时出现滚动条，而不是撑破页面 */
-    overflow-y: hidden;
-    padding: 0.5em 0;       /* 上下留点空隙 */
+    padding-left: 2em; /* 保持标准的 Markdown 缩进 */
 }
