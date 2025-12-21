@@ -5,31 +5,28 @@
 
 /* ==================== 表格样式 ==================== */
 table {
+  display: block;       /* 关键：将表格变为块级元素，使其溢出时产生滚动条 */
   width: 100%;
+  max-width: 100%;      /* 绝对不允许超过父容器宽度 */
+  overflow-x: auto;     /* 横向溢出时滚动 */
+  overflow-y: visible;  /* 纵向必须可见，否则 sticky 会失效 */
+  border-collapse: separate; /* 关键：sticky 在 collapse 模式下会有边框瑕疵 */
+  border-spacing: 0;
   margin: 1.5em 0;
-  border-collapse: collapse;
   border-radius: 6px;
-  overflow: hidden;
   box-shadow: 0 4px 16px var(--vscode-shadow);
   background-color: var(--vscode-bg);
-  font-size: 0.95em;
 }
 
 /* 表头样式 */
-thead {
-  background-color: var(--vscode-bg-light);
-  border-bottom: 1px solid var(--vscode-border);
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
 
-th {
-  padding: 10px 15px;
-  text-align: left;
-  font-weight: 500;
-  color: var(--vscode-accent-light);
-  border-right: 1px solid var(--vscode-border);
+
+thead th {
+  position: sticky;
+  top: 48px;            /* 对应导航栏高度 */
+  z-index: 10;          /* 保证在内容之上 */
+  background-color: var(--vscode-bg-light); /* 必须给背景色，否则滚动时文字会重叠 */
+  border-bottom: 1px solid var(--vscode-border);
 }
 
 th:last-child {
@@ -41,7 +38,34 @@ td {
   padding: 10px 15px;
   border-right: 1px solid var(--vscode-border);
   border-bottom: 1px solid var(--vscode-border);
+  white-space: nowrap; /* 开启此项可防止表格内容自动换行，更像 Excel */
+  background-color: var(--vscode-bg);
+}
+
+td {
+  padding: 10px 15px;
+  border-right: 1px solid var(--vscode-border);
+  border-bottom: 1px solid var(--vscode-border);
   transition: background-color 0.2s;
+}
+
+/* 首列固定 */
+th:first-child,
+td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 8;
+  background-color: var(--vscode-bg-light) !important; /* 稍深色以区分 */
+  border-right: 2px solid var(--vscode-accent) !important; /* 加粗边缘线 */
+}
+
+
+
+thead tr:first-child th:first-child {
+  z-index: 15;
+  top: 48px;
+  left: 0;
+  background-color: var(--vscode-sidebar) !important;
 }
 
 td:last-child {
@@ -52,13 +76,13 @@ tr:last-child td {
   border-bottom: none;
 }
 
-/* 表格行悬停效果 */
-tbody tr:hover {
-  background-color: var(--vscode-line-highlight);
+/* 悬停高亮 */
+tbody tr:hover td {
+  background-color: var(--vscode-active) !important;
 }
 
 /* 斑马纹表格效果 */
-tbody tr:nth-child(odd) {
+tbody tr:nth-child(odd) td {
   background-color: var(--vscode-line-highlight);
 }
 
@@ -70,12 +94,15 @@ tbody tr:nth-child(odd) {
   font-size: 0.9em;
 }
 
-/* 响应式表格 */
-@media (max-width: 768px) {
+/* 移动端特殊处理：在小屏上取消首列固定，防止遮挡过多内容 */
+@media (max-width: 600px) {
+  th:first-child, 
+  td:first-child,
+  thead tr:first-child th:first-child {
+    position: static;
+  }
   table {
     display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
 }
 
