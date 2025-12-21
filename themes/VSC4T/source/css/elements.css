@@ -5,14 +5,11 @@
 
 /* ==================== 表格样式 ==================== */
 table {
-  display: block;
-  width: max-content;   /* 关键：按内容宽度 */
-  max-width: 100%;      /* 关键：不能超过大 box */
+  width: 100%;
   margin: 1.5em 0;
   border-collapse: collapse;
   border-radius: 6px;
-  overflow-x: auto;     /* 只允许横向滚动 */
-  overflow-y: visible;
+  overflow: hidden;
   box-shadow: 0 4px 16px var(--vscode-shadow);
   background-color: var(--vscode-bg);
   font-size: 0.95em;
@@ -22,6 +19,9 @@ table {
 thead {
   background-color: var(--vscode-bg-light);
   border-bottom: 1px solid var(--vscode-border);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 th {

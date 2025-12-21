@@ -1047,18 +1047,237 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box; 
 }
 
-/* 防止文章内容把大 box 撑破 */
-.post-content {
+/* =========================================
+   表格固定表头和第一列样式
+   ========================================= */
+
+/* 表格容器：设置滚动区域 */
+.table-container {
+  position: relative;
+  width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
-  min-width: 0;
+  margin: 1.5rem 0;
+  border: 1px solid var(--vscode-active);
+  border-radius: 4px;
+  background-color: var(--vscode-sidebar);
+  overflow: hidden; /* 确保内部滚动不会溢出 */
 }
 
-.post-content th:first-child,
-.post-content td:first-child {
+/* 表格包装器：用于实现双滚动轴 */
+.table-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: auto; /* 同时支持水平和垂直滚动 */
+  max-height: 500px; /* 设置表格最大高度，超出则显示垂直滚动 */
+}
+
+/* 主表格样式 */
+.table-wrapper table {
+  width: 100%;
+  border-collapse: separate; /* 必须用separate才能实现固定列效果 */
+  border-spacing: 0;
+  margin: 0;
+  background-color: var(--vscode-sidebar);
+}
+
+/* 表格单元格基本样式 */
+.table-wrapper th,
+.table-wrapper td {
+  padding: 8px 12px;
+  border-right: 1px solid var(--vscode-border);
+  border-bottom: 1px solid var(--vscode-border);
+  text-align: left;
+  vertical-align: top;
+  background-color: inherit;
+  color: var(--vscode-text);
+  white-space: nowrap; /* 防止单元格内容换行 */
+}
+
+/* 移除最后一列的右边框 */
+.table-wrapper th:last-child,
+.table-wrapper td:last-child {
+  border-right: none;
+}
+
+/* 移除最后一行的下边框 */
+.table-wrapper tr:last-child td {
+  border-bottom: none;
+}
+
+/* 固定表头行 */
+.table-wrapper thead tr {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* 固定表头单元格 - 添加背景和阴影 */
+.table-wrapper thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--vscode-bg-light);
+  font-weight: 600;
+  border-bottom: 2px solid var(--vscode-accent);
+  z-index: 11;
+}
+
+/* 固定第一列 */
+.table-wrapper th:first-child,
+.table-wrapper td:first-child {
   position: sticky;
   left: 0;
-  background-color: var(--vscode-bg);
-  z-index: 2;
-  box-shadow: 2px 0 0 var(--vscode-border);
+  background-color: var(--vscode-bg-light);
+  z-index: 9;
+}
+
+/* 固定左上角单元格（第一行第一列） */
+.table-wrapper thead th:first-child {
+  z-index: 12;
+  left: 0;
+  background-color: var(--vscode-bg-light);
+}
+
+/* 当表格滚动时，为固定列添加阴影效果 */
+.table-wrapper th:first-child::after,
+.table-wrapper td:first-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -2px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to right, 
+    var(--vscode-shadow) 0%, 
+    rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+/* 表头阴影 */
+.table-wrapper thead th::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to bottom, 
+    var(--vscode-shadow) 0%, 
+    rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+/* 表格内部滚动条样式 */
+.table-wrapper::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: var(--vscode-sidebar);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--vscode-active);
+  border-radius: 6px;
+  border: 3px solid var(--vscode-sidebar);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: var(--vscode-accent);
+}
+
+/* 表格标题（可选） */
+.table-caption {
+  padding: 0.75rem 1rem;
+  background-color: var(--vscode-bg-light);
+  border-bottom: 1px solid var(--vscode-active);
+  font-weight: 600;
+  color: var(--vscode-text);
+  font-size: 0.95rem;
+}
+
+/* 表格滚动提示（当内容溢出时显示） */
+.table-scroll-hint {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 0.7rem;
+  color: var(--vscode-text-light);
+  background-color: var(--vscode-sidebar);
+  padding: 2px 6px;
+  border-radius: 3px;
+  opacity: 0.7;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* 移动端响应式调整 */
+@media (max-width: 768px) {
+  .table-wrapper {
+    max-height: 400px; /* 移动端减少最大高度 */
+  }
+  
+  .table-wrapper th,
+  .table-wrapper td {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+  
+  /* 移动端缩小固定列的宽度 */
+  .table-wrapper th:first-child,
+  .table-wrapper td:first-child {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* 小屏幕设备优化 */
+@media (max-width: 480px) {
+  .table-wrapper {
+    max-height: 300px;
+  }
+  
+  .table-caption {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================================
+   兼容已存在的表格样式
+   ========================================= */
+
+/* 确保文章内的普通表格不会应用固定列样式，除非包裹在.table-container中 */
+.post-content table:not(.table-wrapper table) {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background-color: var(--vscode-sidebar);
+}
+
+.post-content table:not(.table-wrapper table) th,
+.post-content table:not(.table-wrapper table) td {
+  padding: 8px 12px;
+  border: 1px solid var(--vscode-border);
+  color: var(--vscode-text);
+}
+
+.post-content table:not(.table-wrapper table) th {
+  background-color: var(--vscode-bg-light);
+  font-weight: 600;
+}
+
+/* 确保大表格不会溢出容器 */
+.post-content {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.post-content > table {
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
 }
