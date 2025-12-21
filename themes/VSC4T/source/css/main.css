@@ -1013,3 +1013,36 @@ h1, h2, h3, h4, h5, h6 {
   filter: invert(1) hue-rotate(180deg);
   background-color: transparent !important;
 }
+
+/* =========================================
+   修复纯文本宽度限制 (强制占满容器)
+   ========================================= */
+
+/* 1. 强制文章内的段落占满 100% 宽度 */
+.post-content p {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  
+  /* 防止长单词(如URL)导致强制换行留出空白，
+     让它们在行尾自动换行 */
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+}
+
+/* 2. 同时确保标题也占满 */
+.post-content h1, 
+.post-content h2, 
+.post-content h3, 
+.post-content h4 {
+  max-width: 100% !important;
+}
+
+/* 3. (可选) 如果你觉得文字太靠边了不好看，
+ 可以稍微调整一下行高，增加阅读舒适度 */
+.post-content {
+  /* 这里的 2rem 是你原本的 padding，
+     现在的改动会让文字填满这 2rem 以内的所有空间 */
+  box-sizing: border-box; 
+}
