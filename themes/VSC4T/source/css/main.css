@@ -1048,92 +1048,98 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   Excel 风格表格 v3.0 (防爆版)
+   Excel 风格表格 v4.0 (JS 容器版 - 绝对防爆)
    ========================================= */
 
-/* 0. 给文章容器加一道保险，防止内部元素撑破布局 */
-.post-content {
-  max-width: 100%;
-  overflow-x: hidden; /* 防止任何东西溢出文章区域 */
-}
-
-/* 1. 表格容器：绝对限制宽度 */
-.post-content table {
-  display: block;              /* 【锁1】变成块级元素 */
-  width: 100%;                 /* 占满容器 */
-  max-width: 100%;             /* 【锁2】严禁超出容器宽度 */
-  
-  overflow-x: auto;            /* 【锁3】内容多了就出滚动条 */
-  overflow-y: hidden;          /* 竖向自然滚动 */
-  
-  /* 强制不换行，触发横向滚动 */
-  white-space: nowrap;         
-  
-  border-spacing: 0;
+/* 1. 外层容器：负责限制宽度和横向滚动 */
+.table-container {
+  width: 100%;
+  max-width: 100vw; /* 限制为视口宽度，防止撑破 */
+  overflow-x: auto; /* 开启横向滚动 */
+  overflow-y: hidden;
   margin-bottom: 1.5rem;
   
-  /* 美化滚动条，让你能看出来它能滚 */
+  /* 移动端顺滑滚动 */
+  -webkit-overflow-scrolling: touch;
+  
+  /* 美化滚动条 */
   scrollbar-width: thin;
   scrollbar-color: var(--vscode-active) var(--vscode-sidebar);
 }
 
-/* 2. 单元格通用样式 */
+/* 2. 内层表格：负责撑开宽度 */
+.post-content table {
+  width: 100%;       /* 尽量占满 */
+  border-collapse: separate; /* 必须 separate 才能用 sticky */
+  border-spacing: 0;
+  white-space: nowrap; /* 强制不换行，让表格横向生长 */
+  margin: 0;         /* 去除默认边距，由容器控制 */
+}
+
+/* 3. 单元格通用样式 */
 .post-content table th,
 .post-content table td {
   padding: 10px 15px;
   border: 1px solid var(--vscode-active);
-  background-color: var(--vscode-bg);
+  background-color: var(--vscode-bg); /* 背景色必须不透明 */
   box-sizing: border-box;
+  vertical-align: middle;
 }
 
 /* =========================================
- 首列冻结逻辑 (Z-Index 层级控制)
+ 首列冻结逻辑 (Sticky + Z-Index)
  ========================================= */
 
-/* 第一列 (普通行) */
+/* 第一列 (普通行) - 冻结在左侧 */
 .post-content table td:first-child {
   position: sticky;
   left: 0;
-  z-index: 10;
+  z-index: 10; /* 层级高于普通单元格 */
+  
   background-color: var(--vscode-bg);
-  /* 右侧阴影，制造层次感 */
-  box-shadow: 2px 0 0 var(--vscode-active); 
-  /* 修正边框合并问题 */
+  /* 右侧阴影，制造层次感，修正边框 */
+  box-shadow: 2px 0 0 var(--vscode-active);
   border-right: 0; 
 }
 
-/* 表头行 */
+/* 表头行 - 样式 */
 .post-content table th {
   background-color: var(--vscode-sidebar);
   font-weight: bold;
-  z-index: 5; /* 比首列低，防止滚动时盖住首列 */
   border-bottom: 2px solid var(--vscode-active);
+  /* 
+     注意：因为外面套了 overflow:auto 的 div，
+     纯 CSS 无法实现“表头吸附浏览器顶部”了，
+     这里就不设置 top: 0 了，表头会随页面滚动。
+  */
 }
 
-/* 左上角那个格子 (既是首列又是表头) */
+/* 左上角那个格子 (既是首列又是表头) - 冻结在左侧 */
 .post-content table th:first-child {
   position: sticky;
   left: 0;
-  z-index: 20; /* 最高层级！压住一切 */
+  z-index: 20; /* 最高层级！ */
+  
   background-color: var(--vscode-sidebar);
+  /* 修正边框 */
   box-shadow: 2px 0 0 var(--vscode-active);
   border-right: 0;
 }
 
 /* =========================================
- 滚动条美化 (Chrome/Edge/Safari)
+ 滚动条美化
  ========================================= */
-.post-content table::-webkit-scrollbar {
-  height: 10px; /* 横向滚动条高度 */
+.table-container::-webkit-scrollbar {
+  height: 10px;
 }
-.post-content table::-webkit-scrollbar-track {
+.table-container::-webkit-scrollbar-track {
   background: var(--vscode-sidebar);
   border-radius: 4px;
 }
-.post-content table::-webkit-scrollbar-thumb {
-  background: var(--vscode-active); /* 滚动条颜色 */
+.table-container::-webkit-scrollbar-thumb {
+  background: var(--vscode-active);
   border-radius: 4px;
 }
-.post-content table::-webkit-scrollbar-thumb:hover {
+.table-container::-webkit-scrollbar-thumb:hover {
   background: var(--vscode-text-light);
 }
