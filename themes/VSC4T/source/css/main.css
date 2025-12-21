@@ -1047,43 +1047,6 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box; 
 }
 
-/* ===============================
-   表格防溢出 + 横向滚动 + 固定第一列
-   =============================== */
-
-   .post-content table {
-    display: block;
-    width: max-content;
-    max-width: 100%;
-    overflow-x: auto;
-    border-collapse: separate;
-    border-spacing: 0;
-  }
-  
-  /* 表头样式 */
-  .post-content thead th {
-    background-color: var(--vscode-active);
-    font-weight: 600;
-    z-index: 1;
-  }
-  
-  /* 固定第一列 */
-  .post-content th:first-child,
-  .post-content td:first-child {
-    position: sticky;
-    left: 0;
-    z-index: 2;
-    background-color: var(--vscode-sidebar);
-    box-shadow: 2px 0 0 var(--vscode-border);
-  }
-  
-  /* 表格单元格基础样式 */
-  .post-content th,
-  .post-content td {
-    padding: 0.5rem 0.75rem;
-    white-space: nowrap;
-  }
-  
 /* 防止文章内容把大 box 撑破 */
 .post-content {
   max-width: 100%;
