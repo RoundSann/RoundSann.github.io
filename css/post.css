@@ -769,3 +769,22 @@
     justify-content: center;
   }
 }
+/* 确保文章中的表格使用新的滚动容器 */
+.vscode-markdown table {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* 如果文章中的表格被自动包装，确保它们使用正确的容器 */
+.vscode-markdown .table-scroll-container table {
+  margin: 0;
+}
+
+/* 确保文章中的表格不会溢出父容器 */
+.post-content {
+  overflow-x: hidden; /* 防止内容溢出 */
+}
+
+.post-content .table-scroll-container {
+  margin: 1.5em 0;
+}

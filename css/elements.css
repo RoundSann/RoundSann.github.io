@@ -4,32 +4,64 @@
  */
 
 /* ==================== 表格样式 ==================== */
-table {
+/* 添加表格容器样式，用于实现固定表头和第一列 */
+.table-scroll-container {
+  position: relative;
   width: 100%;
   margin: 1.5em 0;
-  border-collapse: collapse;
-  border-radius: 6px;
   overflow: hidden;
+  border-radius: 6px;
   box-shadow: 0 4px 16px var(--vscode-shadow);
   background-color: var(--vscode-bg);
-  font-size: 0.95em;
+  max-width: 100%; /* 确保不超过父容器 */
 }
 
-/* 表头样式 */
+/* 表格滚动包装器 */
+.table-scroll-wrapper {
+  overflow: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 表格基础样式 */
+table {
+  width: 100%;
+  margin: 0;
+  border-collapse: separate; /* 使用separate以便固定行列生效 */
+  border-spacing: 0;
+  background-color: var(--vscode-bg);
+  font-size: 0.95em;
+  min-width: 100%; /* 确保表格最小宽度为100% */
+}
+
+/* 表头样式 - 固定表头 */
 thead {
   background-color: var(--vscode-bg-light);
   border-bottom: 1px solid var(--vscode-border);
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 10;
 }
 
+/* 表头单元格样式 */
 th {
   padding: 10px 15px;
   text-align: left;
   font-weight: 500;
   color: var(--vscode-accent-light);
   border-right: 1px solid var(--vscode-border);
+  border-bottom: 1px solid var(--vscode-border);
+  background-color: var(--vscode-bg-light);
+  position: relative;
+  white-space: nowrap; /* 防止表头文字换行 */
+}
+
+th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 20;
+  background-color: var(--vscode-bg-light);
+  box-shadow: 1px 0 0 var(--vscode-border);
 }
 
 th:last-child {
@@ -42,6 +74,15 @@ td {
   border-right: 1px solid var(--vscode-border);
   border-bottom: 1px solid var(--vscode-border);
   transition: background-color 0.2s;
+}
+
+/* 固定第一列 */
+td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background-color: var(--vscode-bg);
+  box-shadow: 1px 0 0 var(--vscode-border);
 }
 
 td:last-child {
@@ -62,6 +103,15 @@ tbody tr:nth-child(odd) {
   background-color: var(--vscode-line-highlight);
 }
 
+/* 固定行列的斑马纹效果 */
+tbody tr:nth-child(odd) td:first-child {
+  background-color: var(--vscode-line-highlight);
+}
+
+tbody tr:hover td:first-child {
+  background-color: var(--vscode-line-highlight);
+}
+
 /* 表格标题和说明 */
 .table-caption {
   margin-bottom: 0.5em;
@@ -72,11 +122,36 @@ tbody tr:nth-child(odd) {
 
 /* 响应式表格 */
 @media (max-width: 768px) {
-  table {
-    display: block;
+  .table-scroll-wrapper {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
+  
+  th:first-child,
+  td:first-child {
+    position: relative; /* 小屏幕上取消固定效果 */
+    left: auto;
+    box-shadow: none;
+  }
+}
+
+/* 表格滚动条样式 */
+.table-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-track {
+  background: var(--vscode-sidebar);
+  border-radius: 4px;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: var(--vscode-border);
+  border-radius: 4px;
+}
+
+.table-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--vscode-border-light);
 }
 
 /* ==================== 分隔线样式 ==================== */
