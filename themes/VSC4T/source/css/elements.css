@@ -9,7 +9,8 @@ table {
   width: 100% !important;   /* 强制占满父容器宽度 */
   max-width: 100%;          /* 严禁超过父容器 */
   margin: 1.5em 0;
-  border-collapse: collapse;
+  border-collapse: separate; /* sticky 模式下必须用 separate */
+  border-spacing: 0;
   border-radius: 6px;
   overflow-x: auto;
   box-shadow: 0 4px 16px var(--vscode-shadow);
