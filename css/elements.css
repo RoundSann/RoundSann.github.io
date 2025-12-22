@@ -17,7 +17,7 @@ table {
   background-color: var(--vscode-bg);
   font-size: 0.95em;
   scrollbar-width: thin;
-  display: block;
+  position: relative;
   box-sizing: border-box;   /* 防止边框撑开宽度 */
 }
 
