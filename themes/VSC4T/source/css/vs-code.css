@@ -130,7 +130,6 @@
 .content-area {
   padding: 20px;
   overflow-y: auto;
-  overflow-x: hidden;
   max-width: 100%;      /* 确保内容区域不会溢出 */
 }
 
