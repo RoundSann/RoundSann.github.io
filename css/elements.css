@@ -5,12 +5,10 @@
 
 /* ==================== 表格样式 ==================== */
 table {
-  display: block;           /* 必须为 block，overflow 才会生效 */
-  width: 100% !important;   /* 强制占满父容器宽度 */
-  max-width: 100%;          /* 严禁超过父容器 */
+  display: block;
+  width: 100%;
   margin: 1.5em 0;
-  border-collapse: separate; /* sticky 模式下必须用 separate */
-  border-spacing: 0;
+  border-collapse: collapse;
   border-radius: 6px;
   overflow-x: auto;
   box-shadow: 0 4px 16px var(--vscode-shadow);
@@ -18,7 +16,6 @@ table {
   font-size: 0.95em;
   scrollbar-width: thin;
   position: relative;
-  box-sizing: border-box;   /* 防止边框撑开宽度 */
 }
 
 /* 表头样式 */
