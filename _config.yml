@@ -136,5 +136,18 @@ markdown:
     linkify: true
     typographer: true
   plugins:
-    - markdown-it-texmath
+    - name: markdown-it-texmath
+      options:
+        engine: katex
+        delimiters: dollars
+        katexOptions:
+          # 在这里开启全局宏定义
+          macros:
+            "\\ii": "\\mathrm{i}"
+            "\\ee": "\\mathrm{e}"
+            "\\dd": "\\mathrm{d}"
+            "\\RR": "\\mathbb{R}"
+            "\\NN": "\\mathbb{N}"
+            "\\LRA": "\\Leftrightarrow"
+            "\\RA": "\\Rightarrow"
 

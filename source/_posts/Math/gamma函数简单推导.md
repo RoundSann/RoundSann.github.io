@@ -10,7 +10,7 @@ $\Gamma$ 的简单且略微初等的推导方式,并不严谨但很直观
 <!-- more -->
 
 # $\Gamma$函数及其推导
-$\newcommand{\dd}{\mathrm{d}}\newcommand{\LR}{\Rightarrow}\newcommand{\LRA}{\Leftrightarrow}$
+$\newcommand{\dd}{\mathrm{d}}\newcommand{\RA}{\Rightarrow}\newcommand{\LRA}{\Leftrightarrow}$
 我们来考察积分
 
 $$\int^{+\infty}_0\frac{x^n}{e^x}\dd x \tag{1}$$
