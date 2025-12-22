@@ -1,169 +1,71 @@
-/* VS Code 风格的普通元素样式
- * 包括表格、分隔线、行内代码等元素
- * 保持与主题整体VSCode风格的一致性
- */
-
-/* ==================== 表格样式 ==================== */
+/* ==================== 极简 Excel 风格表格 (冻结行列) ==================== */
 table {
-  display: block;
+  display: block;           /* 允许横向滚动 */
+  overflow-x: auto;         /* 仅表格内部横向滚动 */
   width: 100%;
+  max-width: 100%;
+  position: relative;       /* 你的二分法修复关键行 */
+  border-collapse: separate; /* 必须用 separate，sticky 的边框才不会错位 */
+  border-spacing: 0;
   margin: 1.5em 0;
-  border-collapse: collapse;
+  background: var(--vscode-bg);
+  border: 1px solid var(--vscode-border);
   border-radius: 6px;
-  overflow-x: auto;
-  box-shadow: 0 4px 16px var(--vscode-shadow);
-  background-color: var(--vscode-bg);
-  font-size: 0.95em;
-  scrollbar-width: thin;
-  position: relative;
 }
 
-/* 表头样式 */
-thead {
-  background-color: var(--vscode-bg-light);
-  border-bottom: 1px solid var(--vscode-border);
+/* 1. 冻结表头 (纵向滚动时固定) */
+thead th {
   position: sticky;
-  top: 0;
-  z-index: 1;
+  top: 48px;                /* 对齐 VS Code 头部导航栏高度 */
+  z-index: 10;
+  background: var(--vscode-bg-light); /* 必须有背景，否则滚动时文字重叠 */
+  border-bottom: 2px solid var(--vscode-border);
 }
 
-th {
-  padding: 10px 15px;
-  text-align: left;
-  font-weight: 500;
-  color: var(--vscode-accent-light);
+/* 2. 冻结首列 (横向滚动时固定) */
+th:first-child, 
+td:first-child {
+  position: sticky;
+  left: 0;                  /* 固定在左边 */
+  z-index: 5;               /* 层级高于普通单元格 */
+  background: var(--vscode-bg); /* 给首列底色，防止滑动时看到后面的字 */
   border-right: 1px solid var(--vscode-border);
 }
 
-th:last-child {
-  border-right: none;
+/* 3. 左上角交叉单元格 (层级最高) */
+thead th:first-child {
+  z-index: 15;
+  background: var(--vscode-bg-light);
 }
 
-/* 表格内容 */
-td {
+/* 单元格基础样式 */
+th, td {
   padding: 10px 15px;
+  min-width: 120px;         /* 保证表格不会缩得太小，强制开启滚动 */
   border-right: 1px solid var(--vscode-border);
   border-bottom: 1px solid var(--vscode-border);
-  transition: background-color 0.2s;
+  text-align: left;
 }
 
-td:last-child {
-  border-right: none;
-}
+/* 斑马纹适配首列颜色 */
+tbody tr:nth-child(odd) td { background: var(--vscode-line-highlight); }
+tbody tr:nth-child(odd) td:first-child { background: var(--vscode-line-highlight); }
 
-tr:last-child td {
-  border-bottom: none;
-}
-
-/* 表格行悬停效果 */
-tbody tr:hover {
-  background-color: var(--vscode-line-highlight);
-}
-
-/* 斑马纹表格效果 */
-tbody tr:nth-child(odd) {
-  background-color: var(--vscode-line-highlight);
-}
-
-/* 表格标题和说明 */
-.table-caption {
-  margin-bottom: 0.5em;
-  color: var(--vscode-text-light);
-  font-style: italic;
-  font-size: 0.9em;
-}
-
-/* 响应式表格 */
-@media (max-width: 768px) {
-  table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-/* ==================== 分隔线样式 ==================== */
+/* ==================== 分隔线 ==================== */
 hr {
   height: 1px;
   margin: 2em 0;
   background-color: var(--vscode-border);
   border: none;
-  position: relative;
-  overflow: visible;
 }
 
-/* 带有装饰效果的分隔线 */
-hr.decorated {
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--vscode-accent-light), transparent);
-}
-
-/* 分隔线中间装饰 */
-hr.decorated::after {
-  content: "●";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--vscode-bg);
-  color: var(--vscode-accent-light);
-  padding: 0 10px;
-  font-size: 0.8em;
-}
-
-/* ==================== 行内代码样式 ==================== */
+/* ==================== 行内代码 ==================== */
 code {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-  background-color: var(--vscode-code-bg); /* 更深的背景色，接近VS Code */
-  color: var(--vscode-code-text); /* 更准确的VS Code字符串颜色 */
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--vscode-code-bg);
+  color: var(--vscode-code-text);
   padding: 0.2em 0.4em;
-  margin: 0 0.2em;
   border-radius: 4px;
   font-size: 0.9em;
   border: 1px solid var(--vscode-border);
-  box-shadow: 0 1px 2px var(--vscode-shadow); /* 轻微阴影增强立体感 */
-  letter-spacing: 0.05em; /* 字母间距略微调整 */
-  font-feature-settings: "calt" 1; /* 连字特性，VS Code默认启用 */
-}
-
-pre code {
-  background-color: transparent;
-  color: inherit;
-  padding: 0;
-  margin: 0;
-  border: none;
-  box-shadow: none;
-  letter-spacing: normal;
-}
-
-.container {
-  width: 550px;
-  height: 400px;
-  overflow: auto;
-  position: absolute;
-  /* 对齐半像素, 以免顶部、左边露出白边 */
-  left: 20.5px;
-  top: 20.5px;
-}
-.table {
-  border-collapse: collapse;
-}
-.table td, .table th {
-  border: 1px solid #ccc;
-}
-.sticky-row > tbody > tr:first-child {
-  position: sticky;
-  top: 0;
-  background-color: #eec;
-  z-index: 1;
-}
-.sticky-col > tbody > tr > :first-child {
-  position: sticky;
-  left: 0;
-  background-color: #cce;
-}
-/* 让 sticky-row 位于 sticky-col 的上方 */
-.sticky-row > tbody > tr:first-child :first-child {
-  position: static;
-  background-color: unset;
 }
