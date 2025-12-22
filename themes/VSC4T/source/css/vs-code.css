@@ -95,6 +95,7 @@
   flex: 1;
   background: var(--vscode-bg);
   min-width: 0;
+  overflow: hidden;
 }
 
 .tab-bar {
@@ -131,6 +132,8 @@
   padding: 20px;
   overflow-y: auto;
   max-width: 100%;      /* 确保内容区域不会溢出 */
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* 文章卡片样式 */

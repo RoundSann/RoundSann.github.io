@@ -1,6 +1,19 @@
 @import "post.css";
 @import url("https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css");
 
+/* 确保所有元素的宽度计算包含边框和内边距 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;         /* 确保它是响应式的 */
+  overflow: hidden;    /* 最后的防线 */
+}
+
 /* 基本样式 */
 body {
   background-color: var(--vscode-bg);
