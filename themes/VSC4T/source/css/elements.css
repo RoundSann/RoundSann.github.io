@@ -5,7 +5,9 @@
 
 /* ==================== 表格样式 ==================== */
 table {
-  width: 100%;
+  display: block;           /* 必须为 block，overflow 才会生效 */
+  width: 100% !important;   /* 强制占满父容器宽度 */
+  max-width: 100%;          /* 严禁超过父容器 */
   margin: 1.5em 0;
   border-collapse: collapse;
   border-radius: 6px;
