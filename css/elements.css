@@ -140,6 +140,15 @@ pre code {
   letter-spacing: normal;
 }
 
+.container {
+  width: 550px;
+  height: 400px;
+  overflow: auto;
+  position: absolute;
+  /* 对齐半像素, 以免顶部、左边露出白边 */
+  left: 20.5px;
+  top: 20.5px;
+}
 .table {
   border-collapse: collapse;
 }
