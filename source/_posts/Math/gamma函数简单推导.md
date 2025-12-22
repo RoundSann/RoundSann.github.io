@@ -10,6 +10,7 @@ $\Gamma$ 的简单且略微初等的推导方式,并不严谨但很直观
 <!-- more -->
 
 # $\Gamma$函数及其推导
+
 $\newcommand{\dd}{\mathrm{d}}\newcommand{\RA}{\Rightarrow}\newcommand{\LRA}{\Leftrightarrow}$
 我们来考察积分
 
@@ -74,4 +75,4 @@ $$(1)\LRA f_n(a)-f_n(0)=n!$$
 
 $$\Gamma(n)=\int^{+\infty}_0 \frac{x^{n-1}}{\ee^x}\dd x=(n-1)!,\forall x\in\NN$$
 
-称之为$\Gamma$(Gamma)函数
+称之为$\Gamma$函数/Gamma函数
