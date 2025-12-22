@@ -3,25 +3,27 @@
  * 保持与主题整体VSCode风格的一致性
  */
 
-/* ==================== 表格样式 ==================== */
+/* ==================== 增强型表格样式 (支持冻结行列 & 防止溢出) ==================== */
 table {
+  display: block;           /* 核心修改：将表格转为块级元素以支持内部横向滚动 */
   width: 100%;
+  max-width: 100%;          /* 限制最大宽度，防止顶破大盒子 */
   margin: 1.5em 0;
-  border-collapse: collapse;
+  border-collapse: separate; /* 核心修改：使用 separate 模式，否则冻结效果的边框会消失 */
+  border-spacing: 0;
   border-radius: 6px;
-  overflow: hidden;
+  overflow-x: auto;         /* 当表格过宽时，开启横向滚动条 */
   box-shadow: 0 4px 16px var(--vscode-shadow);
   background-color: var(--vscode-bg);
   font-size: 0.95em;
 }
 
-/* 表头样式 */
+/* 表头样式 - 冻结在顶部 */
 thead {
   background-color: var(--vscode-bg-light);
-  border-bottom: 1px solid var(--vscode-border);
   position: sticky;
-  top: 0;
-  z-index: 1;
+  top: 48px;                /* 这里的 48px 对应你 style.css 里的导航栏高度 */
+  z-index: 10;              /* 确保向下滚动时，表头始终在最上方 */
 }
 
 th {
@@ -30,18 +32,50 @@ th {
   font-weight: 500;
   color: var(--vscode-accent-light);
   border-right: 1px solid var(--vscode-border);
+  border-bottom: 2px solid var(--vscode-border); /* 加深表头下划线 */
+  background-color: var(--vscode-bg-light);      /* 必须设置背景，否则滚动时文字会重叠 */
+  white-space: nowrap;                           /* 防止表头文字被迫换行 */
 }
 
 th:last-child {
   border-right: none;
 }
 
-/* 表格内容 */
+/* 冻结首列样式 */
+th:first-child,
+td:first-child {
+  position: sticky;
+  left: 0;                  /* 固定在左侧 */
+  z-index: 8;               /* 层级高于普通单元格 */
+  border-right: 2px solid var(--vscode-border); /* 加粗首列右边框，增强视觉分割 */
+}
+
+/* 左上角第一个单元格：既是首行又是首列 */
+thead th:first-child {
+  z-index: 15;              /* 最高层级，防止被覆盖 */
+  background-color: var(--vscode-bg-light);
+}
+
+/* 修复冻结列在不同行状态下的背景色 (防止背景透明导致看到下方文字) */
+tbody tr td:first-child {
+  background-color: var(--vscode-bg);
+}
+
+tbody tr:nth-child(odd) td:first-child {
+  background-color: var(--vscode-line-highlight); /* 适配斑马纹背景 */
+}
+
+tbody tr:hover td:first-child {
+  background-color: var(--vscode-active);         /* 适配悬停背景 */
+}
+
+/* 表格内容单元格 */
 td {
   padding: 10px 15px;
   border-right: 1px solid var(--vscode-border);
   border-bottom: 1px solid var(--vscode-border);
   transition: background-color 0.2s;
+  min-width: 120px;         /* 设定最小宽度，防止内容太挤，同时强制触发横向滚动 */
 }
 
 td:last-child {
@@ -62,20 +96,10 @@ tbody tr:nth-child(odd) {
   background-color: var(--vscode-line-highlight);
 }
 
-/* 表格标题和说明 */
-.table-caption {
-  margin-bottom: 0.5em;
-  color: var(--vscode-text-light);
-  font-style: italic;
-  font-size: 0.9em;
-}
-
-/* 响应式表格 */
+/* 响应式表格 (移动端优化) */
 @media (max-width: 768px) {
-  table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  thead {
+    top: 48px; /* 移动端导航栏高度如果一致则保持 48px */
   }
 }
 
@@ -95,7 +119,6 @@ hr.decorated {
   background: linear-gradient(to right, transparent, var(--vscode-accent-light), transparent);
 }
 
-/* 分隔线中间装饰 */
 hr.decorated::after {
   content: "●";
   position: absolute;
@@ -111,16 +134,16 @@ hr.decorated::after {
 /* ==================== 行内代码样式 ==================== */
 code {
   font-family: 'JetBrains Mono', 'Courier New', monospace;
-  background-color: var(--vscode-code-bg); /* 更深的背景色，接近VS Code */
-  color: var(--vscode-code-text); /* 更准确的VS Code字符串颜色 */
+  background-color: var(--vscode-code-bg);
+  color: var(--vscode-code-text);
   padding: 0.2em 0.4em;
   margin: 0 0.2em;
   border-radius: 4px;
   font-size: 0.9em;
   border: 1px solid var(--vscode-border);
-  box-shadow: 0 1px 2px var(--vscode-shadow); /* 轻微阴影增强立体感 */
-  letter-spacing: 0.05em; /* 字母间距略微调整 */
-  font-feature-settings: "calt" 1; /* 连字特性，VS Code默认启用 */
+  box-shadow: 0 1px 2px var(--vscode-shadow);
+  letter-spacing: 0.05em;
+  font-feature-settings: "calt" 1;
 }
 
 pre code {
