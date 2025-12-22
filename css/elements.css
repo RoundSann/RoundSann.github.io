@@ -1,30 +1,29 @@
-/* VS Code 风格的普通元素样式 */
+/* VS Code 风格的普通元素样式
+ * 包括表格、分隔线、行内代码等元素
+ * 保持与主题整体VSCode风格的一致性
+ */
 
-/* ==================== 增强版表格样式 (彻底修复溢出 & 冻结行列) ==================== */
+/* ==================== 表格样式 ==================== */
 table {
-  display: block;           /* 必须为 block，overflow 才会生效 */
-  width: 100% !important;   /* 强制占满父容器宽度 */
-  max-width: 100%;          /* 严禁超过父容器 */
+  width: 100%;
   margin: 1.5em 0;
-  border-collapse: separate; /* sticky 模式下必须用 separate */
-  border-spacing: 0;
+  border-collapse: collapse;
   border-radius: 6px;
-  overflow-x: auto;         /* 关键：内部横向滚动 */
-  overflow-y: visible;      /* 确保纵向 sticky 生效 */
+  overflow-x: auto;
   box-shadow: 0 4px 16px var(--vscode-shadow);
   background-color: var(--vscode-bg);
   font-size: 0.95em;
   scrollbar-width: thin;
-  position: relative;
-  box-sizing: border-box;   /* 防止边框撑开宽度 */
+  display: block;
 }
 
-/* 整个表头冻结在顶部 */
+/* 表头样式 */
 thead {
-  position: sticky;
-  top: 0;                   /* 如果有顶部导航栏，会在下文 vs-code.css 中处理 */
-  z-index: 10;
   background-color: var(--vscode-bg-light);
+  border-bottom: 1px solid var(--vscode-border);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 th {
@@ -33,73 +32,128 @@ th {
   font-weight: 500;
   color: var(--vscode-accent-light);
   border-right: 1px solid var(--vscode-border);
-  border-bottom: 2px solid var(--vscode-border);
-  background-color: var(--vscode-bg-light);
-  white-space: nowrap;      /* 防止表头文字换行，强制触发滚动 */
 }
 
-/* 冻结首列核心逻辑 */
-th:first-child, 
-td:first-child {
-  position: sticky;
-  left: 0;                  /* 固定在左侧 */
-  z-index: 8;
-  border-right: 2px solid var(--vscode-border) !important;
-  background-color: var(--vscode-bg); /* 赋予背景色遮挡下方滚动内容 */
+th:last-child {
+  border-right: none;
 }
 
-/* 奇偶行背景适配，防止冻结列透明 */
-tbody tr:nth-child(odd) td:first-child {
-  background-color: var(--vscode-line-highlight);
-}
-tbody tr:hover td:first-child {
-  background-color: var(--vscode-active);
-}
-
-/* 左上角交叉单元格 */
-thead th:first-child {
-  z-index: 15;
-  background-color: var(--vscode-bg-light);
-}
-
-/* 普通单元格样式 */
+/* 表格内容 */
 td {
   padding: 10px 15px;
   border-right: 1px solid var(--vscode-border);
   border-bottom: 1px solid var(--vscode-border);
   transition: background-color 0.2s;
-  min-width: 120px;         /* 保证表格有内容宽度可滚 */
-  background-color: inherit;
+}
+
+td:last-child {
+  border-right: none;
 }
 
 tr:last-child td {
   border-bottom: none;
 }
 
-/* 表格内部滚动条样式优化 (VSCode风格) */
-table::-webkit-scrollbar {
-  height: 6px;
-}
-table::-webkit-scrollbar-thumb {
-  background: var(--vscode-border);
-  border-radius: 3px;
+/* 表格行悬停效果 */
+tbody tr:hover {
+  background-color: var(--vscode-line-highlight);
 }
 
-/* ==================== 其他元素 ==================== */
+/* 斑马纹表格效果 */
+tbody tr:nth-child(odd) {
+  background-color: var(--vscode-line-highlight);
+}
+
+/* 表格标题和说明 */
+.table-caption {
+  margin-bottom: 0.5em;
+  color: var(--vscode-text-light);
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+/* 响应式表格 */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ==================== 分隔线样式 ==================== */
 hr {
   height: 1px;
   margin: 2em 0;
   background-color: var(--vscode-border);
   border: none;
+  position: relative;
+  overflow: visible;
 }
 
+/* 带有装饰效果的分隔线 */
+hr.decorated {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--vscode-accent-light), transparent);
+}
+
+/* 分隔线中间装饰 */
+hr.decorated::after {
+  content: "●";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--vscode-bg);
+  color: var(--vscode-accent-light);
+  padding: 0 10px;
+  font-size: 0.8em;
+}
+
+/* ==================== 行内代码样式 ==================== */
 code {
   font-family: 'JetBrains Mono', 'Courier New', monospace;
-  background-color: var(--vscode-code-bg);
-  color: var(--vscode-code-text);
+  background-color: var(--vscode-code-bg); /* 更深的背景色，接近VS Code */
+  color: var(--vscode-code-text); /* 更准确的VS Code字符串颜色 */
   padding: 0.2em 0.4em;
   margin: 0 0.2em;
   border-radius: 4px;
   font-size: 0.9em;
   border: 1px solid var(--vscode-border);
+  box-shadow: 0 1px 2px var(--vscode-shadow); /* 轻微阴影增强立体感 */
+  letter-spacing: 0.05em; /* 字母间距略微调整 */
+  font-feature-settings: "calt" 1; /* 连字特性，VS Code默认启用 */
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  letter-spacing: normal;
+}
+
+.table {
+  border-collapse: collapse;
+}
+.table td, .table th {
+  border: 1px solid #ccc;
+}
+.sticky-row > tbody > tr:first-child {
+  position: sticky;
+  top: 0;
+  background-color: #eec;
+  z-index: 1;
+}
+.sticky-col > tbody > tr > :first-child {
+  position: sticky;
+  left: 0;
+  background-color: #cce;
+}
+/* 让 sticky-row 位于 sticky-col 的上方 */
+.sticky-row > tbody > tr:first-child :first-child {
+  position: static;
+  background-color: unset;
 }
