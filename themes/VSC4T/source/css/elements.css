@@ -9,10 +9,12 @@ table {
   margin: 1.5em 0;
   border-collapse: collapse;
   border-radius: 6px;
-  overflow: hidden;
+  overflow-x: auto;
   box-shadow: 0 4px 16px var(--vscode-shadow);
   background-color: var(--vscode-bg);
   font-size: 0.95em;
+  scrollbar-width: thin;
+  display: block;
 }
 
 /* 表头样式 */
