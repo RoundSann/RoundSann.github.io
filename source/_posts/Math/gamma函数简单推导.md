@@ -64,7 +64,7 @@ $$f_n(x)=x\ln^n(x)-nf_{x-1}(x)$$
 当$x\to 0$时,由洛必达法则,我们有$\lim_{x\to 0}x\ln^n(x)=0$  
 且通过迭代,即可得到
 
-$$f_n(x)=&x\ln^n(x)+n(x\ln^{n-1}(x)+(n-1)(x\ln^{n-2}(x)+(\dots 1\times(x\ln^0(x)))))=n!x+R_x$$
+$$f_n(x)=x\ln^n(x)+n(x\ln^{n-1}(x)+(n-1)(x\ln^{n-2}(x)+(\dots 1\times(x\ln^0(x)))))=n!x+R_x$$
 
 其中,当$x=1$或$x\to 0$时,$R_x$为无穷小,从而
 
