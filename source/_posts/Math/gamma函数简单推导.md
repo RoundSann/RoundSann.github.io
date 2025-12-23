@@ -19,14 +19,14 @@ $$
 
 我们来考察积分
 
-$$\int^{+\infty}_0\frac{x^n}{e^x}\dd x \tag{1}$$
+$$\int^{+\infty}_0\frac{x^n}{\ee^x}\dd x \tag{1}$$
 
 方便起见,这里我们暂时做出如下简写:$\displaystyle \ln^m(x):=(\ln(x))^m$  
 我们观察可得
 
-$$ \frac{\dd x}{e^x}=\dd\left(-\frac{1}{e^x}\right)=\dd(-e^{-x})$$
+$$ \frac{\dd x}{\ee^x}=\dd\left(-\frac{1}{\ee^x}\right)=\dd(-\ee^{-x})$$
 
-我们不妨令$t=-e^{-x}$,则$x=-\ln(-t)$,且有
+我们不妨令$t=-\ee^{-x}$,则$x=-\ln(-t)$,且有
 
 $$\left\{\begin{matrix}
         x=0&\RA&t=-1\\
@@ -52,11 +52,11 @@ $$\int\ln^n(x)\dd x$$
 
 使用分部积分,得到:
 
-$$\int\ln^n(x)\dd x=x\ln^n(x)-\int xd(\ln^n(x))$$
+$$\int\ln^n(x)\dd x=x\ln^n(x)-\int x\dd(\ln^n(x))$$
 
 且有
 
-$$\int xd(\ln^n(x))=n\int\ln^{n-1}(x)\dd x=\cdots$$
+$$\int x\dd(\ln^n(x))=n\int\ln^{n-1}(x)\dd x=\cdots$$
 
 我们不妨令
 
