@@ -24,7 +24,7 @@ $$\int^{+\infty}_0\frac{x^n}{e^x}\dd x \tag{1}$$
 方便起见,这里我们暂时做出如下简写:$\displaystyle \ln^m(x):=(\ln(x))^m$  
 我们观察可得
 
-$$ \frac{\dd x}{e^x}=\dd\left(-\frac{1}{e^x}\right)=d(-e^{-x})$$
+$$ \frac{\dd x}{e^x}=\dd\left(-\frac{1}{e^x}\right)=\dd(-e^{-x})$$
 
 我们不妨令$t=-e^{-x}$,则$x=-\ln(-t)$,且有
 
@@ -37,7 +37,7 @@ $$\left\{\begin{matrix}
 
 $$(1)\LRA\int^0_{-1}(-\ln(-t))^n\dd t\LRA
     \begin{dcases}
-        \int^0_{-1}\ln^{2h}(-t)\dd t\\\\
+        \int^0_{-1}\ln^{2h}(-t)\dd t\\
         \int^0_{-1}-\ln^{2h+1}(-t)\dd t
 \end{dcases}$$
 
