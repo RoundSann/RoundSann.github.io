@@ -29,7 +29,7 @@ $$ \frac{\dd x}{e^x}=\dd\left(-\frac{1}{e^x}\right)=\dd(-e^{-x})$$
 我们不妨令$t=-e^{-x}$,则$x=-\ln(-t)$,且有
 
 $$\left\{\begin{matrix}
-        x=0&\RA&t=-1\\\\
+        x=0&\RA&t=-1\\
         x\to\infty&\RA&t\to 0
 \end{matrix}\right.$$
 
