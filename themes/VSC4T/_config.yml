@@ -137,10 +137,10 @@ comments:
 # 支持多种尺寸和格式，以适配不同设备和浏览器
 favicon:
   ico: /favicon.ico                    # 传统 favicon 格式
-  small: /favicon-16x16.png           # 16x16 PNG
-  medium: /favicon-32x32.png          # 32x32 PNG
-  large: /favicon-192x192.png         # 192x192 PNG (Android)
-  apple_touch_icon: /apple-touch-icon.png  # 180x180 (iOS)
+  small: /favicon.ico           # 16x16 PNG
+  medium: /favicon.ico          # 32x32 PNG
+  large: /favicon.ico         # 192x192 PNG (Android)
+  apple_touch_icon: /favicon.ico  # 180x180 (iOS)
 
 # 自定义 CSS 和 JS
 custom_css:
