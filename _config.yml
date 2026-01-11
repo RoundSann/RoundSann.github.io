@@ -136,6 +136,7 @@ markdown:
     linkify: true
     typographer: true
   plugins:
+    - name: markdown-it-footnote
     - name: markdown-it-texmath
       options:
         engine: katex
