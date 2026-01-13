@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1768246906176">
+  <link rel="stylesheet" href="../css/post.css?v=1768320916645">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -176,6 +176,11 @@
         
           <div class="file">
             <i class="fas fa-file-code"></i>
+            <a href="../rimworld%E8%A1%A8%E6%A0%BC%E5%90%88%E9%9B%86/">Rimworld表格合集</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
             <a href="../%E5%8E%9F%E7%89%88%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">原版相关内容</a>
           </div>
         
@@ -209,11 +214,6 @@
             <a href="../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/">溪谷联邦</a>
           </div>
         
-          <div class="file">
-            <i class="fas fa-file-code"></i>
-            <a href="../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/">异象扩展</a>
-          </div>
-        
       </div>
     </div>
     
@@ -230,19 +230,19 @@
           <div class="tag-item">
             <i class="fas fa-tag"></i>
             <a href="../tags/rimworld/">rimworld</a>
-            <span class="count">(16)</span>
-          </div>
-        
-          <div class="tag-item">
-            <i class="fas fa-tag"></i>
-            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
-            <span class="count">(9)</span>
+            <span class="count">(17)</span>
           </div>
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
             <a href="../tags/%E7%A5%9E%E4%BB%99%E6%96%97%E6%B3%95/">神仙斗法</a>
             <span class="count">(2)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
+            <span class="count">(9)</span>
           </div>
         
       </div>
@@ -5028,14 +5028,34 @@
 </ul>
 <p>海迪尔诺亚拥有四个被动技能和一个主动位移技能</p>
 <ul>
-<li>帝国指令</li>
-<li>冥渊恐惧</li>
-<li>奥尔基努斯之赤</li>
-<li>深渊惊骇</li>
+<li>帝国指令:为半径16内的人类添加&quot;帝国指令&quot;状态,持续4h<br>
+移动操作能力+20% 视觉听觉能力+30% 瞄准时间-30% 远程冷却时间-0.3 近战命中率+20 易燃性-30% 射击精度+20 双防+20% 承伤系数-10%</li>
+<li>冥渊恐惧:对半径4内的敌人添加&quot;冥渊恐惧&quot;状态,持续2h<br>
+移动操作能力最大65% 失血量系数30% 承伤系数+20% 双防-60% 愈合系数×0% 每四秒受到一点冻伤[穿]</li>
+<li>奥尔基努斯之赤:被海迪尔诺亚近战攻击时概率触发(空手下为15%概率),并
+<ul>
+<li>若被攻击者为玩家阵营,则将其扇到地图边缘,并施加&quot;奥尔基努斯之赤&quot;,持续2.66h,移速-1.5</li>
+<li>若被攻击者为非玩家阵容,则施加&quot;奥尔基努斯之赤&quot;,持续2.66h,移速-1.5</li>
+</ul>
+</li>
+<li>深渊惊骇:对远程击中海迪尔诺亚的人分情况施加内容
+<ul>
+<li>若攻击者为玩家阵营,则第1次以及之后每50次远程命中后瞬移到攻击者面前,并造成25点伤害</li>
+<li>若攻击者为非玩家阵营,则为其施加&quot;深渊惊骇&quot;状态<br>
+视觉听觉能力-40% 语言能力-90% 瞄准时间+50% 远程冷却时间+0.5</li>
+</ul>
+</li>
 </ul>
 <ol>
-<li>深渊潜泳</li>
+<li>深渊潜泳:30cd,31释放半径的位移技能</li>
 </ol>
+<details>
+<summary><b>额外内容</b> 本部分为ai扒源码得出,未经验证不保证准确性</summary>
+<p>瞬移机制:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> <span class="hljs-keyword">void</span> <span class="hljs-title">PostPreApplyDamage</span>(<span class="hljs-params"><span class="hljs-keyword">ref</span> DamageInfo dinfo, <span class="hljs-keyword">out</span> <span class="hljs-built_in">bool</span> absorbed</span>)</span><br>&#123;<br>    absorbed = <span class="hljs-literal">false</span>;  <span class="hljs-comment">// 初始化：伤害不被吸收</span><br>    <br>    <span class="hljs-comment">// ============ 第一层判断：是否为远程伤害 ============</span><br>    <span class="hljs-keyword">if</span> (dinfo.Def.isRanged)  <span class="hljs-comment">// 只处理远程攻击，近战直接跳过整个逻辑</span><br>    &#123;<br>        <span class="hljs-comment">// ============ 第二层判断：海迪尔诺亚的阵营 ============</span><br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.pawn2.Faction == Faction.OfPlayer)  <span class="hljs-comment">// 情况A：海迪尔诺亚属于玩家阵营</span><br>        &#123;<br>            <span class="hljs-comment">// --- 玩家阵营分支 ---</span><br>            <br>            <span class="hljs-comment">// 步骤1：播放吸收伤害的视觉/音效</span><br>            <span class="hljs-keyword">this</span>.AbsorbedDamage(dinfo);<br>            <br>            <span class="hljs-comment">// 步骤2：尝试获取攻击者</span><br>            Pawn pawn = dinfo.Instigator <span class="hljs-keyword">as</span> Pawn;<br>            <span class="hljs-keyword">if</span> (pawn != <span class="hljs-literal">null</span>)  <span class="hljs-comment">// 攻击者是一个 Pawn（不是炮塔等）</span><br>            &#123;<br>                <span class="hljs-comment">// 步骤3：友军检测（避免反噬队友）</span><br>                <span class="hljs-keyword">if</span> (pawn.Faction == <span class="hljs-keyword">this</span>.pawn2.Faction)<br>                &#123;<br>                    <span class="hljs-keyword">return</span>;  <span class="hljs-comment">// 同阵营，不施加 debuff，直接结束</span><br>                &#125;<br>                <br>                <span class="hljs-comment">// 步骤4：给敌对攻击者施加&quot;深渊惊骇&quot;</span><br>                pawn.health.AddHediff(HediffDefOf.HAR_XO_Hediff_a, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>, <span class="hljs-literal">null</span>);<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">else</span>  <span class="hljs-comment">// 情况B：海迪尔诺亚不是玩家阵营（敌对或中立NPC）</span><br>        &#123;<br>            <span class="hljs-comment">// --- 敌对阵营分支（核心冷却机制） ---</span><br>            <br>            <span class="hljs-comment">// ============ 第三层判断：冷却计数器 ============</span><br>            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.counter &lt;= <span class="hljs-number">0</span>)  <span class="hljs-comment">// counter为0或负数时，允许触发瞬移</span><br>            &#123;<br>                <span class="hljs-comment">// 步骤1：尝试获取攻击者</span><br>                Pawn pawn2 = dinfo.Instigator <span class="hljs-keyword">as</span> Pawn;<br>                <span class="hljs-keyword">if</span> (pawn2 != <span class="hljs-literal">null</span>)<br>                &#123;<br>                    <span class="hljs-comment">// 步骤2：播放传送音效</span><br>                    SoundStarter.PlayOneShot(<br>                        SoundDef.Named(<span class="hljs-string">&quot;Psycast_Skip_Entry&quot;</span>), <br>                        <span class="hljs-keyword">new</span> TargetInfo(<span class="hljs-keyword">this</span>.pawn2.Position, <span class="hljs-keyword">this</span>.pawn2.Map, <span class="hljs-literal">false</span>)<br>                    );<br>                    <br>                    <span class="hljs-comment">// 步骤3：在原位置生成特效（离开）</span><br>                    MoteMaker.MakeStaticMote(<br>                        <span class="hljs-keyword">this</span>.parent.PositionHeld, <br>                        <span class="hljs-keyword">this</span>.parent.MapHeld, <br>                        ThingDef.Named(<span class="hljs-string">&quot;HAR_XO_Mote_Extra_a&quot;</span>), <br>                        <span class="hljs-number">0.5f</span><br>                    );<br>                    MoteMaker.MakeStaticMote(<br>                        <span class="hljs-keyword">this</span>.parent.PositionHeld, <br>                        <span class="hljs-keyword">this</span>.parent.MapHeld, <br>                        ThingDef.Named(<span class="hljs-string">&quot;HAR_XO_Mote_Extra_b&quot;</span>), <br>                        <span class="hljs-number">0.5f</span><br>                    );<br>                    <br>                    <span class="hljs-comment">// 步骤4：瞬移到攻击者位置</span><br>                    <span class="hljs-keyword">this</span>.pawn2.Position = pawn2.Position;<br>                    <span class="hljs-keyword">this</span>.pawn2.Notify_Teleported(<span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>);<br>                    <br>                    <span class="hljs-comment">// 步骤5：在新位置生成特效（到达）</span><br>                    MoteMaker.MakeStaticMote(<br>                        <span class="hljs-keyword">this</span>.parent.PositionHeld, <br>                        <span class="hljs-keyword">this</span>.parent.MapHeld, <br>                        ThingDef.Named(<span class="hljs-string">&quot;HAR_XO_Mote_Extra_a&quot;</span>), <br>                        <span class="hljs-number">0.5f</span><br>                    );<br>                    MoteMaker.MakeStaticMote(<br>                        <span class="hljs-keyword">this</span>.parent.PositionHeld, <br>                        <span class="hljs-keyword">this</span>.parent.MapHeld, <br>                        ThingDef.Named(<span class="hljs-string">&quot;HAR_XO_Mote_Extra_b&quot;</span>), <br>                        <span class="hljs-number">0.5f</span><br>                    );<br>                    <br>                    <span class="hljs-comment">// 步骤6：对攻击者造成反击伤害</span><br>                    HAR_XO_Comp_Shield.Damage(pawn2);<br>                &#125;<br>                <br>                <span class="hljs-comment">// 步骤7：重置冷却计数器为50</span><br>                <span class="hljs-keyword">this</span>.counter = <span class="hljs-number">50</span>;<br>            &#125;<br>            <br>            <span class="hljs-comment">// ============ counter 递减机制（关键！） ============</span><br>            <span class="hljs-comment">// 注意：这段代码在 if (this.counter &lt;= 0) 外部</span><br>            <span class="hljs-comment">// 意味着每次受到远程攻击都会执行，无论是否触发瞬移</span><br>            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.counter &gt; <span class="hljs-number">0</span>)<br>            &#123;<br>                <span class="hljs-keyword">this</span>.counter--;  <span class="hljs-comment">// 计数器减1</span><br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// ============ 反击伤害方法 ============</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Damage</span>(<span class="hljs-params">Pawn pawn</span>)</span><br>&#123;<br>    <span class="hljs-keyword">if</span> (pawn == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">if</span> (!pawn.PositionHeld.IsValid) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">if</span> (pawn.MapHeld == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">if</span> (pawn.Dead) <span class="hljs-keyword">return</span>;<br>    <br>    <span class="hljs-comment">// 造成25点刺伤，100%护甲穿透</span><br>    pawn.TakeDamage(<span class="hljs-keyword">new</span> DamageInfo(<br>        DamageDefOf.Stab,        <span class="hljs-comment">// 伤害类型：刺伤</span><br>        <span class="hljs-number">25f</span>,                      <span class="hljs-comment">// 伤害值：25点</span><br>        <span class="hljs-number">100f</span>,                     <span class="hljs-comment">// 护甲穿透：100%</span><br>        <span class="hljs-number">-1f</span>,                      <span class="hljs-comment">// 默认角度</span><br>        <span class="hljs-literal">null</span>,                     <span class="hljs-comment">// 无特定攻击者</span><br>        <span class="hljs-literal">null</span>,                     <span class="hljs-comment">// 无特定部位</span><br>        <span class="hljs-literal">null</span>,                     <span class="hljs-comment">// 无特定武器</span><br>        <span class="hljs-number">0</span>,                        <span class="hljs-comment">// 无特殊标志</span><br>        <span class="hljs-literal">null</span>,                     <span class="hljs-comment">// 无额外数据</span><br>        <span class="hljs-literal">true</span>,                     <span class="hljs-comment">// 计入战斗记录</span><br>        <span class="hljs-literal">true</span>,                     <span class="hljs-comment">// 允许偏转</span><br>        <span class="hljs-number">2</span>,                        <span class="hljs-comment">// QualityCategory（未知用途）</span><br>        <span class="hljs-literal">true</span>,                     <span class="hljs-comment">// 允许盔甲</span><br>        <span class="hljs-literal">false</span>                     <span class="hljs-comment">// 不是来自爆炸</span><br>    ));<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>吸收伤害的实现:</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">AbsorbedDamage</span>(<span class="hljs-params">DamageInfo dinfo</span>)</span><br>&#123;<br>    <span class="hljs-comment">// 仅播放视觉和音效，未修改 dinfo 参数</span><br>    SoundStarter.PlayOneShot(SoundDefOf.EnergyShield_AbsorbDamage, ...);<br>    <span class="hljs-built_in">float</span> num = Mathf.Min(<span class="hljs-number">10f</span>, <span class="hljs-number">2f</span> + dinfo.Amount / <span class="hljs-number">10f</span>);<br>    FleckMaker.Static(..., FleckDefOf.ExplosionFlash, num);<br>    <span class="hljs-comment">// 生成尘埃粒子</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; num2; i++)<br>    &#123;<br>        FleckMaker.ThrowDustPuff(...);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</details>
 <h3 id="凯特尔">凯特尔</h3>
 <details>
 <summary>点击查看变化表格</summary>
@@ -9274,7 +9294,7 @@ OC狙的穿甲为79%,五段大幽灵的甲为140%,六段190%</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 微正义
+                  rimworld, 微正义, 种族
                   
                 </span>
               
@@ -9295,45 +9315,6 @@ OC狙的穿甲为79%,五段大幽灵的甲为140%,六段190%</p>
       </div>
     
       <div class="vs-recommended-item" data-index="1" tabindex="0">
-        <a href="../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>边缘世界种族数据提取器</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              一个用于RimWorld的py小脚本,可以自动拉取工作目录下的所有mod文件里的外星人XML定义数据并生成表格,帮助你快速认知一个种族在XML定义上擅长什么工作,不擅长什么工作.
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-                <span class="vs-tags-preview">
-                  <i class="fas fa-tags"></i>
-                  rimworld, 种族, 精品
-                  
-                </span>
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  11月 23
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  13 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="2" tabindex="0">
         <a href="../%E5%8F%AF%E8%83%BD%E8%BF%87%E6%97%B6-%E8%BE%B9%E7%BC%98%E4%BB%99%E8%B7%AF/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -9372,6 +9353,45 @@ OC狙的穿甲为79%,五段大幽灵的甲为140%,六段190%</p>
         </a>
       </div>
     
+      <div class="vs-recommended-item" data-index="2" tabindex="0">
+        <a href="../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>边缘世界种族数据提取器</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              一个用于RimWorld的py小脚本,可以自动拉取工作目录下的所有mod文件里的外星人XML定义数据并生成表格,帮助你快速认知一个种族在XML定义上擅长什么工作,不擅长什么工作.
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 精品, 种族
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  11月 23
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  13 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
       <div class="vs-recommended-item" data-index="3" tabindex="0">
         <a href="../%E8%8C%89%E7%BA%A6%E6%97%8F%E8%8D%AF%E7%89%A9/" class="vs-recommended-link">
           <!-- 文章信息 -->
@@ -9391,7 +9411,7 @@ OC狙的穿甲为79%,五段大幽灵的甲为140%,六段190%</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 精品
+                  rimworld, 原版向, 精品
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -9414,47 +9434,6 @@ OC狙的穿甲为79%,五段大幽灵的甲为140%,六段190%</p>
       </div>
     
       <div class="vs-recommended-item" data-index="4" tabindex="0">
-        <a href="../%E6%82%A0%E5%85%B0/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>悠兰</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              内容不多,很原版的种族 前期护甲会优于原版,后期乏力,正义度几乎没有甚至更弱
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-                <span class="vs-tags-preview">
-                  <i class="fas fa-tags"></i>
-                  rimworld, 种族, 精品
-                  
-                    <span class="vs-more-tags">+1</span>
-                  
-                </span>
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  9月 19
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  4 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="5" tabindex="0">
         <a href="../%E7%8E%9B%E9%B2%81%E6%AD%A6%E5%99%A8%E5%AF%B9%E7%85%A7/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -9473,7 +9452,7 @@ OC狙的穿甲为79%,五段大幽灵的甲为140%,六段190%</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 原版向
+                  rimworld, 原版向, 种族
                   
                 </span>
               
@@ -9486,6 +9465,47 @@ OC狙的穿甲为79%,五段大幽灵的甲为140%,六段190%</p>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
                   4 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="5" tabindex="0">
+        <a href="../%E7%B1%B3%E8%8E%89%E5%AE%89/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>米莉安</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              大名鼎鼎的米莉拉…的米莉安的介绍,比较古早 不包含米帝国等扩展,只有纯米. 整体来说,作为玩家时是微正义的,无法做到单刷袭击,但是作为敌对那就遭了罪了,使用链式阵地可能解决都较为困难
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 负正义, 微正义
+                  
+                    <span class="vs-more-tags">+1</span>
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 23
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  3 min
                 </span>
               </span>
             </div>
@@ -9657,7 +9677,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-01-13
+      2026-01-14
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -9782,7 +9802,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/search.js"></script>
 <script src="../js/theme-switch.js"></script>
 
-<script src="../js/password-protect.js?v=1768246906176"></script>
+<script src="../js/password-protect.js?v=1768320916646"></script>
 
     <script>
       // 移动端菜单切换
