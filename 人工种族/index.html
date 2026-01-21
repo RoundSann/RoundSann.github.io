@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1769027386414">
+  <link rel="stylesheet" href="../css/post.css?v=1769027676261">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -291,7 +291,7 @@
 很有趣的系列mod,强度相当高,但是整体还算是自洽的.正义度毫无疑问神仙斗法了</p>
 <span id="more"></span>
 <p><strong>本篇攻略特别感谢各位吧友群友B友等各个社区的讨论/发现/补充,才能整理并总结出来较为全面的攻略.</strong><br>
-特别地,<a target="_blank" rel="noopener" href="https://github.com/RoundSann/RoundSann.github.io/blob/source/source/_posts/Rimworld/%E4%BA%8C%E6%AC%A1%E5%85%83%E7%A7%8D%E6%97%8F/%E4%BA%BA%E5%B7%A5%E7%A7%8D%E6%97%8F.md">本文章有可供下载源码</a>,方便你进行二次更改编辑</p>
+特别地,<a target="_blank" rel="noopener" href="https://github.com/RoundSann/RoundSann.github.io/blob/source/source/_posts/Rimworld/%E4%BA%8C%E6%AC%A1%E5%85%83%E7%A7%8D%E6%97%8F/%E4%BA%BA%E5%B7%A5%E7%A7%8D%E6%97%8F.md">本文章有可供下载的源码</a>,方便你进行二次更改编辑</p>
 <h2 id="各种链接">各种链接</h2>
 <p>人工种族的攻略比较多,<strong>种族介绍建议看贴吧/本博客内容,BOSS打法建议看视频</strong></p>
 <ul>
@@ -10609,43 +10609,7 @@
 <p>写此份内容时,因为本身不会代码,又想知道aya有没有在代码层面写了什么东西,所以使用了ai辅助挖掘,提示词如下:</p>
 <details>
 <summary>点击查看提示词</summary>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs markdown">在对话中,你需要遵守如下约定:<br><br>我正在制作rimworld的一些mod百科,需要你解包mod的内容,并给出mod内容的详细百科.<br><br>百科整体以 <span class="hljs-code">`客观内容 空行 内容评论`</span> 的方式进行叙述,让读者既能领悟到mod的客观内容,也能感受到百科作者的主观评价,帮助其快速分辨哪些是有用的,哪些是无所谓的内容.且客观内容的部分一定要全面,做到看了百科就能知道这个mod的全部内容  <br><br>工作区结构如下:<br><span class="hljs-bullet"> -</span>  <span class="hljs-code">`人工种族.md`</span>是工作的最终目录,里面记录着目前写的百科,之后的修改也都会写入里面<br><span class="hljs-bullet"> -</span>  <span class="hljs-code">`mods`</span>文件夹下的子文件夹分别为steam创意工坊的mod源码,每次使用时会告诉你要阅读哪个文件夹的内容.<br><span class="hljs-bullet"> -</span>  mod文件夹下<span class="hljs-code">`1.6\Assemblies`</span>中的与dll同名的文件为反编译得到的源码.<br><br>最终输出的<span class="hljs-code">`人工种族.md`</span>百科文件整体结构如下:<br></code></pre></td></tr></table></figure>
-<details>
-<summary>点击查看变化表格</summary>
-<p>表格 这部分已经填充并校对好,一般来说不需要你进行修改,但如果你发现有错误的部分,可以指出</p>
-</details>
-<p>对该种族整体的细节点评,要分条写</p>
-<ul>
-<li>例如写这个种族是否有强制特性</li>
-<li>这个种族相比于普通人,都有什么区别,记得填充上所有的区别,是<strong>所有的</strong>区别</li>
-</ul>
-<p>然后是这个种族的技能的介绍</p>
-<ul>
-<li>被动技能使用这样的 -  进行列表</li>
-</ul>
-<ol>
-<li>主动技能使用这样的 1. 进行列表,要写清楚技能效果,技能cd,技能会施加什么buff,持续多久等,一定要全面</li>
-</ol>
-<p>然后是对每个技能的简单评价,有用/没用/很强/泛用性差等</p>
-<p><strong>Mod额外内容</strong>:</p>
-<ul>
-<li>这里填写这个mod除了加了这个种族以外,还有什么其他内容(例如动物,添加的配方表,添加的衣物武器等)</li>
-<li>添加的衣物/武器:
-<ul>
-<li>例如这里是衣物1,你要写清楚他的制作成本,穿在身上有没有什么特殊效果等,如果他是这个种族专属的衣物,你还应该在其后面加一个&quot;[专]&quot;字样来特别说名</li>
-<li>例如这里是武器1,你要写清楚他的制作成本,DPS,拿在手上有没有什么特殊效果,击中敌人有没有什么特殊效果等</li>
-</ul>
-</li>
-<li>除了武器衣物以外,是否还有其他内容,比如添加了新的工作台,这个工作台能干什么,等</li>
-<li>另外不要忘了mod添加的专属派系,以及这个派系的特色(是否有专属商队/专属贸易物等)</li>
-</ul>
-<p>这里填写对每一项Mod额外内容的评价,例如某某衣服制作成本低的同时防御高,buff给的多,某某武器DPS很高但是准头较差需要注意</p>
-<p><strong>获取方式</strong>:</p>
-<ul>
-<li>这里写该种族的具体获取方式,例如可以去专属派系抓一个过来,或是有什么特殊的获取方式</li>
-</ul>
-<p>最后,分别对这个种族的工作能力以及战斗能力做出综合评价,并结合其获取方式的难易度为其进行综合打分</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><br>另外,还有需要注意的内容:<br><span class="hljs-bullet"> 1.</span> 全程以中文进行输出以及书写,包括思考部分<br><span class="hljs-bullet"> 2.</span> 仅阅读给你说明的文件夹,减少不必要的token消耗,当然如果给你说明的文件夹里引用了其他文件夹的内容,你也可以读其他的文件夹<br><span class="hljs-bullet"> 3.</span> 源码中都是以日语硬编码的,恰当翻译成中文并对应<br><span class="hljs-bullet"> 4.</span> 需要尽可能全面的内容,将mod的<span class="hljs-strong">**所有内容**</span>都展示出来,不仅仅是种族的特征,还有衣物/武器/派系/建筑等相关的数据也要展示出来<br><span class="hljs-bullet"> 5.</span> 对于机制复杂或原版没有的内容,以分析源码的方式对齐运作方式进行解析,一定要把内容讲述明白,不能模棱两可,一定要全部展示出来,就像把所有的xml以及c源码翻译成白话文一般,全面的展示mod全部内容<br><span class="hljs-bullet"> 6.</span> 注意检查种族是否有免疫地形减速,单次受伤上限,强制/概率特性(通常写在专属背景故事里)等内容<br><br>现在,请你读取 xxx 文件夹,并完善 xxx 部分<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs markdown">在对话中,你需要遵守如下约定:<br><br>我正在制作rimworld的一些mod百科,需要你解包mod的内容,并给出mod内容的详细百科.<br><br>百科整体以 <span class="hljs-code">`客观内容 空行 内容评论`</span> 的方式进行叙述,让读者既能领悟到mod的客观内容,也能感受到百科作者的主观评价,帮助其快速分辨哪些是有用的,哪些是无所谓的内容.且客观内容的部分一定要全面,做到看了百科就能知道这个mod的全部内容  <br><br>工作区结构如下:<br><span class="hljs-bullet"> -</span>  <span class="hljs-code">`人工种族.md`</span>是工作的最终目录,里面记录着目前写的百科,之后的修改也都会写入里面<br><span class="hljs-bullet"> -</span>  <span class="hljs-code">`mods`</span>文件夹下的子文件夹分别为steam创意工坊的mod源码,每次使用时会告诉你要阅读哪个文件夹的内容.<br><span class="hljs-bullet"> -</span>  mod文件夹下<span class="hljs-code">`1.6\Assemblies`</span>中的与dll同名的文件为反编译得到的源码.<br><br>最终输出的<span class="hljs-code">`人工种族.md`</span>百科文件整体结构如下:<br><span class="hljs-code">```</span><br><span class="hljs-code">&lt;details&gt;</span><br><span class="hljs-code">&lt;summary&gt;点击查看变化表格&lt;/summary&gt;</span><br><span class="hljs-code"></span><br><span class="hljs-code">表格 这部分已经填充并校对好,一般来说不需要你进行修改,但如果你发现有错误的部分,可以指出</span><br><span class="hljs-code">&lt;/details&gt;</span><br><span class="hljs-code"></span><br><span class="hljs-code">对该种族整体的细节点评,要分条写</span><br><span class="hljs-code"> -  例如写这个种族是否有强制特性</span><br><span class="hljs-code"> -  这个种族相比于普通人,都有什么区别,记得填充上所有的区别,是**所有的**区别</span><br><span class="hljs-code"></span><br><span class="hljs-code">然后是这个种族的技能的介绍</span><br><span class="hljs-code"> -  被动技能使用这样的 -  进行列表</span><br><span class="hljs-code"> 1. 主动技能使用这样的 1. 进行列表,要写清楚技能效果,技能cd,技能会施加什么buff,持续多久等,一定要全面</span><br><span class="hljs-code"></span><br><span class="hljs-code">然后是对每个技能的简单评价,有用/没用/很强/泛用性差等</span><br><span class="hljs-code"></span><br><span class="hljs-code">**Mod额外内容**:</span><br><span class="hljs-code"> -  这里填写这个mod除了加了这个种族以外,还有什么其他内容(例如动物,添加的配方表,添加的衣物武器等)</span><br><span class="hljs-code"> -  添加的衣物/武器:</span><br><span class="hljs-code">     -  例如这里是衣物1,你要写清楚他的制作成本,穿在身上有没有什么特殊效果等,如果他是这个种族专属的衣物,你还应该在其后面加一个&quot;[专]&quot;字样来特别说名</span><br><span class="hljs-code">     -  例如这里是武器1,你要写清楚他的制作成本,DPS,拿在手上有没有什么特殊效果,击中敌人有没有什么特殊效果等</span><br><span class="hljs-code"> -  除了武器衣物以外,是否还有其他内容,比如添加了新的工作台,这个工作台能干什么,等</span><br><span class="hljs-code"> -  另外不要忘了mod添加的专属派系,以及这个派系的特色(是否有专属商队/专属贸易物等)</span><br><span class="hljs-code"></span><br><span class="hljs-code">这里填写对每一项Mod额外内容的评价,例如某某衣服制作成本低的同时防御高,buff给的多,某某武器DPS很高但是准头较差需要注意</span><br><span class="hljs-code"></span><br><span class="hljs-code">**获取方式**:</span><br><span class="hljs-code"> -  这里写该种族的具体获取方式,例如可以去专属派系抓一个过来,或是有什么特殊的获取方式</span><br><span class="hljs-code"></span><br><span class="hljs-code">最后,分别对这个种族的工作能力以及战斗能力做出综合评价,并结合其获取方式的难易度为其进行综合打分</span><br><span class="hljs-code">```</span><br><br>另外,还有需要注意的内容:<br><span class="hljs-bullet"> 1.</span> 全程以中文进行输出以及书写,包括思考部分<br><span class="hljs-bullet"> 2.</span> 仅阅读给你说明的文件夹,减少不必要的token消耗,当然如果给你说明的文件夹里引用了其他文件夹的内容,你也可以读其他的文件夹<br><span class="hljs-bullet"> 3.</span> 源码中都是以日语硬编码的,恰当翻译成中文并对应<br><span class="hljs-bullet"> 4.</span> 需要尽可能全面的内容,将mod的<span class="hljs-strong">**所有内容**</span>都展示出来,不仅仅是种族的特征,还有衣物/武器/派系/建筑等相关的数据也要展示出来<br><span class="hljs-bullet"> 5.</span> 对于机制复杂或原版没有的内容,以分析源码的方式对齐运作方式进行解析,一定要把内容讲述明白,不能模棱两可,一定要全部展示出来,就像把所有的xml以及c源码翻译成白话文一般,全面的展示mod全部内容<br><span class="hljs-bullet"> 6.</span> 注意检查种族是否有免疫地形减速,单次受伤上限,强制/概率特性(通常写在专属背景故事里)等内容<br><br>现在,请你读取 xxx 文件夹,并完善 xxx 部分<br></code></pre></td></tr></table></figure>
 </details>
 <h2 id="疑似BUG汇总">疑似BUG汇总</h2>
 <p>此部分内容均为疑似的BUG,不知是否是作者有意为之,本人并不了解编程相关,相关内容均为问AI得出,仅供参考,请勿盲目相信</p>
@@ -10856,57 +10820,16 @@ aya在各种buff中定义的是<code>RangedWeapon_Cooldown</code>,这是武器�
       </div>
     
       <div class="vs-recommended-item" data-index="4" tabindex="0">
-        <a href="../%E7%B1%B3%E8%8E%89%E5%AE%89/" class="vs-recommended-link">
+        <a href="../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
             <div class="vs-recommended-title">
               <i class="fas fa-file-code"></i>
-              <span>米莉安</span>
+              <span>溪谷联邦</span>
             </div>
             
             <div class="vs-recommended-excerpt">
-              大名鼎鼎的米莉拉…的米莉安的介绍,比较古早 不包含米帝国等扩展,只有纯米. 整体来说,作为玩家时是微正义的,无法做到单刷袭击,但是作为敌对那就遭了罪了,使用链式阵地可能解决都较为困难
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-                <span class="vs-tags-preview">
-                  <i class="fas fa-tags"></i>
-                  rimworld, 种族, 微正义
-                  
-                    <span class="vs-more-tags">+1</span>
-                  
-                </span>
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  9月 23
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  3 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="5" tabindex="0">
-        <a href="../%E7%8E%9B%E9%B2%81%E6%AD%A6%E5%99%A8%E5%AF%B9%E7%85%A7/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>玛鲁武器对照</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              对maru种族及其武器进行了简单统计 整体数值比较接近原版甚至大部分武器数值还不如原版.Buff给的也是相当保守
+              施工中~
             </div>
             
             <div class="vs-recommended-meta">
@@ -10923,7 +10846,48 @@ aya在各种buff中定义的是<code>RangedWeapon_Cooldown</code>,这是武器�
               <span class="vs-meta-info">
                 <span class="vs-date">
                   <i class="fas fa-calendar-alt"></i>
-                  8月 08
+                  9月 16
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  1 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="5" tabindex="0">
+        <a href="../%E6%82%A0%E5%85%B0/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>悠兰</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              内容不多,很原版的种族 前期护甲会优于原版,后期乏力,正义度几乎没有甚至更弱
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 精品
+                  
+                    <span class="vs-more-tags">+1</span>
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 19
                 </span>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
@@ -11224,7 +11188,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/search.js"></script>
 <script src="../js/theme-switch.js"></script>
 
-<script src="../js/password-protect.js?v=1769027386414"></script>
+<script src="../js/password-protect.js?v=1769027676262"></script>
 
     <script>
       // 移动端菜单切换
