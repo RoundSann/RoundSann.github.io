@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1769112682724">
+  <link rel="stylesheet" href="../css/post.css?v=1769191352552">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -7265,20 +7265,39 @@
 <li>BOSS刷新方式:在15年后自然刷新或使用&quot;绝望之笛&quot;(200灵液之石)召唤BOSS,在30天内若未击败则自动消失,自然刷新仅刷新一次</li>
 <li>本体20w血量</li>
 <li>受伤机制:仅允许近战攻击,单次受伤最高200点</li>
+<li>被动机制:
+<ul>
+<li>为35半径内的生物持续添加&quot;雏鸟之巢&quot;状态,持续1.2h<br>
+瞄准时间-50% 远程冷却时间-0.5 双防-150% 承伤系数+50% 愈合系数×0%</li>
+<li>每隔10小时为19半径内的生物添加&quot;窥视虚空&quot;状态,持续10s.拥有此状态的人陷入狂暴/失神精神状态</li>
+</ul>
+</li>
 <li>反击机制[穿]:
 <ul>
-<li>每受到20次近战攻击后,以自身为中心6半径释放5点炸伤,附带&quot;雏鸟轻啼&quot;状态,持续6h</li>
-<li>每受到20次远程攻击后,在攻击者所在格释放3半径的5炸伤,附带&quot;雏鸟轻啼&quot;状态,持续6h</li>
-<li>每受到57次近战攻击后,释放半径57的爆炸,对范围内生物造成50点炸伤,并施加&quot;雏鸟振翅&quot;状态,持续12h<br>
+<li>第一次受到近战攻击时,在攻击者所在格释放1半径的25点炸伤[穿][存疑,有时候别的近战攻击次数也触发,但频率很低]</li>
+<li>每受到20次近战攻击后,以自身为中心6半径释放5点炸伤[穿],附带&quot;雏鸟轻啼&quot;状态,持续6h<br>
+失血量系数110% 每两秒受到一点伤害[穿]</li>
+<li>每受到20次远程攻击后,在攻击者所在格释放3半径的5炸伤[穿],附带&quot;雏鸟轻啼&quot;状态,持续6h<br>
+失血量系数110% 每两秒受到一点伤害[穿]</li>
+<li>每受到57次近战攻击后,释放80半径的爆炸,造成40点炸伤[穿],对建筑200w伤害,并为生物施加&quot;雏鸟振翅&quot;状态,持续12h<br>
 意识最大50% 移动能力最大0% 出血率110%,若没人救援的话会在两小时内直接死亡(拖到床上就不会死了)<br>
-特别地,每次远程攻击都会重置此反击技能到0次</li>
-<li>当雏鸟的血量降到15w时,会开始发射流弹</li>
-<li>当雏鸟的血量降到10w时,会开始发射流弹</li>
-<li>当雏鸟的血量降到15w,10w,5w时,会进行大范围的直接清除</li>
+特别地,每次远程攻击都会重置次数到57次</li>
+<li>当雏鸟的血量降到15w后,每受到40次攻击,向50半径内的三个随机位置释放一个&quot;雏鸟凝望&quot;流弹,造成1半径的10点伤害,并施加&quot;雏鸟凝望&quot;状态,持续6h,使其视觉听觉能力-40%,对建筑10伤害</li>
+<li>当雏鸟的血量降到10w后,每受到60次攻击,向50半径内的四个随机位置释放一个&quot;雏鸟泣血&quot;流弹,造成4半径的15点伤害,并施加&quot;雏鸟泣血&quot;状态,持续1h,使其承伤系数+100%,对建筑150伤害</li>
+<li>当雏鸟的血量降到5w后,每受到15次攻击,在25半径内的随机位置释放3半径的爆炸,造成7.5伤害,并施加&quot;雏鸟啄食&quot;状态,持续6h<br>
+意识-30% 疲劳度×30% 崩溃临界值+35% 疼痛休克阈值-40%</li>
+<li>当雏鸟的血量降到15w,10w,5w时,会进行大致30半径的直接清除pawn,界外之血,伊迪亚之奴,阿瓦露琪安,罪孽灵免疫清除</li>
 </ul>
 </li>
 </ul>
-<p>特别地,由于雏鸟是10×10的建筑BOSS,站在斜角近战攻击是不会被反伤到的</p>
+<p><strong>机制分析</strong>:</p>
+<ul>
+<li>流弹甚至不是穿甲伤害,我们直接无视它</li>
+<li>仅允许近战伤害,且近战伤害多了会释放强制倒地大招,但使用远程武器可以将计数器归零重新开始计</li>
+<li>随机触发的18半径狂暴有点烦,但思滞血清是活爹</li>
+</ul>
+<p><strong>解决方式</strong>:肥肠的简单啊,随便让一个高躯干耐久种族拿dps高的刀(比如什么光辉之石刀),再让一个高躯干耐久的种族拿一把狙,俩人磕了思滞血清一起输出,掉到15w血10w血5w血的时候躲一下大招,接着输出就完事了</p>
+<p>掉落物雏鸟永住是7×7的建筑艺术品,美观度40000.渡星的心脏使用后播放结局报幕</p>
 <h3 id="远渡星海之鸟">远渡星海之鸟</h3>
 <p><img src="/images/%E4%BA%BA%E5%B7%A5%E7%A7%8D%E6%97%8F/%E4%BA%BA%E5%B7%A5%E7%A7%8D%E6%97%8F-%E8%BF%9C%E6%B8%A1%E6%98%9F%E6%B5%B7%E4%B9%8B%E9%B8%9F.png" alt="远渡星海之鸟"><br>
 彩蛋BOSS,会循环清理地图上的小人,无正常解法</p>
@@ -10951,16 +10970,16 @@ aya在各种buff中定义的是<code>RangedWeapon_Cooldown</code>,这是武器�
       </div>
     
       <div class="vs-recommended-item" data-index="5" tabindex="0">
-        <a href="../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/" class="vs-recommended-link">
+        <a href="../%E7%8E%9B%E9%B2%81%E6%AD%A6%E5%99%A8%E5%AF%B9%E7%85%A7/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
             <div class="vs-recommended-title">
               <i class="fas fa-file-code"></i>
-              <span>溪谷联邦</span>
+              <span>玛鲁武器对照</span>
             </div>
             
             <div class="vs-recommended-excerpt">
-              施工中~
+              对maru种族及其武器进行了简单统计 整体数值比较接近原版甚至大部分武器数值还不如原版.Buff给的也是相当保守
             </div>
             
             <div class="vs-recommended-meta">
@@ -10977,11 +10996,11 @@ aya在各种buff中定义的是<code>RangedWeapon_Cooldown</code>,这是武器�
               <span class="vs-meta-info">
                 <span class="vs-date">
                   <i class="fas fa-calendar-alt"></i>
-                  9月 16
+                  8月 08
                 </span>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
-                  1 min
+                  4 min
                 </span>
               </span>
             </div>
@@ -11153,7 +11172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-01-23
+      2026-01-24
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -11278,7 +11297,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/search.js"></script>
 <script src="../js/theme-switch.js"></script>
 
-<script src="../js/password-protect.js?v=1769112682725"></script>
+<script src="../js/password-protect.js?v=1769191352552"></script>
 
     <script>
       // 移动端菜单切换
