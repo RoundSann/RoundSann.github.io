@@ -5,7 +5,7 @@
 body {
   background-color: var(--vscode-bg);
   color: var(--vscode-text);
-  font-family: 'Times New Roman', 'Source Code Pro', monospace;
+  font-family: 'Consolas', 'Source Code Pro', monospace;
   line-height: 1.6;
   padding-top: 20px;
   margin-bottom: 30px;
