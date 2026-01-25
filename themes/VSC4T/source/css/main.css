@@ -5,7 +5,7 @@
 body {
   background-color: var(--vscode-bg);
   color: var(--vscode-text);
-  font-family: 'Consolas', 'Source Code Pro', monospace;
+  font-family: 'Times New Roman', 'Source Code Pro', monospace;
   line-height: 1.6;
   padding-top: 20px;
   margin-bottom: 30px;
@@ -1045,32 +1045,4 @@ h1, h2, h3, h4, h5, h6 {
   /* 这里的 2rem 是你原本的 padding，
      现在的改动会让文字填满这 2rem 以内的所有空间 */
   box-sizing: border-box; 
-}
-
-/* =========================================
-   字体修改：英文 Times New Roman
-   ========================================= */
-
-/* 1. 只修改文章内容区域 */
-.post-content {
-  /* 
-     逻辑：
-     1. 英文数字 -> 用 Times New Roman
-     2. 中文 -> 用 "Microsoft YaHei" (微软雅黑) 或你喜欢的字体
-     3. 兜底 -> sans-serif
-  */
-  font-family: "Times New Roman", "Microsoft YaHei", sans-serif;
-}
-
-/* 2. 【关键】保护代码块 (绝对不能变) */
-.post-content pre, 
-.post-content code,
-.post-content .hljs {
-  /* 强制代码块回滚到等宽字体 */
-  font-family: 'Consolas', 'Source Code Pro', monospace !important;
-}
-
-/* 3. 保护数学公式 (KaTeX 自带字体最好看，不要强制覆盖) */
-.katex {
-  font-family: KaTeX_Main, "Times New Roman", serif !important;
 }
