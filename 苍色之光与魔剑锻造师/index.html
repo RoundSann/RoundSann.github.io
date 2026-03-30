@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1774899201813">
+  <link rel="stylesheet" href="../css/post.css?v=1774899327225">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -230,17 +230,27 @@
 <p>锻刀可使用(1~)3(~5)个素材(少素材多素材需要中后期解锁),素材则决定了刀的类型,伤害等<br>
 素材共有四种数值:</p>
 <ol>
-<li>质量:几乎啥也不决定,更重的武器有略微的额外伤害比例,但重素材的基础数值基本都远不如元素石,从而屁用没有(除了被侵蚀的金属和绯绯色金)<details>
+<li>
+<p>质量:几乎啥也不决定,更重的武器有略微的额外伤害比例,但重素材的基础数值基本都远不如元素石,从而屁用没有(除了被侵蚀的金属和绯绯色金)</p>
+<details>
 <summary>点击查看详细碎碎念</summary>
- -  锻造时,每一点溢出质量提供0.2强化次数和1.8耐久
- -  强化时,每一点质量提供0.6物理伤害和2.4耐久
- -  由于绝大部分情况下质量并不会溢出很多(除了女怪武器),同时本身质量给的额外强化也是蚊子腿,所以很辣鸡
- -  且高重素材的数值都是飞舞,魔铁3重3+2+2=7伤,魔银4重2+4+2=8伤,锡石4重13伤,魔锆11+4+2=17伤,陨铁4重21+3=24伤,而前期的魔石为1+3+8=12伤,中期魔晶石2+7+10=19伤,直接秒了这堆没用的飞舞.
- -  高重素材极大地增加了你背包的负担,同时没法提供优秀的额外输出,纯纯拉完了
+<ul>
+<li>锻造时,每一点溢出质量提供0.2强化次数和1.8耐久</li>
+<li>强化时,每一点质量提供0.6物理伤害和2.4耐久</li>
+<li>由于绝大部分情况下质量并不会溢出很多(除了女怪武器),同时本身质量给的额外强化也是蚊子腿,所以很辣鸡</li>
+<li>且高重素材的数值都是飞舞,魔铁3重3+2+2=7伤,魔银4重2+4+2=8伤,锡石4重13伤,魔锆11+4+2=17伤,陨铁4重21+3=24伤,而前期的魔石为1+3+8=12伤,中期魔晶石2+7+10=19伤,直接秒了这堆没用的飞舞.</li>
+<li>高重素材极大地增加了你背包的负担,同时没法提供优秀的额外输出,纯纯拉完了</li>
+</ul>
 </li>
-<li>韧性:锻造和强化时,每一点(溢出)韧性提供0.875物理伤害和0.0625会心率和0.0625格挡值</li>
-<li>魔力:锻造和强化时,每一点(溢出)魔力提供1属性伤害</li>
-<li>额外词条:可以给武器提供附魔,例如吸血等</li>
+<li>
+<p>韧性:锻造和强化时,每一点(溢出)韧性提供0.875物理伤害和0.0625会心率和0.0625格挡值</p>
+</li>
+<li>
+<p>魔力:锻造和强化时,每一点(溢出)魔力提供1属性伤害</p>
+</li>
+<li>
+<p>额外词条:可以给武器提供附魔,例如吸血等</p>
+</li>
 </ol>
 <p>总结一下,武器的伤害值大致可视为 总伤害=0.875韧性+魔力 更极端一点你甚至可以舍去那极小的常数,直接视为<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>总伤害</mtext><mo>=</mo><mtext>韧性</mtext><mo>+</mo><mtext>魔力</mtext></mrow><annotation encoding="application/x-tex">总伤害=韧性+魔力</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">总伤害</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord cjk_fallback">韧性</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord cjk_fallback">魔力</span></span></span></span></eq></p>
 <p>那么锻刀的方向也就十分明了,哪个总数值高我选哪个.查表不难得出,几种元素石是总数值最高的,最低级的魔石/xx之石总伤1+3+8=12伤,中级的魔晶石/xx结晶石总伤2+7+10=19伤,后期的魔晶核心/xx元素总伤3+13+12=28伤</p>
@@ -1121,7 +1131,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     language: "zh-CN",
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "Ergebnis",
+    search_result: "نتيجة",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -1159,7 +1169,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/search.js"></script>
 <script src="../js/theme-switch.js"></script>
 
-<script src="../js/password-protect.js?v=1774899201813"></script>
+<script src="../js/password-protect.js?v=1774899327226"></script>
 
     <script>
       // 移动端菜单切换
