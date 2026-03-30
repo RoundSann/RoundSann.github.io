@@ -19,10 +19,10 @@ PLUS_MODE      = True         # 武器破碎陷阱
 
 POWER_VALUE    = 91           # 韧性原始值
 MAGIC_VALUE    = 88           # 魔力原始值
-MAIN_AFFIX_ID  = 146           # 主词条编号(1~151)或英文type名
+MAIN_AFFIX_ID  = 151           # 主词条编号(1~151)或英文type名
+MAIN_AFFIX_VAL = 30         # 主词条原始值
 SUB1_AFFIX_ID  = 21           # 副词条1编号(1~151)或英文type名
 SUB2_AFFIX_ID  = 26           # 副词条2编号(1~151)或英文type名
-MAIN_AFFIX_VAL = 40          # 主词条原始值
 SUB1_AFFIX_VAL = 50           # 副词条1原始值
 SUB2_AFFIX_VAL = 30           # 副词条2原始值
 # =====================================================
