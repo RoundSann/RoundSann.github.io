@@ -21,8 +21,8 @@ POWER_VALUE    = 91           # 韧性原始值
 MAGIC_VALUE    = 88           # 魔力原始值
 MAIN_AFFIX_ID  = 143           # 主词条编号(1~151)或英文type名
 MAIN_AFFIX_VAL = 130         # 主词条原始值
-SUB1_AFFIX_ID  = 19           # 副词条1编号(1~151)或英文type名
-SUB1_AFFIX_VAL = 90           # 副词条1原始值
+SUB1_AFFIX_ID  = 39           # 副词条1编号(1~151)或英文type名
+SUB1_AFFIX_VAL = 18           # 副词条1原始值
 SUB2_AFFIX_ID  = 143           # 副词条2编号(1~151)或英文type名
 SUB2_AFFIX_VAL = 63           # 副词条2原始值
 # =====================================================
