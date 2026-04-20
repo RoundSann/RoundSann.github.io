@@ -17,8 +17,8 @@ import math
 HARD_MODE      = True         # 最高难度
 PLUS_MODE      = True         # 武器破碎陷阱
 
-POWER_VALUE    = 91           # 韧性原始值
-MAGIC_VALUE    = 88           # 魔力原始值
+POWER_VALUE    = 42           # 韧性原始值
+MAGIC_VALUE    = 182           # 魔力原始值
 MAIN_AFFIX_ID  = 143           # 主词条编号(1~151)或英文type名
 MAIN_AFFIX_VAL = 130         # 主词条原始值
 SUB1_AFFIX_ID  = 39           # 副词条1编号(1~151)或英文type名
