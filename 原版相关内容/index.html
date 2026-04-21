@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1776676237959">
+  <link rel="stylesheet" href="../css/post.css?v=1776757493543">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -161,7 +161,7 @@
         <span>TABLE OF CONTENTS</span>
       </div>
       <div class="section-content">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E9%80%9F%E5%BA%A6%E8%AE%A1%E7%AE%97"><span class="toc-text">工作速度计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%98%E7%AE%97%E7%B1%BB"><span class="toc-text">乘算类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E7%AE%97%E7%B1%BB"><span class="toc-text">加算类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A3%E7%89%A9%E6%8A%A4%E7%94%B2%E8%AE%A1%E7%AE%97"><span class="toc-text">衣物护甲计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A4%E5%AE%B3%E7%B1%BB%E5%9E%8B"><span class="toc-text">伤害类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E9%87%8F%E4%BF%9D%E6%8A%A4"><span class="toc-text">过量保护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%B2%E4%BC%A4-Cut"><span class="toc-text">割伤(Cut)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%BA%E4%BC%A4-Stab"><span class="toc-text">刺伤(Stab)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B8%E4%BC%A4"><span class="toc-text">炸伤</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E9%80%9F%E5%BA%A6%E8%AE%A1%E7%AE%97"><span class="toc-text">工作速度计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E7%AE%97%E7%B1%BB"><span class="toc-text">加算类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A3%E7%89%A9%E6%8A%A4%E7%94%B2%E8%AE%A1%E7%AE%97"><span class="toc-text">衣物护甲计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A4%E5%AE%B3%E7%B1%BB%E5%9E%8B"><span class="toc-text">伤害类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E9%87%8F%E4%BF%9D%E6%8A%A4"><span class="toc-text">过量保护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%B2%E4%BC%A4-Cut"><span class="toc-text">割伤(Cut)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%BA%E4%BC%A4-Stab"><span class="toc-text">刺伤(Stab)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B8%E4%BC%A4"><span class="toc-text">炸伤</span></a></li></ol></li></ol>
       </div>
     </div>
     
@@ -288,24 +288,24 @@
 <ul>
 <li>我们记<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span></eq>表示一项工作速度的基础值,例如智人种的普通工作速度基础值为100%</li>
 <li>我们记<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">G</span></span></span></span></eq>表示全局工作速度</li>
-<li>我们定义算符: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msup><mi>a</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mi>x</mi><mo stretchy="false">(</mo><mi>b</mi><mi>M</mi><mo stretchy="false">)</mo><mo>:</mo><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>a</mi><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mtext>最大取</mtext><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a&#x27;)x(bM):=(1+a(x-1))(\text{最大取}b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">))</span><span class="mopen">(</span><span class="mord text"><span class="mord cjk_fallback">最大取</span></span><span class="mord mathnormal">b</span><span class="mclose">)</span></span></span></span></eq>. 其中,a称为权重,b称为最大值</li>
-<li>我们定义算符: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mo stretchy="false">(</mo><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mi>c</mi><mo stretchy="false">)</mo><mi>y</mi><mo stretchy="false">(</mo><mi>d</mi><mi>M</mi><mo stretchy="false">)</mo><mo>:</mo><mo>=</mo><mo stretchy="false">(</mo><mi>c</mi><mi>y</mi><mo>−</mo><mi>c</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mtext>最大取</mtext><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(&#x27;c)y(dM):=(cy-c)(\text{最大取}d)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mopen"><span class="mopen">(</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mopen">(</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">cy</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord text"><span class="mord cjk_fallback">最大取</span></span><span class="mord mathnormal">d</span><span class="mclose">)</span></span></span></span></eq>. 其中,c称为影响,d称为最大值</li>
+<li>我们定义算符: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msup><mi>a</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mi>x</mi><mo stretchy="false">(</mo><mi>b</mi><mi>M</mi><mo stretchy="false">)</mo><mo>:</mo><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>a</mi><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mtext>最大取</mtext><mi>b</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(a&#x27;)x(bM):=(1+a(x-1))(最大取b)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">))</span><span class="mopen">(</span><span class="mord cjk_fallback">最大取</span><span class="mord mathnormal">b</span><span class="mclose">)</span></span></span></span></eq>. 其中,a称为权重,b称为最大值</li>
+<li>我们定义算符: <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mo stretchy="false">(</mo><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mi>c</mi><mo stretchy="false">)</mo><mi>y</mi><mo stretchy="false">(</mo><mi>d</mi><mi>M</mi><mo stretchy="false">)</mo><mo>:</mo><mo>=</mo><mo stretchy="false">(</mo><mi>c</mi><mi>y</mi><mo>−</mo><mi>c</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mtext>最大取</mtext><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(&#x27;c)y(dM):=(cy-c)(最大取d)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mopen"><span class="mopen">(</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mopen">(</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">cy</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">c</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord cjk_fallback">最大取</span><span class="mord mathnormal">d</span><span class="mclose">)</span></span></span></span></eq>. 其中,c称为影响,d称为最大值</li>
 </ul>
 <p>工作速度计算主要分为两类</p>
-<h3 id="乘算类">乘算类</h3>
-<p>第一种为乘算,主要是各种工作速度/工作效率的计算方式.其大体结构为:</p>
-<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>k</mi><mi>G</mi><mo>×</mo><mi>f</mi><mo stretchy="false">(</mo><mtext>技能等级</mtext><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><msup><mtext>操作权重</mtext><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mtext>操作能力</mtext><mo>×</mo><mo stretchy="false">(</mo><msup><mtext>视觉权重</mtext><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mtext>视觉能力</mtext></mrow><annotation encoding="application/x-tex">kG\times f(\text{技能等级})\times (\text{操作权重}&#x27;)\text{操作能力}\times(\text{视觉权重}&#x27;)\text{视觉能力}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord text"><span class="mord cjk_fallback">技能等级</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0751em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">操作权重</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8251em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord text"><span class="mord cjk_fallback">操作能力</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0751em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord text"><span class="mord cjk_fallback">视觉权重</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8251em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord text"><span class="mord cjk_fallback">视觉能力</span></span></span></span></span></span></eqn></section><p>亦即:  基础值×全局工作速度×技能等级加成×加权后的操作能力×加权后的视觉能力</p>
-<p>例如,建造速度的公式为 <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>G</mi><mo>×</mo><mo stretchy="false">(</mo><mn>0.3</mn><mo>+</mo><mn>0.0875</mn><mtext>建造</mtext><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><msup><mn>1</mn><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mtext>操作</mtext><mo>×</mo><mo stretchy="false">(</mo><msup><mn>0.2</mn><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mtext>视觉</mtext><mo stretchy="false">(</mo><mn>1</mn><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">kG\times(0.3+0.0875建造)\times(1&#x27;)操作\times(0.2&#x27;)视觉(1M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0.3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0.0875</span><span class="mord cjk_fallback">建造</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord cjk_fallback">操作</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0.</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord cjk_fallback">视觉</span><span class="mopen">(</span><span class="mord">1</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span></eq>,若某种族的建造速度基础值为<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.2</mn></mrow><annotation encoding="application/x-tex">1.2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.2</span></span></span></span></eq>,全局工作速度<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.35</mn></mrow><annotation encoding="application/x-tex">1.35</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.35</span></span></span></span></eq>,建造10级,操作能力<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn></mrow><annotation encoding="application/x-tex">1.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.5</span></span></span></span></eq>,视觉能力<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.6</mn></mrow><annotation encoding="application/x-tex">0.6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.6</span></span></span></span></eq>,则其实际建造速度为</p>
-<p>$\begin{aligned}<br>
+<ul>
+<li>乘算类:大部分计算走的都是乘算,例如各种工作速度/工作效率的计算方式.<br>
+其大体结构为:<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>G</mi><mo>×</mo><mi>f</mi><mo stretchy="false">(</mo><mtext>技能等级</mtext><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><mtext>操作权</mtext><msup><mtext>重</mtext><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mtext>操作能力</mtext><mo>×</mo><mo stretchy="false">(</mo><mtext>视觉权</mtext><msup><mtext>重</mtext><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mtext>视觉能力</mtext></mrow><annotation encoding="application/x-tex">kG\times f(技能等级)\times (操作权重&#x27;)操作能力\times(视觉权重&#x27;)视觉能力</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord cjk_fallback">技能等级</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">操作权</span><span class="mord"><span class="mord cjk_fallback">重</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord cjk_fallback">操作能力</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">视觉权</span><span class="mord"><span class="mord cjk_fallback">重</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord cjk_fallback">视觉能力</span></span></span></span></eq><br>
+亦即:  基础值×全局工作速度×技能等级加成×加权后的操作能力×加权后的视觉能力<br>
+例如,建造速度的公式为 <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>G</mi><mo>×</mo><mo stretchy="false">(</mo><mn>0.3</mn><mo>+</mo><mn>0.0875</mn><mtext>建造</mtext><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><msup><mn>1</mn><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mtext>操作</mtext><mo>×</mo><mo stretchy="false">(</mo><msup><mn>0.2</mn><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mtext>视觉</mtext><mo stretchy="false">(</mo><mn>1</mn><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">kG\times(0.3+0.0875建造)\times(1&#x27;)操作\times(0.2&#x27;)视觉(1M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0.3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0.0875</span><span class="mord cjk_fallback">建造</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">1</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord cjk_fallback">操作</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0019em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0.</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7519em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord cjk_fallback">视觉</span><span class="mopen">(</span><span class="mord">1</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span></eq>,若某种族的建造速度基础值为<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.2</mn></mrow><annotation encoding="application/x-tex">1.2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.2</span></span></span></span></eq>,全局工作速度<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.35</mn></mrow><annotation encoding="application/x-tex">1.35</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.35</span></span></span></span></eq>,建造10级,操作能力<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn></mrow><annotation encoding="application/x-tex">1.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.5</span></span></span></span></eq>,视觉能力<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.6</mn></mrow><annotation encoding="application/x-tex">0.6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.6</span></span></span></span></eq>,则其实际建造速度为<br>
+$\begin{aligned}<br>
 建造速度&amp;=1.2\times 1.35\times(0.3+0.0875\times 10)\times(1’)1.5\times(0.2’)0.6(1M)\<br>
 &amp;=1.9035\times (1+1\times(1.5-1))\times (1+0.2\times(0.6-1))(1M)\<br>
 &amp;=1.9035\times 1.5\times 0.92\<br>
 &amp;=2.62683\approx 262%<br>
-\end{aligned}$</p>
-<p>在这个例子中,60%的视觉能力只带来了8%的实际减益</p>
-<p>直接套用此公式的工作速度类型有:</p>
-<details>
-<summary>点击查看完整公式列表</summary>
+\end{aligned}$</li>
+<li>加算类:主要用于战斗计算,例如射击精度</li>
+</ul>
+<p>速度相关</p>
 <table>
 <thead>
 <tr>
@@ -325,157 +325,10 @@
 <td></td>
 </tr>
 <tr>
-<td>采矿效率</td>
-<td>0.6+f(采矿)</td>
-<td>0.3(1M)</td>
-<td>0.2(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>深钻井操作速度</td>
-<td>0.04+0.12采矿</td>
-<td>1</td>
-<td>0.5(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>采矿速度</td>
-<td>0.04+0.12采矿</td>
-<td>1</td>
-<td>0.5(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>手术成功率</td>
-<td>0.1+f(医疗)</td>
-<td>1</td>
-<td>0.4(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>手术速度</td>
-<td>0.4+0.06医疗</td>
-<td>1</td>
-<td>0.7(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>治疗质量</td>
-<td>0.2+0.1医疗</td>
-<td>1(1.4M)</td>
-<td>0.7(1.4M)</td>
-<td></td>
-</tr>
-<tr>
-<td>治疗速度</td>
-<td>0.4+0.06医疗</td>
-<td>1</td>
-<td>0.8(1.3M)</td>
-<td></td>
-</tr>
-<tr>
 <td>建造速度</td>
 <td>0.3+0.0875建造</td>
 <td>1</td>
 <td>0.2(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>建造成功率</td>
-<td>0.75+f(建造)</td>
-<td>0.3</td>
-<td>0.2(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>修理成功率</td>
-<td>0.75+f(建造)</td>
-<td>0.3</td>
-<td>0.2(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>阅读速度</td>
-<td>1+0.02智识</td>
-<td></td>
-<td>1(1M)</td>
-<td>1意识</td>
-</tr>
-<tr>
-<td>植物收获效率</td>
-<td>0.6+f(种植)</td>
-<td>0.3</td>
-<td>0.2(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>种植速度</td>
-<td>0.08+0.115种植</td>
-<td>1</td>
-<td>0.3(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>屠宰速度</td>
-<td>0.4+0.06烹饪</td>
-<td>1</td>
-<td>0.4(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>屠宰效率</td>
-<td>0.75+0.025烹饪</td>
-<td>0.9</td>
-<td>0.4(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>机械族拆解速度</td>
-<td>0.4+0.06手工</td>
-<td>1</td>
-<td>0.4(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>机械族拆解效率</td>
-<td>0.75+0.025手工</td>
-<td>0.9</td>
-<td>0.4(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>制药速度</td>
-<td>0.3+0.0875智识</td>
-<td>1</td>
-<td>0.6(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>酿酒速度</td>
-<td>0.4+0.06烹饪</td>
-<td>1</td>
-<td>0.3(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>骇入速度</td>
-<td>0.75+0.025智识</td>
-<td>0.5(1.1M)</td>
-<td>0.5(1.1M)</td>
-<td>1意识(1.2M)</td>
-</tr>
-<tr>
-<td>动物收集效率</td>
-<td>0.6+f(驯兽)</td>
-<td>0.3</td>
-<td>0.2(1M)</td>
-<td></td>
-</tr>
-<tr>
-<td>动物收集速度</td>
-<td>0.04+0.12驯兽</td>
-<td>1</td>
-<td>0.5(1M)</td>
 <td></td>
 </tr>
 <tr>
@@ -486,17 +339,45 @@
 <td></td>
 </tr>
 <tr>
-<td>研究速度</td>
-<td>0.08+0.115智识</td>
-<td>0.5(1.1M)</td>
-<td>0.5(1.1M)</td>
+<td>采矿速度</td>
+<td>0.04+0.12采矿</td>
+<td>1</td>
+<td>0.5(1M)</td>
 <td></td>
 </tr>
 <tr>
-<td>钓鱼效率</td>
-<td>0.3+f(驯兽)</td>
-<td>0.3</td>
+<td>深钻井操作速度</td>
+<td>0.04+0.12采矿</td>
+<td>1</td>
+<td>0.5(1M)</td>
 <td></td>
+</tr>
+<tr>
+<td>屠宰速度</td>
+<td>0.4+0.06烹饪</td>
+<td>1</td>
+<td>0.4(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>酿酒速度</td>
+<td>0.4+0.06烹饪</td>
+<td>1</td>
+<td>0.3(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>种植速度</td>
+<td>0.08+0.115种植</td>
+<td>1</td>
+<td>0.3(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>动物收集速度</td>
+<td>0.04+0.12驯兽</td>
+<td>1</td>
+<td>0.5(1M)</td>
 <td></td>
 </tr>
 <tr>
@@ -507,7 +388,42 @@
 <td></td>
 </tr>
 <tr>
-<td>实体调查速率</td>
+<td>机械族拆解速度</td>
+<td>0.4+0.06手工</td>
+<td>1</td>
+<td>0.4(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>熔炼速度</td>
+<td>1</td>
+<td>1</td>
+<td>0.3(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>手术速度</td>
+<td>0.4+0.06医疗</td>
+<td>1</td>
+<td>0.7(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>治疗速度</td>
+<td>0.4+0.06医疗</td>
+<td>1</td>
+<td>0.8(1.3M)</td>
+<td></td>
+</tr>
+<tr>
+<td>阅读速度</td>
+<td>1+0.02智识</td>
+<td></td>
+<td>1(1M)</td>
+<td>1意识</td>
+</tr>
+<tr>
+<td>研究速度</td>
 <td>0.08+0.115智识</td>
 <td>0.5(1.1M)</td>
 <td>0.5(1.1M)</td>
@@ -519,6 +435,110 @@
 <td>0.5</td>
 <td>0.5</td>
 <td>1意识</td>
+</tr>
+<tr>
+<td>制药速度</td>
+<td>0.3+0.0875智识</td>
+<td>1</td>
+<td>0.6(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>骇入速度</td>
+<td>0.75+0.025智识</td>
+<td>0.5(1.1M)</td>
+<td>0.5(1.1M)</td>
+<td>1意识(1.2M)</td>
+</tr>
+<tr>
+<td>实体调查速率</td>
+<td>0.08+0.115智识</td>
+<td>0.5(1.1M)</td>
+<td>0.5(1.1M)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>技能等级加成</th>
+<th>操作权重</th>
+<th>视觉权重</th>
+<th>额外权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>建造成功率</td>
+<td>0.75+<a target="_blank" rel="noopener" href="https://rimworld.huijiwiki.com/wiki/%E5%BB%BA%E9%80%A0%E6%88%90%E5%8A%9F%E7%8E%87#%E6%95%B0%E6%8D%AE%E8%A1%A8">见表格</a></td>
+<td>0.3</td>
+<td>0.2(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>修理成功率</td>
+<td>0.75+<a target="_blank" rel="noopener" href="https://rimworld.huijiwiki.com/wiki/%E4%BF%AE%E7%90%86%E6%88%90%E5%8A%9F%E7%8E%87#%E6%95%B0%E6%8D%AE%E8%A1%A8">见表格</a></td>
+<td>0.3</td>
+<td>0.2(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>采矿效率</td>
+<td>0.6+<a target="_blank" rel="noopener" href="https://rimworld.huijiwiki.com/wiki/%E9%87%87%E7%9F%BF%E6%95%88%E7%8E%87#%E6%95%B0%E6%8D%AE%E8%A1%A8">见表格</a></td>
+<td>0.3(1M)</td>
+<td>0.2(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>屠宰效率</td>
+<td>0.75+0.025烹饪</td>
+<td>0.9</td>
+<td>0.4(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>植物收获效率</td>
+<td>0.6+<a target="_blank" rel="noopener" href="https://rimworld.huijiwiki.com/wiki/%E6%A4%8D%E7%89%A9%E6%94%B6%E8%8E%B7%E6%95%88%E7%8E%87#%E6%95%B0%E6%8D%AE%E8%A1%A8">见表格</a></td>
+<td>0.3</td>
+<td>0.2(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>动物收集效率</td>
+<td>0.6+<a target="_blank" rel="noopener" href="https://rimworld.huijiwiki.com/wiki/%E5%8A%A8%E7%89%A9%E6%94%B6%E9%9B%86%E6%95%88%E7%8E%87#%E6%95%B0%E6%8D%AE%E8%A1%A8">见表格</a></td>
+<td>0.3</td>
+<td>0.2(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>钓鱼效率</td>
+<td>0.3+<a target="_blank" rel="noopener" href="https://rimworld.huijiwiki.com/wiki/%E9%92%93%E9%B1%BC%E6%95%88%E7%8E%87#%E6%95%B0%E6%8D%AE%E8%A1%A8">见表格</a></td>
+<td>0.3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>机械族拆解效率</td>
+<td>0.75+0.025手工</td>
+<td>0.9</td>
+<td>0.4(1M)</td>
+<td></td>
+</tr>
+<tr>
+<td>治疗质量</td>
+<td>0.2+0.1医疗</td>
+<td>1(1.4M)</td>
+<td>0.7(1.4M)</td>
+<td></td>
+</tr>
+<tr>
+<td>手术成功率</td>
+<td>0.1+<a target="_blank" rel="noopener" href="https://rimworld.huijiwiki.com/wiki/%E6%89%8B%E6%9C%AF%E6%88%90%E5%8A%9F%E7%8E%87#%E6%95%B0%E6%8D%AE%E8%A1%A8">见表格</a></td>
+<td>1</td>
+<td>0.4(1M)</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -729,7 +749,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 正义
+                  rimworld, 正义, 种族
                   
                 </span>
               
@@ -750,6 +770,45 @@
       </div>
     
       <div class="vs-recommended-item" data-index="4" tabindex="0">
+        <a href="../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>(尚未完工)失能机关</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              施工中~暂时只有几个统计表格~太久不更的话也有可能是烂尾了 强度的话,作为玩家派系的机器人强度尚可,但作为敌对BOSS解决起来就很棘手了
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 微正义, 负正义
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  8月 17
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  3 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="5" tabindex="0">
         <a href="../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -768,7 +827,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 正义, 负正义
+                  rimworld, 负正义, 正义
                   
                 </span>
               
@@ -781,45 +840,6 @@
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
                   1 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="5" tabindex="0">
-        <a href="../%E5%8E%9F%E7%89%88%E8%99%AB%E6%97%8F%E6%89%A9%E5%B1%952/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>原版虫族扩展2</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              虫族扩展2的数值一览表 完完全全就是原版级别的数值我只能说
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-                <span class="vs-tags-preview">
-                  <i class="fas fa-tags"></i>
-                  rimworld, VE扩展, 原版向
-                  
-                </span>
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  4月 23
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  2 min
                 </span>
               </span>
             </div>
@@ -991,7 +1011,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-04-20
+      2026-04-21
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -1078,7 +1098,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     language: "zh-CN",
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "résultat",
+    search_result: "Ergebnis",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -1116,7 +1136,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/search.js"></script>
 <script src="../js/theme-switch.js"></script>
 
-<script src="../js/password-protect.js?v=1776676237960"></script>
+<script src="../js/password-protect.js?v=1776757493544"></script>
 
     <script>
       // 移动端菜单切换
