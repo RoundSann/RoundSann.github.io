@@ -184,48 +184,47 @@ pre code {
   background-color: unset;
 }
 
-/* ==================== 表格首行悬浮样式 ==================== */
+/* Floating header for horizontally scrollable post tables. */
+.post-body table thead {
+  top: 48px;
+}
 
-/* 悬浮表头容器 */
-#sticky-table-headers-container {
+.floating-table-header {
+  display: none;
   position: fixed;
-  left: 0;
-  width: 100%;
-  z-index: 99;
-  pointer-events: none;
-}
-
-/* 悬浮克隆表头 */
-.sticky-header-clone {
-  position: absolute;
-  pointer-events: auto;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-}
-
-/* 克隆表格样式 */
-.sticky-clone-table {
-  margin: 0 !important;
-  border-collapse: collapse;
-  overflow: visible !important;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
-  border-bottom: 2px solid var(--vscode-link);
-  background-color: var(--vscode-bg-light) !important;
-}
-
-.sticky-clone-table thead {
-  position: static !important;
-  background-color: var(--vscode-bg-light) !important;
-  border-bottom: 1px solid var(--vscode-border);
-}
-
-.sticky-clone-table th {
-  background-color: var(--vscode-bg-light) !important;
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  z-index: 900;
+  pointer-events: none;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 16px var(--vscode-shadow);
+  background-color: var(--vscode-bg-light);
 }
 
-.sticky-clone-table th:first-child {
-  background-color: var(--vscode-bg-light) !important;
+.floating-table-header.is-visible {
+  display: block;
+}
+
+.floating-table-header table {
+  display: table;
+  width: auto;
+  margin: 0;
+  border-collapse: collapse;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  background-color: var(--vscode-bg-light);
+  transition: none;
+}
+
+.floating-table-header thead {
+  position: static;
+}
+
+.floating-table-header th {
+  box-sizing: border-box;
+  position: static;
+  left: auto;
+  z-index: auto;
+  background-color: var(--vscode-bg-light);
+  white-space: nowrap;
 }
