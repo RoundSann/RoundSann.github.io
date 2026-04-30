@@ -4,18 +4,26 @@
  */
 
 /* ==================== 表格样式 ==================== */
-table {
-  display: block;
+
+/* 表格包装容器 - 用于支持横向滚动和sticky header */
+.table-wrapper {
   width: 100%;
   margin: 1.5em 0;
-  border-collapse: collapse;
-  border-radius: 6px;
   overflow-x: auto;
+  overflow-y: visible;
+  border-radius: 6px;
   box-shadow: 0 4px 16px var(--vscode-shadow);
   background-color: var(--vscode-bg);
-  font-size: 0.95em;
   scrollbar-width: thin;
   position: relative;
+}
+
+/* 表格本体 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+  margin: 0;
 }
 
 /* 表头样式 */
@@ -91,8 +99,7 @@ tbody tr:nth-child(odd) {
 
 /* 响应式表格 */
 @media (max-width: 768px) {
-  table {
-    display: block;
+  .table-wrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
