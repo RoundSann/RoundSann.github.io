@@ -4,32 +4,27 @@
  */
 
 /* ==================== 表格样式 ==================== */
-
-/* 表格包装容器 - 用于支持横向滚动 */
-.table-wrapper {
+table {
+  display: block;
   width: 100%;
   margin: 1.5em 0;
-  overflow-x: auto;
-  overflow-y: visible; /* 关键：不让wrapper成为垂直滚动容器，sticky才能相对于页面视口 */
+  border-collapse: collapse;
   border-radius: 6px;
+  overflow-x: auto;
   box-shadow: 0 4px 16px var(--vscode-shadow);
   background-color: var(--vscode-bg);
-  scrollbar-width: thin;
-  /* 注意：不设置position，保持默认static */
-}
-
-/* 表格本体 */
-table {
-  width: 100%;
-  border-collapse: collapse;
   font-size: 0.95em;
-  margin: 0;
+  scrollbar-width: thin;
+  position: relative;
 }
 
 /* 表头样式 */
 thead {
   background-color: var(--vscode-bg-light);
   border-bottom: 1px solid var(--vscode-border);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 th {
@@ -96,7 +91,8 @@ tbody tr:nth-child(odd) {
 
 /* 响应式表格 */
 @media (max-width: 768px) {
-  .table-wrapper {
+  table {
+    display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
