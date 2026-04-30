@@ -5,17 +5,17 @@
 
 /* ==================== 表格样式 ==================== */
 
-/* 表格包装容器 - 用于支持横向滚动和sticky header */
+/* 表格包装容器 - 用于支持横向滚动 */
 .table-wrapper {
   width: 100%;
   margin: 1.5em 0;
   overflow-x: auto;
-  overflow-y: visible;
+  overflow-y: visible; /* 关键：不让wrapper成为垂直滚动容器，sticky才能相对于页面视口 */
   border-radius: 6px;
   box-shadow: 0 4px 16px var(--vscode-shadow);
   background-color: var(--vscode-bg);
   scrollbar-width: thin;
-  position: relative;
+  /* 注意：不设置position，保持默认static */
 }
 
 /* 表格本体 */
