@@ -183,3 +183,49 @@ pre code {
   position: static;
   background-color: unset;
 }
+
+/* ==================== 表格首行悬浮样式 ==================== */
+
+/* 悬浮表头容器 */
+#sticky-table-headers-container {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  pointer-events: none;
+}
+
+/* 悬浮克隆表头 */
+.sticky-header-clone {
+  position: absolute;
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* 克隆表格样式 */
+.sticky-clone-table {
+  margin: 0 !important;
+  border-collapse: collapse;
+  overflow: visible !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid var(--vscode-link);
+  background-color: var(--vscode-bg-light) !important;
+}
+
+.sticky-clone-table thead {
+  position: static !important;
+  background-color: var(--vscode-bg-light) !important;
+  border-bottom: 1px solid var(--vscode-border);
+}
+
+.sticky-clone-table th {
+  background-color: var(--vscode-bg-light) !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sticky-clone-table th:first-child {
+  background-color: var(--vscode-bg-light) !important;
+}
