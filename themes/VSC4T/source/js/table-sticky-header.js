@@ -1,30 +1,45 @@
 /**
  * 表格首行悬挂功能
- * 当表格过长时,让表头固定在页面顶部,类似Excel的冻结窗格
+ * 当表格在垂直方向超出视口时,表头固定在页面顶部,类似Excel冻结窗格
  */
 (function() {
   'use strict';
 
-  // 配置
-  const HEADER_HEIGHT = 60; // 固定导航栏高度
-  const STICKY_Z_INDEX = 999; // sticky表头的z-index
-
-  // 存储所有表格信息
-  const tables = [];
+  var tables = [];
 
   /**
-   * 初始化所有表格
+   * 获取固定导航栏的实际底部位置（动态计算）
+   */
+  function getHeaderBottom() {
+    var header = document.querySelector('.vs-header');
+    if (!header) return 0;
+    return header.getBoundingClientRect().bottom;
+  }
+
+  /**
+   * 检查元素是否处于折叠的 <details> 内
+   */
+  function isInCollapsedDetails(el) {
+    var p = el.parentElement;
+    while (p) {
+      if (p.tagName === 'DETAILS' && !p.open) return true;
+      p = p.parentElement;
+    }
+    return false;
+  }
+
+  /**
+   * 初始化所有表格：包裹 wrapper + 创建浮动表头
    */
   function initTables() {
-    // 查找所有表格
-    const allTables = document.querySelectorAll('.vscode-markdown table');
+    var allTables = document.querySelectorAll('.vscode-markdown table');
 
-    allTables.forEach((table, index) => {
-      const thead = table.querySelector('thead');
+    allTables.forEach(function(table) {
+      var thead = table.querySelector('thead');
       if (!thead) return;
 
-      // 为每个表格创建包装容器（如果还没有）
-      let wrapper = table.parentElement;
+      // 包裹 table-wrapper（如果尚未包裹）
+      var wrapper = table.parentElement;
       if (!wrapper.classList.contains('table-wrapper')) {
         wrapper = document.createElement('div');
         wrapper.className = 'table-wrapper';
@@ -32,223 +47,165 @@
         wrapper.appendChild(table);
       }
 
-      // 存储表格信息
-      tables.push({
+      var info = {
         table: table,
         thead: thead,
         wrapper: wrapper,
-        stickyThead: null,
-        isSticky: false,
-        lastScrollLeft: 0
-      });
+        floatingHeader: null,
+        clonedTable: null,
+        syncLayer: null,
+        isActive: false
+      };
+
+      tables.push(info);
     });
 
-    // 创建sticky表头（延迟创建，避免影响初始渲染）
-    setTimeout(() => {
-      tables.forEach(tableInfo => createStickyThead(tableInfo));
-    }, 100);
+    // 延迟创建浮动表头，等布局稳定
+    setTimeout(function() {
+      tables.forEach(function(info) { createFloatingHeader(info); });
+    }, 300);
   }
 
   /**
-   * 创建sticky表头（克隆原始表头）
+   * 创建浮动表头 DOM
    */
-  function createStickyThead(tableInfo) {
-    const { thead, wrapper } = tableInfo;
+  function createFloatingHeader(info) {
+    var fh = document.createElement('div');
+    fh.className = 'table-floating-header';
+    fh.style.cssText =
+      'position:fixed;z-index:999;display:none;overflow:hidden;' +
+      'background-color:var(--vscode-bg-light);' +
+      'border-bottom:1px solid var(--vscode-border);' +
+      'box-shadow:0 2px 8px rgba(0,0,0,0.15);';
 
-    // 创建sticky表头容器
-    const stickyContainer = document.createElement('div');
-    stickyContainer.className = 'sticky-thead-container';
-    stickyContainer.style.cssText = `
-      position: fixed;
-      top: ${HEADER_HEIGHT}px;
-      left: 0;
-      right: 0;
-      z-index: ${STICKY_Z_INDEX};
-      display: none;
-      overflow-x: auto;
-      background-color: var(--vscode-bg-light);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      border-bottom: 1px solid var(--vscode-border);
-    `;
+    // 同步层：通过 transform 跟随横向滚动
+    var syncLayer = document.createElement('div');
+    syncLayer.className = 'table-sync-layer';
 
     // 克隆表头
-    const clonedThead = thead.cloneNode(true);
-    const clonedTable = document.createElement('table');
-    clonedTable.appendChild(clonedThead);
-    clonedTable.style.cssText = `
-      width: ${tableInfo.table.offsetWidth}px;
-      margin: 0;
-      border-collapse: collapse;
-    `;
+    var clonedTable = document.createElement('table');
+    clonedTable.style.cssText = 'margin:0;border-collapse:collapse;';
+    clonedTable.appendChild(info.thead.cloneNode(true));
 
-    // 同步列宽
-    syncColumnWidths(tableInfo.table, clonedTable);
+    syncLayer.appendChild(clonedTable);
+    fh.appendChild(syncLayer);
+    document.body.appendChild(fh);
 
-    stickyContainer.appendChild(clonedTable);
-    document.body.appendChild(stickyContainer);
+    info.floatingHeader = fh;
+    info.clonedTable = clonedTable;
+    info.syncLayer = syncLayer;
 
-    tableInfo.stickyThead = stickyContainer;
-    tableInfo.clonedTable = clonedTable;
-
-    // 监听表格容器的横向滚动
-    wrapper.addEventListener('scroll', () => {
-      if (tableInfo.isSticky) {
-        tableInfo.stickyThead.scrollLeft = wrapper.scrollLeft;
-      }
-      tableInfo.lastScrollLeft = wrapper.scrollLeft;
-    });
-  }
-
-  /**
-   * 同步列宽
-   */
-  function syncColumnWidths(sourceTable, targetTable) {
-    const sourceThs = sourceTable.querySelectorAll('thead th');
-    const targetThs = targetTable.querySelectorAll('thead th');
-
-    sourceThs.forEach((th, index) => {
-      if (targetThs[index]) {
-        targetThs[index].style.width = `${th.offsetWidth}px`;
-        targetThs[index].style.minWidth = `${th.offsetWidth}px`;
+    // 横向滚动同步
+    info.wrapper.addEventListener('scroll', function() {
+      if (info.isActive) {
+        info.syncLayer.style.transform = 'translateX(' + (-info.wrapper.scrollLeft) + 'px)';
       }
     });
-  }
 
-  /**
-   * 检查元素是否在视口中
-   */
-  function isElementInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-      rect.bottom > HEADER_HEIGHT &&
-      rect.top < window.innerHeight
-    );
-  }
-
-  /**
-   * 检查表格是否需要sticky表头
-   */
-  function shouldShowSticky(tableInfo) {
-    const tableRect = tableInfo.table.getBoundingClientRect();
-    const theadRect = tableInfo.thead.getBoundingClientRect();
-
-    // 表头已经滚出视口顶部（在导航栏下方）
-    const theadAboveViewport = theadRect.bottom <= HEADER_HEIGHT;
-
-    // 表格底部还在视口中
-    const tableStillVisible = tableRect.bottom > HEADER_HEIGHT + 50;
-
-    return theadAboveViewport && tableStillVisible;
-  }
-
-  /**
-   * 更新sticky表头位置
-   */
-  function updateStickyThead(tableInfo) {
-    const { wrapper, stickyThead, clonedTable } = tableInfo;
-
-    if (!stickyThead) return;
-
-    const needSticky = shouldShowSticky(tableInfo);
-
-    if (needSticky && !tableInfo.isSticky) {
-      // 显示sticky表头
-      stickyThead.style.display = 'block';
-      tableInfo.isSticky = true;
-
-      // 同步横向滚动位置
-      stickyThead.scrollLeft = wrapper.scrollLeft;
-
-      // 更新宽度
-      clonedTable.style.width = `${tableInfo.table.offsetWidth}px`;
-      syncColumnWidths(tableInfo.table, clonedTable);
-
-      // 设置sticky表头的位置
-      const tableRect = tableInfo.table.getBoundingClientRect();
-      stickyThead.style.left = `${tableRect.left}px`;
-      stickyThead.style.width = `${tableRect.width}px`;
-
-    } else if (!needSticky && tableInfo.isSticky) {
-      // 隐藏sticky表头
-      stickyThead.style.display = 'none';
-      tableInfo.isSticky = false;
-
-    } else if (needSticky && tableInfo.isSticky) {
-      // 更新位置和宽度
-      const tableRect = tableInfo.table.getBoundingClientRect();
-      stickyThead.style.left = `${tableRect.left}px`;
-      stickyThead.style.width = `${tableRect.width}px`;
-      clonedTable.style.width = `${tableInfo.table.offsetWidth}px`;
-
-      // 同步列宽（响应窗口大小变化）
-      syncColumnWidths(tableInfo.table, clonedTable);
+    // 监听 details 的 toggle 事件
+    var details = info.wrapper.closest('details');
+    if (details) {
+      details.addEventListener('toggle', function() {
+        if (!details.open && info.isActive) {
+          info.floatingHeader.style.display = 'none';
+          info.isActive = false;
+        }
+      });
     }
   }
 
   /**
-   * 滚动事件处理器（使用节流）
+   * 同步列宽（源表 -> 克隆表）
    */
-  let ticking = false;
+  function syncColumnWidths(srcTable, tgtTable) {
+    var srcThs = srcTable.querySelectorAll('thead th');
+    var tgtThs = tgtTable.querySelectorAll('thead th');
+    for (var i = 0; i < srcThs.length; i++) {
+      if (tgtThs[i]) {
+        var w = srcThs[i].offsetWidth;
+        tgtThs[i].style.width = w + 'px';
+        tgtThs[i].style.minWidth = w + 'px';
+      }
+    }
+  }
+
+  /**
+   * 更新单个表格的浮动表头状态
+   */
+  function updateTable(info) {
+    var fh = info.floatingHeader;
+    if (!fh) return;
+
+    // 折叠状态检查
+    if (isInCollapsedDetails(info.wrapper)) {
+      if (info.isActive) { fh.style.display = 'none'; info.isActive = false; }
+      return;
+    }
+
+    var headerBottom = getHeaderBottom();
+    var theadRect = info.thead.getBoundingClientRect();
+    var wrapperRect = info.wrapper.getBoundingClientRect();
+
+    // 表头已滚出导航栏底部 && 表格底部仍然可见
+    var needSticky = theadRect.bottom <= headerBottom && wrapperRect.bottom > headerBottom + 30;
+
+    if (needSticky) {
+      if (!info.isActive) {
+        fh.style.display = 'block';
+        info.isActive = true;
+      }
+      // 位置 = 导航栏底部, 宽度 = wrapper 可见宽度
+      fh.style.top = headerBottom + 'px';
+      fh.style.left = wrapperRect.left + 'px';
+      fh.style.width = wrapperRect.width + 'px';
+
+      // 克隆表宽度 = 原表全宽（可能超出 wrapper，由 overflow:hidden 裁剪）
+      info.clonedTable.style.width = info.table.offsetWidth + 'px';
+      syncColumnWidths(info.table, info.clonedTable);
+
+      // 同步横向滚动偏移
+      info.syncLayer.style.transform = 'translateX(' + (-info.wrapper.scrollLeft) + 'px)';
+
+    } else if (info.isActive) {
+      fh.style.display = 'none';
+      info.isActive = false;
+    }
+  }
+
+  // ---- 滚动 & resize ----
+  var ticking = false;
   function onScroll() {
     if (!ticking) {
-      window.requestAnimationFrame(() => {
-        tables.forEach(tableInfo => updateStickyThead(tableInfo));
+      requestAnimationFrame(function() {
+        tables.forEach(updateTable);
         ticking = false;
       });
       ticking = true;
     }
   }
 
-  /**
-   * 窗口大小改变时重新计算
-   */
   function onResize() {
-    // 隐藏所有sticky表头
-    tables.forEach(tableInfo => {
-      if (tableInfo.stickyThead) {
-        tableInfo.stickyThead.style.display = 'none';
-        tableInfo.isSticky = false;
+    tables.forEach(function(info) {
+      if (info.floatingHeader) {
+        info.floatingHeader.style.display = 'none';
+        info.isActive = false;
       }
     });
-
-    // 延迟重新计算
-    setTimeout(() => {
-      tables.forEach(tableInfo => {
-        if (tableInfo.clonedTable) {
-          tableInfo.clonedTable.style.width = `${tableInfo.table.offsetWidth}px`;
-          syncColumnWidths(tableInfo.table, tableInfo.clonedTable);
-        }
-        updateStickyThead(tableInfo);
-      });
-    }, 100);
+    setTimeout(function() { tables.forEach(updateTable); }, 100);
   }
 
-  /**
-   * 初始化
-   */
+  // ---- 启动 ----
   function init() {
-    // 等待DOM完全加载
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('DOMContentLoaded', function() {
         setTimeout(initTables, 200);
       });
     } else {
       setTimeout(initTables, 200);
     }
-
-    // 监听滚动事件
     window.addEventListener('scroll', onScroll, { passive: true });
-
-    // 监听窗口大小改变
     window.addEventListener('resize', onResize, { passive: true });
   }
 
-  // 启动
   init();
-
-  // 暴露API供调试使用
-  window.TableStickyHeader = {
-    refresh: initTables,
-    tables: tables
-  };
 })();

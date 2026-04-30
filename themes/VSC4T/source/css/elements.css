@@ -30,9 +30,6 @@ table {
 thead {
   background-color: var(--vscode-bg-light);
   border-bottom: 1px solid var(--vscode-border);
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 
 th {
