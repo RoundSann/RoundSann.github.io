@@ -4,43 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title> | 缘神</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="A simple dark Hexo theme inspired by code.">
+  <meta name="keywords" content="">
+  <meta name="author" content="Round">
+  <link rel="canonical" href="https://RoundSann.github.io">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content=" | 缘神">
+  <meta property="og:description" content="A simple dark Hexo theme inspired by code.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://RoundSann.github.io">
+  <meta property="og:site_name" content="缘神">
   
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content=" | 缘神">
+  <meta name="twitter:description" content="A simple dark Hexo theme inspired by code.">
+
   <!-- Favicon 配置 -->
   
-    
-      <link rel="icon" type="image/x-icon" href="../../favicon.ico">
-    
-    
-      <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.ico">
-    
-    
-      <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.ico">
-    
-    
-      <link rel="icon" type="image/png" sizes="192x192" href="../../favicon.ico">
-    
-    
-      <link rel="apple-touch-icon" sizes="180x180" href="../../favicon.ico">
-    
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+
+  <!-- 外部样式 - 统一使用 jsdelivr CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- 代码高亮样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-dark.min.css" crossorigin="anonymous">
+
+  <!-- Mermaid.js 库 (defer加载) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" crossorigin="anonymous"></script>
+
+  <!-- 主题样式 -->
   <link rel="stylesheet" href="../../css/theme-colors.css">
   <link rel="stylesheet" href="../../css/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- 添加代码高亮样式 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
-  <!-- 添加highlight.js库 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <!-- 添加mermaid.js库 -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <link rel="stylesheet" href="../../css/code.css">
   <link rel="stylesheet" href="../../css/code-custom.css">
   <link rel="stylesheet" href="../../css/code-languages.css">
   <link rel="stylesheet" href="../../css/mermaid.css">
 
   <link rel="stylesheet" href="../../css/vs-code.css">
-  <link rel="stylesheet" href="../../css/post.css?v=1777648419633">
+  <link rel="stylesheet" href="../../css/post.css?v=1777648757200">
   <link rel="stylesheet" href="../../css/tag.css">
   <link rel="stylesheet" href="../../css/categories.css">
   <link rel="stylesheet" href="../../css/archive.css">
@@ -53,16 +59,17 @@
 
   <!-- Add any custom head content here -->
 
-  <script src="../../js/explorer.js"></script>
-  <script src="../../js/code-copy.js"></script>
-  <script src="../../js/code-enhance.js"></script>
+  <script defer src="../../js/explorer.js"></script>
+  <script defer src="../../js/code-enhance.js"></script>
 <meta name="generator" content="Hexo 8.1.1"></head>
 
   <body>
     <div class="wrapper">
-      <div class="mobile-menu-toggle">
+      <div class="mobile-menu-toggle" aria-label="Toggle sidebar menu" role="button" tabindex="0">
         <i class="fas fa-bars"></i>
       </div>
+      <!-- 移动端侧边栏遮罩层 -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
       <header class="vs-header">
   <nav class="vs-nav">
     <div class="nav-left">
@@ -187,125 +194,327 @@
     </div>
     
     <div class="content-area">
-      <div class="category-detail">
-        <div class="category-header">
-          <i class="fas fa-folder"></i>
-          <h2>rimworld</h2>
-          <span class="count">10 posts</span>
+      
+
+      <!-- 分类 Hero 横幅 -->
+      <div class="category-detail-hero has-cover">
+        
+          <img class="category-detail-hero-img" src="/images/%E6%82%A0%E5%85%B0/%E6%82%A0%E5%85%B0-%E5%9F%BA%E5%9B%A0.png" alt="rimworld" loading="lazy">
+        
+        <div class="category-detail-hero-overlay"></div>
+        <div class="category-detail-hero-content">
+          <div class="category-detail-hero-icon">
+            <i class="fas fa-folder-open"></i>
+          </div>
+          <h1 class="category-detail-hero-title">rimworld</h1>
+          
+          <div class="category-detail-hero-meta">
+            <span class="category-detail-hero-count">
+              <i class="fas fa-file-alt"></i>
+              10 posts
+            </span>
+          </div>
         </div>
-        <div class="category-posts">
+      </div>
+
+      <!-- 文章列表 -->
+      <div class="category-detail-posts">
+        
           
-            <div class="post-item">
-              <i class="fas fa-file-alt"></i>
-              <div class="post-info">
-                <a href="../../rimworld%E8%A1%A8%E6%A0%BC%E5%90%88%E9%9B%86/">Rimworld表格合集</a>
-                <span class="date">
-                  <i class="fas fa-calendar-alt"></i>
-                  2026-01-13
-                </span>
+          <a href="../../rimworld%E8%A1%A8%E6%A0%BC%E5%90%88%E9%9B%86/" class="category-detail-card">
+            <div class="category-detail-card-body">
+              <div class="category-detail-card-header">
+                <i class="fas fa-file-alt"></i>
+                <span class="category-detail-card-title">Rimworld表格合集</span>
+                
               </div>
-            </div>
-          
-            <div class="post-item">
-              <i class="fas fa-file-alt"></i>
-              <div class="post-info">
-                <a href="../../%E5%8E%9F%E7%89%88%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">原版相关内容</a>
-                <span class="date">
-                  <i class="fas fa-calendar-alt"></i>
-                  2025-12-17
-                </span>
+              <div class="category-detail-card-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2026-01-13</span>
+                
+                  <span class="category-detail-card-tags">
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> rimworld</span>
+                    
+                  </span>
+                
               </div>
+              <p class="category-detail-card-excerpt">
+                本Blog所有表格合集...
+              </p>
             </div>
+            
+          </a>
+        
           
-            <div class="post-item">
-              <i class="fas fa-file-alt"></i>
-              <div class="post-info">
-                <a href="../../%E4%BD%BF%E7%94%A8%E9%A1%BB%E7%9F%A5%E5%8F%8A%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95mod%E5%86%B2%E7%AA%81/">使用须知及个人记录Mod冲突</a>
-                <span class="date">
-                  <i class="fas fa-calendar-alt"></i>
-                  2025-12-08
-                </span>
+          <a href="../../%E5%8E%9F%E7%89%88%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" class="category-detail-card">
+            <div class="category-detail-card-body">
+              <div class="category-detail-card-header">
+                <i class="fas fa-file-alt"></i>
+                <span class="category-detail-card-title">原版相关内容</span>
+                
               </div>
-            </div>
-          
-            <div class="post-item">
-              <i class="fas fa-file-alt"></i>
-              <div class="post-info">
-                <a href="../../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/">边缘世界种族数据提取器</a>
-                <span class="date">
-                  <i class="fas fa-calendar-alt"></i>
-                  2025-11-23
-                </span>
+              <div class="category-detail-card-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2025-12-17</span>
+                
+                  <span class="category-detail-card-tags">
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> rimworld</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 原版</span>
+                    
+                  </span>
+                
               </div>
+              <p class="category-detail-card-excerpt">
+                存放一些在mod中发现的原版相关的有趣内容...
+              </p>
             </div>
+            
+          </a>
+        
           
-            <div class="post-item">
-              <i class="fas fa-file-alt"></i>
-              <div class="post-info">
-                <a href="../../%E8%90%8C%E8%9E%88/">萌螈</a>
-                <span class="date">
-                  <i class="fas fa-calendar-alt"></i>
-                  2025-11-21
-                </span>
+          <a href="../../%E4%BD%BF%E7%94%A8%E9%A1%BB%E7%9F%A5%E5%8F%8A%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95mod%E5%86%B2%E7%AA%81/" class="category-detail-card">
+            <div class="category-detail-card-body">
+              <div class="category-detail-card-header">
+                <i class="fas fa-file-alt"></i>
+                <span class="category-detail-card-title">使用须知及个人记录Mod冲突</span>
+                
               </div>
-            </div>
-          
-            <div class="post-item">
-              <i class="fas fa-file-alt"></i>
-              <div class="post-info">
-                <a href="../../%E9%98%BF%E5%B0%94%E6%B3%95%E4%B9%A6%E7%B1%8D/">阿尔法书籍</a>
-                <span class="date">
-                  <i class="fas fa-calendar-alt"></i>
-                  2025-09-19
-                </span>
+              <div class="category-detail-card-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2025-12-08</span>
+                
+                  <span class="category-detail-card-tags">
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> rimworld</span>
+                    
+                  </span>
+                
               </div>
+              <p class="category-detail-card-excerpt">
+                本人标准的使用须知
+以及个人的mod冲突记录...
+              </p>
             </div>
+            
+          </a>
+        
           
-            <div class="post-item">
-              <i class="fas fa-file-alt"></i>
-              <div class="post-info">
-                <a href="../../%E6%82%A0%E5%85%B0/">悠兰</a>
-                <span class="date">
-                  <i class="fas fa-calendar-alt"></i>
-                  2025-09-19
-                </span>
+          <a href="../../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/" class="category-detail-card">
+            <div class="category-detail-card-body">
+              <div class="category-detail-card-header">
+                <i class="fas fa-file-alt"></i>
+                <span class="category-detail-card-title">边缘世界种族数据提取器</span>
+                
               </div>
-            </div>
-          
-            <div class="post-item">
-              <i class="fas fa-file-alt"></i>
-              <div class="post-info">
-                <a href="../../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/">溪谷联邦</a>
-                <span class="date">
-                  <i class="fas fa-calendar-alt"></i>
-                  2025-09-16
-                </span>
+              <div class="category-detail-card-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2025-11-23</span>
+                
+                  <span class="category-detail-card-tags">
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> rimworld</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 种族</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 精品</span>
+                    
+                  </span>
+                
               </div>
+              <p class="category-detail-card-excerpt">
+                一个用于RimWorld的py小脚本,可以自动拉取工作目录下的所有mod文件里的外星人XML定义数据并生成表格,帮助你快速认知一个种族在XML定义上擅长什么工作,不擅长什么工作....
+              </p>
             </div>
+            
+          </a>
+        
           
-            <div class="post-item">
-              <i class="fas fa-file-alt"></i>
-              <div class="post-info">
-                <a href="../../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/">异象扩展</a>
-                <span class="date">
-                  <i class="fas fa-calendar-alt"></i>
-                  2025-09-03
-                </span>
+          <a href="../../%E8%90%8C%E8%9E%88/" class="category-detail-card">
+            <div class="category-detail-card-body">
+              <div class="category-detail-card-header">
+                <i class="fas fa-file-alt"></i>
+                <span class="category-detail-card-title">萌螈</span>
+                
               </div>
-            </div>
-          
-            <div class="post-item">
-              <i class="fas fa-file-alt"></i>
-              <div class="post-info">
-                <a href="../../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/">(尚未完工)失能机关</a>
-                <span class="date">
-                  <i class="fas fa-calendar-alt"></i>
-                  2025-08-17
-                </span>
+              <div class="category-detail-card-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2025-11-21</span>
+                
+                  <span class="category-detail-card-tags">
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> rimworld</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 种族</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 正义</span>
+                    
+                  </span>
+                
               </div>
+              <p class="category-detail-card-excerpt">
+                萌螈的技能效果及其书籍效果
+不考虑流派技能的话整体很贴近原版,奈何流派技能(尤其是百花)实在是强而有力,只能给到正义了...
+              </p>
             </div>
+            
+          </a>
+        
           
-        </div>
+          <a href="../../%E9%98%BF%E5%B0%94%E6%B3%95%E4%B9%A6%E7%B1%8D/" class="category-detail-card">
+            <div class="category-detail-card-body">
+              <div class="category-detail-card-header">
+                <i class="fas fa-file-alt"></i>
+                <span class="category-detail-card-title">阿尔法书籍</span>
+                
+              </div>
+              <div class="category-detail-card-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2025-09-19</span>
+                
+                  <span class="category-detail-card-tags">
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> rimworld</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 精品</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 原版向</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 阿尔法系列</span>
+                    
+                  </span>
+                
+              </div>
+              <p class="category-detail-card-excerpt">
+                对阿尔法书籍 AlphaBooks 的内容进行统计并简单评级
+几乎没有强度...
+              </p>
+            </div>
+            
+          </a>
+        
+          
+          <a href="../../%E6%82%A0%E5%85%B0/" class="category-detail-card">
+            <div class="category-detail-card-body">
+              <div class="category-detail-card-header">
+                <i class="fas fa-file-alt"></i>
+                <span class="category-detail-card-title">悠兰</span>
+                
+              </div>
+              <div class="category-detail-card-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2025-09-19</span>
+                
+                  <span class="category-detail-card-tags">
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> rimworld</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 种族</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 精品</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 原版向</span>
+                    
+                  </span>
+                
+              </div>
+              <p class="category-detail-card-excerpt">
+                内容不多,很原版的种族
+前期护甲会优于原版,后期乏力,正义度几乎没有甚至更弱...
+              </p>
+            </div>
+            
+              <div class="category-detail-card-thumb">
+                <img src="/images/%E6%82%A0%E5%85%B0/%E6%82%A0%E5%85%B0-%E5%9F%BA%E5%9B%A0.png" alt="悠兰" loading="lazy">
+              </div>
+            
+          </a>
+        
+          
+          <a href="../../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/" class="category-detail-card">
+            <div class="category-detail-card-body">
+              <div class="category-detail-card-header">
+                <i class="fas fa-file-alt"></i>
+                <span class="category-detail-card-title">溪谷联邦</span>
+                
+              </div>
+              <div class="category-detail-card-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2025-09-16</span>
+                
+                  <span class="category-detail-card-tags">
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> rimworld</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 种族</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 原版向</span>
+                    
+                  </span>
+                
+              </div>
+              <p class="category-detail-card-excerpt">
+                施工中~...
+              </p>
+            </div>
+            
+          </a>
+        
+          
+          <a href="../../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/" class="category-detail-card">
+            <div class="category-detail-card-body">
+              <div class="category-detail-card-header">
+                <i class="fas fa-file-alt"></i>
+                <span class="category-detail-card-title">异象扩展</span>
+                
+              </div>
+              <div class="category-detail-card-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2025-09-03</span>
+                
+                  <span class="category-detail-card-tags">
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> rimworld</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 负正义</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 正义</span>
+                    
+                  </span>
+                
+              </div>
+              <p class="category-detail-card-excerpt">
+                这个是真恶心👎🤮
+绝大部分内容都是原版等级强度的,但有一两个强度极高
+仅包含了血肉内容的表格...
+              </p>
+            </div>
+            
+          </a>
+        
+          
+          <a href="../../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/" class="category-detail-card">
+            <div class="category-detail-card-body">
+              <div class="category-detail-card-header">
+                <i class="fas fa-file-alt"></i>
+                <span class="category-detail-card-title">(尚未完工)失能机关</span>
+                
+              </div>
+              <div class="category-detail-card-meta">
+                <span><i class="fas fa-calendar-alt"></i> 2025-08-17</span>
+                
+                  <span class="category-detail-card-tags">
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> rimworld</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 微正义</span>
+                    
+                      <span class="category-detail-tag"><i class="fas fa-tag"></i> 负正义</span>
+                    
+                  </span>
+                
+              </div>
+              <p class="category-detail-card-excerpt">
+                施工中~暂时只有几个统计表格~太久不更的话也有可能是烂尾了
+强度的话,作为玩家派系的机器人强度尚可,但作为敌对BOSS解决起来就很棘手了...
+              </p>
+            </div>
+            
+          </a>
+        
       </div>
     </div>
   </div>
@@ -337,31 +546,19 @@
   </div>
 </footer>
 
-    
-    <!-- 全局配置 -->
-    <script>
-      window.HEXO_CONFIG = {
-        language: "zh-CN",
-        root: "/",
-        
-        theme_switch: {
-          enabled: false,
-          light_start: "06:00",
-          light_end: "18:00"
-        }
-        
-      };
 
-      // 特定于搜索的配置
+    <!-- 搜索专用配置 (HEXO_CONFIG 在 scripts.ejs 中统一定义) -->
+    <script>
       window.VSC4T_SEARCH = {
         root: "/"
       };
     </script>
-    
-    <script src="//cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/highlight.js@11.7.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+
+    <!-- 外部脚本 - 统一使用 cdnjs CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous"></script>
+    <script>if(typeof hljs !== 'undefined') hljs.highlightAll();</script>
     <!-- 这里可以放置自定义脚本 -->
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -406,12 +603,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 <!-- Scripts -->
 <script>
-  // 将语言文件中的翻译传递给前端
+  // 全局配置 - 包含 i18n 字符串和主题配置
   window.HEXO_CONFIG = {
     language: "zh-CN",
+    root: "/",
+    
+    theme_switch: {
+      enabled: false,
+      light_start: "06:00",
+      light_end: "18:00"
+    },
+    
+    // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "résultat",
+    search_result: "نتيجة",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -438,25 +644,73 @@ document.addEventListener('DOMContentLoaded', (event) => {
     encrypt_again: "重新加密",
     encrypt_wrong_password: "密码错误，请重试。",
     encrypt_show_password: "显示密码",
-    encrypt_hide_password: "隐藏密码"
+    encrypt_hide_password: "隐藏密码",
+    // Sidebar i18n strings
+    sidebar_about: "关于",
+    sidebar_categories: "分类",
+    sidebar_tags: "标签",
+    // Post page i18n strings
+    post_toc: "目录",
+    post_category_posts: "同分类文章",
+    post_article_tags: "文章标签"
   };
 </script>
 
 
 
 <!-- 添加所有需要的脚本 -->
-<script src="../../js/main.js"></script>
 <script src="../../js/search.js"></script>
 <script src="../../js/theme-switch.js"></script>
 
-<script src="../../js/password-protect.js?v=1777648419633"></script>
-<script src="../../js/table-sticky-header.js"></script>
+<script src="../../js/password-protect.js?v=1777648757200"></script>
 
     <script>
       // 移动端菜单切换
       $(document).ready(function() {
-        $('.mobile-menu-toggle').click(function() {
-          $('.sidebar-explorer').toggleClass('show');
+        var $body = $('body');
+        var $sidebar = $('.sidebar-explorer');
+        var $overlay = $('.sidebar-overlay');
+        var $toggle = $('.mobile-menu-toggle');
+
+        function openSidebar() {
+          $sidebar.addClass('show');
+          $overlay.addClass('show');
+          $toggle.addClass('active');
+          $body.addClass('sidebar-open');
+        }
+
+        function closeSidebar() {
+          $sidebar.removeClass('show');
+          $overlay.removeClass('show');
+          $toggle.removeClass('active');
+          $body.removeClass('sidebar-open');
+        }
+
+        // 汉堡按钮点击切换
+        $toggle.on('click', function(e) {
+          e.stopPropagation();
+          if ($sidebar.hasClass('show')) {
+            closeSidebar();
+          } else {
+            openSidebar();
+          }
+        });
+
+        // 点击遮罩层关闭
+        $overlay.on('click', function() {
+          closeSidebar();
+        });
+
+        // ESC 键关闭
+        $(document).on('keydown', function(e) {
+          if (e.key === 'Escape' && $sidebar.hasClass('show')) {
+            closeSidebar();
+          }
+        });
+
+        // 点击侧边栏内的链接时自动关闭侧边栏，确保锚点跳转正常
+        $sidebar.on('click', 'a', function() {
+          closeSidebar();
         });
       });
     </script>
