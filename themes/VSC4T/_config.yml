@@ -95,6 +95,18 @@ code_block:
 # 首页文章数量
 index_posts: 5
 
+# 分类专栏配置
+# 为每个分类自定义封面图和描述，分类名需与实际分类名完全一致
+# 示例:
+# categories:
+#   blog:
+#     cover: /images/blog-cover.jpg
+#     description: "个人博客文章，记录技术心得与生活感悟"
+#   technical-guide:
+#     cover: /images/tech-cover.jpg
+#     description: "详细的技术教程和使用指南"
+categories:
+
 # 开启 MathJax 数学公式支持
 mathjax: true
 
@@ -111,7 +123,7 @@ comments:
   
   # Waline 配置 - 无需 GitHub 账号的评论系统
   waline:
-    serverURL: https://blog-vercel-waline.vercel.app/ # 你的 Waline 服务器地址（例如：https://your-domain.vercel.app）
+    serverURL: https://vsc4tblackcat1337.vercel.app/ # 你的 Waline 服务器地址（例如：https://your-domain.vercel.app）
     lang: zh-CN # 界面语言: 'zh-CN' | 'en' | 'jp' 等
     locale: {} # 自定义语言配置
     emoji: 
@@ -135,12 +147,13 @@ comments:
 
 # Favicon 配置
 # 支持多种尺寸和格式，以适配不同设备和浏览器
-favicon:
-  ico: /favicon.ico                    # 传统 favicon 格式
-  small: /favicon.ico           # 16x16 PNG
-  medium: /favicon.ico          # 32x32 PNG
-  large: /favicon.ico         # 192x192 PNG (Android)
-  apple_touch_icon: /favicon.ico  # 180x180 (iOS)
+# 注意：需要在 source 目录下放置对应的 favicon 文件
+# favicon:
+#   ico: /favicon.ico                    # 传统 favicon 格式
+#   small: /favicon-16x16.png           # 16x16 PNG
+#   medium: /favicon-32x32.png          # 32x32 PNG
+#   large: /favicon-192x192.png         # 192x192 PNG (Android)
+#   apple_touch_icon: /apple-touch-icon.png  # 180x180 (iOS)
 
 # 自定义 CSS 和 JS
 custom_css:

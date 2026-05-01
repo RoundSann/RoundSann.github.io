@@ -1,5 +1,4 @@
 @import "post.css";
-@import url("https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css");
 
 /* 基本样式 */
 body {
@@ -12,7 +11,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 85%;
   margin: 0 auto;
   padding: 20px;
   min-height: calc(100vh - 30px);
@@ -284,7 +283,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.8125rem;
   font-weight: 400;
   letter-spacing: 0.01em;
-  white-space: normal; /* 允许换行 */
+  white-space: nowrap;
 }
 
 /* Button group */
@@ -998,6 +997,41 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+/* ========================================
+   Sidebar Tag Cloud - Pinyin Sorted
+   ======================================== */
+.tagcloud-pinyin {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.tagcloud-pinyin .tag-cloud-link {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  background-color: var(--vscode-active);
+  border: 1px solid var(--vscode-border);
+  border-radius: 3px;
+  color: var(--vscode-text-light);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tagcloud-pinyin .tag-cloud-link:hover {
+  background-color: var(--vscode-accent);
+  border-color: var(--vscode-accent);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.tagcloud-pinyin .tag-cloud-link:active {
+  transform: translateY(0);
+}
+
 /* 响应式优化 */
 @media (max-width: 768px) {
   .vs-comments-section {
@@ -1006,43 +1040,4 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: -10px;
     border-radius: 0;
   }
-}
-
-.post-content .tikzjax svg {
-  /* 使用反色 + 色相旋转180度 把tikz黑白问题解决 */
-  filter: invert(1) hue-rotate(180deg);
-  background-color: transparent !important;
-}
-
-/* =========================================
-   修复纯文本宽度限制 (强制占满容器)
-   ========================================= */
-
-/* 1. 强制文章内的段落占满 100% 宽度 */
-.post-content p {
-  max-width: 100% !important;
-  width: 100% !important;
-  margin-right: 0 !important;
-  padding-right: 0 !important;
-  
-  /* 防止长单词(如URL)导致强制换行留出空白，
-     让它们在行尾自动换行 */
-  word-wrap: break-word; 
-  overflow-wrap: break-word;
-}
-
-/* 2. 同时确保标题也占满 */
-.post-content h1, 
-.post-content h2, 
-.post-content h3, 
-.post-content h4 {
-  max-width: 100% !important;
-}
-
-/* 3. (可选) 如果你觉得文字太靠边了不好看，
- 可以稍微调整一下行高，增加阅读舒适度 */
-.post-content {
-  /* 这里的 2rem 是你原本的 padding，
-     现在的改动会让文字填满这 2rem 以内的所有空间 */
-  box-sizing: border-box; 
 }

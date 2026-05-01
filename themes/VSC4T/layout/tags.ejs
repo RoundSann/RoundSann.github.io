@@ -1,15 +1,13 @@
 <%- partial('_partial/header') %>
 
 <%
-// Group tags by first letter
+// Group tags by first letter (支持中文拼音首字母)
 const sortedTags = site.tags.sort('name');
 const groupedTags = {};
 
 sortedTags.each(function(tag) {
-  let firstLetter = tag.name.charAt(0).toUpperCase();
-  if (!/^[A-Z]$/.test(firstLetter)) {
-    firstLetter = '#'; // Group non-alphabetic tags under '#'
-  }
+  // 使用 getPinyinFirstLetter helper 获取拼音首字母
+  let firstLetter = getPinyinFirstLetter(tag.name);
   if (!groupedTags[firstLetter]) {
     groupedTags[firstLetter] = [];
   }

@@ -7,6 +7,7 @@ search: Поиск
 previous: Предыдущий
 next: Следующий
 read_more: Читать далее
+post_updated: Обновлено
 
 # Search functionality
 search_placeholder: Введите для поиска...
