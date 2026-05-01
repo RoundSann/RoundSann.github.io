@@ -8,7 +8,6 @@ search: "Suche"
 previous: "Vorheriger"
 next: "Nächster"
 read_more: "Weiterlesen"
-post_updated: "Aktualisiert"
 
 # 搜索功能
 search_placeholder: "Suchbegriff eingeben..."

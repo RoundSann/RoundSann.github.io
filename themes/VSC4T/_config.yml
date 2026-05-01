@@ -95,18 +95,6 @@ code_block:
 # 首页文章数量
 index_posts: 5
 
-# 分类专栏配置
-# 为每个分类自定义封面图和描述，分类名需与实际分类名完全一致
-# 示例:
-# categories:
-#   blog:
-#     cover: /images/blog-cover.jpg
-#     description: "个人博客文章，记录技术心得与生活感悟"
-#   technical-guide:
-#     cover: /images/tech-cover.jpg
-#     description: "详细的技术教程和使用指南"
-categories:
-
 # 开启 MathJax 数学公式支持
 mathjax: true
 
@@ -147,7 +135,6 @@ comments:
 
 # Favicon 配置
 # 支持多种尺寸和格式，以适配不同设备和浏览器
-# 注意：需要在 source 目录下放置对应的 favicon 文件
 favicon:
   ico: /favicon.ico                    # 传统 favicon 格式
   small: /favicon.ico           # 16x16 PNG

@@ -8,7 +8,6 @@ previous: Previous
 next: Next
 read_more: Read More
 pinned_post: Pinned Post
-post_updated: Updated
 
 # Search functionality
 search_placeholder: Type to search...
@@ -52,13 +51,3 @@ encrypt_again: Re-encrypt
 encrypt_wrong_password: Incorrect password. Please try again.
 encrypt_show_password: Show password
 encrypt_hide_password: Hide password
-
-# Sidebar
-sidebar_about: About
-sidebar_categories: Categories
-sidebar_tags: Tags
-
-# Post page
-post_toc: TABLE OF CONTENTS
-post_category_posts: CATEGORY POSTS
-post_article_tags: ARTICLE TAGS
