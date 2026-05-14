@@ -28,6 +28,7 @@
     "katex": "^0.16.27",
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-mathjax": "^2.0.0",
-    "markdown-it-texmath": "^1.0.0"
+    "markdown-it-texmath": "^1.0.0",
+    "pinyin-pro": "^3.28.1"
   }
 }
