@@ -113,7 +113,11 @@
 }
 
 .vscode-markdown img {
-  max-width: 100%;
+  max-width: 33vw;
+  max-height: 33vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   border: 1px solid var(--vscode-border);
   border-radius: 6px;
   margin: 1.5em auto;
