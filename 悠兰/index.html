@@ -4,7 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>悠兰 | 缘神</title>
-  
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="内容不多,很原版的种族
+前期护甲会优于原版,后期乏力,正义度几乎没有甚至更弱">
+  <meta name="keywords" content="rimworld,种族,精品,原版向">
+  <meta name="author" content="Round">
+  <link rel="canonical" href="https://RoundSann.github.io">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="悠兰 | 缘神">
+  <meta property="og:description" content="内容不多,很原版的种族
+前期护甲会优于原版,后期乏力,正义度几乎没有甚至更弱">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://RoundSann.github.io">
+  <meta property="og:site_name" content="缘神">
+  <meta property="article:published_time" content="2025-09-18T16:32:33.000Z">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="悠兰 | 缘神">
+  <meta name="twitter:description" content="内容不多,很原版的种族
+前期护甲会优于原版,后期乏力,正义度几乎没有甚至更弱">
+
   <!-- Favicon 配置 -->
   
     
@@ -23,24 +45,27 @@
       <link rel="apple-touch-icon" sizes="180x180" href="../favicon.ico">
     
   
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+
+  <!-- 外部样式 - 统一使用 jsdelivr CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- 代码高亮样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-dark.min.css" crossorigin="anonymous">
+
+  <!-- Mermaid.js 库 (defer加载) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" crossorigin="anonymous"></script>
+
+  <!-- 主题样式 -->
   <link rel="stylesheet" href="../css/theme-colors.css">
   <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- 添加代码高亮样式 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
-  <!-- 添加highlight.js库 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  <!-- 添加mermaid.js库 -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <link rel="stylesheet" href="../css/code.css">
   <link rel="stylesheet" href="../css/code-custom.css">
   <link rel="stylesheet" href="../css/code-languages.css">
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1778755202263">
+  <link rel="stylesheet" href="../css/post.css?v=1778756536250">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -53,16 +78,17 @@
 
   <!-- Add any custom head content here -->
 
-  <script src="../js/explorer.js"></script>
-  <script src="../js/code-copy.js"></script>
-  <script src="../js/code-enhance.js"></script>
+  <script defer src="../js/explorer.js"></script>
+  <script defer src="../js/code-enhance.js"></script>
 <meta name="generator" content="Hexo 8.1.1"></head>
 
   <body>
     <div class="wrapper">
-      <div class="mobile-menu-toggle">
+      <div class="mobile-menu-toggle" aria-label="Toggle sidebar menu" role="button" tabindex="0">
         <i class="fas fa-bars"></i>
       </div>
+      <!-- 移动端侧边栏遮罩层 -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
       <header class="vs-header">
   <nav class="vs-nav">
     <div class="nav-left">
@@ -158,19 +184,19 @@
     <div class="explorer-section">
       <div class="section-header">
         <i class="fas fa-list"></i>
-        <span>TABLE OF CONTENTS</span>
+        <span>目录</span>
       </div>
       <div class="section-content">
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%8D%E6%97%8F%E6%A6%82%E8%A7%88"><span class="toc-text">种族概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%8D%E6%97%8F%E5%88%86%E7%B1%BB-%E8%8E%B7%E5%8F%96%E6%96%B9%E5%BC%8F-%E5%9F%BA%E5%9B%A0-%E7%89%B9%E6%80%A7"><span class="toc-text">种族分类&#x2F;获取方式&#x2F;基因&#x2F;特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A4%E7%94%B2"><span class="toc-text">护甲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A6%E5%99%A8"><span class="toc-text">武器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%B1%E8%8A%B1%E6%A0%91"><span class="toc-text">樱花树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%B1%E6%9E%9C-%E4%B8%B0%E7%A1%95%E6%A8%B1%E6%9E%9C"><span class="toc-text">樱果&#x2F;丰硕樱果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9E%E7%8E%AF-%E9%80%9A%E5%AE%9D-%E5%BC%8F%E7%A5%9E"><span class="toc-text">神环&#x2F;通宝&#x2F;式神</span></a></li></ol>
       </div>
     </div>
-    
+
     <!-- 同分类文章 -->
     
     <div class="explorer-section">
       <div class="section-header">
         <i class="fas fa-folder"></i>
-        <span>CATEGORY POSTS</span>
+        <span>同分类文章</span>
       </div>
       <div class="section-content">
         
@@ -223,7 +249,7 @@
     <div class="explorer-section">
       <div class="section-header">
         <i class="fas fa-tags"></i>
-        <span>ARTICLE TAGS</span>
+        <span>文章标签</span>
       </div>
       <div class="section-content">
         
@@ -231,12 +257,6 @@
             <i class="fas fa-tag"></i>
             <a href="../tags/rimworld/">rimworld</a>
             <span class="count">(18)</span>
-          </div>
-        
-          <div class="tag-item">
-            <i class="fas fa-tag"></i>
-            <a href="../tags/%E5%8E%9F%E7%89%88%E5%90%91/">原版向</a>
-            <span class="count">(7)</span>
           </div>
         
           <div class="tag-item">
@@ -249,6 +269,12 @@
             <i class="fas fa-tag"></i>
             <a href="../tags/%E7%B2%BE%E5%93%81/">精品</a>
             <span class="count">(4)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E5%8E%9F%E7%89%88%E5%90%91/">原版向</a>
+            <span class="count">(7)</span>
           </div>
         
       </div>
@@ -273,7 +299,13 @@
             <span class="date">
               <i class="fas fa-calendar-alt"></i>
               2025-09-19
-            </span>            
+            </span>
+            
+            <span class="updated-date">
+              <i class="fas fa-sync-alt"></i>
+              更新于 2026-05-13
+            </span>
+                        
               <span class="categories">
                 <i class="fas fa-folder"></i>
                 <div class="categories-list">
@@ -999,7 +1031,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 原版向, 种族
+                  rimworld, 种族, 精品
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1040,7 +1072,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 原版向, 精品
+                  rimworld, 精品, 原版向
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1081,7 +1113,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 原版向, 种族
+                  rimworld, 种族, 原版向
                   
                 </span>
               
@@ -1159,7 +1191,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 原版向, 种族
+                  rimworld, 种族, 原版向
                   
                 </span>
               
@@ -1198,7 +1230,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 原版向, 种族
+                  rimworld, 种族, 原版向
                   
                 </span>
               
@@ -1395,31 +1427,19 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </footer>
 
-    
-    <!-- 全局配置 -->
-    <script>
-      window.HEXO_CONFIG = {
-        language: "zh-CN",
-        root: "/",
-        
-        theme_switch: {
-          enabled: false,
-          light_start: "06:00",
-          light_end: "18:00"
-        }
-        
-      };
 
-      // 特定于搜索的配置
+    <!-- 搜索专用配置 (HEXO_CONFIG 在 scripts.ejs 中统一定义) -->
+    <script>
       window.VSC4T_SEARCH = {
         root: "/"
       };
     </script>
-    
-    <script src="//cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/highlight.js@11.7.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+
+    <!-- 外部脚本 - 统一使用 cdnjs CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous"></script>
+    <script>if(typeof hljs !== 'undefined') hljs.highlightAll();</script>
     <!-- 这里可以放置自定义脚本 -->
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -1464,12 +1484,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 <!-- Scripts -->
 <script>
-  // 将语言文件中的翻译传递给前端
+  // 全局配置 - 包含 i18n 字符串和主题配置
   window.HEXO_CONFIG = {
     language: "zh-CN",
+    root: "/",
+    
+    theme_switch: {
+      enabled: false,
+      light_start: "06:00",
+      light_end: "18:00"
+    },
+    
+    // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "Ergebnis",
+    search_result: "نتيجة",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -1496,25 +1525,74 @@ document.addEventListener('DOMContentLoaded', (event) => {
     encrypt_again: "重新加密",
     encrypt_wrong_password: "密码错误，请重试。",
     encrypt_show_password: "显示密码",
-    encrypt_hide_password: "隐藏密码"
+    encrypt_hide_password: "隐藏密码",
+    // Sidebar i18n strings
+    sidebar_about: "关于",
+    sidebar_categories: "分类",
+    sidebar_tags: "标签",
+    // Post page i18n strings
+    post_toc: "目录",
+    post_category_posts: "同分类文章",
+    post_article_tags: "文章标签"
   };
 </script>
 
 
 
 <!-- 添加所有需要的脚本 -->
-<script src="../js/main.js"></script>
 <script src="../js/search.js"></script>
 <script src="../js/theme-switch.js"></script>
 
-<script src="../js/password-protect.js?v=1778755202263"></script>
 <script src="../js/table-sticky-header.js"></script>
+<script src="../js/password-protect.js?v=1778756536250"></script>
 
     <script>
       // 移动端菜单切换
       $(document).ready(function() {
-        $('.mobile-menu-toggle').click(function() {
-          $('.sidebar-explorer').toggleClass('show');
+        var $body = $('body');
+        var $sidebar = $('.sidebar-explorer');
+        var $overlay = $('.sidebar-overlay');
+        var $toggle = $('.mobile-menu-toggle');
+
+        function openSidebar() {
+          $sidebar.addClass('show');
+          $overlay.addClass('show');
+          $toggle.addClass('active');
+          $body.addClass('sidebar-open');
+        }
+
+        function closeSidebar() {
+          $sidebar.removeClass('show');
+          $overlay.removeClass('show');
+          $toggle.removeClass('active');
+          $body.removeClass('sidebar-open');
+        }
+
+        // 汉堡按钮点击切换
+        $toggle.on('click', function(e) {
+          e.stopPropagation();
+          if ($sidebar.hasClass('show')) {
+            closeSidebar();
+          } else {
+            openSidebar();
+          }
+        });
+
+        // 点击遮罩层关闭
+        $overlay.on('click', function() {
+          closeSidebar();
+        });
+
+        // ESC 键关闭
+        $(document).on('keydown', function(e) {
+          if (e.key === 'Escape' && $sidebar.hasClass('show')) {
+            closeSidebar();
+          }
+        });
+
+        // 点击侧边栏内的链接时自动关闭侧边栏，确保锚点跳转正常
+        $sidebar.on('click', 'a', function() {
+          closeSidebar();
         });
       });
     </script>

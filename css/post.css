@@ -65,7 +65,7 @@
 
 .vscode-markdown p {
   margin: 1em 0 1.2em; /* 增加段落间的垂直空间，特别是底部空间 */
-  max-width: 70ch; /* 限制理想的行宽，大约为70个字符宽度，提高可读性 */
+  max-width: 100%; /* 全宽显示，充分利用屏幕空间 */
 }
 
 .vscode-markdown a {
@@ -260,6 +260,17 @@
 
 .post-meta .tags i {
   color: var(--vscode-link);
+}
+
+/* 更新日期样式 */
+.post-meta .updated-date {
+  color: var(--vscode-text-light);
+  font-size: 0.9em;
+}
+
+.post-meta .updated-date i {
+  color: var(--vscode-success, #4ec9b0);
+  font-size: 0.85em;
 }
 
 /* 置顶文章指示器样式 */
