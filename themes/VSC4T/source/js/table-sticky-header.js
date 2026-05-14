@@ -57,17 +57,21 @@
         var cloneH = clone.offsetHeight;
         var topPos = Math.min(0, rect.bottom - cloneH);
 
+        // 使用 thead 实际渲染宽度来约束 wrapper，避免 display:block 的 table 撑满容器
+        var theadWidth = thead.offsetWidth;
+        var visibleWidth = Math.min(rect.width, theadWidth);
+
         // wrapper 裁剪到表格可视区域
         wrapper.style.visibility = 'visible';
         wrapper.style.top = topPos + 'px';
         wrapper.style.left = rect.left + 'px';
-        wrapper.style.width = rect.width + 'px';
+        wrapper.style.width = visibleWidth + 'px';
         wrapper.style.height = cloneH + 'px';
 
         // 克隆随表格横向滚动平移
         clone.style.transform = 'translateX(-' + table.scrollLeft + 'px)';
-        // 克隆宽度=内容宽，保证所有列都渲染出来再裁剪
-        clone.style.width = table.scrollWidth + 'px';
+        // 克隆宽度=thead内容宽，保证所有列都渲染出来再裁剪
+        clone.style.width = theadWidth + 'px';
       }
 
       window.addEventListener('scroll', syncClone, { passive: true });
