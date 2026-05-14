@@ -14,7 +14,8 @@
 
       // 克隆表头：宽度=表格内容宽，随横向滚动平移
       var clone = thead.cloneNode(true);
-      clone.style.cssText = 'display:table;table-layout:fixed;border-collapse:collapse;background-color:var(--vscode-bg-light);border-bottom:1px solid var(--vscode-border);box-sizing:border-box;';
+      var tableFont = window.getComputedStyle(table).font;
+      clone.style.cssText = 'display:table;table-layout:fixed;border-collapse:collapse;background-color:var(--vscode-bg-light);border-bottom:1px solid var(--vscode-border);box-sizing:border-box;font:' + tableFont + ';';
       wrapper.appendChild(clone);
 
       function isHidden() {
