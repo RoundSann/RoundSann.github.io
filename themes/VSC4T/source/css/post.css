@@ -113,7 +113,7 @@
 }
 
 .vscode-markdown img {
-  max-width: 33vw;
+  max-width: 33%;
   max-height: 33vh;
   width: auto;
   height: auto;
@@ -132,7 +132,7 @@
 .vscode-markdown img[style*="height"],
 .vscode-markdown img[width],
 .vscode-markdown img[height] {
-  max-width: none;
+  max-width: 100%;
   max-height: none;
 }
 
