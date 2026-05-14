@@ -8,6 +8,7 @@ previous: 上一篇
 next: 下一篇
 read_more: 阅读更多
 pinned_post: 置顶文章
+post_updated: 更新于
 
 # 搜索功能
 search_placeholder: 输入关键词搜索...
@@ -50,3 +51,13 @@ encrypt_again: 重新加密
 encrypt_wrong_password: 密码错误，请重试。
 encrypt_show_password: 显示密码
 encrypt_hide_password: 隐藏密码
+
+# 侧边栏
+sidebar_about: 关于
+sidebar_categories: 分类
+sidebar_tags: 标签
+
+# 文章页面
+post_toc: 目录
+post_category_posts: 同分类文章
+post_article_tags: 文章标签

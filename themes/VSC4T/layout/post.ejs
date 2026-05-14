@@ -7,19 +7,19 @@
     <div class="explorer-section">
       <div class="section-header">
         <i class="fas fa-list"></i>
-        <span>TABLE OF CONTENTS</span>
+        <span><%- __('post_toc') %></span>
       </div>
       <div class="section-content">
         <%- toc(page.content, {list_number: false}) %>
       </div>
     </div>
-    
+
     <!-- 同分类文章 -->
     <% if (page.categories && page.categories.length) { %>
     <div class="explorer-section">
       <div class="section-header">
         <i class="fas fa-folder"></i>
-        <span>CATEGORY POSTS</span>
+        <span><%- __('post_category_posts') %></span>
       </div>
       <div class="section-content">
         <% 
@@ -45,7 +45,7 @@
     <div class="explorer-section">
       <div class="section-header">
         <i class="fas fa-tags"></i>
-        <span>ARTICLE TAGS</span>
+        <span><%- __('post_article_tags') %></span>
       </div>
       <div class="section-content">
         <% page.tags.each(function(tag){ %>
@@ -77,7 +77,13 @@
             <span class="date">
               <i class="fas fa-calendar-alt"></i>
               <%= date(page.date, config.date_format) %>
-            </span>            <% if (page.categories && page.categories.length) { %>
+            </span>
+            <% if (page.updated && page.updated.isValid() && page.updated.diff(page.date, 'minutes') > 1) { %>
+            <span class="updated-date">
+              <i class="fas fa-sync-alt"></i>
+              <%- __('post_updated') %> <%= date(page.updated, config.date_format) %>
+            </span>
+            <% } %>            <% if (page.categories && page.categories.length) { %>
               <span class="categories">
                 <i class="fas fa-folder"></i>
                 <div class="categories-list">
