@@ -1,7 +1,7 @@
 ---
 title: 边缘世界种族数据提取器
 date: 2025-11-23 22:55:00
-tags: [rimworld,种族,精品]
+tags: [rimworld,种族]
 categories: [rimworld]
 ---
 
@@ -13,9 +13,9 @@ categories: [rimworld]
 
 # RimWorld-Race-Stats-Extractor (边缘世界种族数据提取器)
 
- > **⚠AI制作屎山警告⚠!**  
- > AI太好用了你知道吗?  
- > 不擅编程,但又有这个需求,所以整个脚本都是让Gemini写的
+ >  **⚠AI制作屎山警告⚠!**  
+ >  AI太好用了你知道吗?  
+ >  不擅编程,但又有这个需求,所以整个脚本都是让Gemini写的
 
 一个用于RimWorld的py小脚本,可以自动拉取工作目录下的所有mod文件里的外星人XML定义数据并生成表格,帮助你快速认知一个种族在XML定义上擅长什么工作,不擅长什么工作.
 
@@ -28,7 +28,7 @@ categories: [rimworld]
 **输出完表格后,如果你是拿去做攻略,一定要和游戏内数据对比校对一遍防止有BUG**
 
 ## 环境依赖
- > 这段ai写的,我看不懂依赖啥的
+ >  这段ai写的,我看不懂依赖啥的
  -  Python 3.8+
  -  pandas
 
