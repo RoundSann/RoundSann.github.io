@@ -62,7 +62,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1779559731735">
+  <link rel="stylesheet" href="../css/post.css?v=1779560404343">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -2127,6 +2127,109 @@
 </ul>
 <hr>
 <p>后续为纯AI内容</p>
+<p>省流版本</p>
+<ul>
+<li>添加的事件(Events Expanded):
+<ul>
+<li><code>KiiroWandererJoin</code>:Kiiro流浪者加入,基础概率0.2</li>
+<li><code>KiiroRelativeJoin</code>:Kiiro亲属加入,基础概率1.0(需殖民地有Kiiro)</li>
+<li><code>Kiiro_GiveQuest_Beggars</code>:Kiiro乞丐来访请求物资,基础概率0.1</li>
+<li><code>Kiiro_Refugee_Baby</code>(需Biotech):Kiiro难民托付婴儿,基础概率0.2,最小间隔60天</li>
+<li><code>Kiiro_Mineral_Discovery</code>:矿脉发现(世界事件),基础概率1.0,需结盟+完全信任。在Kiiro据点3~6格处生成矿脉,30%概率有威胁,5~10天超时</li>
+<li><code>Kiiro_NewSettlement_Establish</code>:新据点建设,基础概率1.2,需结盟+完全信任。Kiiro请求在5~8格外建立新据点,40%概率请求木材300~600,建设3~6天,完成后世界地图生成新Kiiro据点</li>
+<li><code>Kiiro_RaidFriendly_CallForAid</code>:呼叫Kiiro援军(通讯台触发),需结盟</li>
+<li><code>Kiiro_ValorEndGame</code>:终局事件,需:财富≥500000,Kiiro殖民者≥20,游戏天数≥120,结盟+完全信任。触发后Valor角色离开殖民地,解锁Valor叙事者</li>
+<li><strong>友好互动任务(需结盟+完全信任):</strong></li>
+<li>篝火晚会:在Kiiro据点1~3格处生成,参加后获得+8%工作速度buff+8心情(7天)</li>
+<li>天灯节:在Kiiro据点1~3格处生成,参加后获得+6心情(15天)</li>
+<li>丰收日:仅秋季触发,Kiiro送来谷物分享</li>
+<li>狩猎剩余:仅冬季触发,在据点附近生成猎物点</li>
+<li>游击队求援:2~5名游击队员撤退到你的殖民地,临时加入2天,随后敌方追兵袭击(1000~6000点)</li>
+<li>医疗援助:Kiiro据点爆发疫病,患者送到你的殖民地治疗,死亡扣好感</li>
+<li>独角兽发现:在据点3~6格处生成独角兽点(8权重普通/2权重群体/2权重加入)</li>
+<li>海盗前哨威胁:海盗前哨威胁Kiiro据点(2~4格),1500~5000点。8~12天超时,未解决:40%游击队自行摧毁/60%据点被毁(-30好感)</li>
+<li>纸艺展览:在据点1~3格处生成</li>
+<li>贸易节:需殖民地有4+商人,持续8天,贸易折扣10~25%,3~8支额外商队到访</li>
+<li>流浪商人定居:Kiiro商人永久加入(仅做烹饪/社交工作),最小间隔160天</li>
+<li>劳工援助:Kiiro劳工临时加入帮忙(不参与战斗),获得+15心情</li>
+</ul>
+</li>
+<li>添加的商人系统(Events Expanded):
+<ul>
+<li>收银台:绑定商人殖民者创建商店,每房间限1个</li>
+<li>货架系列:多种尺寸(1×1到2×2),提供商人容量6~56不等,需定期整理</li>
+<li>展示架系列:美观更高,容量12~24</li>
+<li>商人心情:根据商店大小获得心情(-5小店/+3拥挤/+8正常/+15宽敞/+24巨大/-10货物空间不足)</li>
+<li>顾客在商店交易后根据房间豪华度获得心情(-4糟糕~+8奇迹般豪华)</li>
+<li>等待过久的顾客获得-5心情</li>
+<li>商人到来获得+15心情(新开始)</li>
+<li>商人赠礼:+5社交好感/+3心情(持续3天)</li>
+<li>购物倾向特性:吝啬(贸易改善+0.08,不主动购物)/购物狂(贸易改善-0.08,频繁购物) 0.9权重</li>
+</ul>
+</li>
+</ul>
+<p><strong>叙事者(Storyteller)</strong></p>
+<table>
+<thead>
+<tr>
+<th>叙事者</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安可·伍德(AncotWood)</td>
+<td>威胁延迟至60天后开始，随机事件间隔1.48天，威胁点数范围0.3~1.7倍</td>
+</tr>
+<tr>
+<td>勇者(Kiiro_Valor)</td>
+<td>威胁11天后开始，间隔更短(on=8/off=8)，包含Kiiro专属任务循环(15天on，1.5~2个事件)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>世界管理器(Kiro_WorldManager) - 敌对惩罚系统</strong></p>
+<ul>
+<li><strong>触发条件</strong>：Kiiro派系与玩家敌对</li>
+<li><strong>检测频率</strong>：每72000tick（约1.2天）</li>
+<li><strong>机制</strong>：敌对后StageNum每次+1（上限100）</li>
+<li><strong>阶段效果</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>摧毁最近的Kiiro定居点</td>
+</tr>
+<tr>
+<td>50</td>
+<td>摧毁最近的Kiiro定居点</td>
+</tr>
+<tr>
+<td>70</td>
+<td>摧毁最近的Kiiro定居点</td>
+</tr>
+<tr>
+<td>80</td>
+<td>摧毁最近的Kiiro定居点</td>
+</tr>
+<tr>
+<td>100</td>
+<td>派系彻底毁灭</td>
+</tr>
+<tr>
+<td>每tick</td>
+<td>1.2%概率随机摧毁一个定居点</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>再往后是贼几把复杂给我看晕到急躁的AI扒的详细版本.</p>
 <p><strong>事件</strong></p>
 <ul>
 <li>勇者加入(<code>KiiroValorJoin</code>),0权重,触发型,cd 600天。Ancot·Wood叙事者挂了<code>Triggered</code>组件,延迟180tick;要求最低历史人口6,生成女性勇者。</li>
@@ -2178,8 +2281,6 @@
 <li>流浪商人(<code>Kiiro_WanderingMerchant</code>),普通任务权重1,普通随机任务池触发;勇者剧本第15~18天固定送一次,cd 160天。2~5天过期,详见特殊商人系统。</li>
 </ul>
 </details>
-<p>本文去掉纯ai内容的总字数为 17674 字,我真几把牛逼</p>
-
         </div>
         
         <!-- 文章导航 - 只在同分类有多篇文章时显示 -->
@@ -2253,6 +2354,45 @@
       </div>
     
       <div class="vs-recommended-item" data-index="1" tabindex="0">
+        <a href="../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>溪谷联邦</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              施工中~
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 原版向
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 16
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  1 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="2" tabindex="0">
         <a href="../%E6%82%A0%E5%85%B0/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -2293,7 +2433,7 @@
         </a>
       </div>
     
-      <div class="vs-recommended-item" data-index="2" tabindex="0">
+      <div class="vs-recommended-item" data-index="3" tabindex="0">
         <a href="../%E7%8E%9B%E9%B2%81%E6%AD%A6%E5%99%A8%E5%AF%B9%E7%85%A7/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -2325,45 +2465,6 @@
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
                   4 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="3" tabindex="0">
-        <a href="../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>溪谷联邦</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              施工中~
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-                <span class="vs-tags-preview">
-                  <i class="fas fa-tags"></i>
-                  rimworld, 种族, 原版向
-                  
-                </span>
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  9月 16
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  1 min
                 </span>
               </span>
             </div>
@@ -2697,7 +2798,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "résultat",
+    search_result: "نتيجة",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -2743,7 +2844,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1779559731735"></script>
+<script src="../js/password-protect.js?v=1779560404344"></script>
 
     <script>
       // 移动端菜单切换
