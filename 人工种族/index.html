@@ -65,7 +65,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1779785591263">
+  <link rel="stylesheet" href="../css/post.css?v=1779996583152">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -297,7 +297,7 @@
             
             <span class="updated-date">
               <i class="fas fa-sync-alt"></i>
-              更新于 2026-05-26
+              更新于 2026-05-29
             </span>
                         
               <span class="categories">
@@ -3169,7 +3169,7 @@
 <li>专属派系: 伊娃莉特的隐居地 仅用于占位的隐藏派系,无实际作用(无袭击无商队)</li>
 <li>添加的武器:
 <ul>
-<li>绝罚之恨[专][穿]:500玻璃钢+100魔鬼素+200高级零部件 96667工作量 60伤/1s 命中附带五秒眩晕,造成伤害时有1/7概率直接秒杀</li>
+<li>绝罚之恨[专][穿]:500玻璃钢+100魔鬼素+200高级零部件 96667工作量 60伤/1s +25近战命中闪避 命中附带五秒眩晕,造成伤害时有1/7概率直接秒杀</li>
 </ul>
 </li>
 <li>添加的衣物:
@@ -3210,7 +3210,7 @@
 <p>战斗能力上,伊娃利特在一个很尴尬的挡位,技能吊打普通人,但是由于尴尬的躯干耐久以及没一个能打穿0%承伤的技能,遇见穿甲伤害或者0%承伤的敌人就光速歇逼,属于是虐菜好手.不过好在其清杂能力是人工种族的一流水平,9点大范围的aoe技能,还只要10血很便宜.相比于魅魔改良迫击炮会炸掉尸体,龙王会炸掉尸体等低贱的清杂方式,伊娃利特大范围aoe显得尤为高贵,技能一开直接黑暗盛宴两刀下去直接200个部落老哥待烹饪了.没血就去随便找个0%承伤种族嘬两口,就是这个吸血必须手动有点难受</p>
 <details>
 <summary><b>额外内容</b> 本部分为ai扒源码得出,未经验证不保证准确性</summary>
-<p>根据C#源码HAR_EL_DamageWorker_Cut.cs 第81-91行:</p>
+<p>根据C#源码<code>HAR_EL_DamageWorker_Cut.cs</code> 第81-91行:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs C#">Random random = <span class="hljs-keyword">new</span> Random(Guid.NewGuid().GetHashCode());<br><span class="hljs-built_in">int</span> num4 = random.Next(<span class="hljs-number">1</span>, <span class="hljs-number">8</span>);  <span class="hljs-comment">// 生成1-7的随机数</span><br><span class="hljs-built_in">bool</span> flag7 = num4 &lt;= <span class="hljs-number">1</span>;         <span class="hljs-comment">// 如果随机数≤1,即随机到1</span><br><span class="hljs-keyword">if</span> (flag7)<br>&#123;<br>    <span class="hljs-built_in">bool</span> flag8 = !pawn.Dead;<br>    <span class="hljs-keyword">if</span> (flag8)<br>    &#123;<br>        pawn.Kill(<span class="hljs-keyword">new</span> DamageInfo?(dinfo), <span class="hljs-literal">null</span>);  <span class="hljs-comment">// 直接击杀目标</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>秒杀概率:<code>random.Next(1, 8)</code>生成1到7的随机整数(不含8),只有随机到1时才触发秒杀,所以秒杀概率是 1/7 ≈ 14.3%</p>
 <p>秒杀条件:</p>
@@ -11533,7 +11533,7 @@ aya在各种buff远程冷却时间中定义的全都是<code>RangedWeapon_Cooldo
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 微正义
+                  rimworld, 微正义, 种族
                   
                 </span>
               
@@ -11712,16 +11712,16 @@ aya在各种buff远程冷却时间中定义的全都是<code>RangedWeapon_Cooldo
       </div>
     
       <div class="vs-recommended-item" data-index="5" tabindex="0">
-        <a href="../%E6%82%A0%E5%85%B0/" class="vs-recommended-link">
+        <a href="../%E7%8E%9B%E9%B2%81%E6%AD%A6%E5%99%A8%E5%AF%B9%E7%85%A7/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
             <div class="vs-recommended-title">
               <i class="fas fa-file-code"></i>
-              <span>悠兰</span>
+              <span>玛鲁武器对照</span>
             </div>
             
             <div class="vs-recommended-excerpt">
-              内容不多,很原版的种族 前期护甲会优于原版,后期乏力,正义度几乎没有甚至更弱
+              对maru种族及其武器进行了简单统计 整体数值比较接近原版甚至大部分武器数值还不如原版.Buff给的也是相当保守
             </div>
             
             <div class="vs-recommended-meta">
@@ -11732,19 +11732,17 @@ aya在各种buff远程冷却时间中定义的全都是<code>RangedWeapon_Cooldo
                   <i class="fas fa-tags"></i>
                   rimworld, 种族, 原版向
                   
-                    <span class="vs-more-tags">+1</span>
-                  
                 </span>
               
               
               <span class="vs-meta-info">
                 <span class="vs-date">
                   <i class="fas fa-calendar-alt"></i>
-                  9月 19
+                  8月 08
                 </span>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
-                  6 min
+                  4 min
                 </span>
               </span>
             </div>
@@ -11916,7 +11914,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-05-26
+      2026-05-29
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -12000,7 +11998,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "Ergebnis",
+    search_result: "نتيجة",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -12046,7 +12044,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1779785591264"></script>
+<script src="../js/password-protect.js?v=1779996583152"></script>
 
     <script>
       // 移动端菜单切换
