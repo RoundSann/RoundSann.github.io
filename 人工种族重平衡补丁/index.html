@@ -65,7 +65,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1782645485909">
+  <link rel="stylesheet" href="../css/post.css?v=1782741459733">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -291,7 +291,7 @@
             
             <span class="updated-date">
               <i class="fas fa-sync-alt"></i>
-              更新于 2026-06-25
+              更新于 2026-06-29
             </span>
                         
               <span class="categories">
@@ -1437,10 +1437,24 @@
 <h2 id="CanaanIntellect">CanaanIntellect</h2>
 <p>三种药的上限改为10级</p>
 <ul>
-<li>生命之圣餐药效果改为每级+5%全身部位耐久</li>
-<li>祝福之圣餐药效果改为每级+3%全能力 0.1移速 瞄准时间×(1-0.05n) 承伤系数×(1-0.05n)</li>
-<li>智慧之圣餐药效果改为每级+3%意识 全局普通工作速度×(1+0.02n) 崩溃临界值×(1-0.05n)</li>
+<li>生命之圣餐药效果改为每级+5%全身部位耐久<br>
+5级及以上附加毒素抗性+200% 真空抗性+200%,10级效果保留</li>
+<li>祝福之圣餐药效果改为每级+3%全能力 0.1移速 瞄准时间×(1-0.05n) 承伤系数×(1-0.05n)<br>
+移除30级以上效果,10级效果保留</li>
+<li>智慧之圣餐药效果改为每级+3%意识 全局普通工作速度×(1+0.02n) 崩溃临界值×(1-0.05n)<br>
+移除30级以上效果,10级效果保留</li>
 </ul>
+<p>技能药</p>
+<ul>
+<li>混沌跃迁改为10s cd,3次充能(2h恢复一次)</li>
+<li>反转新星改为5天cd的高爆弹炸伤</li>
+<li>大燃烧改为1天cd</li>
+<li>脑域骇入改为1天cd</li>
+<li>残虐利刃改为30%穿甲25伤,可储存2次(12h恢复一次)</li>
+<li>腐败恐惧改为15%穿甲5伤,可储存3次(12h恢复一次)</li>
+<li>相位薄膜改为5天cd,效果改为三防+100% 易燃性×0% 承伤×50%</li>
+</ul>
+<p>研究点数改为前置500,后续每个1000</p>
 <h2 id="涉及到DLL修改的内容">涉及到DLL修改的内容</h2>
 <ol>
 <li>添加了储存技能次数</li>
@@ -1932,7 +1946,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-06-28
+      2026-06-29
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -2016,7 +2030,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "نتيجة",
+    search_result: "résultat",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -2062,7 +2076,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1782645485909"></script>
+<script src="../js/password-protect.js?v=1782741459734"></script>
 
     <script>
       // 移动端菜单切换
