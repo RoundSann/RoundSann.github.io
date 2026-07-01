@@ -65,7 +65,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1782756937702">
+  <link rel="stylesheet" href="../css/post.css?v=1782895711401">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -291,7 +291,7 @@
             
             <span class="updated-date">
               <i class="fas fa-sync-alt"></i>
-              更新于 2026-06-30
+              更新于 2026-07-01
             </span>
                         
               <span class="categories">
@@ -1443,6 +1443,7 @@
 移除30级以上效果,10级效果保留</li>
 <li>智慧之圣餐药效果改为每级+3%意识 全局普通工作速度×(1+0.02n) 崩溃临界值×(1-0.05n)<br>
 移除30级以上效果,10级效果保留</li>
+<li>光晕之圣餐药效果改为每一级增加5%伤害,制作成本改为5所有油+1特异制造许可证</li>
 </ul>
 <p>技能药</p>
 <ul>
@@ -1451,8 +1452,11 @@
 <li>大燃烧改为12h cd</li>
 <li>脑域骇入改为1天cd</li>
 <li>残虐利刃改为30%穿甲25伤,可储存2次(12h恢复一次)</li>
-<li>腐败恐惧改为15%穿甲5伤,可储存2次(12h恢复一次)</li>
+<li>腐败恐惧移除无视承伤,伤害改为15%穿甲5伤,可储存2次(12h恢复一次)</li>
 <li>相位薄膜改为5天cd,效果改为三防+100% 易燃性×0% 承伤×50%</li>
+<li>慈悲射击改为52.5%穿甲35伤,可储存3次(6h恢复一次)</li>
+<li>再见痛苦改为5天cd</li>
+<li>王权恩典改为3天cd,持续时间改为3h,效果改为移动能力+20% 操作视觉听觉能力+10% 移速+0.5 疼痛休克阈值+20% 近战命中闪避+3 射击精度+6 崩溃临界值-10% 瞄准时间×80% 陷阱触发率×0%</li>
 </ul>
 <p>研究点数改为前置500,后续每个1000</p>
 <h2 id="涉及到DLL修改的内容">涉及到DLL修改的内容</h2>
@@ -1566,7 +1570,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 负正义
+                  rimworld, 负正义, 微正义
                   
                 </span>
               
@@ -1644,7 +1648,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 微正义
+                  rimworld, 种族, 负正义
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1745,16 +1749,16 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
       </div>
     
       <div class="vs-recommended-item" data-index="5" tabindex="0">
-        <a href="../rimworld%E8%A1%A8%E6%A0%BC%E5%90%88%E9%9B%86/" class="vs-recommended-link">
+        <a href="../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
             <div class="vs-recommended-title">
               <i class="fas fa-file-code"></i>
-              <span>Rimworld表格合集</span>
+              <span>异象扩展</span>
             </div>
             
             <div class="vs-recommended-excerpt">
-              本Blog所有表格合集
+              这个是真恶心👎🤮 绝大部分内容都是原版等级强度的,但有一两个强度极高 仅包含了血肉内容的表格
             </div>
             
             <div class="vs-recommended-meta">
@@ -1763,7 +1767,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld
+                  rimworld, 正义, 负正义
                   
                 </span>
               
@@ -1771,11 +1775,11 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               <span class="vs-meta-info">
                 <span class="vs-date">
                   <i class="fas fa-calendar-alt"></i>
-                  1月 13
+                  9月 03
                 </span>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
-                  14 min
+                  1 min
                 </span>
               </span>
             </div>
@@ -1947,7 +1951,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-06-30
+      2026-07-01
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -2031,7 +2035,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "resultado",
+    search_result: "نتيجة",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -2077,7 +2081,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1782756937702"></script>
+<script src="../js/password-protect.js?v=1782895711402"></script>
 
     <script>
       // 移动端菜单切换
