@@ -65,7 +65,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1782895711401">
+  <link rel="stylesheet" href="../css/post.css?v=1783022983042">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -1270,6 +1270,7 @@
 <li>远程武器制作成本修改为80玻璃钢+3魔鬼素</li>
 <li>三把近战武器伤害修改为13伤/s,移除附加效果(保留击杀增伤)</li>
 <li>兽之铳穿甲改为25%</li>
+<li>不灭改为18伤/0.7s,保留击杀增伤,降低价值,耐久度降低为500</li>
 </ul>
 <p>衣物修改</p>
 <ul>
@@ -1458,7 +1459,7 @@
 <li>再见痛苦改为5天cd</li>
 <li>王权恩典改为3天cd,持续时间改为3h,效果改为移动能力+20% 操作视觉听觉能力+10% 移速+0.5 疼痛休克阈值+20% 近战命中闪避+3 射击精度+6 崩溃临界值-10% 瞄准时间×80% 陷阱触发率×0%</li>
 </ul>
-<p>研究点数改为前置500,后续每个1000</p>
+<p>研究点数改为前置500,后续每个1000.</p>
 <h2 id="涉及到DLL修改的内容">涉及到DLL修改的内容</h2>
 <ol>
 <li>添加了储存技能次数</li>
@@ -1486,8 +1487,9 @@
 <li>修改远域者伤害和穿甲</li>
 <li>debug 魅魔魔女极寒报错</li>
 <li>远域者乌鸦附加猎杀人类,忏悔改为15s爆炸</li>
-<li>兼容圣餐</li>
-<li>圣餐又更新了,再兼容.残虐利刃穿甲伤害硬编码在c#</li>
+<li>兼容CanaanIntellect</li>
+<li>兼容CanaanIntellect更新的技能.残虐利刃穿甲伤害硬编码在c#</li>
+<li>兼容了CanaanIntellect更新的圣餐</li>
 </ol>
 <p>V1.0 初始版本<br>
 V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
@@ -1570,7 +1572,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 负正义, 微正义
+                  rimworld, 微正义, 负正义
                   
                 </span>
               
@@ -1648,7 +1650,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 负正义
+                  rimworld, 种族, 微正义
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1749,16 +1751,16 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
       </div>
     
       <div class="vs-recommended-item" data-index="5" tabindex="0">
-        <a href="../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/" class="vs-recommended-link">
+        <a href="../rimworld%E8%A1%A8%E6%A0%BC%E5%90%88%E9%9B%86/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
             <div class="vs-recommended-title">
               <i class="fas fa-file-code"></i>
-              <span>异象扩展</span>
+              <span>Rimworld表格合集</span>
             </div>
             
             <div class="vs-recommended-excerpt">
-              这个是真恶心👎🤮 绝大部分内容都是原版等级强度的,但有一两个强度极高 仅包含了血肉内容的表格
+              本Blog所有表格合集
             </div>
             
             <div class="vs-recommended-meta">
@@ -1767,7 +1769,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 正义, 负正义
+                  rimworld
                   
                 </span>
               
@@ -1775,11 +1777,11 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               <span class="vs-meta-info">
                 <span class="vs-date">
                   <i class="fas fa-calendar-alt"></i>
-                  9月 03
+                  1月 13
                 </span>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
-                  1 min
+                  14 min
                 </span>
               </span>
             </div>
@@ -1951,7 +1953,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-07-01
+      2026-07-03
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -2081,7 +2083,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1782895711402"></script>
+<script src="../js/password-protect.js?v=1783022983043"></script>
 
     <script>
       // 移动端菜单切换
