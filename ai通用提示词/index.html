@@ -62,7 +62,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1783454261982">
+  <link rel="stylesheet" href="../css/post.css?v=1783541886332">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -282,7 +282,7 @@
             
             <span class="updated-date">
               <i class="fas fa-sync-alt"></i>
-              更新于 2026-07-07
+              更新于 2026-07-08
             </span>
                         
               <span class="categories">
@@ -320,13 +320,14 @@
 <li>需要尽可能全面的内容,将mod的<strong>所有内容</strong>都展示出来,不仅仅是种族的特征,还有衣物/武器/派系/建筑等mod中所有数据均要展示,我会自行筛选哪些需要哪些删去,你只负责告诉我一共有哪些内容</li>
 <li>若某属性本身为固定值,则记为 <strong>值  属性</strong> ,例如 15%穿甲 ,意为穿甲本身值为15%</li>
 <li>若某属性为加减乘某值,则记为 <strong>属性±×值</strong> ,例如 承伤-50% ,意为承伤系数减少了50%</li>
+<li>将 x%利器防御基础值 y%材料效果乘数 简记为 <strong>x%+y%S</strong></li>
 <li>对技能的描述固定为 xx前摇xx cd,xx释放半径xx爆炸半径,xx消耗,为范围内生物造成(是否无视承伤系数)xx穿甲的x点x(伤害类型)伤害,施加&quot;xx&quot;状态,持续xx时间</li>
 <li>若某些内容(技能/武器/衣物)会附带&quot;状态(hediff)&quot;,则应当写清状态持续时间(若为随伤害附加,则应说清每点伤害累计x%状态值)</li>
 <li>百科整体遵循&quot;客观内容 空行 主观评论&quot;架构,你只需填充客观内容即可,不必填写主观评论</li>
 <li>此项内容是一个非常大的任务,途中会多次上下文溢出,请自行管理上下文和注意力</li>
 </ul>
 <p>百科整体架构如下</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><br><span class="hljs-strong">**重要注意事项**</span>(若有需要特别提醒玩家的机制/bug/注意事项,写在这里,加粗强调)<br><br><span class="hljs-section">## 总览/定义区</span><br><br><span class="hljs-strong">**定义**</span>(若有自创术语/通用规则需要解释):<br><span class="hljs-bullet"> -</span>  <span class="hljs-strong">**术语名**</span>: 术语解释<br><span class="hljs-bullet"> -</span>  ...<br><br><span class="hljs-section">## 种族本体</span><br><br>以下各章节按需包含,若mod不含该部分内容则跳过对应章节.<br><br><span class="hljs-section">### 数值概览</span><br>基础表格 此部分我会自己使用脚本拉取,不需要你进行单独拉取<br><br>此处列举种族的整体细节以及机制,要分条写:<br><span class="hljs-bullet"> -</span>  是否有衣物限制,<br><span class="hljs-bullet"> -</span>  是否地形减速免疫,受击减速免疫,单次受伤上限,各类伤害类型减伤(如子弹伤×0.5)等特殊机制<br><span class="hljs-bullet"> -</span>  其余特殊效果,例如空手攻击带眩晕,有额外的机制/社交等.注意要把<span class="hljs-strong">**所有**</span>与普通人不同的点都写出来<br><br><span class="hljs-section">### 基因/特性/心情</span><br><span class="hljs-strong">**基因**</span> 先列举该mod都添加了什么基因异种,再说每个基因异种都包含什么基因,最后再说新添加的&quot;非原版&quot;基因是什么效果<br>基因异种A:基因1;基因2;基因3;...<br><br>基因1(非原版基因):x复杂度+y代谢 详细效果(例如加多少移速,附带哪个技能等)<br><br><span class="hljs-strong">**特性**</span> 先列举该种族有什么必带特性/概率特性(要写明概率)/必不带特性,再列举该mod新添加的特性的详细效果<br>种族A必带xxx特性,30%概率带yyy特性,必定没有zzz特性<br><br>aaa特性(非原版特性):是否为某种族专属特性/特殊情况专属特性.若为特殊情况专属特性,则应写明什么情况下才会生成该特性 特性权重 详细效果<br><br><span class="hljs-strong">**心情**</span><br><span class="hljs-bullet"> -</span>  特殊心情.特殊心情要在<span class="hljs-code">`&lt;details&gt;`</span>折叠中把所有心情都举出来.<br><span class="hljs-bullet"> -</span>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span></span><br><span class="hljs-code">    &lt;summary&gt;点击查看AI扒取特殊心情&lt;/summary&gt;</span><br><span class="hljs-code"></span><br><span class="hljs-bullet">    -</span>  xx心情+数值<br><span class="hljs-bullet">    -</span>  xx心情-数值<br><span class="hljs-code">    &lt;/details&gt;</span><br><span class="hljs-code"></span><br><span class="hljs-section">## 科技</span><br>此处全部为主观部分,理应我来填充,但科技树总是很乱,难免会晕,所以需要你帮我初步整理.包括爬科技树压力,各项内容的重要性(先研究哪个科技更合适),此部分内容应当等后面内容都看完,确定了什么武器/装备/内容更重要后,再回过头来决定哪个科技要进行优先考虑.所以此部分请最后完成<br><br><span class="hljs-section">## 武器(若有)</span><br>介绍武器特色与DPS,先介绍整体武器数值倾向(基本等同于原版/弱于原版/强于原版/极强于原版),然后根据其制作成本/科研成本要求,简单分析前中后期可以列装什么武器<br><span class="hljs-section">### 近战武器</span><br><span class="hljs-strong">**此处仅需列出有附加效果/机制的武器,对于没有任何效果的纯粹武器,我会放一个表格,不需大费周章进行列举**</span><br><br><span class="hljs-bullet"> -</span>  近战武器:制作成本 取伤害最高的那一个作为单次伤害/攻击间隔 武器附加机制/状态<br>如:<br><span class="hljs-bullet"> -</span>  铁剑:20金属 13伤/0.6s 移速+0.2<br><br><span class="hljs-section">### 远程武器</span><br><span class="hljs-strong">**此处仅需列出有附加效果/机制的武器,对于没有任何效果的纯粹武器,我会放一个表格,不需大费周章进行列举**</span><br><br><span class="hljs-bullet"> -</span>  远程武器:制作成本 前摇后摇射程穿甲连射次数×单次伤害,四距离精度,传奇级dpsa,叠1%瞄准时间后的dpsa,武器附加机制/状态<br>如:<br><span class="hljs-bullet"> -</span>  突击步枪:80钢铁+3零部件 2s前摇1.2s后摇28射程25%穿甲5×6伤的武器,四距离精度40/45/50/55,传奇级dpsa xxx,叠1%瞄准时间为yyy,移速+0.1,命中附加xxx状态,持续x时<br><br><span class="hljs-section">## 衣物(若有)</span><br>介绍衣物特色与数值,先介绍衣物护甲的整体数值倾向,然后根据其制作成本/科研成本要求,简单分析前中后期可以列装什么衣物.以及非战斗的工作人员/打杂人员是否有合适的衣物<br><br><span class="hljs-section">### 工作衣物(你可以进行细分,例如背包配件/机械师服装/灵能衣物/特殊用途等,但整体架构不变)</span><br>你需要列举<span class="hljs-strong">**所有**</span>有附加效果/机制的衣物.若同时满足&quot;护甲值条件&quot;,则归类为战斗衣物,不归类为工作衣物<br><span class="hljs-bullet"> -</span>  衣物名:制作要求 附加效果<br>如:<br><span class="hljs-bullet"> -</span>  白工作服:85皮革或纤维+25布 治疗速度+5% 研究速度+5%<br><br><span class="hljs-section">### 战斗衣物(若衣物大于15个,则可进一步细分为前中后期战斗衣物)</span><br>此处需要列举满足 利器防御基础值+材料效果乘数(StuffEffectMultiplierArmor)×(若仅允许皮革纤维,则乘2.08;若仅允许金属,则乘1.14)&gt;0.8(下称此不等式为护甲值条件) 的衣物.<br><span class="hljs-bullet"> -</span>  衣物名:制作要求 x利器基础值y材料效果乘数(若为固定防御,则写为三防x/y/z) 附加效果(若有)<br>如<br><span class="hljs-bullet"> -</span>  夜行衣:160皮革或纤维+75魔菇布 60%利器基础值 35%材料效果乘数 可潜行 崩溃临界值-5% 狩猎隐蔽率+40% 疼痛休克阈值+15%<br><span class="hljs-bullet"> -</span>  勇者甲胄:不可制作 三防200/156/130 崩溃临界值-5% 近战命中率+6 近战闪避率+8 远程闪避率+15% 移速+0.2 抑止时间乘数+10% 易燃性×0%<br><br><span class="hljs-section">## 派系</span><br>添加了xx派系 默认中立/敌对/永久敌对;xx科技等级<br>该派系添加了(非原版)商队xxx,卖啥买啥(如果是和原版派系一样就别写了)<br>该派系据点额外有xxx卖(如果是和原版派系一样就别写了)<br><br><span class="hljs-section">## Mod特色内容</span><br>这里填写作者特别研发的特色内容,例如某些种族机械专精/灵能专精等,这里详细介绍其特殊机制.我会在末尾简单说一些特色内容,但是你仍需要深度挖掘看有没有我没有注意到的特色内容.注意此部分一定要详细.<br><br><span class="hljs-section">## Mod其余内容</span><br><span class="hljs-bullet"> -</span>  添加的食物/医疗品:<br><span class="hljs-bullet">     -</span>  1名称=制作成本 食用后获得&quot;xx&quot;状态,持续时长<br><span class="hljs-code">        列出状态效果</span><br><span class="hljs-code"> -  添加的事件:`事件id`</span><br><span class="hljs-code">     -  事件名称:事件最低触发时间,触发间隔,触发权重,事件内容/事件要求</span><br><span class="hljs-code"> -  添加的其余配方/内容</span><br><span class="hljs-code">     -  用于查漏补缺,暂时没有明确要求,但越详细越好</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><br><span class="hljs-strong">**重要注意事项**</span>(若有需要特别提醒玩家的机制/bug/注意事项,写在这里,加粗强调)<br><br><span class="hljs-section">## 总览/定义区</span><br><br><span class="hljs-strong">**定义**</span>(若有自创术语/通用规则需要解释):<br><span class="hljs-bullet"> -</span>  <span class="hljs-strong">**术语名**</span>: 术语解释<br><span class="hljs-bullet"> -</span>  ...<br><br><span class="hljs-section">## 种族本体</span><br><br>以下各章节按需包含,若mod不含该部分内容则跳过对应章节.<br><br><span class="hljs-section">### 数值概览</span><br>基础表格 此部分我会自己使用脚本拉取,不需要你进行单独拉取<br><br>此处列举种族的整体细节以及机制,要分条写:<br><span class="hljs-bullet"> -</span>  是否有衣物限制,<br><span class="hljs-bullet"> -</span>  是否地形减速免疫,受击减速免疫,单次受伤上限,各类伤害类型减伤(如子弹伤×0.5)等特殊机制<br><span class="hljs-bullet"> -</span>  其余特殊效果,例如空手攻击带眩晕,有额外的机制/社交等.注意要把<span class="hljs-strong">**所有**</span>与普通人不同的点都写出来<br><br><span class="hljs-section">### 基因/特性/心情</span><br><span class="hljs-strong">**基因**</span> 先列举该mod都添加了什么基因异种,再说每个基因异种都包含什么基因,最后再说新添加的&quot;非原版&quot;基因是什么效果<br>基因异种A:基因1;基因2;基因3;...<br><br>基因1(非原版基因):x复杂度+y代谢 详细效果(例如加多少移速,附带哪个技能等)<br><br><span class="hljs-strong">**特性**</span> 先列举该种族有什么必带特性/概率特性(要写明概率)/必不带特性,再列举该mod新添加的特性的详细效果<br>种族A必带xxx特性,30%概率带yyy特性,必定没有zzz特性<br><br>aaa特性(非原版特性):是否为某种族专属特性/特殊情况专属特性.若为特殊情况专属特性,则应写明什么情况下才会生成该特性 特性权重 详细效果<br><br><span class="hljs-strong">**心情**</span><br><span class="hljs-bullet"> -</span>  特殊心情.特殊心情要在<span class="hljs-code">`&lt;details&gt;`</span>折叠中把所有心情都举出来.<br><span class="hljs-bullet"> -</span>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span></span><br><span class="hljs-code">    &lt;summary&gt;点击查看AI扒取特殊心情&lt;/summary&gt;</span><br><span class="hljs-code"></span><br><span class="hljs-bullet">    -</span>  xx心情+数值<br><span class="hljs-bullet">    -</span>  xx心情-数值<br><span class="hljs-code">    &lt;/details&gt;</span><br><span class="hljs-code"></span><br><span class="hljs-section">## 科技</span><br>此处全部为主观部分,理应我来填充,但科技树总是很乱,难免会晕,所以需要你帮我初步整理.包括爬科技树压力,各项内容的重要性(先研究哪个科技更合适),此部分内容应当等后面内容都看完,确定了什么武器/装备/内容更重要后,再回过头来决定哪个科技要进行优先考虑.所以此部分请最后完成<br><br><span class="hljs-section">## 武器(若有)</span><br>介绍武器特色与DPS,先介绍整体武器数值倾向(基本等同于原版/弱于原版/强于原版/极强于原版),然后根据其制作成本/科研成本要求,简单分析前中后期可以列装什么武器<br><span class="hljs-section">### 近战武器</span><br><span class="hljs-strong">**此处仅需列出有附加效果/机制的武器,对于没有任何效果的纯粹武器,我会放一个表格,不需大费周章进行列举**</span><br><br><span class="hljs-bullet"> -</span>  近战武器:制作成本 取伤害最高的那一个作为单次伤害/攻击间隔 武器附加机制/状态<br>如:<br><span class="hljs-bullet"> -</span>  铁剑:20金属 13伤/0.6s 移速+0.2<br><br><span class="hljs-section">### 远程武器</span><br><span class="hljs-strong">**此处仅需列出有附加效果/机制的武器,对于没有任何效果的纯粹武器,我会放一个表格,不需大费周章进行列举**</span><br><br><span class="hljs-bullet"> -</span>  远程武器:制作成本 前摇后摇射程穿甲连射次数×单次伤害,四距离精度,传奇级dpsa,叠1%瞄准时间后的dpsa,武器附加机制/状态<br>如:<br><span class="hljs-bullet"> -</span>  突击步枪:80钢铁+3零部件 2s前摇1.2s后摇28射程25%穿甲5×6伤的武器,四距离精度40/45/50/55,传奇级dpsa xxx,叠1%瞄准时间为yyy,移速+0.1,命中附加xxx状态,持续x时<br><br><span class="hljs-section">## 衣物(若有)</span><br>介绍衣物特色与数值,先介绍衣物护甲的整体数值倾向,然后根据其制作成本/科研成本要求,简单分析前中后期可以列装什么衣物.以及非战斗的工作人员/打杂人员是否有合适的衣物<br><br><span class="hljs-section">### 工作衣物(你可以进行细分,例如背包配件/机械师服装/灵能衣物/特殊用途等,但整体架构不变)</span><br>你需要列举<span class="hljs-strong">**所有**</span>有附加效果/机制的衣物.若同时满足&quot;护甲值条件&quot;,则归类为战斗衣物,不归类为工作衣物<br><span class="hljs-bullet"> -</span>  衣物名:制作要求 附加效果<br>如:<br><span class="hljs-bullet"> -</span>  白工作服:85皮革或纤维+25布 治疗速度+5% 研究速度+5%<br><br><span class="hljs-section">### 战斗衣物(若衣物大于15个,则可进一步细分为前中后期战斗衣物)</span><br>此处需要列举满足 利器防御基础值+材料效果乘数(StuffEffectMultiplierArmor)×(若仅允许皮革纤维,则乘2.08;若仅允许金属,则乘1.14)&gt;0.8(下称此不等式为护甲值条件) 的衣物.<br><span class="hljs-bullet"> -</span>  衣物名:制作要求 x利器基础值y材料效果乘数(若为固定防御,则写为x/y/z三防) 附加效果(若有)<br>如<br><span class="hljs-bullet"> -</span>  夜行衣:160皮革或纤维+75魔菇布 60%利器基础值 35%材料效果乘数 可潜行 崩溃临界值-5% 狩猎隐蔽率+40% 疼痛休克阈值+15%<br><span class="hljs-bullet"> -</span>  勇者甲胄:不可制作 200/156/130三防 崩溃临界值-5% 近战命中率+6 近战闪避率+8 远程闪避率+15% 移速+0.2 抑止时间乘数+10% 易燃性×0%<br><br><span class="hljs-section">## 派系</span><br>添加了xx派系 默认中立/敌对/永久敌对;xx科技等级<br>该派系添加了(非原版)商队xxx,卖啥买啥(如果是和原版派系一样就别写了)<br>该派系据点额外有xxx卖(如果是和原版派系一样就别写了)<br><br><span class="hljs-section">## Mod特色内容</span><br>这里填写作者特别研发的特色内容,例如某些种族机械专精/灵能专精等,这里详细介绍其特殊机制.我会在末尾简单说一些特色内容,但是你仍需要深度挖掘看有没有我没有注意到的特色内容.注意此部分一定要详细.<br><br><span class="hljs-section">## Mod其余内容</span><br><span class="hljs-bullet"> -</span>  添加的食物/医疗品:<br><span class="hljs-bullet">     -</span>  1名称=制作成本 食用后获得&quot;xx&quot;状态,持续时长<br><span class="hljs-code">        列出状态效果</span><br><span class="hljs-code"> -  添加的事件:`事件id`</span><br><span class="hljs-code">     -  事件名称:事件最低触发时间,触发间隔,触发权重,事件内容/事件要求</span><br><span class="hljs-code"> -  添加的其余配方/内容</span><br><span class="hljs-code">     -  用于查漏补缺,暂时没有明确要求,但越详细越好</span><br></code></pre></td></tr></table></figure>
 <p>现在,请你读取  文件夹,完善</p>
 
         </div>
@@ -474,7 +475,7 @@
                 </span>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
-                  1 min
+                  2 min
                 </span>
               </span>
             </div>
@@ -522,45 +523,6 @@
       </div>
     
       <div class="vs-recommended-item" data-index="4" tabindex="0">
-        <a href="../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>(尚未完工)失能机关</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              施工中~暂时只有几个统计表格~太久不更的话也有可能是烂尾了 强度的话,作为玩家派系的机器人强度尚可,但作为敌对BOSS解决起来就很棘手了
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-                <span class="vs-tags-preview">
-                  <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 负正义
-                  
-                </span>
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  8月 17
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  3 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="5" tabindex="0">
         <a href="../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -579,7 +541,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 负正义, 正义
+                  rimworld, 正义, 负正义
                   
                 </span>
               
@@ -592,6 +554,45 @@
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
                   1 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="5" tabindex="0">
+        <a href="../%E5%8E%9F%E7%89%88%E8%99%AB%E6%97%8F%E6%89%A9%E5%B1%952/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>原版虫族扩展2</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              虫族扩展2的数值一览表 完完全全就是原版级别的数值我只能说
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, VE扩展, 原版向
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  4月 23
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  2 min
                 </span>
               </span>
             </div>
@@ -763,7 +764,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-07-08
+      2026-07-09
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -893,7 +894,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1783454261982"></script>
+<script src="../js/password-protect.js?v=1783541886333"></script>
 
     <script>
       // 移动端菜单切换
