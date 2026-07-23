@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>美狐扩展-星环-仅ai扒取 | 缘神</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="仅作记录,大概率不会更新">
+  <meta name="keywords" content="rimworld">
+  <meta name="author" content="Round">
+  <link rel="canonical" href="https://RoundSann.github.io">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="美狐扩展-星环-仅ai扒取 | 缘神">
+  <meta property="og:description" content="仅作记录,大概率不会更新">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://RoundSann.github.io">
+  <meta property="og:site_name" content="缘神">
+  <meta property="article:published_time" content="2026-06-26T12:19:25.000Z">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="美狐扩展-星环-仅ai扒取 | 缘神">
+  <meta name="twitter:description" content="仅作记录,大概率不会更新">
+
+  <!-- Favicon 配置 -->
+  
+    
+      <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    
+    
+      <link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico">
+    
+    
+      <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+    
+    
+      <link rel="icon" type="image/png" sizes="192x192" href="../favicon.ico">
+    
+    
+      <link rel="apple-touch-icon" sizes="180x180" href="../favicon.ico">
+    
+  
+
+  <!-- 外部样式 - 统一使用 jsdelivr CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- 代码高亮样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-dark.min.css" crossorigin="anonymous">
+
+  <!-- Mermaid.js 库 (defer加载) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" crossorigin="anonymous"></script>
+
+  <!-- 主题样式 -->
+  <link rel="stylesheet" href="../css/theme-colors.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/code.css">
+  <link rel="stylesheet" href="../css/code-custom.css">
+  <link rel="stylesheet" href="../css/code-languages.css">
+  <link rel="stylesheet" href="../css/mermaid.css">
+
+  <link rel="stylesheet" href="../css/vs-code.css">
+  <link rel="stylesheet" href="../css/post.css?v=1784833704687">
+  <link rel="stylesheet" href="../css/tag.css">
+  <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/archive.css">
+  <link rel="stylesheet" href="../css/search.css">
+  <link rel="stylesheet" href="../css/mobile.css">  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/elements.css">
+
+  <!-- 添加 JetBrains Mono 字体 -->  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Add any custom head content here -->
+
+  <script defer src="../js/explorer.js"></script>
+  <script defer src="../js/code-enhance.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+    <div class="wrapper">
+      <div class="mobile-menu-toggle" aria-label="Toggle sidebar menu" role="button" tabindex="0">
+        <i class="fas fa-bars"></i>
+      </div>
+      <!-- 移动端侧边栏遮罩层 -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+      <header class="vs-header">
+  <nav class="vs-nav">
+    <div class="nav-left">
+      <a href="/" class="nav-brand">
+        <i class="fas fa-terminal"></i>
+        缘神
+      </a>
+    </div>
+    
+    <div class="nav-right">
+      <a href="/" class="nav-item ">
+        <i class="fas fa-home"></i>
+        <span>首页</span>
+      </a>
+      <a href="/archives/" class="nav-item ">
+        <i class="fas fa-archive"></i>
+        <span>归档</span>
+      </a>
+      <a href="/categories/" class="nav-item ">
+        <i class="fas fa-folder"></i>
+        <span>分类</span>
+      </a>
+      <a href="/tags/" class="nav-item ">
+        <i class="fas fa-tags"></i>
+        <span>标签</span>
+      </a>
+      <a href="/search/" class="nav-item ">
+        <i class="fas fa-search"></i>
+        <span>搜索</span>
+      </a>
+      <a href="/about/" class="nav-item ">
+        <i class="fas fa-info-circle"></i>
+        <span>关于</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function smoothScroll(event, target) {
+    event.preventDefault();
+    const targetId = target.substring(target.indexOf('#') + 1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 50, // 调整偏移量
+        behavior: 'smooth'
+      });
+    } else {
+      window.location.href = target;
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.vs-header');
+    const nav = document.querySelector('.vs-nav');
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    nav.style.setProperty('--scroll-percent', `${scrollPercent}%`);
+    
+    if (window.scrollY > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // 添加标签页切换动画
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      const ripple = document.createElement('span');
+      ripple.classList.add('nav-ripple');
+      this.appendChild(ripple);
+      
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      setTimeout(() => ripple.remove(), 1000);
+    });
+  });
+</script>
+
+
+<div class="vscode-container">
+  <!-- 左侧资源管理器 -->
+  <div class="sidebar-explorer">
+    <!-- TOC导航 -->
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-list"></i>
+        <span>目录</span>
+      </div>
+      <div class="section-content">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%9F%E7%8E%AF%E6%89%A9%E5%B1%95"><span class="toc-text">星环扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E8%A7%88-%E5%AE%9A%E4%B9%89%E5%8C%BA"><span class="toc-text">总览&#x2F;定义区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%BF%83%E6%83%85%EF%BC%88%E6%98%9F%E7%8E%AF%E6%96%B0%E5%A2%9E%EF%BC%89"><span class="toc-text">特殊心情（星环新增）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%91%E6%8A%80"><span class="toc-text">科技</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A6%E5%99%A8"><span class="toc-text">武器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%91%E6%88%98%E6%AD%A6%E5%99%A8"><span class="toc-text">近战武器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%AD%A6%E5%99%A8"><span class="toc-text">远程武器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A3%E7%89%A9"><span class="toc-text">衣物</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E8%A1%A3%E7%89%A9"><span class="toc-text">工作衣物</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%98%E6%96%97%E8%A1%A3%E7%89%A9"><span class="toc-text">战斗衣物</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%98%E5%9C%BA%E6%94%AF%E6%8F%B4%E6%8A%A4%E7%94%B2"><span class="toc-text">战场支援护甲</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B4%BE%E7%B3%BB%E4%B8%8E%E6%98%9F%E7%8E%AF%E5%95%86%E8%B4%B8"><span class="toc-text">派系与星环商贸</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%9F%E7%8E%AF%E5%95%86%E5%BA%97"><span class="toc-text">星环商店</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%9F%E7%8E%AF%E9%9B%B6%E9%83%A8%E4%BB%B6%E5%95%86%E4%BA%BA"><span class="toc-text">星环零部件商人</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mod%E7%89%B9%E8%89%B2%E5%86%85%E5%AE%B9"><span class="toc-text">Mod特色内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E6%A2%B0%E4%BD%93"><span class="toc-text">机械体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%BA%E6%A2%B0%E6%95%B4%E5%A4%87%E6%9E%B6%E4%B8%8E%E5%8D%87%E7%BA%A7"><span class="toc-text">机械整备架与升级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E7%AD%91%E4%B8%8E%E8%83%BD%E6%BA%90"><span class="toc-text">建筑与能源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%9F%E7%8E%AF%E9%80%9A%E8%AE%AF-%E8%BD%A8%E9%81%93%E6%94%AF%E6%8F%B4%E4%B8%8E%E9%9B%87%E4%BD%A3"><span class="toc-text">星环通讯,轨道支援与雇佣</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%A8%E9%81%93%E6%94%AF%E6%8F%B4"><span class="toc-text">轨道支援</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%87%E4%BD%A3%E6%9C%8D%E5%8A%A1"><span class="toc-text">雇佣服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%AE%E7%82%B9%E7%B3%BB%E7%BB%9F%E4%B8%8E%E4%BB%BB%E5%8A%A1"><span class="toc-text">据点系统与任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%84%E6%BA%90-%E9%85%8D%E6%96%B9%E4%B8%8E%E7%94%9F%E4%BA%A7"><span class="toc-text">资源,配方与生产</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E8%B5%84%E6%BA%90"><span class="toc-text">新增资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E6%96%B9"><span class="toc-text">配方</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9-%E5%8C%BB%E7%96%97%E5%93%81-%E4%B9%A6%E7%B1%8D%E4%B8%8E%E6%B0%94%E4%BD%93"><span class="toc-text">食物,医疗品,书籍与气体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%9F%E7%89%A9"><span class="toc-text">食物</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BF%E5%A4%9A%E5%B0%BC%E6%96%AF"><span class="toc-text">阿多尼斯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A6%E7%B1%8D"><span class="toc-text">书籍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%94%E4%BD%93%E5%92%8C%E7%8E%AF%E5%A2%83%E5%B0%98%E5%9F%83"><span class="toc-text">气体和环境尘埃</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BD%99%E7%89%A9%E5%93%81"><span class="toc-text">其余物品</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6-%E5%8F%99%E8%BF%B0%E8%80%85%E4%B8%8E%E5%89%A7%E6%9C%AC"><span class="toc-text">事件,叙述者与剧本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%99%E8%BF%B0%E8%80%85"><span class="toc-text">叙述者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E4%BA%8B%E4%BB%B6"><span class="toc-text">有效事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E6%9C%AF%E6%97%85%E8%A1%8C%E5%89%A7%E6%9C%AC"><span class="toc-text">学术旅行剧本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%A4%E9%B8%AE%E5%89%A7%E6%83%85"><span class="toc-text">赤鸮剧情</span></a></li></ol>
+      </div>
+    </div>
+
+    <!-- 同分类文章 -->
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-folder"></i>
+        <span>同分类文章</span>
+      </div>
+      <div class="section-content">
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E7%BE%8E%E7%8B%90/">美狐</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E7%BB%AE%E7%BD%97/">绮罗</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E4%BA%BA%E5%B7%A5%E7%A7%8D%E6%97%8F%E9%87%8D%E5%B9%B3%E8%A1%A1%E8%A1%A5%E4%B8%81/">人工种族重平衡补丁</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../rimworld%E8%A1%A8%E6%A0%BC%E5%90%88%E9%9B%86/">Rimworld表格合集</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../ai%E9%80%9A%E7%94%A8%E6%8F%90%E7%A4%BA%E8%AF%8D/">AI通用提示词</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%8E%9F%E7%89%88%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">原版相关内容</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83%E5%8F%8A%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">文档规范及经验分享</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/">边缘世界种族数据提取器</a>
+          </div>
+        
+      </div>
+    </div>
+    
+    
+    <!-- 标签列表 -->
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-tags"></i>
+        <span>文章标签</span>
+      </div>
+      <div class="section-content">
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/rimworld/">rimworld</a>
+            <span class="count">(22)</span>
+          </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- 主要内容区域 -->
+  <div class="editor-content">
+    <div class="tab-bar">
+      <div class="tab active">
+        <i class="fas fa-file-alt"></i>
+        <span>美狐扩展-星环-仅ai扒取.md</span>
+      </div>
+    </div>
+    
+    <div class="content-area">
+      <article class="post-content">
+        <div class="post-header">
+          <h1>美狐扩展-星环-仅ai扒取</h1>
+          <div class="post-meta">
+            <span class="date">
+              <i class="fas fa-calendar-alt"></i>
+              2026-06-26
+            </span>
+            
+            <span class="updated-date">
+              <i class="fas fa-sync-alt"></i>
+              更新于 2026-07-23
+            </span>
+                        
+              <span class="categories">
+                <i class="fas fa-folder"></i>
+                <div class="categories-list">
+                  <ul class="category-item-post-list"><li class="category-item-post-list-item"><a class="category-item-post-list-link" href="../categories/rimworld/">rimworld</a></li></ul>
+                </div>
+              </span>
+            
+            
+              <span class="tags">
+                <i class="fas fa-tags"></i>
+                <div class="tags-list">
+                  <ul class="tag-item-post-list" itemprop="keywords"><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/rimworld/" rel="tag">rimworld</a></li></ul>
+                </div>
+              </span>
+            
+          </div>
+        </div>
+        
+        <div class="post-body vscode-markdown">
+          <p>仅作记录,大概率不会更新</p>
+<span id="more"></span>
+<p>加了好多的武器衣物机械体,不想统计了,仅放出ai扒取内容</p>
+<ul>
+<li>20瓷金=24玻璃钢+16钢铁</li>
+<li>40瓷金=20玻璃钢+15钢铁+15化合燃料</li>
+<li>80瓷金=20玻璃钢+20钢铁+50化合燃料+5黄金+40美狐陶瓷<br>
+2.4银 55%耐久度上限 150/140/160三防 30%利钝器伤害 70%近战冷却时间 0%易燃性</li>
+<li>5预编程纳米尘=20玻璃钢+250秘灵粉末+1零部件</li>
+<li>35预编程纳米尘=140玻璃钢+1250秘灵粉末+8零部件</li>
+<li>50纤维-21=1预编程纳米尘+20火玄丝绸+5超织物+5魔菇布<br>
+12银 280%耐久度上限 230/80/500三防 20/24冷热隔温 0%易燃性</li>
+<li>25强化型埃格林合金=20玻璃钢+15瓷金+1预编程纳米尘<br>
+15银 600%耐久度上限 145/130/130三防 50%利器伤害 170%钝器伤害 240%近战冷却时间 360%工作量 0%易燃性</li>
+</ul>
+<p>赤鸮剧情为三幕通讯链:</p>
+<ul>
+<li>第一幕事件ID为SR_Akasagi_Story_A,需中级许可.玩家误入PMC加密频道并认识赤鸮,第一处&quot;安全第一&quot;选项会正常推进本幕至结束,不会永久中断整个任务</li>
+<li>第二幕事件ID为SR_Akasagi_Story_B,需高级许可.赤鸮进行客户回访,透露姐姐诗音正在执行任务</li>
+<li>第三幕事件ID为SR_Akasagi_Story_C,需高级许可且游戏开始至少12日.赤鸮和诗音被PMC除名.赤鸮说明自己借PMC情报网消灭害死父母的组织,随后被PMC当作棋子清除</li>
+<li>第三幕可接纳赤鸮,也可拒绝.拒绝会永久结束剧情并获得物资奖励.源码中的 lastIncidentTickAbs 只在新游戏初始化,之后未更新,因此第三幕的12日限制实际按开局时间计算,而不是按第二幕结束时间计算</li>
+<li>若拒绝,则会送来极佳朱鹮无人机,极佳时雨高频振荡菜刀,赤鸮的礼服,15000白银,8美狐大福</li>
+<li>若接受,则Akasagi加入殖民地,固定为24岁 雪凛种,特性固定为 格斗者 坚韧 意志如钢 敏捷 善良.技能固定为射击5 格斗(双火)18+8=26 建造6 采矿8 烹饪2-4=0 种植(单火)4 驯兽3-8=0 手工(单火)10+4=14 艺术6-4=2 医疗(单火)4 社交6 智识(单火)6,自带4级启灵和5级灵侍</li>
+</ul>
+<p><strong>下列内容全部为ai扒取,完全没有验证仅作参考</strong><br>
+<strong>下列内容全部为ai扒取,完全没有验证仅作参考</strong><br>
+<strong>下列内容全部为ai扒取,完全没有验证仅作参考</strong><br>
+<strong>下列内容全部为ai扒取,完全没有验证仅作参考</strong><br>
+<strong>下列内容全部为ai扒取,完全没有验证仅作参考</strong></p>
+<h2 id="星环扩展">星环扩展</h2>
+<p><strong>重要注意事项</strong></p>
+<ul>
+<li><strong>&quot;轨道游走粒子光束&quot;和&quot;轨道深层矿脉扫描&quot;在源码中明确标记为未完工(WIP),不要把它们当作稳定功能使用.</strong></li>
+<li><strong>Patch_Pawn_NeedsTracker 在所有 Scribe.mode&gt;0 的保存,载入阶段令所有角色 ShouldHaveNeed=false,可能影响需求初始化以及存档载入.</strong></li>
+<li><strong>论文的科技印图循环使用 i&lt;=list.Count,当前没有未完成印图科技时可能发生越界错误.</strong></li>
+<li><strong>机械整备架的建筑说明声明机械能充能速度为0.0025/tick,实际组件固定为0.00083333335/tick.</strong></li>
+<li><strong>D2A3/R&quot;撕裂者&quot;实际引用D2A2的11伤,13%穿甲弹,定义中的18伤弹没有被引用.</strong></li>
+<li><strong>基因回溯仓源码中的父系,母系英文描述写反,简体中文标签及组件实际行为正确,应按下文的实际行为理解.</strong></li>
+<li><strong>大犬座火力支援型没有制造配方,只能通过商店,佣兵或事件获得.</strong></li>
+<li><strong>蚀燃尘埃自然事件的基础概率为0,只能由其他机制强制触发.</strong></li>
+<li><strong>时雨太刀只有耐久严格大于10时才能使用强化斩击,最后10点耐久无法消耗.</strong></li>
+<li><strong>制式防身武装收备带没有加入美狐衣物白名单,美狐角色可能无法穿戴.</strong></li>
+<li><strong>大犬座火力支援型,武仙座破障型和武仙座精击型没有被列入部分机械升级的允许机型,具体限制见机械升级章节.</strong></li>
+</ul>
+<h2 id="总览-定义区">总览/定义区</h2>
+<p>星环扩展(Star Ring,源码命名空间 SRM)是围绕美狐族都市,星环公司,灵能术士,军用机械体和轨道支援建立的综合扩展.扩展没有新增独立可玩的种族本体,基因异种或特性体系,而是向美狐内容加入背景,装备,科技,商贸,机械体,据点任务和赤鸮剧情,并依赖原版美狐的资源,衣物层和工作台.</p>
+<p><strong>定义</strong></p>
+<ul>
+<li><strong>星环公司</strong>:扩展中的高科技美狐企业,负责商店,雇佣,轨道支援,机械体和大量装备.</li>
+<li><strong>印花</strong>:星环商店及轨道支援使用的专用兑换额度.通常按商品银价值每1000银获得1枚,商店结算时清零.</li>
+<li><strong>初级,中级,高级许可</strong>:星环商店的三档购买权限.累计消费7000银解锁中级许可,累计消费15000银解锁高级许可.</li>
+<li><strong>机械能</strong>:机械体的可用能量需求.机械整备架可维修耐久并缓慢补充机械能,不同升级会改变机械能耗.</li>
+<li><strong>秘兰灵腺</strong>:美狐原版的灵能腺体需求.战场支援护甲超载,部分食品和美狐灵能机制会直接改变其严重度.</li>
+<li><strong>燃解</strong>:燃解(Pyrolytic Decomposition)状态.它由燃解导弹及蚀燃环境叠加,逐级降低护甲,闪避和移动能力,并提高燃烧,硬直和远程冷却惩罚.</li>
+<li><strong>战场支援护甲</strong>:无普通护甲值的中间层装备,穿戴后在躯干附加导弹发射器状态,实际继承固定106/82/96三防及携带量,装填加成.</li>
+<li><strong>据点</strong>:星环任务中建立的远程功能站点,可存放远行队和物资,并按技能周期性产出奖励.</li>
+</ul>
+<h2 id="特殊心情（星环新增）">特殊心情（星环新增）</h2>
+<details>
+<summary>点击查看AI扒取特殊心情</summary>
+<ul>
+<li>吃了大理石慕斯蛋糕：+4（1天）</li>
+<li>吃了日光蛋糕：+3（1天）</li>
+<li>吃了美狐大福：+6（1天）</li>
+<li>吃了艾尔诺蜜糖饼：+1 / 北极美狐耳基因+3（1天）</li>
+<li>雇佣高薪：+12</li>
+<li>阿多尼斯/秘兰灵腺超载相关心情阶段：0 / -5 / -12 / -40 / -60（随超载严重度）</li>
+<li>穿戴雨衣：约+1（范围-1~2）</li>
+</ul>
+</details>
+<h2 id="科技">科技</h2>
+<p>星环科技均为研究项目,括号内为研究点数,&quot;印图&quot;表示所需科技印图数量.</p>
+<ul>
+<li>场抑制理论(500):前置微电子基础.</li>
+<li>动质量平衡(1500):前置场抑制理论.</li>
+<li>高热嵌合(1500):前置场抑制理论.</li>
+<li>重型装备(1500):前置场抑制理论.</li>
+<li>冷聚变循环(2000):前置电荷武器,高热嵌合.</li>
+<li>先进约束器(2000):前置冷聚变循环.</li>
+<li>精密核心蚀刻(1500,2印图):前置冷聚变循环.</li>
+<li>电融合平衡(2000):前置动质量平衡.</li>
+<li>高速释能装置(1000):前置电融合平衡,冷聚变循环.</li>
+<li>自动分析(1500):前置高速释能装置.</li>
+<li>斥力场效应论(2500):前置场抑制理论.</li>
+<li>先进步兵协同理论(2000):前置多元分析仪.</li>
+<li>人机协同战术(2500):前置先进步兵协同理论.</li>
+<li>高等战斗无人机(2500):前置人机协同战术,斥力场效应论.</li>
+<li>城市战无人机(2500):前置先进步兵协同理论,斥力场效应论.</li>
+<li>灵能弦论(2500):前置多元分析仪.</li>
+<li>C.A.P计划(2500,2印图):前置灵能弦论.</li>
+<li>简单服装(500):前置美狐基础衣物.</li>
+<li>星环公司衣物(500):前置简单服装.</li>
+<li>星环公司战斗服装(500):前置星环公司衣物.</li>
+<li>星环公司高等战斗服装(500):前置星环公司战斗服装.</li>
+<li>合金铸造(2000):前置美狐基础工厂.</li>
+<li>炸药熔铸(800):前置药物生产.</li>
+<li>纳米工艺优化(1500,2印图):前置美狐机械骇入.</li>
+<li>陶瓷工艺优化(1000,1印图):前置美狐基础工厂.</li>
+<li>可编程纳米机械(2500):前置美狐机械骇入.</li>
+<li>供能循环优化(800):前置冷聚变循环.</li>
+<li>高性能燃烧剂(1500):前置药物生产.</li>
+<li>通用升级(800):前置先进步兵协同理论.</li>
+</ul>
+<h2 id="武器">武器</h2>
+<p>星环武器整体从工业时代枪械延伸到超重型机械炮和灵能武器.早期可制作武器接近原版工业武器或略强,瓷金,埃格林,纳米尘和军用零部件体系成型后,电荷枪,智能追踪弹和机械炮显著强于原版,重型机械炮和灵能时域武器属于极高强度,但有重量,弹药或灵能限制的后期装备.</p>
+<h3 id="近战武器">近战武器</h3>
+<ul>
+<li>标准术士权杖(Standard Psy Staff):30瓷金+20纤维-21+100秘灵粉末,13钝击/2.6s或12刺击/2.6s,90%穿甲,灵敏度+0.5,熵消散+3,熵阈值+100.</li>
+<li>闪电链术士权杖:标准术士权杖成本+3军用零部件,12刺击/2.6s,90%穿甲,附带闪电链技能.</li>
+<li>等离子短剑:22切割/1s,75%穿甲或25刺击/1s,100%穿甲,移速+0.3.</li>
+<li>镇暴棍:30瓷金+10埃格林,最高4钝击/0.4s,移速+0.4,近战闪避+0.5.4伤/0.4s和3伤/0.7s工具攻击另造成5点神经疼痛伤害,每点实际伤害累积5%&quot;神经疼痛&quot;状态值,状态每日下降75%,4%/40%/60%阶段分别使疼痛+30%/+45%/+60%,近战闪避-0.6/-0.75/-0.9,近战命中-0.2/-0.3/-0.5.</li>
+<li>时雨高频振荡太刀(Shigure High-Frequency Oscillation Katana):不可普通制作时成本为30埃格林+20纤维-21+12军用零部件+3高级零部件,最高25切割或刺击/2s,90%穿甲.驱动器耐久500,每1纳米尘恢复100耐久,强化斩击每次消耗10耐久,只有当前耐久严格大于10时可释放.</li>
+<li>ABB-05&quot;纺锤&quot;:不可制作,17切割/1s,50%穿甲,移速+0.3.</li>
+<li>路牌:10瓷金,最高13切割/5s,另有9钝击/2.6s,无额外状态.</li>
+</ul>
+<p>闪电链(Electric Arc):1.5秒前摇,5秒cd,23.9射程,120熵,2%精神力消耗,向目标发射100%穿甲,30点燃烧伤并附加15 EMP,30%概率追加15点眩晕.基础传导率75%,传导距离2.9格,每次传导伤害×80%.下雨,雷暴,雾雨,血雨,闪电风暴,目标带&quot;眼中积水&quot;状态或目标为机械体时,传导率变为100%,距离6.9格,伤害和穿甲×2.</p>
+<h3 id="远程武器">远程武器</h3>
+<p>以下为有附加模式,追踪,状态,弹药或特殊机制的武器,其余纯数值枪械名称一并列出,具体基础表可按Def拉取.</p>
+<ul>
+<li>A32磁轨步枪:40瓷金+30塑钢+10工业零部件+1军用零部件,1.3秒前摇,45.9射程,1发×5伤,56%穿甲,命中附带少量EMP并可穿透护盾.</li>
+<li>A32磁轨步枪(巡弋套件):1把A32+3工业零部件+3军用零部件,1.9秒前摇,45.9射程,2发×19伤,59%穿甲.</li>
+<li>A5战斗磁轨步枪:40瓷金+15塑钢+2军用零部件+15工业零部件+2高级零部件,1.6秒前摇,39.9射程,4发×10伤,45%穿甲.</li>
+<li>A5M2战斗磁轨步枪:1把A5+5军用零部件+15工业零部件+3高级零部件+25埃格林,1.4秒前摇,41.9射程,4发×10伤,47%穿甲,另有39.9射程,4发×15热伤,20%穿甲模式.</li>
+<li>A7重型线粒子狙击炮:10军用零部件+15工业零部件+5高级零部件+75埃格林+15纤维-21+2预编程纳米尘,4.9秒前摇,49.9射程,2.9半径,100点气化伤害,无固定穿甲字段但为气化伤害,冷却系数2.</li>
+<li>P-E3030&quot;格斗剑&quot;:15瓷金+10塑钢+9工业零部件,1.1秒前摇,19.9射程,4发×5伤,11%穿甲.</li>
+<li>A121&quot;门扉&quot;脉冲步枪:40瓷金+35塑钢+3军用零部件+15工业零部件+1高级零部件.实弹模式1.4秒前摇,1.6秒后摇,31.9射程,4发×15伤,30%穿甲,近距脉冲模式1.6秒前摇,1.6秒后摇,15.9射程,3发×8伤,5%穿甲.</li>
+<li>权20-S:40瓷金+75埃格林+10工业零部件+5高级零部件+5预编程纳米尘+15军用零部件,1.6秒前摇,31.9射程,4发×15伤,1.56爆炸半径,无穿甲,每发智能爆炸弹独立追踪目标.</li>
+<li>钥22-R:55瓷金+85埃格林+10工业零部件+6高级零部件+2预编程纳米尘+15军用零部件,1.1秒前摇,37.9射程,3发×30伤,接近目标后近炸并散射高速破片.</li>
+<li>目18-K:40瓷金+55埃格林+10工业零部件+6高级零部件+2预编程纳米尘+20军用零部件,普通模式0.8秒前摇,25.9射程,2发×10伤,40%穿甲,控制弹模式1.2秒前摇,25.9射程,1发×2伤,3爆炸半径,制动力500,并用于群体控制.</li>
+<li>A17-RR&quot;层流&quot;:40瓷金+20塑钢+17工业零部件+1军用零部件,1.2秒前摇,37.9射程,6发×11伤,49%穿甲,并可切换6伤,33%穿甲的低穿透弹.</li>
+<li>A15-RRK&quot;湍流&quot;:35瓷金+20塑钢+15工业零部件+1军用零部件,1.2秒前摇,29.9射程,8发×9伤,46%穿甲,并可切换6伤,31%穿甲弹.</li>
+<li>A17-LSW&quot;涡流&quot;轻机枪:不可普通制作,2.6秒前摇,39.9射程,12发×11伤,49%穿甲,亦可切换6伤,33%穿甲弹.</li>
+<li>&quot;费洛蒙&quot;追猎机炮:25埃格林+60瓷金+8工业零部件+6军用零部件,1.5秒前摇,37射程,40伤,穿甲按弹丸定义,移速-0.8.其弹丸可使战场支援护甲快速锁定目标.</li>
+<li>&quot;灵蛇权杖&quot;多用途机炮:75埃格林+3工业零部件+5军用零部件+1高级零部件+1重型冷聚变核心,1秒前摇,35.9射程,1.9爆炸半径,30热爆伤,60%穿甲,移速-1.2,需配套重武器衣物.</li>
+<li>HC30A自动炮:机械体武器,2秒前摇,52射程,4发×40伤,面向轻装甲压制.</li>
+<li>&quot;炽渊II&quot;狱火束流炮:机械体专用,3秒充能,45射程,最多连续100束,射击后进入长时间散热,可在非充能阶段切换扫射或聚焦模式,实际弹丸由机械体动力源生成.</li>
+<li>&quot;乌尔班&quot;三轨重装磁轨炮:机械体专用,2秒前摇,65.9射程,3爆炸半径,聚变磁混合弹,用于重装甲和永备工事.</li>
+<li>&quot;新星&quot;八管集束火箭发射器:机械体专用,7.7秒前摇,150射程,8发,7.5爆炸半径,适合区域压制.</li>
+<li>PDW-2A:机械体认证武器,1.2秒前摇,18.9射程,3发×10伤,30%穿甲,需合法机械接口或认证动力骨骼.</li>
+<li>HAP-20:武仙座专用重型机枪,5秒前摇,45射程,4发×15爆炸伤,1爆炸半径,2%穿甲.</li>
+<li>&quot;赋格曲&quot;HC57A-12集成武器站:机械体武器站,1.5秒前摇,45.9射程,4发×45热爆伤,1.5爆炸半径,60%穿甲.</li>
+<li>&quot;哨兵&quot;反器材狙击炮:机械体专用大口径狙击炮,用于反制设备和高价值目标.</li>
+<li>&quot;风暴&quot;压制速射机枪:机械体专用,发射.338拉普马格南增压弹,拥有较快瞄准和高容量弹药箱.</li>
+<li>&quot;交响曲&quot;HC25-AA弹炮结合武器系统,&quot;孔杜克图斯&quot;E221R3双轨电磁炮,&quot;圆舞曲&quot;M1225-2燃烧弹发射器,&quot;咏叹调&quot;M120E自装填迫击炮,&quot;奥尔加农&quot;HC30WS联装自动武器站:均为大犬座及其支援型机械体武器,分别承担防空,磁轨直射,燃烧,曲射和联装压制职能.“圆舞曲&quot;的凝固燃料火箭为9爆炸半径,命中生物附加&quot;可燃凝胶附着”,持续3600 tick,状态使承伤+30%,易燃性+2,移速-1,热能护甲-150%.</li>
+<li>&quot;天火&quot;发射器:不可普通制作,通常来自高级商店,每发消耗1轻型冷聚变核心,1秒前摇,6至40射程,3爆炸半径100%穿甲150点气化伤害,随后散射50枚1.5爆炸半径,100%穿甲,40点热爆伤弹丸.</li>
+<li>GL-XXI&quot;雷霆&quot;发射器:3工业零部件+1军用零部件+30瓷金+1预编程纳米尘,常规模式0.6秒前摇,30.9射程,1爆炸半径,15爆炸伤,2%穿甲,附带秘灵尘榴弹技能,1.1秒前摇,10至35射程,4连发,6.9爆炸半径,释放秘灵尘,最多5充能,每1预编程纳米尘补1充能.</li>
+<li>GL-MX&quot;火炬&quot;发射器:3工业零部件+2军用零部件+30瓷金+1预编程纳米尘,常规榴弹0.8秒前摇,34.9射程,1爆炸半径,15爆炸伤,燃烧尘榴弹1秒前摇,31.9射程,6.9爆炸半径,生成可持续灼烧并点燃生物的尘雾云.</li>
+<li>CSG-22&quot;六分仪&quot;自动霰弹枪:45瓷金+30塑钢+6军用零部件+1预编程纳米尘,1.2秒前摇,16.9射程,磁封装爆裂霰弹,1.3爆炸半径,15爆炸伤.</li>
+<li>&quot;火山&quot;抛弃式机枪巢:不可普通制作或由支援投放,1.6秒前摇,31.9射程,12发×15伤,95%穿甲.弹药打空后转为&quot;火山&quot;抛弃式机枪巢(空),可在星环工作台用空枪回收20玻璃钢+10埃格林+1军用零部件,空枪回收配方前置动质量平衡.</li>
+<li>AT-120&quot;针矛&quot;发射器:一次性制导反坦克导弹,7秒前摇,42.9射程,移速-0.5,导弹为2爆炸半径的&quot;片麻岩&quot;反坦克弹,射后可拆下瞄具.</li>
+<li>&quot;时之沙&quot;时域手枪:标准模式需6级灵能,10熵和2%精神力,0.3秒前摇,25.9射程,每发使目标种族预期寿命增加10%,并造成相当于当前生理年龄×10%的时间紊流伤害.命中衣物时直接对衣物造成40伤并阻断生物伤害.标准模式可按肉体10年,机械250年,其他种族预期寿命10%的换算提取固态时间,超频模式1.2秒前摇,每次发射5枚,消耗5固态时间且不产生固态时间.</li>
+<li>“白花”:至少1级灵能.白模式0.3秒前摇,0.7秒后摇,25.9射程,50熵,2%精神力,2.49爆炸半径,4点眩晕伤,黑模式消耗25熵,不消耗精神力,2.49爆炸半径,15点无视护甲心灵伤,两种模式均为独立灵能脉冲.</li>
+<li>P-E3050&quot;匕首&quot;:40瓷金+15塑钢+3工业零部件,0.4秒前摇,21.9射程,11伤,30%穿甲.</li>
+<li>D2A2&quot;推进者&quot;:30钢铁+3工业零部件+15瓷金,1.1秒前摇,29.9射程,3发×11伤,13%穿甲.</li>
+<li>D2A3/R&quot;撕裂者&quot;:15瓷金+1把D2A2+5工业零部件,0.8秒前摇,32射程,3发×11伤,13%穿甲,实际使用D2A2弹丸.</li>
+<li>CSG-12霰弹枪:15塑钢+5工业零部件,1.3秒前摇,15.9射程,3发×8伤,20%穿甲.</li>
+<li>CSG-12C电荷霰弹枪:15瓷金+1把CSG-12+1高级零部件+1预编程纳米尘,1.5秒前摇,18.9射程,3发×15伤,45%穿甲.</li>
+<li>美狐自动步枪(长弓套件):15钢铁+2工业零部件+1把美狐防卫步枪,0.91秒前摇,30射程,3连发.</li>
+<li>美狐步枪(遥击套件):15钢铁+2工业零部件+1把美狐老式步枪,2.6秒前摇,45射程,单发精确射击.</li>
+</ul>
+<p>纯数值或主要由弹药决定的新增武器还包括:D2N&quot;正电荷&quot;突击步枪,防卫型,火力支援型,霰射型,&quot;猎户座&quot;长导轨步枪,HC30A自动炮,HAR762,HC57A-12集成武器站,&quot;哨兵&quot;反器材狙击炮,&quot;风暴&quot;压制速射机枪,&quot;交响曲&quot;HC25-AA,&quot;孔杜克图斯&quot;E221R3,&quot;圆舞曲&quot;M1225-2,&quot;咏叹调&quot;M120E,以及上述机械体内置的电荷速射炮,自卫机枪,自动榴弹机炮.D2A3/R的弹丸引用错误必须按注意事项处理.</p>
+<h2 id="衣物">衣物</h2>
+<p>星环战斗衣物的固定三防普遍高于原版工业服装,后期动力装甲达到约98至120利器防御,工作服则主要提高研究,建造,医疗,种植,采矿,机械控制或灵能效率.以下护甲值按利器/钝器/热能三防书写,材料护甲使用&quot;基础+材料效果乘数S&quot;.</p>
+<h3 id="工作衣物">工作衣物</h3>
+<ul>
+<li>制式防身武装收备带:2工业零部件+50钢铁+20塑钢,装填时间-10%,允许携带副武器.<strong>该物品未加入美狐衣物白名单.</strong></li>
+<li>防暴头盔:10美狐乌木丝绸+10美狐军用级防弹陶瓷+2军用零部件+60金属材料,0%+70%S,崩溃临界值-5%,疼痛休克阈值+5%,休息消耗+2%.</li>
+<li>星环职工制服:研究速度+25%,全局工作速度+10%,全局学习速度+15%,异象研究速度+25%.</li>
+<li>学院制服:全局学习速度+50%.</li>
+<li>美狐工匠制服:全局劳动+10%,打磨速度+20%,机械体相关工作速度+20%,建造速度+15%,建造成功率+10%,维修损坏建筑成功率+10%.</li>
+<li>美狐厨师制服:药物烹饪速度+30%,食物中毒概率-70%,屠宰速度+20%,屠宰产出+5%.</li>
+<li>美狐花匠制服:植物工作速度+45%,植物收获产量+25%.</li>
+<li>美狐护工制服:手术速度+25%,手术成功率+20%,治疗质量+10%,治疗速度+80%.</li>
+<li>星环射手夹克:20美狐乌木丝绸+3工业零部件+60材料,33%+10%S,移速+0.5.</li>
+<li>星环助理外套:20美狐乌木丝绸+60材料,20%+10%S,研究速度+10%,全局工作速度+5%,学习速度+5%.</li>
+<li>星环辅助外骨骼:1军用零部件+50美狐陶瓷+4工业零部件+60金属材料,0%+20%S,普通劳动+10%,携带+40,采矿和深钻速度+26%,采矿产量+8%,打磨速度+30%,建造速度+20%,建造及维修成功率+10%.</li>
+<li>星环术士斗篷:30美狐乌木丝绸+30纤维-21,固定20/10/48三防,社交影响+20%,熵消散+1,灵敏度+30%.</li>
+<li>CAP集成系统V2:10埃格林+10军用零部件+2高级零部件,固定10/10/0三防,衣物本体使机械控制组+2.&quot;CAP&quot;状态另使机械带宽×1.5,机械远程控制距离+75,瞄准时间+20%,移速-0.1,灵敏度+0.2,四距离射击精度因子各+0.01,近战闪避-0.5,心灵熵产生-0.1.</li>
+<li>美狐族围巾:75材料,0%+15%S,保暖,无战斗附加机制.</li>
+<li>美狐混色内衣,美狐连体黑丝内衣,美狐高叉连体内衣:各25美狐乌木丝绸+25材料,1%+6%S,美丽+0.3.</li>
+<li>星环冲锋衣夹克:50美狐乌木丝绸+45材料,42%+10%S,无额外数值机制.</li>
+<li>星环防尘风衣:20美狐乌木丝绸+3工业零部件+60材料,33%+10%S,无额外数值机制.</li>
+</ul>
+<h3 id="战斗衣物">战斗衣物</h3>
+<ul>
+<li>标准防弹头盔:40瓷金+10塑钢+1军用零部件,固定106/98/112三防.</li>
+<li>MKIII防护头盔:40塑钢+10美狐乌木丝绸+1军用零部件,固定98/40/50三防,射击精度+1.</li>
+<li>射手头盔:30美狐乌木丝绸+5纤维-21+30埃格林+3军用零部件+1高级零部件,固定96/45/120三防,疼痛休克阈值+5%,近战闪避-1,射击精度+8,真空抗性+65%,减压抗性+25%,缺氧抗性+100%.</li>
+<li>潜航战斗辅助头盔:20埃格林+20美狐乌木丝绸+5纤维-21+2军用零部件+1高级零部件,固定120/50/60三防,疼痛休克阈值+5%,射击精度+1,毒环境抗性+10,毒素抗性+10,远程冷却-10%,真空抗性+68%,减压抗性+25%,缺氧抗性+100%.</li>
+<li>推进头盔:20塑钢+25美狐乌木丝绸+2军用零部件+1高级零部件,固定108/46/56三防,射击精度+1.</li>
+<li>潜航外骨骼作战服:4军用零部件+80美狐乌木丝绸+3高级零部件+120埃格林+45纤维-21,固定120/50/60三防,瞄准时间-5%,携带+30,真空抗性+30%,真空移动速度×4,减压抗性+75%.进入临战状态后产生可吸收投射物的护盾,护盾存在时单穿此服可避免减压伤和缺氧,需卸载空间机动模块后才能安全下水.</li>
+<li>标准型携行具:40布+60钢铁+1军用零部件,固定106/40/48三防,携带+150,装填时间-20%.</li>
+<li>MKIII动力系统:1军用零部件+60美狐乌木丝绸+80瓷金+20塑钢,固定98/40/50三防,瞄准时间-10%,携带+150,移速+0.25.</li>
+<li>重型镇暴装甲:1军用零部件+20美狐乌木丝绸+2工业零部件+20塑钢+20钢铁,固定102/60/130三防,瞄准时间-5%,携带+150,移速+0.5.</li>
+<li>&quot;险境&quot;防护性外骨骼装甲:2军用零部件+50美狐乌木丝绸+5工业零部件+60瓷金,固定110/60/130三防,瞄准时间-9%,携带+150,移速+0.5,可携带副武器.</li>
+<li>推进动力装甲:1军用零部件+60美狐乌木丝绸+1高级零部件+80瓷金+50塑钢,固定108/46/56三防,瞄准时间-9%,携带+150,移速+0.12,可携带副武器.</li>
+<li>防暴制服:85美狐乌木丝绸+50皮革或纤维材料,35%+30%S,美丽+0.5,射击精度+0.1,近战伤害系数+10%,远程冷却-10%,受击硬直-10%,崩溃临界值-5%,逮捕成功率+50%,易燃性-10.</li>
+<li>星环雨季夹克:30美狐乌木丝绸+50皮革或纤维材料,40%+20%S,附加&quot;穿着雨衣&quot;状态,可避免雨水相关不适并触发雨衣心情.</li>
+</ul>
+<h3 id="战场支援护甲">战场支援护甲</h3>
+<p>战场支援护甲,战场支援护甲(电弧),战场支援护甲(燃解)均为中间层和外壳层装备,固定提供106/82/96三防,携带+30,装填时间-20%,成本为3军用零部件+60美狐乌木丝绸+2高级零部件+55纤维-21+20埃格林+100塑钢,制作前置星环公司高等战斗服装和侦察装甲,制作技能8.</p>
+<ul>
+<li>三种护甲均拥有55.9射程,0.5秒前摇,5000 tick冷却的发射技能,目标半径9.9格.</li>
+<li>手动技能模式:普通型在9.9半径内发射3枚常规导弹,电弧型和燃解型各发射4枚对应导弹,技能完成后不自动重复.每枚导弹命中率100%,近炸距离1.9格,普通导弹180爆炸伤,2穿甲并散射20枚碎片.</li>
+<li>自动炮塔模式:关闭超载时,导弹发射器完成当前一轮后清除当前目标,开启超载时持续搜索并自动发射.普通型内置炮塔一轮为2组×2枚,电弧型为3枚,燃解型为1枚,三者分别使用源码中的炮塔连发参数.</li>
+<li>电弧模式:每轮发射4枚电弧导弹,每枚20枪伤,30%穿甲,命中后额外生成45燃烧伤,15 EMP的电弧,并有30%概率附加15眩晕.</li>
+<li>燃解模式:每轮发射4枚燃解导弹,每枚60过热电荷伤,30%穿甲,并额外生成燃烧弹药&quot;Bullet_GLG_Burn&quot;,在6.9爆炸半径形成燃解尘雾.</li>
+<li>超载模式:开启后持续自动搜敌和发射,每完成一轮向&quot;秘兰灵腺超载&quot;累积2%严重度.超载状态按25%,50%,75%,100%阶段分别增加休息消耗和疼痛,并阻断睡眠,降低自然愈合,达到高阶段时意识和视力上限被压低,状态每日下降0.25严重度.</li>
+</ul>
+<h2 id="派系与星环商贸">派系与星环商贸</h2>
+<ul>
+<li><strong>美狐军事组织</strong>:工业科技等级,自然敌对但非永久敌对,第75日后才会袭击,不围城但会组织常规袭击.商队包括美狐机械商队,星环零部件商人,外来者战斗供应商,奇珍商,据点沿用原版美狐据点商人.</li>
+<li><strong>新兴美狐巨企政权</strong>:隐藏,太空派系,默认中立,开局必生成一个隐藏派系.</li>
+<li><strong>星环科研队</strong>:隐藏,太空派系,仅在相关任务临时生成,不作为开局世界派系.</li>
+</ul>
+<h3 id="星环商店">星环商店</h3>
+<ul>
+<li>初级货池45项,中级货池48项,高级货池31项.每次刷新抽取初级30项,其中3项为随机非人类,非虫族肉,中级许可额外抽22项,高级许可额外抽8项.</li>
+<li>每15日刷新,累计消费7000银解锁中级许可,累计消费15000银解锁高级许可.每120日结算,印花和累计消费清零,默认提前7日预警.</li>
+<li>初级,中级,高级价格倍率分别为1.2,1.5,2,每1000银商品价值获得1印花.黄金可按市值10银抵扣银币.</li>
+<li>运费基础200银,每150kg占用一个运输舱,每舱150银,商品数量超过3000件后,每增加100件收取5银,取重量运费和数量运费的较高者.</li>
+<li>到货时间为20000 tick+每运输舱4000 tick+每200件1200 tick+每10kg 800 tick.加急运输使运送时间减半但雇佣费用加倍.</li>
+<li>美狐谈判者每级社交提供0.25%折扣,上限5%.</li>
+<li>静态优惠码:KFCVIVO50减免40%,IDK减免10%,LIQUID减免40%,TOMATO减免40%.随机优惠码包括固定减免50至650银,5%至30%折扣,满减和免运费四类.</li>
+<li>货池可购买或出售的独特内容包括火山机枪,星环武器和衣物,预编程纳米尘,军用零部件,轻重冷聚变核心,美狐食品,书籍,机械血清,帝国植入物,灵能物品和部分异象物品,普通钢铁,塑钢,布,羊毛,药物,农作物等也有对应货池项.</li>
+</ul>
+<p>货池的实际条目和单次购买上限如下(源码中的中英文Def名并列):</p>
+<ul>
+<li>初级许可45项:SR_Volcano×1,Apparel_PackBroadshield×1,SR_RefinedNanoDust×60,Novel×1,SR_MihoRifleOld×5,SR_MihoDefenceRifle_LongBow×5,Miho_PositiveFlower_Tea×4000,Miho_PositiveFlower_Pipe×1000,RawPosFlower×4000,Miho_Ceramics×4000,WoodLog×4000,WoolAlpaca×4000,Chemfuel×4000,Steel×4000,Plasteel×4000,Gold×4000,SR_Ceramium×2000,WoolBison×4000,ComponentIndustrial×4000,Cloth×5000,WoolMegasloth×4000,WoolMuffalo×4000,WoolSheep×4000,Synthread×2000,Uranium×4000,Jade×5000,MedicineIndustrial×1000,RawPotatoes×10000,RawRice×4000,RawCorn×6000,Hay×10000,Chocolate×3000,RawBerries×3000,Milk×3000,InsectJelly×300,HemogenPack×300,Neutroamine×3000,Miho_InariZushi×200,SR_PositiveFlowerCandy×200,SR_MarbleMousseCake×200,SR_SunshineCake×200,SR_MihoDaifuku×200,SR_ElnoHoneyCookies×200,SR_D2A2_Type×5,SR_ASH12ShootGun×5.</li>
+<li>中级许可48项:Hyperweave×1000,Schematic×1,Miho_Schematic×1,SR_D2LB_S×1,SR_D2N_MG×1,SR_D2N_SMG×1,SR_D2N_AR×1,SR_AT120_Launcher×3,SR_PE3030_Pistol×2,SR_A5_Type×1,SR_ASH12ChargeShootGun×2,ReinforcedBarrel×100,Miho_Ebony_Mulberry×1000,Miho_Ebony_SilkCloth×1000,Miho_PositiveFlower_Juice×200,DevilstrandCloth×2000,Beer×1000,Ambrosia×1000,Luciferium×1000,Penoxycyline×1000,GoJuice×1000,SR_Component×200,SR_Fiber×400,SR_HCFC×25,SR_LCFC×100,SR_Eglin×2000,Miho_MilitaryGradeBalisticCeramics×2000,BroadshieldCore×1,SignalChip×5,Shell_EMP×200,Shell_Toxic×100,Shell_Firefoam×100,Shell_Smoke×100,Shell_Incendiary×500,Shell_HighExplosive×500,SR_A32_Type×3,SR_A32_Advanced×1,SR_ASHtoto×1,SR_GLXXI×1,SR_A17RR×1,SR_A15RRK×1,SR_Apparel_MiddlePowerArmor_Police×2,SR_Apparel_MiddlePowerArmor×2,SR_Apparel_MiddlePowerArmor_Heavy×2,SR_Apparel_MiddlePowerArmor_Standard×2,SR_Appareal_HeadPoweredHelmet_Heavy×2,SR_Appareal_HeadPoweredHelmet_Standard×2,SR_MechSerumRepairer×2.</li>
+<li>高级许可31项:SR_Quantum_Heavy×1,SR_Quantum_Light×1,SR_HFLauncher×1,MechSerumHealer×1,DeathrestCapacitySerum×1,Miho_CelestialScale×100,Miho_ExoticMatter×1,Miho_HeavyMechCore×10,MedicineUltratech×500,SR_SerumAdonis×1,Shell_AntigrainWarhead×2,PsychicAmplifier×1,MechSerumResurrector×1,PsychicSoothePulser×1,TechprofSubpersonaCore×1,NanostructuringChip×1,PowerfocusChip×3,ArchiteCapsule×3,SR_FashionMagazine×1,SR_NatureMagazine×1,SR_NoteBook×1,SR_Paper×1,SR_SexMagazine×1,SR_Apparel_MissleArmor_DMG×1,Apparel_PsychicShockLance×1,Apparel_PsychicInsanityLance×1,PsychicAnimalPulser×1,ArchotechArm×1,ArchotechEye×1,ArchotechLeg×1,SR_A7_Type×1.</li>
+</ul>
+<h3 id="星环零部件商人">星环零部件商人</h3>
+<p>固定或随机携带2000至4000银,1至2重型机械核心,6军用零部件,50至200军用陶瓷,价值500至1000银的秘灵粉末,20至70工业零部件,3至6高级零部件,可能携带-100至200中性胺,-30至70巧克力,-50至15工业药,-4至1加固炮管,并随机携带3本书.收购简单高价物品,艺术品,帝国植入物,乐器和特殊工具,也会收购死尸尘炮弹,虚空雕塑,异象碎片,生物铁和亡魂脊柱.</p>
+<p>轨道回收商携带20000至40000银,以&quot;非常便宜&quot;的价格回收除人肉,远程武器,近战武器外的可交易物.</p>
+<h2 id="Mod特色内容">Mod特色内容</h2>
+<h3 id="机械体">机械体</h3>
+<p>扩展新增14个PawnKind,当前有13个制造配方:</p>
+<ul>
+<li>武仙座步兵型,武仙座破障型,武仙座精击型.</li>
+<li>牧夫座近卫型,牧夫座尖兵型.</li>
+<li>天琴座耀光型,极昼型,星火型.</li>
+<li>大犬座主战型,野战型,坦歼型,喷火型,火炮运载型,火力支援型.</li>
+</ul>
+<p>火力支援型没有制造配方.三种武仙座均需3军用零部件+50钢铁+95瓷金+75玻璃钢+5工业零部件,妊娠周期分别1/2/2,两种牧夫座均需1护盾核心+75玻璃钢+125瓷金+30埃格林+10工业零部件+5军用零部件,妊娠2周期,耀光型需250瓷金+75玻璃钢+5工业零部件+10军用零部件+1重型机械核心,极昼型将玻璃钢改为80,星火型在此基础上加2加固炮管,均为3周期.</p>
+<ul>
+<li>大犬座主战:150纤维-21+1高级零部件+1护盾核心+275瓷金+150埃格林+35工业零部件+17军用零部件+1重型机械核心,4周期.</li>
+<li>大犬座野战:150纤维-21+1高级零部件+3加固炮管+1护盾核心+255瓷金+120埃格林+27工业零部件+17军用零部件+1重型机械核心,4周期.</li>
+<li>大犬座坦歼:150纤维-21+2高级零部件+1加固炮管+1护盾核心+175瓷金+250埃格林+32工业零部件+20军用零部件+2重型机械核心,4周期,需高等战斗无人机,供能循环优化.</li>
+<li>大犬座喷火:1高级零部件+3加固炮管+295瓷金+30埃格林+13工业零部件+15军用零部件+1重型机械核心,4周期,需高等战斗无人机,高性能燃烧剂.</li>
+<li>大犬座火炮运载:75玻璃钢+245瓷金+25埃格林+20工业零部件+15军用零部件+1重型机械核心,4周期.</li>
+</ul>
+<p>机械体主要武器和定位:武仙座装备HAP-20小口径榴弹机枪,牧夫座近卫内置斥力场护盾和手动拦截系统,尖兵额外装备重型瓷金防弹盾与外置护盾,天琴座为超重四足平台,耀光装备炽渊II,极昼装备乌尔班并偏侦查锁定,星火为重火力改型,大犬座主战装备HC57A-12,火箭巢和低角护盾,野战携带迫击炮,坦歼偏反装甲,喷火使用重型燃烧弹,火炮运载使用迫击炮,火力支援装备双联30mm炮,榴弹发射器和四联反坦克导弹.</p>
+<h3 id="机械整备架与升级">机械整备架与升级</h3>
+<p>机械整备架成本150钢铁+100玻璃钢+10工业零部件,工作/待机功耗1200/200W,只接纳玩家控制的机械体,每120 tick维修1点耐久,实际每tick补充0.00083333335机械能.它可自动释放机械体,装拆升级,并为武器和主动拦截系统装弹.</p>
+<p>有效机械升级及成本,效果:</p>
+<ul>
+<li>爆炸反应装甲:3预编程纳米尘+25瓷金+25玻璃钢,250耗材护甲,爆炸伤×5%,燃烧伤×50%,利器和钝器防御+10%,移速-0.2.</li>
+<li>埃格林装甲:150埃格林+20瓷金+25玻璃钢,500耗材护甲,爆炸,燃烧和子弹伤×50%,利器和钝器防御+30%,承伤-20%,移速-0.5,闪避-0.6,易燃性-1.</li>
+<li>瓷金装甲:10埃格林+200瓷金+25玻璃钢,300耗材护甲,爆炸,燃烧和子弹伤×75%,利器和钝器防御+10%,承伤-5%,移速-0.2,闪避-0.3,易燃性-1.</li>
+<li>重型动力堆增压器:5军用零部件+20瓷金+1高级零部件,机械能耗+15%,血液循环和移动能力+50%.</li>
+<li>先进火控系统:3军用零部件+20玻璃钢+2高级零部件,机械能耗+50%,瞄准时间-30%,射击精度+2,远程冷却-50%.</li>
+<li>辅助地钉:15瓷金+20玻璃钢+2工业零部件,移速-0.3,瞄准时间-10%,射击精度+0.5,远程冷却-15%.</li>
+<li>配位液压骨骼:15瓷金+20玻璃钢+5工业零部件,机械能耗+5%,移动能力+25%.</li>
+<li>辅助装弹机:2军用零部件+30玻璃钢+15工业零部件,装填时间-25%.</li>
+<li>热障III-B:8军用零部件+20瓷金+25玻璃钢,榴弹主动拦截.启用时机械能耗+100%,瞄准时间+30%,射击精度-0.2,远程冷却+10%.</li>
+<li>热障IV:10军用零部件+20瓷金+25玻璃钢,实弹主动拦截,启用惩罚同上.</li>
+<li>热障V:热障IV成本+1高级零部件,激光主动拦截,启用惩罚同上.</li>
+</ul>
+<p>爆炸反应装甲,埃格林装甲,液压骨骼,装弹机主要允许五种有配方大犬座,瓷金装甲额外允许三种天琴座和基础武仙座,增压器,火控系统允许大犬座和三种天琴座,地钉只允许三种天琴座,热障IV允许大犬座主战,野战,坦歼和天琴座极昼,热障V,III-B只允许大犬座主战,野战,坦歼.大犬座火力支援,武仙座破障和精击不在对应允许列表中.</p>
+<h3 id="建筑与能源">建筑与能源</h3>
+<ul>
+<li>通用快速成型站:150钢铁+5工业零部件+3军用零部件+1高级零部件,220耐久,工作/待机功耗550/50W,可接工具柜和美狐工作AI,前置场抑制理论.</li>
+<li>基因回溯仓:120钢铁+4工业零部件,250耐久,工作/待机功耗200/50W,每个周期1天,前置异种胚芽植入.父系返祖会复制父亲的内源基因及异种类型,找不到父亲时回退到母亲,母系返祖复制母亲的内源基因及异种类型,相应父母不存在或没有基因追踪器时,回退到该PawnKind的第一个异种类型,再无结果则变为基准人.清除基因周期直接转为基准人.</li>
+<li>手动应答终端:任务地图内的可骇入终端,200防御,不可建造.</li>
+<li>&quot;弧光&quot;护盾生成器:轨道支援投放,半径7.2格,护盾上限2500,每秒自然损失10点且不充能.</li>
+<li>拦截器枪械,拦截榴弹和拦截激光Def仅供机械升级或机械体使用,不是可独立建造炮塔.</li>
+</ul>
+<p>冷聚变反应堆:</p>
+<ul>
+<li>反应堆成本500埃格林+100纤维-21+15军用零部件+15高级零部件+30工业零部件,启动消耗1重型冷聚变核心,燃料为轻型核心,容量100.</li>
+<li>燃料不超过50%时反应活性固定1000,50%至100%按二次曲线升至8000,发电量=反应活性×12.5,基础安全系数1000.</li>
+<li>每个方向最多连接1个稳定器.稳定器成本100埃格林+25纤维-21+5军用零部件+7高级零部件+30工业零部件,耗电200至1750W,并等量增加安全系数.</li>
+<li>自动控制主机成本20埃格林+25纤维-21+15军用零部件+15高级零部件+30工业零部件,耗电80W,发电×1.2,燃耗-20%,自动维持1000至1500安全冗余,反应堆耐久≤30%时紧急停机.</li>
+<li>反应堆失控损坏后会熔毁,使地图全部电网中带故障组件的设备进入故障状态.</li>
+</ul>
+<h2 id="星环通讯-轨道支援与雇佣">星环通讯,轨道支援与雇佣</h2>
+<h3 id="轨道支援">轨道支援</h3>
+<ul>
+<li>精准打击:3000银+300黄金+2印花,10秒锁定,15轮×1发.</li>
+<li>集束炮击:6印花,5轮×3发,每枚母弹分裂15枚子弹.</li>
+<li>粒子光束:6印花,15秒预警.</li>
+<li>轨道游走粒子光束:8印花,未完工.</li>
+<li>温压火力网:2000银+200黄金+6印花,5轮×3发.</li>
+<li>辐能波:1500银+150黄金+3印花,半径40,使电器故障.</li>
+<li>EMP波:1500银+150黄金+3印花,半径40,对电器和机械体施加EMP.</li>
+<li>干扰尘,秘灵尘,烟雾:各2印花.</li>
+<li>全角护盾:4印花.</li>
+<li>工程零件包:2000银+200黄金+5印花,20工业零部件+10军用零部件+5高级零部件.</li>
+<li>生存食品包:500银+50黄金,20包装生存食品.</li>
+<li>火山机枪:750银+75黄金+2印花.</li>
+<li>AT-120&quot;针矛&quot;:2印花.</li>
+<li>1个优惠码:2印花,5个优惠码:8印花.</li>
+<li>轨道深层矿脉扫描:3印花,未完工.</li>
+</ul>
+<h3 id="雇佣服务">雇佣服务</h3>
+<ul>
+<li>临时外交官:1500银+5印花,永久加入殖民地,限1人.</li>
+<li>教授:500银+50银/天,最多60天,2人,累计消费2000银解锁.</li>
+<li>武仙座:100银+20银/天,最多60天,10台.</li>
+<li>牧夫座:100银+25银/天,最多60天,5台,累计消费1000银解锁.</li>
+<li>大犬座主战,火力支援,火炮运载:各500银+1印花+50银/天,最多60天,1台,累计消费6000银解锁.</li>
+<li>斥候:100银+2银/小时,最多240小时,6人,累计消费500银解锁.</li>
+<li>步兵:200银+3银/小时,最多240小时,4人,累计消费2000银解锁.</li>
+<li>追猎者:200银+1印花+4银/小时,最多48小时,2人,累计消费8000银解锁.</li>
+<li>打击者:300银+1印花+6银/小时,最多48小时,1人,累计消费8000银解锁.</li>
+</ul>
+<h2 id="据点系统与任务">据点系统与任务</h2>
+<p>有效任务包括&quot;第三类接触&quot;(SR_GiveQuest_Interaction_SignalTower),持续袭击/敌方集结点(SR_ContinuousRaid),未能交付的货物(SR_ItemStash),学生加入(SR_StudentJoins),天外来客/陨落星辰主线,以及太阳帆,军事,采矿,中央厨房,农场,牧场,工厂,电视台,医院,集会,外交所,研究院12类据点建设.</p>
+<p>据点共同机制:</p>
+<ul>
+<li>可存放远行队和物资,远行队在据点内获得无限食物,可用运输舱投送或接回远行队,未带走物品继续保存在据点.</li>
+<li>通常建设需要10000工作量,工厂需要30000工作量.</li>
+<li>采矿,农场,牧场和工厂按对应技能工作,建成后每约1至1.5天由ThingSetMaker生成资源奖励,中央厨房按烹饪技能生成食物.</li>
+<li>军事据点A/B分别按射击和近战技能生成军事奖励,医院按医疗技能工作并提供医院服务,集会按社交技能快速变卖物资,外交所每次按社交技能改善目标派系8至16关系,允许对敌对派系使用,研究院按智识技能优先给予满足前置的科技印图,无印图时给予1个科技教授人格核心.</li>
+<li>太阳帆为5级据点,升级工作量10000/100000/200000/300000,远程电力输出0/10000/30000/100000/300000W,建成奖励1个引力透镜,地图射线接收站可接收其电力.</li>
+<li>电视台为5级,升级工作量10000/20000/30000/40000,观看广播分别获得心情+4/+8/+12/+16/+20,持续6000/12000/24000/48000/96000 tick.</li>
+</ul>
+<h2 id="资源-配方与生产">资源,配方与生产</h2>
+<h3 id="新增资源">新增资源</h3>
+<ul>
+<li>埃格林合金(Reinforced Eglin Alloy):市值14.5,重量3,利器防御材料强度1.45,钝器1.3,热能1.3,耐辐射,隔磁,易燃性0.</li>
+<li>军用零部件(Military Components):市值75,重量1,堆叠75,最大耐久100,易燃性0.</li>
+<li>预编程纳米尘(Preprogrammed Nanodust):市值100,重量1,堆叠75,可作为药物摄入,增加阿多尼斯维护需求并附加秘兰灵腺严重度.</li>
+<li>固态时间(Solid Time):市值100,重量1,堆叠5,可作为时之沙超频弹药,使用时有爆炸风险.</li>
+<li>轻型冷聚变核心:市值350,重量0.3,堆叠24,临界损坏时半径5爆炸.</li>
+<li>重型冷聚变核心:市值1750,重量0.3,堆叠12,临界损坏时半径10气化爆炸.</li>
+<li>引力透镜:市值4000,重量2,堆叠1,太阳帆据点建成奖励,可用于远程电力接收.</li>
+<li>星环机械残块:被摧毁的星环机械体残留块,熔炼可得35塑钢+15瓷金,拆解可得1军用零部件+2工业零部件.</li>
+</ul>
+<h3 id="配方">配方</h3>
+<ul>
+<li>少量铸造瓷金:24玻璃钢+16钢铁→20瓷金,6000工.</li>
+<li>普通铸造瓷金:20玻璃钢+15钢铁+15化合燃料→40瓷金,4500工.</li>
+<li>高效铸造瓷金:0.5黄金+40美狐陶瓷+20玻璃钢+20钢铁+50化合燃料→80瓷金,3000工,需陶瓷工艺优化.</li>
+<li>少量铸造埃格林:20玻璃钢+15瓷金+1预编程纳米尘→25埃格林,4500工.</li>
+<li>高效铸造埃格林:25玻璃钢+15瓷金+2预编程纳米尘→45埃格林,2000工.</li>
+<li>制备纤维-21:1预编程纳米尘+20美狐乌木丝绸+5超织物+5魔鬼素→50纤维-21,1000工.</li>
+<li>小批量纳米尘:20玻璃钢+250秘灵粉末+1工业零部件→5预编程纳米尘,4500工.</li>
+<li>大批量纳米尘:140玻璃钢+1250秘灵粉末+8工业零部件→35预编程纳米尘,9000工.</li>
+<li>精密蚀刻护盾核心:20埃格林+20纤维-21+2军用零部件+50瓷金+1高级零部件→1护盾核心.</li>
+<li>轻型冷聚变核心:20埃格林+3预编程纳米尘+10纤维-21+4高级零部件→10轻型核心.</li>
+<li>重型冷聚变核心:45埃格林+5预编程纳米尘+15纤维-21+1军用零部件+5高级零部件→2重型核心.</li>
+<li>空火山机枪回收:1把空火山→20玻璃钢+10埃格林+1军用零部件.</li>
+<li>星环机械残块熔炼:1星环机械残块,600工,得到Def继承的熔炼产物35塑钢+15瓷金.</li>
+<li>星环机械残块拆解:1星环机械残块,2400工,得到1军用零部件+2工业零部件.</li>
+</ul>
+<h2 id="食物-医疗品-书籍与气体">食物,医疗品,书籍与气体</h2>
+<h3 id="食物">食物</h3>
+<ul>
+<li>向日葵糖:无独立制作配方,市值9,营养0.3,娱乐20%,无新增状态.</li>
+<li>大理石慕斯蛋糕:无独立制作配方,市值25,营养0.9,食用获得心情+4,持续1天.</li>
+<li>日光蛋糕:无独立制作配方,市值20,营养0.9,食用获得心情+3,持续1天,补满向日葵茶需求并增加1点秘兰灵腺状态值.</li>
+<li>美狐大福:无独立制作配方,市值25,营养0.9,娱乐40%,食用获得心情+6,持续1天.</li>
+<li>艾尔诺蜜糖饼:无独立制作配方,市值10,营养0.45,普通人获得心情+1,北极美狐获得心情+3,持续1天,补50%向日葵茶需求并增加0.5点秘兰灵腺状态值.</li>
+</ul>
+<h3 id="阿多尼斯">阿多尼斯</h3>
+<ul>
+<li>阿多尼斯血清:市值4000,给予阿多尼斯保护状态和维护需求.维护需求每日下降1.6%,预编程纳米尘可补充.保护状态阻止死亡,每天愈合5点耐久,并用维护需求吸收致命伤,同时心情+3.</li>
+<li>维修机械液:市值800,可对机械体尸体使用,无副作用复活机械体.</li>
+<li>预编程纳米尘摄入:阿多尼斯维护需求+10%,秘兰灵腺状态值+1.</li>
+</ul>
+<h3 id="书籍">书籍</h3>
+<ul>
+<li>时尚杂志:提供艺术经验,从第15日起每小时5%至20%概率获得创作灵感.</li>
+<li>自然杂志:提供采矿,种植和驯兽经验,从第8日起每小时5%至20%概率获得持续3天的随机增益,分别为采矿速度/产量+50%,种植速度/收获+50%,动物采集速度/产量+50%并驯服+30%,训练+50%.</li>
+<li>笔记:从第4日起每小时100%触发一次,触发后销毁,随机产生任务,气象骤变,干扰尘埃,秘灵尘埃,蚀燃尘埃或优惠码.</li>
+<li>论文:提供智识经验,每小时0%至10%概率给予一张未完成星环科技印图并销毁.没有未完成印图时可能触发源码越界问题.</li>
+<li>写真集:提供社交经验,从第1日起每小时10%至40%概率获得持续1天的&quot;看了小黄书&quot;,亲热间隔乘数×50%.</li>
+</ul>
+<h3 id="气体和环境尘埃">气体和环境尘埃</h3>
+<ul>
+<li>蚀燃尘:持续30秒,每秒攻击格内生物,6基础伤害中一半按毒抗且无视护甲攻击呼吸部位,另一半按易燃性攻击裸露可燃部位,每影响1名生物浓度-5%.</li>
+<li>干扰尘:持续60秒,按浓度概率拦截速度低于40的投射物,白名单额外包括大犬座轨道炮普通/AP弹,干扰尘榴弹和乌尔班弹.源码中拦截概率随投射物速度降低.</li>
+<li>秘灵尘:持续24秒,每秒对机械体造成5点EMP并清除EMP适应,同时按浓度累积0.7点秘灵尘干扰,对有EMP反应植入物的非机械生物施加秘灵尘侵入.</li>
+<li>秘灵尘干扰30%:EMP抵抗-2,承伤+5%,意识/移动/操作能力各-10%,80%:承伤+10%,意识/移动/操作能力各-25%.</li>
+<li>秘灵尘侵入30%:疼痛+10%,瞄准时间+110%,移速-1,80%:疼痛+40%,瞄准时间+150%,闪避-1,受击硬直×1.5,承伤+10%,移速-4.</li>
+<li>燃解状态:每1点严重度每日自然下降60,严重度0.1起利器/钝器/热能护甲分别-0.05/-0.05/-0.1并EMP抗性-10%,0.4起分别-0.1/-0.1/-0.3,易燃性+0.3,远程冷却×1.1,近战闪避×0.7,硬直×1.1,0.75起分别-0.15/-0.15/-0.4,易燃性+0.6,移速-1,远程冷却×1.2,近战闪避×0.5,硬直×1.5,0.95起护甲分别-0.17/-0.17/-0.6,易燃性+1,移速-2,远程冷却×1.5,硬直×2.</li>
+</ul>
+<h3 id="其余物品">其余物品</h3>
+<ul>
+<li>CC验证芯片(CC Chip):1纳米结构芯片+10军用零部件,前置C.A.P计划,只能由已有机械纽带的人植入脑部.植入后全局学习速度+10%,机械带宽+40且机械带宽×1.1,机械控制组+2,机械远程控制距离+25.物品声明最大植入数3,但状态Def禁止重复.</li>
+<li>固态时间使用者年龄必须至少13岁,每次使用减少1生理年龄但不低于13岁,重置年龄倒退需求,并随机移除1至2个永久伤口及因年龄尚未达到阶段的生日疾病.物品本身有半径4,50点时间紊流爆炸,点燃后可引发时间紊流.</li>
+<li>轻型和重型冷聚变核心均有临界损坏爆炸风险,重型核心也被机械体和大型武器作为燃料.</li>
+<li>雇佣机械体携带&quot;佣兵机械体&quot;状态,其机械带宽成本由星环公司承担.</li>
+</ul>
+<h2 id="事件-叙述者与剧本">事件,叙述者与剧本</h2>
+<h3 id="叙述者">叙述者</h3>
+<ul>
+<li>层云:大事件MTB1.5日,第30日起4.6日威胁期/4日休息期,最小间隔4日,每期1次,机械袭击点数×2,机械袭击生成器同样×2.小威胁第11日起3日开启/3日关闭,每期1次,地图杂项第5日起MTB4.8日,低食物和低药物补偿第15日起各MTB1日,商队24次/年,访客15次/年,无皇权每7日1任务,有皇权每7日2任务,世界杂项第15日起MTB15日.</li>
+<li>弧曦:第8日起按季节事件池产生事件.心情值从3开始,春季+1,冬季-1,舒适温度,喜欢/厌恶天气,世界和地图状况各改变±1,极端温度每离舒适范围约10℃继续降低,最终限制在1至5.事件索引按心情偏向正面或负面,并根据威胁,杂项,疾病,贸易事件成功或失败状态,以20%概率在MTB5日机制下生成后续事件,仍保留常规威胁,任务,疾病和派系互动组件.</li>
+</ul>
+<h3 id="有效事件">有效事件</h3>
+<ul>
+<li>干扰尘埃(SR_JammerGasFallout):第60日起,基础概率0.12,最短重复90日,持续2.5至10.5日.</li>
+<li>秘灵尘埃(SR_EMPGasFallout):第60日起,基础概率0.12,最短重复90日,持续2.5至10.5日.</li>
+<li>蚀燃尘埃(SR_HeatGasFallout):持续0.125至0.35日,基础概率0,只能由笔记或其他机制强制触发.</li>
+<li>学生加入(SR_StudentJoin):基础概率0.4.</li>
+<li>余波:气象骤变(SR_AbruptMeteorologicalVariation):基础概率0,只由笔记等机制触发,持续1.5至3.5日,多次随机改变天气.</li>
+<li>书中优惠码(SR_PromoCodeInBook):基础概率0,只由笔记等机制触发.</li>
+</ul>
+<h3 id="学术旅行剧本">学术旅行剧本</h3>
+<p>剧本初始包含1名教授,2名学生,1名守卫.初始科技包括美狐机械,美狐基础工厂,美狐基础衣物,机械加工,生物燃料精炼,美狐重型工厂,简单服装,合金铸造,炸药熔铸,初始物资为800银,5慕斯蛋糕,5美狐大福和3工业药.约1.5日后空投P-E3050,标准防弹头盔,险境装甲,100包装生存食品,20闪耀世界药,40工业零部件和600钢铁,再过24小时提供1名持续1440小时的步兵佣兵.</p>
+<h2 id="赤鸮剧情">赤鸮剧情</h2>
+<p>赤鸮剧情为三幕通讯链:</p>
+<ul>
+<li>第一幕事件ID为SR_Akasagi_Story_A,需中级许可.玩家误入PMC加密频道并认识赤鸮,第一处&quot;安全第一&quot;选项会正常推进本幕至结束,不会永久中断整个任务.</li>
+<li>第二幕事件ID为SR_Akasagi_Story_B,需高级许可.赤鸮进行客户回访,透露姐姐诗音正在执行任务.</li>
+<li>第三幕事件ID为SR_Akasagi_Story_C,需高级许可且游戏开始至少12日.赤鸮和诗音被PMC除名.赤鸮说明自己借PMC情报网消灭害死父母的组织,随后被PMC当作棋子清除.</li>
+<li>第三幕可接纳赤鸮,也可拒绝.拒绝会永久结束剧情并获得物资奖励.源码中的 lastIncidentTickAbs 只在新游戏初始化,之后未更新,因此第三幕的12日限制实际按开局时间计算,而不是按第二幕结束时间计算.</li>
+</ul>
+<p>拒绝奖励为大师品质时雨太刀,朱鹮无人机,赤鸮礼服,15000银和8个美狐大福.</p>
+<ul>
+<li>赤鸮礼服:55纤维-21+1军用零部件+1高级零部件+3预编程纳米尘,固定100/40/0三防并带10%材料护甲乘数,愈合系数+75%,美丽+1.</li>
+<li>朱鹮无人机:腰带层装备,50埃格林+25纤维-21+25军用零部件+3高级零部件+3预编程纳米尘+1护盾核心,机械带宽+15,控制组+1,护盾上限1.1,充能速度0.13,每次受伤护盾损失0.01,自带激光拦截器,0.7秒前摇,2秒后摇.</li>
+<li>时雨太刀剧情配方:30埃格林+20纤维-21+12军用零部件+3高级零部件.</li>
+</ul>
+
+        </div>
+        
+        <!-- 文章导航 - 只在同分类有多篇文章时显示 -->
+        
+        
+        
+        <nav class="post-nav">
+          
+          
+            <a class="next" href="../%E7%BE%8E%E7%8B%90/">
+              美狐
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          
+        </nav>
+        
+        
+        <!-- 推荐文章 -->
+        
+
+
+<div class="vs-recommended-posts">
+  <div class="vs-recommended-header">
+    <div class="section-header">
+      <i class="fas fa-lightbulb"></i>
+      <span>相关文章</span>
+    </div>
+  </div>
+  
+  <div class="vs-recommended-grid">
+    
+      <div class="vs-recommended-item" data-index="0" tabindex="0">
+        <a href="../%E7%BE%8E%E7%8B%90/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>美狐</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              种族本体 数值概览 属性 智人种 凡灵种 雪凛种 沙伶种 战凌种 欲琳种(未着衣) 虚零种 生命值系数 100% 85% 85% 85% 85% 85% 85% 躯干耐久 40 34 34 34 34 34 34 基础价值 1750 900...
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 原版向
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  6月 26
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  8 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="1" tabindex="0">
+        <a href="../ai%E9%80%9A%E7%94%A8%E6%8F%90%E7%A4%BA%E8%AF%8D/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>AI通用提示词</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              我正在制作rimworld的mod百科,需要你阅读mod的内容,并给出mod内容的详细百科. 工作区路径为 D:\Games\1_RimworldHistorySaveAndMods\PersonalMod\LocalModsForAI ,...
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  1月 02
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  1 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="2" tabindex="0">
+        <a href="../%E5%8E%9F%E7%89%88%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>原版相关内容</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              存放一些在mod中发现的原版相关的有趣内容
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 原版
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  12月 17
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  6 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="3" tabindex="0">
+        <a href="../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>异象扩展</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              这个是真恶心👎🤮 绝大部分内容都是原版等级强度的,但有一两个强度极高 仅包含了血肉内容的表格
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 正义, 负正义
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 03
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  1 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="4" tabindex="0">
+        <a href="../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>边缘世界种族数据提取器</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              一个用于RimWorld的py小脚本,可以自动拉取工作目录下的所有mod文件里的外星人XML定义数据并生成表格,帮助你快速认知一个种族在XML定义上擅长什么工作,不擅长什么工作.
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  11月 23
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  13 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="5" tabindex="0">
+        <a href="../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>(尚未完工)失能机关</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              施工中~暂时只有几个统计表格~太久不更的话也有可能是烂尾了 强度的话,作为玩家派系的机器人强度尚可,但作为敌对BOSS解决起来就很棘手了
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 负正义, 微正义
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  8月 17
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  3 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+  </div>
+  
+  <!-- 查看更多 -->
+  <div class="vs-recommended-footer">
+    <a href="../archives/" class="vs-view-more">
+      <i class="fas fa-folder-open"></i>
+      <span>查看更多文章</span>
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+// 键盘导航支持
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.vs-recommended-item');
+  let currentIndex = -1;
+  
+  // 键盘事件
+  document.addEventListener('keydown', function(e) {
+    if (!items.length) return;
+    
+    if (e.key === 'Tab') {
+      // Tab键导航由浏览器处理
+      return;
+    }
+    
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      
+      // 移除当前高亮
+      if (currentIndex >= 0) {
+        items[currentIndex].classList.remove('vs-focused');
+      }
+      
+      // 更新索引
+      if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % items.length;
+      } else {
+        currentIndex = currentIndex <= 0 ? items.length - 1 : currentIndex - 1;
+      }
+      
+      // 添加新高亮
+      items[currentIndex].classList.add('vs-focused');
+      items[currentIndex].focus();
+    }
+    
+    if (e.key === 'Enter' && currentIndex >= 0) {
+      const link = items[currentIndex].querySelector('a');
+      if (link) link.click();
+    }
+  });
+  
+  // 鼠标悬停时更新当前索引
+  items.forEach((item, index) => {
+    item.addEventListener('mouseenter', function() {
+      currentIndex = index;
+      items.forEach(i => i.classList.remove('vs-focused'));
+      item.classList.add('vs-focused');
+    });
+  });
+});
+</script>
+
+        
+        <!-- 评论区 -->
+        
+  <div class="vs-comments-section">
+    <div class="section-header">
+      <i class="fas fa-comments"></i>
+      <span>评论</span>
+    </div>
+    
+    
+      <!-- Waline 评论系统 -->
+      <div id="waline"></div>
+      <script>
+        // 加载 Waline CSS
+        const walineCSS = document.createElement('link');
+        walineCSS.rel = 'stylesheet';
+        walineCSS.href = 'https://unpkg.com/@waline/client@v3/dist/waline.css';
+        document.head.appendChild(walineCSS);
+        
+        // 加载 Waline JS
+        const walineScript = document.createElement('script');
+        walineScript.type = 'module';
+        walineScript.onload = function() {
+          // 确保 Waline 加载后再初始化
+          import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
+            const waline = init({
+              el: '#waline',
+              serverURL: 'https://blog-vercel-waline.vercel.app/',
+              lang: 'zh-CN',
+              locale: {},
+              emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus"],
+              requiredMeta: [],
+              login: 'disable',
+              wordLimit: 0,
+              pageSize: 10,
+              imageUploader: false,
+              highlighter: true,
+              texRenderer: false,
+              search: false,
+              pageview: false,
+              comment: true,
+              copyright: false,
+              
+              // 自动适配主题
+              dark: document.documentElement.getAttribute('data-theme') === 'dark' ? 'auto' : false,
+              
+              // 评论框占位符
+              placeholder: '欢迎留言，无需登录即可评论~',
+              
+              // 元数据配置
+              meta: ['nick', 'mail', 'link'],
+              
+              // 表情配置
+              emojiCDN: 'https://unpkg.com/@waline/emojis@1.2.0/',
+            });
+            
+            // 监听主题变化
+            const observer = new MutationObserver((mutations) => {
+              mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                  // Waline 会自动处理主题切换
+                  if (waline) {
+                    waline.update({ dark: isDark ? 'auto' : false });
+                  }
+                }
+              });
+            });
+            
+            observer.observe(document.documentElement, {
+              attributes: true,
+              attributeFilter: ['data-theme']
+            });
+          });
+        };
+        walineScript.src = 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+        document.body.appendChild(walineScript);
+      </script>
+    
+    
+  </div>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <footer class="footer">
+  <div class="status-bar">
+    <div class="status-item">
+      <i class="fas fa-code-branch"></i>
+      master
+    </div>
+    <div class="status-item">
+      <i class="fas fa-sync"></i>
+      Round
+    </div>
+    <div class="status-item">
+      <i class="fas fa-clock"></i>
+      2026-07-24
+    </div>
+    <div class="status-item">
+      Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
+    </div>
+    <div class="status-item github">
+      <a href="#" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- 搜索专用配置 (HEXO_CONFIG 在 scripts.ejs 中统一定义) -->
+    <script>
+      window.VSC4T_SEARCH = {
+        root: "/"
+      };
+    </script>
+
+    <!-- 外部脚本 - 统一使用 cdnjs CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous"></script>
+    <script>if(typeof hljs !== 'undefined') hljs.highlightAll();</script>
+    <!-- 这里可以放置自定义脚本 -->
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Apply smooth scroll to non-TOC anchor links
+  document.querySelectorAll('a[href^="#"]:not(.toc-link)').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      // Check if querySelector is valid before using it
+      try {
+        const targetSelector = this.getAttribute('href');
+        // Basic check for potentially invalid selectors (though not exhaustive)
+        if (targetSelector && targetSelector.length > 1) { 
+          const targetElement = document.querySelector(targetSelector);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          } else {
+            console.warn('Smooth scroll target not found:', targetSelector);
+          }
+        } else {
+           console.warn('Invalid href for smooth scroll:', targetSelector);
+        }
+      } catch (error) {
+        console.error('Error during smooth scroll:', error, 'Selector:', this.getAttribute('href'));
+        // Fallback or alternative behavior if needed
+        // For example, try getElementById if it's just an ID
+        const targetId = this.getAttribute('href').slice(1);
+        try {
+            const targetElementById = document.getElementById(decodeURIComponent(targetId));
+            if (targetElementById) {
+                targetElementById.scrollIntoView({ behavior: 'smooth' });
+            }
+        } catch (idError) {
+             console.error('Fallback getElementById also failed:', idError);
+        }
+      }
+    });
+  });
+});
+</script>
+
+<!-- Scripts -->
+<script>
+  // 全局配置 - 包含 i18n 字符串和主题配置
+  window.HEXO_CONFIG = {
+    language: "zh-CN",
+    root: "/",
+    
+    theme_switch: {
+      enabled: false,
+      light_start: "06:00",
+      light_end: "18:00"
+    },
+    
+    // Search i18n strings
+    search_placeholder: "输入关键词搜索...",
+    search_no_results: "未找到相关结果",
+    search_result: "résultat",
+    search_results: "搜索结果",
+    search_results_found: "找到 undefined 个结果",
+    search_in: "搜索范围",
+    search_in_title: "标题",
+    search_in_content: "内容",
+    search_in_tags: "标签",
+    search_in_categories: "分类",
+    search_filters: "搜索过滤器",
+    search_recent: "最近搜索",
+    search_clear: "清除",
+    search_loading: "加载中...",
+    search_error: "加载搜索数据时出错",
+    // Encryption i18n strings
+    encrypt_badge: "受保护",
+    encrypt_title: "受保护的内容",
+    encrypt_description: "请输入密码以解锁本文，密码会在本设备本地保存，直到你选择重新加密。",
+    encrypt_label: "密码",
+    encrypt_placeholder: "输入密码解锁内容",
+    encrypt_button: "解锁",
+    encrypt_button_loading: "解锁中...",
+    encrypt_hint: "按 Enter 提交，密码会在本设备上记住。",
+    encrypt_success: "内容解锁成功！",
+    encrypt_unlocked_note: "内容已解锁，可随时重新加密。",
+    encrypt_again: "重新加密",
+    encrypt_wrong_password: "密码错误，请重试。",
+    encrypt_show_password: "显示密码",
+    encrypt_hide_password: "隐藏密码",
+    // Sidebar i18n strings
+    sidebar_about: "关于",
+    sidebar_categories: "分类",
+    sidebar_tags: "标签",
+    // Post page i18n strings
+    post_toc: "目录",
+    post_category_posts: "同分类文章",
+    post_article_tags: "文章标签"
+  };
+</script>
+
+
+
+<!-- 添加所有需要的脚本 -->
+<script src="../js/search.js"></script>
+<script src="../js/theme-switch.js"></script>
+
+<script src="../js/table-sticky-header.js"></script>
+<script src="../js/password-protect.js?v=1784833704687"></script>
+
+    <script>
+      // 移动端菜单切换
+      $(document).ready(function() {
+        var $body = $('body');
+        var $sidebar = $('.sidebar-explorer');
+        var $overlay = $('.sidebar-overlay');
+        var $toggle = $('.mobile-menu-toggle');
+
+        function openSidebar() {
+          $sidebar.addClass('show');
+          $overlay.addClass('show');
+          $toggle.addClass('active');
+          $body.addClass('sidebar-open');
+        }
+
+        function closeSidebar() {
+          $sidebar.removeClass('show');
+          $overlay.removeClass('show');
+          $toggle.removeClass('active');
+          $body.removeClass('sidebar-open');
+        }
+
+        // 汉堡按钮点击切换
+        $toggle.on('click', function(e) {
+          e.stopPropagation();
+          if ($sidebar.hasClass('show')) {
+            closeSidebar();
+          } else {
+            openSidebar();
+          }
+        });
+
+        // 点击遮罩层关闭
+        $overlay.on('click', function() {
+          closeSidebar();
+        });
+
+        // ESC 键关闭
+        $(document).on('keydown', function(e) {
+          if (e.key === 'Escape' && $sidebar.hasClass('show')) {
+            closeSidebar();
+          }
+        });
+
+        // 点击侧边栏内的链接时自动关闭侧边栏，确保锚点跳转正常
+        $sidebar.on('click', 'a', function() {
+          closeSidebar();
+        });
+      });
+    </script>
+  </body>
+</html>
