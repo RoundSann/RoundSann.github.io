@@ -62,7 +62,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1784840532034">
+  <link rel="stylesheet" href="../css/post.css?v=1784917320047">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -288,7 +288,7 @@
             
             <span class="updated-date">
               <i class="fas fa-sync-alt"></i>
-              更新于 2026-07-23
+              更新于 2026-07-25
             </span>
                         
               <span class="categories">
@@ -732,7 +732,7 @@
 <li>射击精度:射手的精度,见<a target="_blank" rel="noopener" href="https://rimworld.huijiwiki.com/wiki/%E5%B0%84%E5%87%BB%E7%B2%BE%E5%BA%A6">灰机wiki</a>或<a target="_blank" rel="noopener" href="https://rimworldwiki.com/wiki/Shooting_Accuracy">官方wiki</a></li>
 <li>距离:射手与目标间的距离,不包括射手所在格,例如 A空格B 的距离为2</li>
 <li>距离乘数:根据人物属性中的&quot;精度系数(贴近/近/中/远)&quot;,进行线性插值.原版仅有&quot;近视&quot;基因修改了此数值.</li>
-<li>武器精度:字面意义,武器的精度</li>
+<li>武器精度:武器在该距离下的精度</li>
 <li>天气系数:射手或目标至少有一人不在屋顶下时生效,各种雨天×80%,各种雾天×50%</li>
 <li>致盲烟雾:弹道路径上任意一格存在致盲烟雾,则×70%</li>
 <li>黑暗亲和:根据目标所处的光照环境,室内外黑暗环境+25%,室内外明亮环境-20%</li>
@@ -1048,6 +1048,7 @@
     1-0.75x,&amp;x&lt;1\\
     0.5-0.25x,&amp;1\leq\Delta A&lt;2\\
 \end{cases}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3em;vertical-align:-1.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.75</span><span class="mord mathnormal">x</span><span class="mpunct">,</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">0.5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.25</span><span class="mord mathnormal">x</span><span class="mpunct">,</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.69em;"><span style="top:-3.69em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">1</span></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:3.008em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">Δ</span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.19em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></eqn></section></p>
+<p>换言之,<strong>当有效护甲值低于100%时,每点护甲增加折合0.75%的护甲承伤减少.当有效护甲高于100%时,每点护甲增加折合0.25%的护甲承伤减少</strong></p>
 <p>对于多层护甲,则是单层护甲的简单嵌套.由于乘法是有交换律的,实际先计算哪个没区别(实际会因为扣除耐久而有区别)</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/RoundSann/Rimworld-Armor-Calculator">护甲曲线生成器</a></p>
 <h4 id="原版护甲分析">原版护甲分析</h4>
@@ -1664,16 +1665,16 @@
       </div>
     
       <div class="vs-recommended-item" data-index="5" tabindex="0">
-        <a href="../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/" class="vs-recommended-link">
+        <a href="../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
             <div class="vs-recommended-title">
               <i class="fas fa-file-code"></i>
-              <span>异象扩展</span>
+              <span>(尚未完工)失能机关</span>
             </div>
             
             <div class="vs-recommended-excerpt">
-              这个是真恶心👎🤮 绝大部分内容都是原版等级强度的,但有一两个强度极高 仅包含了血肉内容的表格
+              施工中~暂时只有几个统计表格~太久不更的话也有可能是烂尾了 强度的话,作为玩家派系的机器人强度尚可,但作为敌对BOSS解决起来就很棘手了
             </div>
             
             <div class="vs-recommended-meta">
@@ -1682,7 +1683,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 正义, 负正义
+                  rimworld, 微正义, 负正义
                   
                 </span>
               
@@ -1690,11 +1691,11 @@
               <span class="vs-meta-info">
                 <span class="vs-date">
                   <i class="fas fa-calendar-alt"></i>
-                  9月 03
+                  8月 17
                 </span>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
-                  1 min
+                  3 min
                 </span>
               </span>
             </div>
@@ -1866,7 +1867,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-07-24
+      2026-07-25
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -1950,7 +1951,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "result",
+    search_result: "risultato",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -1996,7 +1997,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1784840532035"></script>
+<script src="../js/password-protect.js?v=1784917320048"></script>
 
     <script>
       // 移动端菜单切换
