@@ -7,7 +7,7 @@
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="A simple dark Hexo theme inspired by code.">
-  <meta name="keywords" content="rimworld,微正义,种族">
+  <meta name="keywords" content="rimworld,种族,微正义">
   <meta name="author" content="Round">
   <link rel="canonical" href="https://RoundSann.github.io">
 
@@ -62,7 +62,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1786821205617">
+  <link rel="stylesheet" href="../css/post.css?v=1786831028040">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -258,14 +258,14 @@
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../tags/%E5%BE%AE%E6%AD%A3%E4%B9%89/">微正义</a>
-            <span class="count">(5)</span>
+            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
+            <span class="count">(12)</span>
           </div>
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
-            <span class="count">(12)</span>
+            <a href="../tags/%E5%BE%AE%E6%AD%A3%E4%B9%89/">微正义</a>
+            <span class="count">(5)</span>
           </div>
         
       </div>
@@ -511,7 +511,6 @@
 <p><strong>高塔&amp;天星石&amp;种子</strong> 高塔是墨诺灵光芒的源头,种子是墨诺灵的重要材料,由天星石制作而成(前期8:1后期5:1合成种子),而天星石也由高塔获得.高塔和光之核心均可每5天引导一次天星石陨石,引导后10小时撞击,掉下9格天星石矿折合243个天星石</p>
 <ul>
 <li>光之核心引导时,当前地图中所有心灵敏感度大于0的单位眩晕10秒,心灵绝缘单位眩晕3.33秒.</li>
-<li>每次引导时有10%概率触发天星石小行星任务(30%概率带有特化武器遗迹),若未触发,再有7%概率发现小行星平台任务(100%概率带有特化武器遗迹),综合概率为16.3%,综合特化武器概率为9.3%,平均53.8天获得一把特化武器</li>
 </ul>
 <p><strong>拉电线</strong> 高塔是电力的源头,分配石碑则是电线,将光芒延伸出去分配到各个&quot;用电器&quot;</p>
 <p><strong>重新放置与流量</strong> 墨诺灵的部分建筑有&quot;重新放置&quot;选项,可以将建筑瞬移到指定的分配石碑覆盖的地方.每个可重新放置建筑都有&quot;重新定位冷却时间&quot;和&quot;流量生成&quot;两个值,前者是重新放置的冷却;后者则可视为重新放置的消耗,每次重新放置都会为高塔增加一定流量,高塔会缓慢&quot;代谢掉&quot;流量,流量的上限固定为1200,溢出时无法进行传送</p>
@@ -561,11 +560,15 @@
 <ul>
 <li>刻印:长矛=1000光+10黑色催化剂+8.6h 40%穿甲18伤/2s,极佳10.8dpsa,传奇14.85dpsa</li>
 <li>刻印:重力锤=1000光+10黑色催化剂+8.6h 不可与盾同时装备 80%穿甲27钝击/2s,极佳16.2dpsa,传奇22.28dpsa 造成(目标体重-10)/60倍率的伤害</li>
-<li>刻印:剑=1000光+10黑色催化剂+5种子+30圣水+8.6h 115%穿甲13伤/1.1s,极佳13.57dpsa,传奇18.65dpsa 400tick偏转冷却2.5偏转概率,每次消耗15个人光芒 100tick招架冷却3.5招架概率3s招架眩晕</li>
+<li>刻印:剑=1000光+10黑色催化剂+5种子+30圣水+8.6h 115%穿甲13伤/1.1s,极佳13.57dpsa,传奇18.65dpsa 400tick偏转冷却2.5偏转概率,每次消耗15个人光芒 100tick招架冷却3.5招架概率3s招架眩晕,每次消耗15个人光芒</li>
 <li>刻印:回音刃=1000光+10黑色催化剂+5种子+30圣水+8.6h 不可与盾同时装备 100%穿甲13伤/1s,极佳15.6dpsa,传奇21.45dpsa 无偏转冷却6偏转概率,每次消耗5个人光芒</li>
-<li>招架:在被近战命中时,有 格斗等级×招架概率 的概率将伤害归零并眩晕攻击者3s</li>
-<li>偏转:在被远程命中时,有 格斗等级×偏转概率 的概率将伤害反弹给10格内最近的敌人</li>
+<li>招架:在被近战命中时,有 格斗等级×招架概率 的概率将伤害归零并眩晕攻击者3s.光芒不足时招架概率降低为0.25</li>
+<li>偏转:每tick检测当前所在格和面对的格是否有敌对子弹,若有,则有 格斗等级×偏转概率 的概率将伤害反弹给10格内最近的敌人.另外偏转的代码实际绑定在回音刀状态下,单独有一个剑并无法偏转,装备剑的同时还得有个回音刀状态才能偏转</li>
 </ul>
+<p>四把武器的dpsa相差并不大,整体都是原版数值<br>
+长矛纯垃圾,重力锤使用高贵的钝伤的同时对蜈蚣这样的高重量单位有非常可观的伤害,但相反的,对一众萝莉二次元压根没伤害.剑负责近战眩晕,刃负责远程反击,同时植入两者不断切换就能同时享受近战眩晕和远程反击.<br>
+招架功能非常舒适,以剑为例,20级格斗给提供50%的招架概率,对纯近战袭击来说提升相当可观,但谁又会和你玩近战呢?更多情况下花哨性质更强,我能想到的最大的用处是解最恶心的隐型魔袭击<br>
+偏转功能则略显诡异,由于它的判定方式是每tick检测两格的子弹,原版最高弹速也才1格/tick,从正面打可以100%偏转,但在mod环境下这项功能可能略微不稳定,墨诺灵自己的弹速就有3格/tick的了.当然,瑕不掩瑜,这依旧是一个好用的技能.当然,瑜不掩bug,单个剑无法偏转这个bug实在太难绷了</p>
 <h3 id="远程武器">远程武器</h3>
 <img src="/images/墨诺灵/墨诺灵-远程武器.png" style="max-width: 65em">
 <ul>
@@ -584,6 +587,7 @@
 <li>斥力手雷:40钢铁+40黑色催化剂 1秒前摇2.66秒后摇13射程3爆炸半径,落地2.5秒后对3半径内的生物造成0%穿甲的60点利伤和2s眩晕,并附加奥德赛的&quot;重力眩晕&quot;状态,意识×90% 移动能力×90%</li>
 </ul>
 <h3 id="特化武器">特化武器</h3>
+<p>每次使用高塔/光之核心的天星石引导时有10%概率触发天星石小行星任务(30%概率带有特化武器遗迹),若未触发,再有7%概率发现小行星平台任务(100%概率带有特化武器遗迹),综合概率为16.3%,综合特化武器概率为9.3%,平均53.8天获得一把特化武器.武器品质为极差到极佳的正态分布随机品质</p>
 <p>添加的特化武器</p>
 <ul>
 <li>遗产(手炮):0.2s前摇1s后摇20射程65%穿甲27伤,90/84/75/45四距离精度</li>
@@ -978,7 +982,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 种族
+                  rimworld, 种族, 微正义
                   
                 </span>
               
@@ -1017,7 +1021,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 负正义
+                  rimworld, 种族, 微正义
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1058,7 +1062,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 种族
+                  rimworld, 种族, 微正义
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1081,45 +1085,6 @@
       </div>
     
       <div class="vs-recommended-item" data-index="3" tabindex="0">
-        <a href="../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>(尚未完工)失能机关</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              施工中~暂时只有几个统计表格~太久不更的话也有可能是烂尾了 强度的话,作为玩家派系的机器人强度尚可,但作为敌对BOSS解决起来就很棘手了
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-                <span class="vs-tags-preview">
-                  <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 负正义
-                  
-                </span>
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  8月 17
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  3 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="4" tabindex="0">
         <a href="../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -1158,6 +1123,45 @@
         </a>
       </div>
     
+      <div class="vs-recommended-item" data-index="4" tabindex="0">
+        <a href="../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>(尚未完工)失能机关</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              施工中~暂时只有几个统计表格~太久不更的话也有可能是烂尾了 强度的话,作为玩家派系的机器人强度尚可,但作为敌对BOSS解决起来就很棘手了
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 微正义, 负正义
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  8月 17
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  3 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
       <div class="vs-recommended-item" data-index="5" tabindex="0">
         <a href="../%E8%8C%89%E7%BA%A6%E6%97%8F%E8%8D%AF%E7%89%A9/" class="vs-recommended-link">
           <!-- 文章信息 -->
@@ -1177,7 +1181,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 原版向
+                  rimworld, 种族, 精品
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1447,7 +1451,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "نتيجة",
+    search_result: "Ergebnis",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -1493,7 +1497,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1786821205618"></script>
+<script src="../js/password-protect.js?v=1786831028040"></script>
 
     <script>
       // 移动端菜单切换
