@@ -8,7 +8,7 @@
   <!-- SEO Meta Tags -->
   <meta name="description" content="很新的种族目前内容量也没有很大,玩法机制都很新颖
 强度高的同时财富值也很高,算是一种变相平衡吧">
-  <meta name="keywords" content="rimworld,微正义,种族">
+  <meta name="keywords" content="rimworld,种族,微正义">
   <meta name="author" content="Round">
   <link rel="canonical" href="https://RoundSann.github.io">
 
@@ -65,7 +65,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1787264422350">
+  <link rel="stylesheet" href="../css/post.css?v=1787431872749">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -202,12 +202,12 @@
         
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../%E7%BE%8E%E7%8B%90/">美狐</a>
+            <a href="../%E7%BE%8E%E7%8B%90%E6%89%A9%E5%B1%95-%E6%98%9F%E7%8E%AF-%E4%BB%85ai%E6%89%92%E5%8F%96/">美狐扩展-星环-仅ai扒取</a>
           </div>
         
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../%E7%BE%8E%E7%8B%90%E6%89%A9%E5%B1%95-%E6%98%9F%E7%8E%AF-%E4%BB%85ai%E6%89%92%E5%8F%96/">美狐扩展-星环-仅ai扒取</a>
+            <a href="../%E7%BE%8E%E7%8B%90/">美狐</a>
           </div>
         
           <div class="file">
@@ -261,14 +261,14 @@
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../tags/%E5%BE%AE%E6%AD%A3%E4%B9%89/">微正义</a>
-            <span class="count">(5)</span>
+            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
+            <span class="count">(12)</span>
           </div>
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
-            <span class="count">(12)</span>
+            <a href="../tags/%E5%BE%AE%E6%AD%A3%E4%B9%89/">微正义</a>
+            <span class="count">(5)</span>
           </div>
         
       </div>
@@ -297,7 +297,7 @@
             
             <span class="updated-date">
               <i class="fas fa-sync-alt"></i>
-              更新于 2026-08-19
+              更新于 2026-08-23
             </span>
                         
               <span class="categories">
@@ -909,6 +909,7 @@
 重构可以免费复活机械体不赖,复活敌对机械体时可以把它临时作为己方的成员,唯一的用处是家里屯俩机械族boss,袭击来了就释放宝可梦,除此之外想不到好的用处.另外不能自己征兆控制的己方成员都是废物<br>
 你说这系统覆写为啥不能给普通人类用呢?这全局工作速度+100%多爽啊.击中敌对机械体时可以把对面牛过来,同样的除了打一些逆天机械族boss以外我想不太到实际用处,本质时间更长的灵能激怒</p>
 <h3 id="坩埚及植入物">坩埚及植入物</h3>
+<p>坩埚的机制非常复杂,分为坩埚和四种子模块,坩埚负责生产,且工作时会根据清单不断产生热量,若总热量大于热容则会爆炸;四种子模块给坩埚提供加成,每种子模块最多叠加60个</p>
 <ul>
 <li>冶炼厂阵列:坩埚=35种子+6花瓣+10000光 3×3大小 100热容量 5冷却速度 200光芒消耗量,免疫爆炸伤害<br>
 坩埚带有&quot;紧急排热&quot;选项,1.2天cd(70000tick),使用紧急排热时,每个散热/分担模块受到200点伤害,若未被摧毁则排出10%热容量的热量</li>
@@ -917,7 +918,7 @@
 <li>冶炼厂阵列:冷却=10种子+5500光 2×2大小 冷却速度+8 光芒消耗量+20 最大储存100圣水,工作时每个坩埚每100tick消耗0.023圣水(每个坩埚每小时消耗0.575圣水)</li>
 <li>冶炼厂阵列:超频=10种子+5500光 2×2大小 工序速度+25% 冷却效率-10% 光芒消耗量+75</li>
 </ul>
-<p>来看坩埚的具体计算方式:</p>
+<p>具体成公式:</p>
 <ul>
 <li>坩埚前10s不产热,之后每500tick增加(产热-冷却)/5的热量,即每小时增加(产热-冷却)热量,热量超过上限会爆炸</li>
 <li>冷却速度=(5+8×冷却数量)×(1+7%散热-10%超频),最低为2</li>
@@ -930,7 +931,7 @@
 <li>6冷却+n超频:六个冷却足以完成所有的配方,而超频模块可以利用我们上述的bug来白嫖速度.这个架构优势是成型快不占地方,有六个冷却就能开锅,之后有多余种子再往上补超频;缺点是冷却模块消耗圣水,圣水的原料花瓣获取难度极高</li>
 <li>超频+分担:此架构<a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/10887870655">源于贴吧老哥</a>,完全不散热,纯靠堆热容来完成配方.这个架构优势是不消耗圣水,且不需要开关超频模块来躲避冷却惩罚(因为这个架构压根就没冷却).缺点则是成型非常慢,一个坩埚35种子1w光,一个模块10种子5k5光.这个架构最低也要20超频+18分担总计415种子21.5w光芒;能放进两个11×11的架构为3坩埚+35超频+15冷却,总计605种子+30w光芒;完全体则是4坩埚+60超频+12分担,总计860种子+43.6w光芒</li>
 </ul>
-<p>先来看冷却架构,这个玩意圣水消耗量实在是太大了,已知每制作一个仿生体要消耗347.4/效率的圣水,若有14个超频模块,则要消耗77.2圣水,也就是30.9花瓣.我们之前有提到相位花园的花瓣日产量为1.7,这显然完全不够;花瓣也可以作为原材料在商队/据点中刷新,一次刷新200~400个,每个价值2银.如果能大量买到花瓣,那冷却架构就是能快速成型的好用架构,但很可惜并不能(除非你加了购物mod,但购物mod都有了直接买仿生体成品不是更方便),冷却架构是真的区,直接去用分担架构吧</p>
+<p>冷却架构的圣水消耗量实在是太大了,每制作一个仿生体要额外消耗347.4/效率的圣水,若有14个超频模块就要消耗77.2圣水,也就是30.9花瓣.每个相位花园的花瓣日产量为1.7,折合要18个相位花园才能每天产一个仿生体;花瓣也可以作为原材料在商队/据点中刷新,一次刷新200~400个,每个价值2银.如果能大量买到花瓣,冷却架构就是快速成型的神,但很可惜并不能(除非你加了购物mod,但购物mod都有了直接买仿生体成品不是更方便),冷却架构是真的区,直接去用分担架构吧</p>
 <p>坩埚配方表</p>
 <ul>
 <li>20有毒垃圾=14.4h+7热量 分解有毒垃圾</li>
@@ -1064,8 +1065,8 @@
         <nav class="post-nav">
           
           
-            <a class="next" href="../%E7%BE%8E%E7%8B%90/">
-              美狐
+            <a class="next" href="../%E7%BE%8E%E7%8B%90%E6%89%A9%E5%B1%95-%E6%98%9F%E7%8E%AF-%E4%BB%85ai%E6%89%92%E5%8F%96/">
+              美狐扩展-星环-仅ai扒取
               <i class="fas fa-chevron-right"></i>
             </a>
           
@@ -1105,7 +1106,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 种族
+                  rimworld, 种族, 微正义
                   
                 </span>
               
@@ -1144,7 +1145,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 负正义
+                  rimworld, 种族, 微正义
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1185,7 +1186,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 种族
+                  rimworld, 种族, 微正义
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1208,45 +1209,6 @@
       </div>
     
       <div class="vs-recommended-item" data-index="3" tabindex="0">
-        <a href="../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>(尚未完工)失能机关</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              施工中~暂时只有几个统计表格~太久不更的话也有可能是烂尾了 强度的话,作为玩家派系的机器人强度尚可,但作为敌对BOSS解决起来就很棘手了
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-                <span class="vs-tags-preview">
-                  <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 负正义
-                  
-                </span>
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  8月 17
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  3 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="4" tabindex="0">
         <a href="../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -1278,6 +1240,45 @@
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
                   13 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="4" tabindex="0">
+        <a href="../%E5%B0%9A%E6%9C%AA%E5%AE%8C%E5%B7%A5-%E5%A4%B1%E8%83%BD%E6%9C%BA%E5%85%B3/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>(尚未完工)失能机关</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              施工中~暂时只有几个统计表格~太久不更的话也有可能是烂尾了 强度的话,作为玩家派系的机器人强度尚可,但作为敌对BOSS解决起来就很棘手了
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 微正义, 负正义
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  8月 17
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  3 min
                 </span>
               </span>
             </div>
@@ -1490,7 +1491,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-08-21
+      2026-08-23
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -1574,7 +1575,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "Ergebnis",
+    search_result: "resultado",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -1620,7 +1621,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1787264422351"></script>
+<script src="../js/password-protect.js?v=1787431872749"></script>
 
     <script>
       // 移动端菜单切换
