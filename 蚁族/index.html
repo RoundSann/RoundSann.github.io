@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>蚁族 | 缘神</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="A simple dark Hexo theme inspired by code.">
+  <meta name="keywords" content="rimworld,种族,原版向">
+  <meta name="author" content="Round">
+  <link rel="canonical" href="https://RoundSann.github.io">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="蚁族 | 缘神">
+  <meta property="og:description" content="A simple dark Hexo theme inspired by code.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://RoundSann.github.io">
+  <meta property="og:site_name" content="缘神">
+  <meta property="article:published_time" content="2026-08-27T16:16:27.000Z">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="蚁族 | 缘神">
+  <meta name="twitter:description" content="A simple dark Hexo theme inspired by code.">
+
+  <!-- Favicon 配置 -->
+  
+    
+      <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    
+    
+      <link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico">
+    
+    
+      <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+    
+    
+      <link rel="icon" type="image/png" sizes="192x192" href="../favicon.ico">
+    
+    
+      <link rel="apple-touch-icon" sizes="180x180" href="../favicon.ico">
+    
+  
+
+  <!-- 外部样式 - 统一使用 jsdelivr CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- 代码高亮样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-dark.min.css" crossorigin="anonymous">
+
+  <!-- Mermaid.js 库 (defer加载) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" crossorigin="anonymous"></script>
+
+  <!-- 主题样式 -->
+  <link rel="stylesheet" href="../css/theme-colors.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/code.css">
+  <link rel="stylesheet" href="../css/code-custom.css">
+  <link rel="stylesheet" href="../css/code-languages.css">
+  <link rel="stylesheet" href="../css/mermaid.css">
+
+  <link rel="stylesheet" href="../css/vs-code.css">
+  <link rel="stylesheet" href="../css/post.css?v=1788436875220">
+  <link rel="stylesheet" href="../css/tag.css">
+  <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/archive.css">
+  <link rel="stylesheet" href="../css/search.css">
+  <link rel="stylesheet" href="../css/mobile.css">  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/elements.css">
+
+  <!-- 添加 JetBrains Mono 字体 -->  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Add any custom head content here -->
+
+  <script defer src="../js/explorer.js"></script>
+  <script defer src="../js/code-enhance.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+    <div class="wrapper">
+      <div class="mobile-menu-toggle" aria-label="Toggle sidebar menu" role="button" tabindex="0">
+        <i class="fas fa-bars"></i>
+      </div>
+      <!-- 移动端侧边栏遮罩层 -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+      <header class="vs-header">
+  <nav class="vs-nav">
+    <div class="nav-left">
+      <a href="/" class="nav-brand">
+        <i class="fas fa-terminal"></i>
+        缘神
+      </a>
+    </div>
+    
+    <div class="nav-right">
+      <a href="/" class="nav-item ">
+        <i class="fas fa-home"></i>
+        <span>首页</span>
+      </a>
+      <a href="/archives/" class="nav-item ">
+        <i class="fas fa-archive"></i>
+        <span>归档</span>
+      </a>
+      <a href="/categories/" class="nav-item ">
+        <i class="fas fa-folder"></i>
+        <span>分类</span>
+      </a>
+      <a href="/tags/" class="nav-item ">
+        <i class="fas fa-tags"></i>
+        <span>标签</span>
+      </a>
+      <a href="/search/" class="nav-item ">
+        <i class="fas fa-search"></i>
+        <span>搜索</span>
+      </a>
+      <a href="/about/" class="nav-item ">
+        <i class="fas fa-info-circle"></i>
+        <span>关于</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function smoothScroll(event, target) {
+    event.preventDefault();
+    const targetId = target.substring(target.indexOf('#') + 1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 50, // 调整偏移量
+        behavior: 'smooth'
+      });
+    } else {
+      window.location.href = target;
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.vs-header');
+    const nav = document.querySelector('.vs-nav');
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    nav.style.setProperty('--scroll-percent', `${scrollPercent}%`);
+    
+    if (window.scrollY > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // 添加标签页切换动画
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      const ripple = document.createElement('span');
+      ripple.classList.add('nav-ripple');
+      this.appendChild(ripple);
+      
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      setTimeout(() => ripple.remove(), 1000);
+    });
+  });
+</script>
+
+
+<div class="vscode-container">
+  <!-- 左侧资源管理器 -->
+  <div class="sidebar-explorer">
+    <!-- TOC导航 -->
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-list"></i>
+        <span>目录</span>
+      </div>
+      <div class="section-content">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%8D%E6%97%8F%E6%9C%AC%E4%BD%93"><span class="toc-text">种族本体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E6%A6%82%E8%A7%88"><span class="toc-text">数值概览</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A6%E5%99%A8"><span class="toc-text">武器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%91%E6%88%98%E6%AD%A6%E5%99%A8"><span class="toc-text">近战武器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%AD%A6%E5%99%A8"><span class="toc-text">远程武器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%8C%96%E6%AD%A6%E5%99%A8"><span class="toc-text">特化武器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%AE%E5%A1%94"><span class="toc-text">炮塔</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A3%E7%89%A9"><span class="toc-text">衣物</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AA%81%E5%8F%98%E4%B8%AA%E4%BD%93"><span class="toc-text">突变个体</span></a></li></ol>
+      </div>
+    </div>
+
+    <!-- 同分类文章 -->
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-folder"></i>
+        <span>同分类文章</span>
+      </div>
+      <div class="section-content">
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%A2%A8%E8%AF%BA%E7%81%B5/">墨诺灵</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E7%BE%8E%E7%8B%90%E6%89%A9%E5%B1%95-%E6%98%9F%E7%8E%AF-%E4%BB%85ai%E6%89%92%E5%8F%96/">美狐扩展-星环-仅ai扒取</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E7%BE%8E%E7%8B%90/">美狐</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E7%BB%AE%E7%BD%97/">绮罗</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E4%BA%BA%E5%B7%A5%E7%A7%8D%E6%97%8F%E9%87%8D%E5%B9%B3%E8%A1%A1%E8%A1%A5%E4%B8%81/">人工种族重平衡补丁</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../ai%E9%80%9A%E7%94%A8%E6%8F%90%E7%A4%BA%E8%AF%8D/">AI通用提示词</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%8E%9F%E7%89%88%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">原版相关内容</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83%E5%8F%8A%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">文档规范及经验分享</a>
+          </div>
+        
+      </div>
+    </div>
+    
+    
+    <!-- 标签列表 -->
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-tags"></i>
+        <span>文章标签</span>
+      </div>
+      <div class="section-content">
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/rimworld/">rimworld</a>
+            <span class="count">(23)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
+            <span class="count">(13)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E5%8E%9F%E7%89%88%E5%90%91/">原版向</a>
+            <span class="count">(7)</span>
+          </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- 主要内容区域 -->
+  <div class="editor-content">
+    <div class="tab-bar">
+      <div class="tab active">
+        <i class="fas fa-file-alt"></i>
+        <span>蚁族.md</span>
+      </div>
+    </div>
+    
+    <div class="content-area">
+      <article class="post-content">
+        <div class="post-header">
+          <h1>蚁族</h1>
+          <div class="post-meta">
+            <span class="date">
+              <i class="fas fa-calendar-alt"></i>
+              2026-08-28
+            </span>
+            
+            <span class="updated-date">
+              <i class="fas fa-sync-alt"></i>
+              更新于 2026-09-03
+            </span>
+                        
+              <span class="categories">
+                <i class="fas fa-folder"></i>
+                <div class="categories-list">
+                  <ul class="category-item-post-list"><li class="category-item-post-list-item"><a class="category-item-post-list-link" href="../categories/rimworld/">rimworld</a></li></ul>
+                </div>
+              </span>
+            
+            
+              <span class="tags">
+                <i class="fas fa-tags"></i>
+                <div class="tags-list">
+                  <ul class="tag-item-post-list" itemprop="keywords"><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/rimworld/" rel="tag">rimworld</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E5%8E%9F%E7%89%88%E5%90%91/" rel="tag">原版向</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E7%A7%8D%E6%97%8F/" rel="tag">种族</a></li></ul>
+                </div>
+              </span>
+            
+          </div>
+        </div>
+        
+        <div class="post-body vscode-markdown">
+          <h2 id="种族本体">种族本体</h2>
+<h3 id="数值概览">数值概览</h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>智人种</th>
+<th>蚁族</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生命值系数</td>
+<td>100%</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>基础价值</td>
+<td>1750</td>
+<td>820</td>
+</tr>
+<tr>
+<td>易燃性</td>
+<td>70%</td>
+<td>200%</td>
+</tr>
+<tr>
+<td>重量</td>
+<td>60</td>
+<td>130</td>
+</tr>
+<tr>
+<td>体型</td>
+<td>1</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>肉量</td>
+<td>140</td>
+<td>20</td>
+</tr>
+<tr>
+<td>皮革量</td>
+<td>75</td>
+<td>40</td>
+</tr>
+<tr>
+<td>移动速度</td>
+<td>4.6</td>
+<td>5</td>
+</tr>
+<tr>
+<td>爬行速度</td>
+<td>0.6</td>
+<td>1.95</td>
+</tr>
+<tr>
+<td>携带能力</td>
+<td>75</td>
+<td>110</td>
+</tr>
+<tr>
+<td>全局动摇系数</td>
+<td>100%</td>
+<td>1000%</td>
+</tr>
+<tr>
+<td>最低舒适温度</td>
+<td>16</td>
+<td>19</td>
+</tr>
+<tr>
+<td>最高舒适温度</td>
+<td>26</td>
+<td>28</td>
+</tr>
+<tr>
+<td>心灵敏感度</td>
+<td>100%</td>
+<td>50%/100%-0.5</td>
+</tr>
+<tr>
+<td>毒素抗性</td>
+<td>0%</td>
+<td>-200%</td>
+</tr>
+<tr>
+<td>有毒环境抗性</td>
+<td>0%</td>
+<td>-50%</td>
+</tr>
+<tr>
+<td>崩溃临界值</td>
+<td>35%</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>疼痛休克阈值</td>
+<td>80%</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>预期寿命</td>
+<td>80</td>
+<td>30</td>
+</tr>
+<tr>
+<td>寿命系数</td>
+<td>100%</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>全局学习系数</td>
+<td>100%</td>
+<td>110%</td>
+</tr>
+<tr>
+<td>生育周期</td>
+<td>15</td>
+<td>9</td>
+</tr>
+<tr>
+<td>近战命中率</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>近战闪避率</td>
+<td>0</td>
+<td>0.8/1×0.8</td>
+</tr>
+<tr>
+<td>射击精度</td>
+<td>0</td>
+<td>0.8/1×0.8</td>
+</tr>
+<tr>
+<td>谈判能力</td>
+<td>100%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>交易价格改善</td>
+<td>100%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>社交效果</td>
+<td>100%</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>魅力</td>
+<td>0</td>
+<td>-3</td>
+</tr>
+<tr>
+<td>采矿效率</td>
+<td>100%</td>
+<td>80%/100%×0.8</td>
+</tr>
+<tr>
+<td>深钻井操作速度</td>
+<td>100%</td>
+<td>200%/100%×2</td>
+</tr>
+<tr>
+<td>采矿速度</td>
+<td>100%</td>
+<td>200%/100%×2</td>
+</tr>
+<tr>
+<td>手术成功率</td>
+<td>100%</td>
+<td>110%/100%×1.1</td>
+</tr>
+<tr>
+<td>治疗质量</td>
+<td>100%</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>建造速度</td>
+<td>100%</td>
+<td>100%×1.25</td>
+</tr>
+<tr>
+<td>阅读速度</td>
+<td>80%</td>
+<td>80%×1.75</td>
+</tr>
+<tr>
+<td>烹饪速度</td>
+<td>0</td>
+<td>0.3/1×0.3</td>
+</tr>
+<tr>
+<td>屠宰速度</td>
+<td>100%</td>
+<td>120%/100%×1.2</td>
+</tr>
+<tr>
+<td>屠宰效率</td>
+<td>100%</td>
+<td>120%/100%×1.2</td>
+</tr>
+<tr>
+<td>机械族拆解速度</td>
+<td>100%</td>
+<td>120%/100%×1.2</td>
+</tr>
+<tr>
+<td>机械族拆解效率</td>
+<td>100%</td>
+<td>120%/100%×1.2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="武器">武器</h2>
+<p>蚁族大部分武器使用特殊伤害类型,分为以下两种</p>
+<ul>
+<li>酸液溶解伤害(下简称为酸伤),伤害自动合并,每点实际伤害为击中的部位施加20s的&quot;酸液溶解&quot;状态,该状态每5s对该部位造成0.1酸伤,部位累计受到60点酸伤时强制被破坏</li>
+<li>强酸性腐蚀伤害(下简称为强酸伤),伤害自动合并,每点实际伤害为击中的部位施加40s的&quot;强酸性腐蚀&quot;状态,该状态每5s对该部位造成0.3强酸伤.某部位累计受到35点强酸伤时强制被破坏</li>
+</ul>
+<p>特别地,同一个部位受到多次酸伤/强酸伤时不会叠加造成多层掉血,但不同部位可以叠加,每一个部位单独结算<br>
+持续掉血机制纯区,蚂蚁腿级掉血,在有武器能一键给所有身体部位造成溶解之前我是不会给这玩意说话的.<br>
+强制破坏就不一样了,这玩意对高血量敌人爽到起飞,尤其是蜈蚣这种身体部位少的机械族,很容易融掉一个身节致死</p>
+<h3 id="近战武器">近战武器</h3>
+<img src="/images/蚁族/蚁族-近战武器.png" style="max-width: 65em">
+<ul>
+<li>强酸刺斧:100蚁族外骨骼+20红基质+20铀+2高级零部件+1蚁族智能核心+10手工+5智识 不同的攻击方式有不同的附加效果<br>
+斧刃 0.4权重30%穿甲15割伤/s,50%概率附加8点强酸割伤<br>
+斧柄 0.4权重35%穿甲15刺伤/s,50%概率附加8点强酸捅伤,10%概率附加1s眩晕<br>
+斧刺 0.2权重50%穿甲25刺伤/3s,50%概率附加10点强酸捅伤,50%概率附加10点强酸割伤,15%概率附加20点emp伤,10%概率附加5s眩晕</li>
+</ul>
+<p>稍微计算下传奇级武器期望dps<br>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>E</mi><mo stretchy="false">(</mo><mi>D</mi><mi>P</mi><mi>S</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mi>E</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo></mrow><mrow><mi>E</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><mo>∑</mo><msub><mi>F</mi><mi>i</mi></msub><msubsup><mi>D</mi><mi>i</mi><mn>2</mn></msubsup><msubsup><mi>D</mi><mi>i</mi><mo>∗</mo></msubsup></mrow><mrow><mo>∑</mo><msub><mi>F</mi><mi>i</mi></msub><msubsup><mi>D</mi><mi>i</mi><mn>2</mn></msubsup><msub><mi>C</mi><mi>i</mi></msub></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mn>0.4</mn><mo>×</mo><msup><mn>24.8</mn><mn>2</mn></msup><mo>×</mo><mo stretchy="false">(</mo><mn>24.8</mn><mo>+</mo><mn>4</mn><mo stretchy="false">)</mo><mo>+</mo><mn>0.4</mn><mo>×</mo><msup><mn>24.8</mn><mn>2</mn></msup><mo>×</mo><mo stretchy="false">(</mo><mn>24.8</mn><mo>+</mo><mn>4</mn><mo stretchy="false">)</mo><mo>+</mo><mn>0.2</mn><mo>×</mo><msup><mn>41.3</mn><mn>2</mn></msup><mo>×</mo><mo stretchy="false">(</mo><mn>41.3</mn><mo>+</mo><mn>5</mn><mo>+</mo><mn>5</mn><mo stretchy="false">)</mo></mrow><mrow><mn>0.4</mn><mo>×</mo><msup><mn>24.8</mn><mn>2</mn></msup><mo>×</mo><mn>1</mn><mo>+</mo><mn>0.4</mn><mo>×</mo><msup><mn>24.8</mn><mn>2</mn></msup><mo>×</mo><mn>1</mn><mo>+</mo><mn>0.2</mn><mo>×</mo><msup><mn>41.3</mn><mn>2</mn></msup><mo>×</mo><mn>3</mn></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>20.89</mn></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align*}E(DPS)&amp;=\dfrac{E(D)}{E(C)}=\dfrac{\sum F_iD_i^2D^*_i}{\sum F_iD_i^2C_i}\\
+&amp;=\dfrac{0.4\times 24.8^2\times(24.8+4)+0.4\times 24.8^2\times(24.8+4)+0.2\times 41.3^2\times(41.3+5+5)}{0.4\times 24.8^2\times 1+0.4\times 24.8^2\times 1+0.2\times 41.3^2\times 3}\\
+&amp;=20.89\end{align*}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:6.8144em;vertical-align:-3.1572em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.6572em;"><span style="top:-5.6572em;"><span class="pstrut" style="height:3.4911em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.05764em;">PS</span><span class="mclose">)</span></span></span><span style="top:-2.9032em;"><span class="pstrut" style="height:3.4911em;"></span><span class="mord"></span></span><span style="top:-0.9939em;"><span class="pstrut" style="height:3.4911em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.1572em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.6572em;"><span style="top:-5.6572em;"><span class="pstrut" style="height:3.4911em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4911em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7959em;"><span style="top:-2.4231em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.0448em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2769em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-2.4413em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2587em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-2.4413em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2587em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9629em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-2.9032em;"><span class="pstrut" style="height:3.4911em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4911em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0.4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">24.</span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">24.</span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">41.</span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">3</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0.4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">24.</span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord">24.8</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">24.</span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord">24.8</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.2</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">41.</span><span class="mord"><span class="mord">3</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord">41.3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">5</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-0.9939em;"><span class="pstrut" style="height:3.4911em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">20.89</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.1572em;"><span></span></span></span></span></span></span></span></span></span></span></span></eqn></section></p>
+<p>若武器拿在手上且忽略牙咬,则斧刃斧柄概率均为37.5%,斧刺概率为25%,实际使用时的dps为<br>
+<section><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>E</mi><mo stretchy="false">(</mo><mi>D</mi><mi>P</mi><mi>S</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mi>E</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo></mrow><mrow><mi>E</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><mo>∑</mo><msub><mi>W</mi><mi>i</mi></msub><msubsup><mi>D</mi><mi>i</mi><mo>∗</mo></msubsup></mrow><mrow><mo>∑</mo><msub><mi>W</mi><mi>i</mi></msub><msub><mi>C</mi><mi>i</mi></msub></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><mrow><mn>0.375</mn><mo>×</mo><mo stretchy="false">(</mo><mn>24.8</mn><mo>+</mo><mn>4</mn><mo stretchy="false">)</mo><mo>+</mo><mn>0.375</mn><mo>×</mo><mo stretchy="false">(</mo><mn>24.8</mn><mo>+</mo><mn>4</mn><mo stretchy="false">)</mo><mo>+</mo><mn>0.25</mn><mo>×</mo><mo stretchy="false">(</mo><mn>41.3</mn><mo>+</mo><mn>5</mn><mo>+</mo><mn>5</mn><mo stretchy="false">)</mo></mrow><mrow><mn>0.375</mn><mo>×</mo><mn>1</mn><mo>+</mo><mn>0.375</mn><mo>×</mo><mn>1</mn><mo>+</mo><mn>0.25</mn><mo>×</mo><mn>3</mn></mrow></mfrac></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mn>22.95</mn></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{align*}E(DPS)&amp;=\dfrac{E(D)}{E(C)}=\dfrac{\sum W_iD^*_i}{\sum W_iC_i}\\
+&amp;=\dfrac{0.375\times(24.8+4)+0.375\times(24.8+4)+0.25\times(41.3+5+5)}{0.375\times 1+0.375\times 1+0.25\times 3}\\
+&amp;=22.95\end{align*}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:6.6593em;vertical-align:-3.0797em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.5797em;"><span style="top:-5.5797em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.05764em;">PS</span><span class="mclose">)</span></span></span><span style="top:-2.9167em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"></span></span><span style="top:-1.0073em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.0797em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.5797em;"><span style="top:-5.5797em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6887em;"><span style="top:-2.4413em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2587em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-2.9167em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0.375</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.375</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.25</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">3</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0.375</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord">24.8</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.375</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord">24.8</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">4</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">0.25</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord">41.3</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">5</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-1.0073em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">22.95</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.0797em;"><span></span></span></span></span></span></span></span></span></span></span></span></eqn></section></p>
+<h3 id="远程武器">远程武器</h3>
+<img src="/images/蚁族/蚁族-远程武器.png" style="max-width: 65em">
+<ul>
+<li>酸性步枪:7手工 移速-0.1</li>
+<li>酸性突击步枪:8手工 移速-0.15</li>
+<li>酸性线步枪:8手工 移速-0.15</li>
+<li>酸性轻机枪:9手工 移速-0.2</li>
+<li>酸弹发射器:9手工+5智识 移速-0.2 9~31射程,发射4个3误差半径的0%穿甲2爆炸半径7酸伤手榴弹(子弹有45tick延迟爆炸)</li>
+<li>战斗胶发射器:8手工+2智识 造成3误差半径的100%穿甲5爆炸半径的1伤(子弹有30tick延迟爆炸),每点实际伤害附加50%(受体型缩放)的&quot;战斗用胶&quot;状态,该状态每天自然下降350%(即50%可持续3.4h)<br>
+严重度&lt;30%时 操作能力-5% 移速×90%<br>
+30%&lt;严重度&lt;45%时 操作能力-10% 移速×80%<br>
+45%&lt;严重度&lt;60%时 操作能力-15% 移速×70%<br>
+60%&lt;严重度时 操作能力-20% 移速×60%</li>
+<li>强酸步枪:80蚁族外骨骼+15红基质+20铀+4高级零部件+1蚁族智能核心+10手工+5智识 移速-0.25 8~35射程,造成10%穿甲2爆炸半径的7强酸伤,只能对外部部位造成伤害</li>
+<li>强酸线步枪:80蚁族外骨骼+15红基质+20铀+4高级零部件+1蚁族智能核心+10手工+5智识 移速-0.25 表格dpsa有误,每次射击6弹丸,实际25.6dpsa,每颗弹丸有10%概率附加15点emp伤.近战时有35%概率附加10点强酸捅伤,25%概率附加25点emp伤,15%概率附加1.5s眩晕</li>
+<li>强酸集束步枪:80蚁族外骨骼+40红基质+25铀+50果糖液+4高级零部件+2蚁族智能核心+10手工+8智识 射击精度+1000 移速-0.45 13~45射程,造成10%穿甲4爆炸半径的8强酸伤,然后向8半径内随机散布25个10%穿甲3爆炸半径的10强酸伤流弹,只能对外部部位造成伤害</li>
+<li>红基质烟雾喷射器:40蚁族外骨骼+55红基质+20铀+4高级零部件+1蚁族智能核心+10手工+5智识 移速-0.25 为路径上3半径的生物添加五秒的&quot;蚁族气体攻击&quot;状态,期间每1s受到0.3强酸伤.并在路径添加&quot;酸性红物质烟雾&quot;,该烟雾为范围内的所有生物提供55%掩体</li>
+</ul>
+<p>战斗胶发射器前的武器伤害为酸伤;战斗胶发射器后的武器伤害为强酸伤.红基质烟雾喷射器描述写着对机械族无效,但实际有</p>
+<h3 id="特化武器">特化武器</h3>
+<ul>
+<li>蚁族远程改装
+<ul>
+<li>肾上腺增生:远程冷却时间×80% 价值+50银</li>
+<li>红外探测器:四距离精度×120% 无视天气烟雾精度惩罚 价值+70银</li>
+<li>延伸枪管外骨骼:射程+20% 价值+60银</li>
+</ul>
+</li>
+<li>蚁族瞄准改装
+<ul>
+<li>双心:瞄准时间乘数-25% 价值+60银 与双心互斥</li>
+<li>心脏肥大:射程乘数+10% 价值+20银 与心脏肥大互斥</li>
+</ul>
+</li>
+<li>蚁族连射改装
+<ul>
+<li>扩容酸液囊:连射倍率×200% 价值+60银</li>
+</ul>
+</li>
+</ul>
+<p>添加的特化武器</p>
+<ul>
+<li>强酸增生步枪:数值等同于强酸步枪 仅允许三个蚁族改装</li>
+<li>强酸增生线步枪:数值等同于强酸线步枪 仅允许三个蚁族改装</li>
+</ul>
+<h3 id="炮塔">炮塔</h3>
+<p>蚁族的炮塔带有一些特殊抗性,破城炮伤×0.05,爆炸/反物质爆炸伤×0.5,酸伤/强酸伤/酸弹伤×0.2</p>
+<ul>
+<li>蚁族回收炮台-外置型:80金属+30蚁族外骨骼+15钢铁+3零部件+1蚁族智能核心 220耐久0.25~0.75s随机前摇7.5s后摇8~45射程,发射4个3误差半径的0%穿甲2爆炸半径7酸伤手榴弹(子弹有45tick延迟爆炸)</li>
+<li>蚁族回收炮台-内防型:80金属+30蚁族外骨骼+15钢铁+3零部件+1蚁族智能核心 220耐久0.25~0.75s随机前摇3.5s后摇15射程,造成0%穿甲的10×1酸伤,每点实际伤害附加10%(受体型缩放)的&quot;战斗用胶&quot;状态</li>
+<li>蚁族回收炮台-拦截型:80金属+30蚁族外骨骼+15钢铁+3零部件+2蚁族智能核心 220耐久0.25~0.75s随机前摇30s后摇50~500射程无需视线,发射8误差半径的100%穿甲6爆炸半径的1伤(子弹有30tick延迟爆炸),每点伤害附加100%(受体型缩放)的战斗用胶状态</li>
+<li>蚁族回收炮台-集群型:80金属+30蚁族外骨骼+150红基质+3零部件+8高级零部件+3蚁族智能核心+3转变红基质 2×2大小420耐久 3s前摇180s后摇13~500射程无需视线,造成10%穿甲4爆炸半径的8强酸伤,然后向16半径内随机散布50个流弹,造成10%穿甲3爆炸半径的10强酸伤,并为3半径的生物添加五秒的&quot;蚁族气体攻击&quot;状态,期间每1s受到0.3强酸伤,且释放3半径的&quot;酸性红物质烟雾&quot;,该烟雾为范围内的所有生物提供55%掩体</li>
+</ul>
+<h2 id="衣物">衣物</h2>
+<img src="/images/蚁族/蚁族-衣物护甲.png" style="max-width: 65em">
+<p><strong>普通衣物&amp;基础护甲</strong></p>
+<ul>
+<li>眼镜:5金属 社交效果+20%</li>
+<li>锁子甲:50金属 35%S利防 易燃性-30%</li>
+<li>附加链甲:40金属+25钢铁 55%+12%S利防 易燃性-30% 占用附加层,覆盖腰</li>
+<li>职业军装:55金属+35蚁族外骨骼 15%+28%S利防 毒素有毒环境抗性+25% 易燃性-60%</li>
+<li>士兵斗篷/军官披风:60蚁族外骨骼 12/12/85三防 毒素有毒环境抗性+15%</li>
+<li>太空呼吸器:25红基质+8铀+5零部件 有毒环境抗性+40% 真空抗性+100% 占用特殊层</li>
+<li>士兵防弹头盔/军官防弹头盔:35金属+15蚁族外骨骼 15%+60%S 毒素有毒环境抗性+25%</li>
+<li>防弹背心:20蚁族外骨骼+20钢铁+1零部件 85/60/35三防 易燃性-20%</li>
+<li>附加装甲:40金属+20蚁族外骨骼 70+20%S三防 毒素有毒环境抗性+25% 易燃性-60% 占用附加层,覆盖腰</li>
+</ul>
+<p><strong>动力甲</strong></p>
+<ul>
+<li>所有动力甲配件都带有易燃性-50%(装甲为易燃性-100%) 毒素抗性+100% 有毒环境抗性+40% 真空抗性+35%(尼氏蚁真空抗性分别为25/25/45)</li>
+<li>沙蚁(军官)动力装甲:95红基质+5高级零部件+30铀 90/50/125三防 移速-0.15 瞄准时间-5%<br>
+带有&quot;释放加速立场&quot;技能,最大1充能,使用消耗5红基质,0.2s前摇10释放半径,放置持续5s的&quot;加速立场&quot;建筑,该建筑每秒为3半径内的生物施加&quot;加速状态&quot;状态,移速×1.5,持续10s(重新走入范围不刷新时间)</li>
+<li>沙蚁(军官)动力头盔:50红基质+2高级零部件+15铀 110/58/125三防 瞄准时间-5%</li>
+<li>沙蚁(军官)附加装甲:60红基质+3高级零部件+20铀 115/75/125三防 移速-0.1 瞄准时间-5% 占用附加层,覆盖腰</li>
+<li>子弹蚁动力装甲:125红基质+5高级零部件+50铀 90/50/125三防 移速+0.4 近战命中率+0.3<br>
+带有&quot;弹出外交针&quot;技能,最大1充能,使用消耗15红基质,无前摇2~9释放半径2爆炸半径,为范围内的生物施加&quot;子弹蚁&quot;状态,操作能力最大0%,持续2s</li>
+<li>子弹蚁动力头盔:80红基质+2高级零部件+35铀 110/58/125三防 移速+0.3 近战闪避率+0.3</li>
+<li>子弹蚁附加装甲:90红基质+3高级零部件+40铀 115/75/125三防 移速+0.2 近战闪避率+0.1 占用附加层,覆盖腰</li>
+<li>恐猛蚁动力装甲:125红基质+5高级零部件+50铀 135/75/165三防 移速-0.45 承伤-10% 近战命中率-0.1<br>
+带有&quot;弹出物理无效化护盾&quot;技能,最大1充能,使用消耗5红基质,0.2s前摇10释放半径,放置持续5s的&quot;物理无效化护盾&quot;建筑,该建筑每秒为3半径内的生物施加&quot;物理无效化护盾&quot;状态,承伤×0%,持续10s(重新走入范围不刷新时间)</li>
+<li>恐猛蚁动力头盔:80红基质+2高级零部件+35铀 135/70/145三防 移速-0.25 承伤-5%</li>
+<li>恐猛蚁附加装甲:90红基质+3高级零部件+40铀 140/110/165三防 移速-0.35 承伤-10% 占用附加层,覆盖腰</li>
+<li>尼氏蚁动力装甲:95红基质+5高级零部件+30铀 95/45/125三防 移速+0.4 机械带宽+9<br>
+带有&quot;隐身&quot;技能,无前摇20s cd,对自身施加&quot;隐身&quot;状态,持续2s</li>
+<li>尼氏蚁动力头盔:80红基质+2高级零部件+35铀 90/40/125三防 移速+0.3 机械带宽+2 近战闪避率+0.7<br>
+带有&quot;激光制导&quot;技能,3s前摇20s cd,32释放半径,为目标添加&quot;激光制导&quot;状态,承伤×125%,持续30s</li>
+<li>尼氏蚁附加装甲:60红基质+3高级零部件+20铀 90/60/125三防 移速+0.3 机械带宽+4 占用附加层,覆盖腰<br>
+带有&quot;止血气体释放&quot;状态,不断为自己和4半径的人形生物不断施加&quot;止血气体&quot;状态,失血量系数×75%</li>
+</ul>
+<h2 id="突变个体">突变个体</h2>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>智人种</th>
+<th>无畏战蚁</th>
+<th>蚁巢守卫</th>
+<th>撕裂者</th>
+<th>三颚</th>
+<th>压迫者</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生命值系数</td>
+<td>100%</td>
+<td>200%</td>
+<td>500%</td>
+<td>200%</td>
+<td>120%</td>
+<td>300%</td>
+</tr>
+<tr>
+<td>基础价值</td>
+<td>1750</td>
+<td>100000</td>
+<td>100000</td>
+<td>100000</td>
+<td>100000</td>
+<td>100000</td>
+</tr>
+<tr>
+<td>易燃性</td>
+<td>70%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>重量</td>
+<td>60</td>
+<td>320</td>
+<td>520</td>
+<td>150</td>
+<td>120</td>
+<td>320</td>
+</tr>
+<tr>
+<td>体型</td>
+<td>1</td>
+<td>2</td>
+<td>5</td>
+<td>1.5</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>肉量</td>
+<td>140</td>
+<td>60</td>
+<td>60</td>
+<td>60</td>
+<td>20</td>
+<td>120</td>
+</tr>
+<tr>
+<td>皮革量</td>
+<td>75</td>
+<td>30</td>
+<td>30</td>
+<td>30</td>
+<td>30</td>
+<td>130</td>
+</tr>
+<tr>
+<td>移动速度</td>
+<td>4.6</td>
+<td>4.15</td>
+<td>2.15</td>
+<td>6.15</td>
+<td>4.15</td>
+<td>3.15</td>
+</tr>
+<tr>
+<td>爬行速度</td>
+<td>0.6</td>
+<td>1.95</td>
+<td>1.95</td>
+<td>1.95</td>
+<td>1.95</td>
+<td>1.95</td>
+</tr>
+<tr>
+<td>携带能力</td>
+<td>75</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>40</td>
+<td>60</td>
+</tr>
+<tr>
+<td>最低舒适温度</td>
+<td>16</td>
+<td>-80</td>
+<td>-80</td>
+<td>-80</td>
+<td>-80</td>
+<td>-80</td>
+</tr>
+<tr>
+<td>最高舒适温度</td>
+<td>26</td>
+<td>500</td>
+<td>500</td>
+<td>500</td>
+<td>500</td>
+<td>500</td>
+</tr>
+<tr>
+<td>心灵敏感度</td>
+<td>100%</td>
+<td>0%-0.5</td>
+<td>0%-0.5</td>
+<td>0%-0.5</td>
+<td>0%-0.5</td>
+<td>0%-0.5</td>
+</tr>
+<tr>
+<td>毒素抗性</td>
+<td>0%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>有毒环境抗性</td>
+<td>0%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>真空抗性</td>
+<td>0%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>崩溃临界值</td>
+<td>35%</td>
+<td>1%</td>
+<td>1%</td>
+<td>1%</td>
+<td>1%</td>
+<td>1%</td>
+</tr>
+<tr>
+<td>疼痛休克阈值</td>
+<td>80%</td>
+<td>99%</td>
+<td>99%</td>
+<td>99%</td>
+<td>99%</td>
+<td>99%</td>
+</tr>
+<tr>
+<td>预期寿命</td>
+<td>80</td>
+<td>150</td>
+<td>150</td>
+<td>150</td>
+<td>150</td>
+<td>150</td>
+</tr>
+<tr>
+<td>全局学习系数</td>
+<td>100%</td>
+<td>150%</td>
+<td>150%</td>
+<td>150%</td>
+<td>150%</td>
+<td>150%</td>
+</tr>
+<tr>
+<td>免疫速度</td>
+<td>100%</td>
+<td>110%</td>
+<td>110%</td>
+<td>110%</td>
+<td>110%</td>
+<td>110%</td>
+</tr>
+<tr>
+<td>生育周期</td>
+<td>15</td>
+<td>99999</td>
+<td>99999</td>
+<td>99999</td>
+<td>99999</td>
+<td>99999</td>
+</tr>
+<tr>
+<td>进食速度</td>
+<td>100%</td>
+<td>-*</td>
+<td>200%</td>
+<td>-*</td>
+<td>200%</td>
+<td>200%</td>
+</tr>
+<tr>
+<td>利器护甲</td>
+<td>0%</td>
+<td>95%</td>
+<td>125%</td>
+<td>125%</td>
+<td>85%</td>
+<td>65%</td>
+</tr>
+<tr>
+<td>钝器护甲</td>
+<td>0%</td>
+<td>45%</td>
+<td>45%</td>
+<td>5%</td>
+<td>25%</td>
+<td>35%</td>
+</tr>
+<tr>
+<td>近战命中率</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>近战闪避率</td>
+<td>0</td>
+<td>1×0.8</td>
+<td>0×0.8</td>
+<td>1×0.8</td>
+<td>0×0.8</td>
+<td>0×0.8</td>
+</tr>
+<tr>
+<td>射击精度</td>
+<td>0</td>
+<td>1×0.8</td>
+<td>1×0.8</td>
+<td>1×0.8</td>
+<td>1×0.8</td>
+<td>1×0.8</td>
+</tr>
+<tr>
+<td>社交效果</td>
+<td>100%</td>
+<td>10%</td>
+<td>10%</td>
+<td>10%</td>
+<td>10%</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>魅力</td>
+<td>0</td>
+<td>-3</td>
+<td>-3</td>
+<td>-3</td>
+<td>-3</td>
+<td>-3</td>
+</tr>
+<tr>
+<td>采矿效率</td>
+<td>100%</td>
+<td>50%×0.8</td>
+<td>50%×0.8</td>
+<td>50%×0.8</td>
+<td>50%×0.8</td>
+<td>50%×0.8</td>
+</tr>
+<tr>
+<td>深钻井操作速度</td>
+<td>100%</td>
+<td>100%×2</td>
+<td>100%×2</td>
+<td>100%×2</td>
+<td>100%×2</td>
+<td>100%×2</td>
+</tr>
+<tr>
+<td>采矿速度</td>
+<td>100%</td>
+<td>400%×2</td>
+<td>400%×2</td>
+<td>400%×2</td>
+<td>400%×2</td>
+<td>400%×2</td>
+</tr>
+<tr>
+<td>阅读速度</td>
+<td>80%</td>
+<td>80%×1.75</td>
+<td>80%×1.75</td>
+<td>80%×1.75</td>
+<td>80%×1.75</td>
+<td>80%×1.75</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>突变个体没有睡眠需求,免疫emp免疫眩晕,气化伤害×0.05</li>
+<li>背景故事统一为近战+5(撕裂者童年背景故事为近战+8),背景故事禁用医疗,社交,智识,艺术,手工,烹饪,种植,建造工作</li>
+<li>均不能穿带任何衣物,无法装备任何武器</li>
+</ul>
+<p>仅可采矿驯兽搬运清洁</p>
+<ul>
+<li>无畏战蚁:2体型4.15移速300血95/45双防 空手25咬伤/1.5s,65%概率附加10点强酸割伤,15%概率附加25点emp伤,5%概率附加2.5s眩晕<br>
+附带永久&quot;无畏战蚁&quot;状态,疼痛×10% 承伤×70% 愈合系数×125% 抗感染肠道蠕虫/肌肉寄生虫/肌纤维纳米机械感染/感官纳米机械感染/感染/流感<br>
+附带2半径的低角护盾,每30s释放持续20s的护盾(即有10s真空期),不会拦截友方子弹</li>
+<li>蚁巢守卫:5体型2.15移速750血125/45双防 空手4咬伤/1.5s,15%概率附加30点emp伤<br>
+自身会被视为99%掩体效果的掩体,且可探头射击.不断为2半径内的人形生物添加&quot;保护&quot;状态,承伤×70%<br>
+附带永久&quot;蚁巢守卫&quot;状态,疼痛×10% 承伤×70% 愈合系数×220% 抗感染肠道蠕虫/肌肉寄生虫/肌纤维纳米机械感染/感官纳米机械感染/感染/流感<br>
+附带8半径的高角护盾,每分钟释放持续50s的护盾(即有10s真空期),不会拦截友方子弹</li>
+<li>撕裂者:1.5体型6.15移速300血125/5双防 左右手18抓伤/0.77s,5%概率附加2.5s眩晕 大颚25咬伤/1.5s,15%概率附带25点emp伤<br>
+附带永久&quot;撕裂者&quot;状态,疼痛×10% 愈合系数×325% 抗感染肠道蠕虫/肌肉寄生虫/肌纤维纳米机械感染/感官纳米机械感染/感染/流感<br>
+附带&quot;破盾冲锋&quot;技能,2.25s前摇3次充能1h cd,6~31射程,向目标格发射10个4点emp伤子弹,并位移到目标格</li>
+<li>三颚:每次产出两个 2体型4.15移速180血85/25双防<br>
+附带永久&quot;三颚&quot;状态,疼痛×10% 愈合系数×400% 抗感染肠道蠕虫/肌肉寄生虫/肌纤维纳米机械感染/感官纳米机械感染/感染/流感<br>
+自带武器&quot;红爆激光&quot;,无前摇0.01s后摇30射程,造成1爆炸半径6%穿甲的5×4点强酸伤害(每发间隔一秒).同时自带同样的副炮&quot;红爆激光&quot;</li>
+<li>压迫者:2体型3.15移速450血65/35三防<br>
+附带永久&quot;压迫者&quot;状态,疼痛×10% 愈合系数×400% 抗感染肠道蠕虫/肌肉寄生虫/肌纤维纳米机械感染/感官纳米机械感染/感染/流感<br>
+自带武器&quot;酸网发射器&quot;,2s前摇7s后摇37射程,每轮射击6次,每次射击6个7误差半径2爆炸半径200%穿甲的1点强酸伤,并施加&quot;毒气损伤&quot;状态,持续5s,该状态每5s对目标造成0.1强酸伤<br>
+酸网发射器和毒气损伤的每点实际伤害会附加10%&quot;酸网&quot;状态,该状态每天自然衰减400%<br>
+严重度&lt;30% 意识移动操作视觉呼吸能力最大150% 抑止时间乘数×105% 心灵敏感度×90% 免疫速度×95% 愈合系数×90% 心灵熵阈值×90% 心灵熵消散速率×90% EMP抗性×90%<br>
+30%&lt;严重度&lt;60% 意识移动操作视觉呼吸能力最大100% 抑止时间乘数×110% 心灵敏感度×70% 免疫速度×90% 愈合系数×70% 心灵熵阈值×70% 心灵熵消散速率×70% EMP抗性×70%<br>
+60%&lt;严重度&lt;90% 意识移动操作视觉呼吸能力最大90% 抑止时间乘数×115% 心灵敏感度×50% 免疫速度×85% 愈合系数×40% 心灵熵阈值×50% 心灵熵消散速率×50% EMP抗性×50%<br>
+90%&lt;严重度 意识移动呼吸能力最大90% 操作视觉能力最大50% 抑止时间乘数×120% 心灵敏感度×30% 免疫速度×80% 愈合系数×0% 心灵熵阈值×30% 心灵熵消散速率×30% EMP抗性×30%</li>
+</ul>
+
+        </div>
+        
+        <!-- 文章导航 - 只在同分类有多篇文章时显示 -->
+        
+        
+        
+        <nav class="post-nav">
+          
+          
+            <a class="next" href="../%E5%A2%A8%E8%AF%BA%E7%81%B5/">
+              墨诺灵
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          
+        </nav>
+        
+        
+        <!-- 推荐文章 -->
+        
+
+
+<div class="vs-recommended-posts">
+  <div class="vs-recommended-header">
+    <div class="section-header">
+      <i class="fas fa-lightbulb"></i>
+      <span>相关文章</span>
+    </div>
+  </div>
+  
+  <div class="vs-recommended-grid">
+    
+      <div class="vs-recommended-item" data-index="0" tabindex="0">
+        <a href="../%E8%8C%89%E7%BA%A6%E6%97%8F%E8%8D%AF%E7%89%A9/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>茉约族药物</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              moyo1.0药物的相关统计及简评 整体强度非常贴近原版,并不正义也不负正义
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 精品, 种族
+                  
+                    <span class="vs-more-tags">+1</span>
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  11月 03
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  2 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="1" tabindex="0">
+        <a href="../%E6%82%A0%E5%85%B0/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>悠兰</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              内容不多,很原版的种族 前期护甲会优于原版,后期乏力,正义度几乎没有甚至更弱
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 精品, 种族
+                  
+                    <span class="vs-more-tags">+1</span>
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 19
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  6 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="2" tabindex="0">
+        <a href="../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>溪谷联邦</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              施工中~
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 原版向
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 16
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  1 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="3" tabindex="0">
+        <a href="../%E7%8E%9B%E9%B2%81/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>玛鲁</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              对maru种族及其武器进行了简单统计 整体数值比较接近原版甚至大部分武器数值还不如原版.Buff给的也是相当保守
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 原版向
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  8月 08
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  4 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="4" tabindex="0">
+        <a href="../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>边缘世界种族数据提取器</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              一个用于RimWorld的py小脚本,可以自动拉取工作目录下的所有mod文件里的外星人XML定义数据并生成表格,帮助你快速认知一个种族在XML定义上擅长什么工作,不擅长什么工作.
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  11月 23
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  13 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="5" tabindex="0">
+        <a href="../%E5%8E%9F%E7%89%88%E8%99%AB%E6%97%8F%E6%89%A9%E5%B1%952/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>原版虫族扩展2</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              虫族扩展2的数值一览表 完完全全就是原版级别的数值我只能说
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, VE扩展, 原版向
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  4月 23
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  2 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+  </div>
+  
+  <!-- 查看更多 -->
+  <div class="vs-recommended-footer">
+    <a href="../archives/" class="vs-view-more">
+      <i class="fas fa-folder-open"></i>
+      <span>查看更多文章</span>
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+// 键盘导航支持
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.vs-recommended-item');
+  let currentIndex = -1;
+  
+  // 键盘事件
+  document.addEventListener('keydown', function(e) {
+    if (!items.length) return;
+    
+    if (e.key === 'Tab') {
+      // Tab键导航由浏览器处理
+      return;
+    }
+    
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      
+      // 移除当前高亮
+      if (currentIndex >= 0) {
+        items[currentIndex].classList.remove('vs-focused');
+      }
+      
+      // 更新索引
+      if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % items.length;
+      } else {
+        currentIndex = currentIndex <= 0 ? items.length - 1 : currentIndex - 1;
+      }
+      
+      // 添加新高亮
+      items[currentIndex].classList.add('vs-focused');
+      items[currentIndex].focus();
+    }
+    
+    if (e.key === 'Enter' && currentIndex >= 0) {
+      const link = items[currentIndex].querySelector('a');
+      if (link) link.click();
+    }
+  });
+  
+  // 鼠标悬停时更新当前索引
+  items.forEach((item, index) => {
+    item.addEventListener('mouseenter', function() {
+      currentIndex = index;
+      items.forEach(i => i.classList.remove('vs-focused'));
+      item.classList.add('vs-focused');
+    });
+  });
+});
+</script>
+
+        
+        <!-- 评论区 -->
+        
+  <div class="vs-comments-section">
+    <div class="section-header">
+      <i class="fas fa-comments"></i>
+      <span>评论</span>
+    </div>
+    
+    
+      <!-- Waline 评论系统 -->
+      <div id="waline"></div>
+      <script>
+        // 加载 Waline CSS
+        const walineCSS = document.createElement('link');
+        walineCSS.rel = 'stylesheet';
+        walineCSS.href = 'https://unpkg.com/@waline/client@v3/dist/waline.css';
+        document.head.appendChild(walineCSS);
+        
+        // 加载 Waline JS
+        const walineScript = document.createElement('script');
+        walineScript.type = 'module';
+        walineScript.onload = function() {
+          // 确保 Waline 加载后再初始化
+          import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
+            const waline = init({
+              el: '#waline',
+              serverURL: 'https://blog-vercel-waline.vercel.app/',
+              lang: 'zh-CN',
+              locale: {},
+              emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus"],
+              requiredMeta: [],
+              login: 'disable',
+              wordLimit: 0,
+              pageSize: 10,
+              imageUploader: false,
+              highlighter: true,
+              texRenderer: false,
+              search: false,
+              pageview: false,
+              comment: true,
+              copyright: false,
+              
+              // 自动适配主题
+              dark: document.documentElement.getAttribute('data-theme') === 'dark' ? 'auto' : false,
+              
+              // 评论框占位符
+              placeholder: '欢迎留言，无需登录即可评论~',
+              
+              // 元数据配置
+              meta: ['nick', 'mail', 'link'],
+              
+              // 表情配置
+              emojiCDN: 'https://unpkg.com/@waline/emojis@1.2.0/',
+            });
+            
+            // 监听主题变化
+            const observer = new MutationObserver((mutations) => {
+              mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                  // Waline 会自动处理主题切换
+                  if (waline) {
+                    waline.update({ dark: isDark ? 'auto' : false });
+                  }
+                }
+              });
+            });
+            
+            observer.observe(document.documentElement, {
+              attributes: true,
+              attributeFilter: ['data-theme']
+            });
+          });
+        };
+        walineScript.src = 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+        document.body.appendChild(walineScript);
+      </script>
+    
+    
+  </div>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <footer class="footer">
+  <div class="status-bar">
+    <div class="status-item">
+      <i class="fas fa-code-branch"></i>
+      master
+    </div>
+    <div class="status-item">
+      <i class="fas fa-sync"></i>
+      Round
+    </div>
+    <div class="status-item">
+      <i class="fas fa-clock"></i>
+      2026-09-03
+    </div>
+    <div class="status-item">
+      Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
+    </div>
+    <div class="status-item github">
+      <a href="#" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- 搜索专用配置 (HEXO_CONFIG 在 scripts.ejs 中统一定义) -->
+    <script>
+      window.VSC4T_SEARCH = {
+        root: "/"
+      };
+    </script>
+
+    <!-- 外部脚本 - 统一使用 cdnjs CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous"></script>
+    <script>if(typeof hljs !== 'undefined') hljs.highlightAll();</script>
+    <!-- 这里可以放置自定义脚本 -->
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Apply smooth scroll to non-TOC anchor links
+  document.querySelectorAll('a[href^="#"]:not(.toc-link)').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      // Check if querySelector is valid before using it
+      try {
+        const targetSelector = this.getAttribute('href');
+        // Basic check for potentially invalid selectors (though not exhaustive)
+        if (targetSelector && targetSelector.length > 1) { 
+          const targetElement = document.querySelector(targetSelector);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          } else {
+            console.warn('Smooth scroll target not found:', targetSelector);
+          }
+        } else {
+           console.warn('Invalid href for smooth scroll:', targetSelector);
+        }
+      } catch (error) {
+        console.error('Error during smooth scroll:', error, 'Selector:', this.getAttribute('href'));
+        // Fallback or alternative behavior if needed
+        // For example, try getElementById if it's just an ID
+        const targetId = this.getAttribute('href').slice(1);
+        try {
+            const targetElementById = document.getElementById(decodeURIComponent(targetId));
+            if (targetElementById) {
+                targetElementById.scrollIntoView({ behavior: 'smooth' });
+            }
+        } catch (idError) {
+             console.error('Fallback getElementById also failed:', idError);
+        }
+      }
+    });
+  });
+});
+</script>
+
+<!-- Scripts -->
+<script>
+  // 全局配置 - 包含 i18n 字符串和主题配置
+  window.HEXO_CONFIG = {
+    language: "zh-CN",
+    root: "/",
+    
+    theme_switch: {
+      enabled: false,
+      light_start: "06:00",
+      light_end: "18:00"
+    },
+    
+    // Search i18n strings
+    search_placeholder: "输入关键词搜索...",
+    search_no_results: "未找到相关结果",
+    search_result: "result",
+    search_results: "搜索结果",
+    search_results_found: "找到 undefined 个结果",
+    search_in: "搜索范围",
+    search_in_title: "标题",
+    search_in_content: "内容",
+    search_in_tags: "标签",
+    search_in_categories: "分类",
+    search_filters: "搜索过滤器",
+    search_recent: "最近搜索",
+    search_clear: "清除",
+    search_loading: "加载中...",
+    search_error: "加载搜索数据时出错",
+    // Encryption i18n strings
+    encrypt_badge: "受保护",
+    encrypt_title: "受保护的内容",
+    encrypt_description: "请输入密码以解锁本文，密码会在本设备本地保存，直到你选择重新加密。",
+    encrypt_label: "密码",
+    encrypt_placeholder: "输入密码解锁内容",
+    encrypt_button: "解锁",
+    encrypt_button_loading: "解锁中...",
+    encrypt_hint: "按 Enter 提交，密码会在本设备上记住。",
+    encrypt_success: "内容解锁成功！",
+    encrypt_unlocked_note: "内容已解锁，可随时重新加密。",
+    encrypt_again: "重新加密",
+    encrypt_wrong_password: "密码错误，请重试。",
+    encrypt_show_password: "显示密码",
+    encrypt_hide_password: "隐藏密码",
+    // Sidebar i18n strings
+    sidebar_about: "关于",
+    sidebar_categories: "分类",
+    sidebar_tags: "标签",
+    // Post page i18n strings
+    post_toc: "目录",
+    post_category_posts: "同分类文章",
+    post_article_tags: "文章标签"
+  };
+</script>
+
+
+
+<!-- 添加所有需要的脚本 -->
+<script src="../js/search.js"></script>
+<script src="../js/theme-switch.js"></script>
+
+<script src="../js/table-sticky-header.js"></script>
+<script src="../js/password-protect.js?v=1788436875220"></script>
+
+    <script>
+      // 移动端菜单切换
+      $(document).ready(function() {
+        var $body = $('body');
+        var $sidebar = $('.sidebar-explorer');
+        var $overlay = $('.sidebar-overlay');
+        var $toggle = $('.mobile-menu-toggle');
+
+        function openSidebar() {
+          $sidebar.addClass('show');
+          $overlay.addClass('show');
+          $toggle.addClass('active');
+          $body.addClass('sidebar-open');
+        }
+
+        function closeSidebar() {
+          $sidebar.removeClass('show');
+          $overlay.removeClass('show');
+          $toggle.removeClass('active');
+          $body.removeClass('sidebar-open');
+        }
+
+        // 汉堡按钮点击切换
+        $toggle.on('click', function(e) {
+          e.stopPropagation();
+          if ($sidebar.hasClass('show')) {
+            closeSidebar();
+          } else {
+            openSidebar();
+          }
+        });
+
+        // 点击遮罩层关闭
+        $overlay.on('click', function() {
+          closeSidebar();
+        });
+
+        // ESC 键关闭
+        $(document).on('keydown', function(e) {
+          if (e.key === 'Escape' && $sidebar.hasClass('show')) {
+            closeSidebar();
+          }
+        });
+
+        // 点击侧边栏内的链接时自动关闭侧边栏，确保锚点跳转正常
+        $sidebar.on('click', 'a', function() {
+          closeSidebar();
+        });
+      });
+    </script>
+  </body>
+</html>
