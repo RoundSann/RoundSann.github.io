@@ -7,7 +7,7 @@
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="A simple dark Hexo theme inspired by code.">
-  <meta name="keywords" content="rimworld,原版向,种族">
+  <meta name="keywords" content="rimworld,种族,原版向,精品">
   <meta name="author" content="Round">
   <link rel="canonical" href="https://RoundSann.github.io">
 
@@ -62,7 +62,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1789026486766">
+  <link rel="stylesheet" href="../css/post.css?v=1789145309746">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -258,14 +258,20 @@
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
+            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
+            <span class="count">(13)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
             <a href="../tags/%E5%8E%9F%E7%89%88%E5%90%91/">原版向</a>
             <span class="count">(7)</span>
           </div>
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
-            <span class="count">(13)</span>
+            <a href="../tags/%E7%B2%BE%E5%93%81/">精品</a>
+            <span class="count">(10)</span>
           </div>
         
       </div>
@@ -294,7 +300,7 @@
             
             <span class="updated-date">
               <i class="fas fa-sync-alt"></i>
-              更新于 2026-09-10
+              更新于 2026-09-12
             </span>
                         
               <span class="categories">
@@ -308,7 +314,7 @@
               <span class="tags">
                 <i class="fas fa-tags"></i>
                 <div class="tags-list">
-                  <ul class="tag-item-post-list" itemprop="keywords"><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/rimworld/" rel="tag">rimworld</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E5%8E%9F%E7%89%88%E5%90%91/" rel="tag">原版向</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E7%A7%8D%E6%97%8F/" rel="tag">种族</a></li></ul>
+                  <ul class="tag-item-post-list" itemprop="keywords"><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/rimworld/" rel="tag">rimworld</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E5%8E%9F%E7%89%88%E5%90%91/" rel="tag">原版向</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E7%A7%8D%E6%97%8F/" rel="tag">种族</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E7%B2%BE%E5%93%81/" rel="tag">精品</a></li></ul>
                 </div>
               </span>
             
@@ -541,7 +547,7 @@
 </table>
 <p>还有如下特质</p>
 <ul>
-<li>男女比为2:8,年龄曲线将生育能力锁定0%</li>
+<li>男女比为2:8,年龄曲线将生育能力锁定0%,不会生成亲属关系</li>
 <li>屠宰产出肉为虫肉,产出皮革为蚁族外骨骼,可穿戴原版衣物,可生成异常尸体</li>
 <li>刚出生就是儿童,成长阶段为1/2/3,有3.5倍的成长点数获取速度,没有年龄工作/近战/射击惩罚,除了研究需要3岁以外其他工作出生就能干</li>
 <li>带有如下特殊抗性:酸/强酸子弹伤×80% 免疫各种非子弹奇葩酸伤 免疫破城炮伤 火焰伤烧伤×150% 原版酸伤×50%</li>
@@ -617,8 +623,9 @@
 <ul>
 <li>繁殖蚁卵=1营养果冻+734工作量 在5~50℃下存放10天孵化</li>
 <li>繁殖异种蚁卵=1营养果冻+734工作量 在5~50℃下存放9天孵化</li>
-<li>繁殖变种蚁卵=1蚁卵+834工作量 在-20~120℃下存放10天孵化</li>
-<li>孵化时生成0~1岁且无技能等级和兴趣的对应蚁族,并添加90天的&quot;好奇心&quot;状态,全局学习系数+150%(随时间衰减但作用不大就不扒了)</li>
+<li>繁殖变种蚁卵=1蚁卵+5转变红基质+834工作量 在-20~120℃下存放10天孵化</li>
+<li>繁殖红蚁虫卵 5红蚁虫卵=5已受精蚁虫卵+1转变红基质+167工作量 在-20~80℃下存放3天孵化</li>
+<li>孵化时生成0~1岁且无技能等级和兴趣的对应蚁族,并添加90天的&quot;好奇心&quot;状态,全局学习系数+150%(随时间衰减但作用不大就不扒了),红蚁虫为动物</li>
 <li>繁殖使用独特的&quot;蚁卵繁殖速度&quot;速度类型,该速度仅有&quot;蚁后&quot;状态和部分基因可提供加成,实际工作时长为工作量/蚁卵繁殖速度(单位秒)</li>
 </ul>
 <p><strong>信息素</strong> 是蚁族的战斗用成瘾品,仅有蚁族可以使用,其余种族使用无效果</p>
@@ -700,6 +707,18 @@
 蚁族强化外骨骼和蚁族强化颚可以给非撕裂者和压迫者的蚁族植入</li>
 <li>1基因修复胶囊=3基因组 可花费10药品进行&quot;基因复原&quot;手术,手术后消除&quot;基因重构&quot;状态</li>
 <li>酸分解手术=15外骨骼 为患者施加0.1%的&quot;酸分解&quot;状态,该状态每天自然增长15%,达到150%时死亡 未包扎时该状态每12小时造成1.25酸伤,该状态在0/50/100/148%严重度时分别造成意识-10/25%/35/40%</li>
+</ul>
+<p><strong>动物</strong></p>
+<ul>
+<li>蚁虫:350银0.5体型75血5.75移速0.32食物消耗 7.2袭击点数20/7三防5.19近战秒伤 每5天产1卵,可训练挖掘<br>
+带有如下特殊抗性:酸/强酸子弹伤×80% 免疫各种杂项酸伤 炸伤/反物质炸伤×10%<br>
+野生蚁虫派系的蚁虫会携带匕首/短矛/左轮手枪/自动手枪</li>
+<li>红蚁虫:500银0.5体型75血4.2移速0.32食物消耗 8.8袭击点数45/14三防 可训练挖掘<br>
+带有如下特殊抗性:酸/强酸子弹伤×80% 免疫各种杂项酸伤 炸伤/反物质炸伤×10%<br>
+带有&quot;红蚁虫酸&quot;副炮,0.12s前摇4s后摇12射程1.3%穿甲的42点酸伤,65/60四距离精度</li>
+<li>傀儡:野生蚁虫派系的被寄生的人类/蚁族/玛鲁/悠兰<br>
+带有永久的&quot;???“状态,疼痛×10% 意识最大80% 承伤×270% 愈合系数×15% 生育能力×0% 心灵敏感度×10%<br>
+带有”???&quot;技能,5s前摇,使用后造成2半径0%穿甲的7点酸伤,为自身施加150%的酸分解状态直接死亡,并生成5个派系为&quot;野生&quot;的蚁虫</li>
 </ul>
 <h2 id="科技">科技</h2>
 <img src="/images/蚁族/蚁族-科技.png" style="max-width: 65em">
@@ -788,7 +807,7 @@
 <ul>
 <li>1粘胶高爆弹=5外骨骼+20化合燃料 造成100%穿甲6爆炸半径的1伤,每点实际伤害附加100%(受体型缩放)的&quot;战斗用胶&quot;状态(效果见远程武器章节)</li>
 </ul>
-<p>蚁族的炮塔均为自动炮塔,可停火但无法主动强制攻击目标,带有如下特殊抗性:破城炮伤×0.05,爆炸/反物质爆炸伤×0.5,酸/强酸子弹伤×80%×0.2</p>
+<p>蚁族的炮塔均为自动炮塔,可停火但无法主动强制攻击目标,带有如下特殊抗性:破城炮伤×0.05,爆炸/反物质爆炸伤×0.5,酸/强酸子弹伤×0.2</p>
 <ul>
 <li>蚁族回收炮台-外置型:80金属+30蚁族外骨骼+15钢铁+3零部件+1蚁族智能核心 220耐久0.25~0.75s随机前摇7.5s后摇8~45射程,发射4个3误差半径的0%穿甲2爆炸半径7酸伤手榴弹(子弹有35tick延迟爆炸) 每轮射击消耗1蚁族外骨骼</li>
 <li>蚁族回收炮台-内防型:80金属+30蚁族外骨骼+15钢铁+3零部件+1蚁族智能核心 220耐久0.25~0.75s随机前摇3.5s后摇15射程95/80/30四距离精度,发射10个子弹,每个造成0%穿甲的1点酸伤和15点emps伤,并附加10%(受体型缩放)的&quot;战斗用胶&quot;状态 每轮射击消耗2蚁族外骨骼</li>
@@ -1210,8 +1229,8 @@
 <ul>
 <li>入侵蚁巢:与所有非蚁族派系敌对,蚁族开局时盟友,其余开局默认敌对的太空科技等级派系 商队为蚁族和平商团 最高点数下有6.6袭击权重</li>
 <li>共生蚁巢:与所有非蚁族派系敌对,蚁族开局时盟友,其余开局永久敌对的太空科技等级派系 商队为蚁族和平商团,蚁族秘检组,带有荣誉点数系统 不会主动袭击</li>
-<li>变种蚁巢:与所有非蚁族派系敌对,蚁族开局时中立,其余开局永久敌对的太空科技等级派系 创建世界时默认不生成,需手动开启,无商队,袭击曲线(10,0)-(8000,3),高点数袭击会有大量变种蚁族,普通蚁族固定为兵蚁,普通近战蚁族固定带有一套仿生腿和蚁族强化外骨骼,普通远程蚁族固定带有一套仿生眼和蚁族强化外骨骼</li>
-<li>野生蚁虫巢穴:默认中立的派系,蚁族战族开局时永久敌对 创建世界时默认不生成,需手动开启 商队为野生蚁虫</li>
+<li>变种蚁巢:与所有非蚁族派系敌对,蚁族开局时中立,其余开局永久敌对的太空科技等级派系 创建世界时默认不生成,需手动开启 无商队 袭击曲线(10,0)-(8000,3),高点数袭击会有大量变种蚁族,普通蚁族固定为兵蚁,普通近战蚁族固定带有一套仿生腿和蚁族强化外骨骼,普通远程蚁族固定带有一套仿生眼和蚁族强化外骨骼</li>
+<li>野生蚁虫巢穴:默认中立的派系,蚁族战族开局时永久敌对 创建世界时默认不生成,需手动开启 商队为野生蚁虫 袭击为少量傀儡带大量蚁虫</li>
 </ul>
 <p>蚁族派系据点会生成外置型炮塔,生物质发电机,改造地雷,外骨骼收集器,蚜虫农场</p>
 <p>添加了三种商队,括号内为商队携带的物品个数的数学期望值,仅统计有用物品</p>
@@ -1246,7 +1265,7 @@
 <ul>
 <li>新蚁巢:3人迫降的正常开局,与入侵蚁巢和共生蚁巢默认盟友</li>
 <li>入侵巢穴:5人开局,与全部非蚁族派系永久敌对,与入侵蚁巢和共生蚁巢默认盟友,每5~6天额外生成一次袭击</li>
-<li>蚁族突击部队:10人兵蚁开局,降落在随机三派系乱战的派系基地,落地送蚁族基础设施,与全部非蚁族派系永久敌对,与入侵蚁巢和共生蚁巢默认盟友,每10~11天额外生成一次机械集群</li>
+<li>蚁族突击部队:10人兵蚁开局,降落在随机三派系乱战的派系基地,落地送蚁族基础设施和基础科技,与全部非蚁族派系永久敌对,与入侵蚁巢和共生蚁巢默认盟友,每10~11天额外生成一次机械集群</li>
 </ul>
 <p>添加了名为&quot;燃烧弹恶魔-W-008&quot;的叙事者</p>
 <ul>
@@ -1592,7 +1611,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 精品, 原版向
+                  rimworld, 种族, 原版向
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1633,7 +1652,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 精品, 原版向
+                  rimworld, 种族, 原版向
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1656,16 +1675,16 @@
       </div>
     
       <div class="vs-recommended-item" data-index="2" tabindex="0">
-        <a href="../%E7%8E%9B%E9%B2%81/" class="vs-recommended-link">
+        <a href="../%E9%98%BF%E5%B0%94%E6%B3%95%E4%B9%A6%E7%B1%8D/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
             <div class="vs-recommended-title">
               <i class="fas fa-file-code"></i>
-              <span>玛鲁</span>
+              <span>阿尔法书籍</span>
             </div>
             
             <div class="vs-recommended-excerpt">
-              对maru种族及其武器进行了简单统计 整体数值比较接近原版甚至大部分武器数值还不如原版.Buff给的也是相当保守
+              对阿尔法书籍 AlphaBooks 的内容进行统计并简单评级 几乎没有强度
             </div>
             
             <div class="vs-recommended-meta">
@@ -1674,7 +1693,9 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 原版向, 种族
+                  rimworld, 原版向, 精品
+                  
+                    <span class="vs-more-tags">+1</span>
                   
                 </span>
               
@@ -1682,11 +1703,11 @@
               <span class="vs-meta-info">
                 <span class="vs-date">
                   <i class="fas fa-calendar-alt"></i>
-                  8月 08
+                  9月 19
                 </span>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
-                  4 min
+                  2 min
                 </span>
               </span>
             </div>
@@ -1713,7 +1734,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 原版向, 种族
+                  rimworld, 种族, 原版向
                   
                 </span>
               
@@ -1734,16 +1755,16 @@
       </div>
     
       <div class="vs-recommended-item" data-index="4" tabindex="0">
-        <a href="../%E5%8E%9F%E7%89%88%E8%99%AB%E6%97%8F%E6%89%A9%E5%B1%952/" class="vs-recommended-link">
+        <a href="../%E5%A2%A8%E8%AF%BA%E7%81%B5/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
             <div class="vs-recommended-title">
               <i class="fas fa-file-code"></i>
-              <span>原版虫族扩展2</span>
+              <span>墨诺灵</span>
             </div>
             
             <div class="vs-recommended-excerpt">
-              虫族扩展2的数值一览表 完完全全就是原版级别的数值我只能说
+              很新的种族目前内容量也没有很大,玩法机制都很新颖 强度高的同时财富值也很高,算是一种变相平衡吧
             </div>
             
             <div class="vs-recommended-meta">
@@ -1752,7 +1773,9 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, VE扩展, 原版向
+                  rimworld, 种族, 精品
+                  
+                    <span class="vs-more-tags">+1</span>
                   
                 </span>
               
@@ -1760,11 +1783,11 @@
               <span class="vs-meta-info">
                 <span class="vs-date">
                   <i class="fas fa-calendar-alt"></i>
-                  4月 23
+                  7月 28
                 </span>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
-                  2 min
+                  6 min
                 </span>
               </span>
             </div>
@@ -1773,16 +1796,16 @@
       </div>
     
       <div class="vs-recommended-item" data-index="5" tabindex="0">
-        <a href="../%E8%BE%B9%E7%BC%98%E4%B8%96%E7%95%8C%E7%A7%8D%E6%97%8F%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E5%99%A8/" class="vs-recommended-link">
+        <a href="../%E7%8E%9B%E9%B2%81/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
             <div class="vs-recommended-title">
               <i class="fas fa-file-code"></i>
-              <span>边缘世界种族数据提取器</span>
+              <span>玛鲁</span>
             </div>
             
             <div class="vs-recommended-excerpt">
-              一个用于RimWorld的py小脚本,可以自动拉取工作目录下的所有mod文件里的外星人XML定义数据并生成表格,帮助你快速认知一个种族在XML定义上擅长什么工作,不擅长什么工作.
+              对maru种族及其武器进行了简单统计 整体数值比较接近原版甚至大部分武器数值还不如原版.Buff给的也是相当保守
             </div>
             
             <div class="vs-recommended-meta">
@@ -1791,7 +1814,7 @@
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族
+                  rimworld, 种族, 原版向
                   
                 </span>
               
@@ -1799,11 +1822,11 @@
               <span class="vs-meta-info">
                 <span class="vs-date">
                   <i class="fas fa-calendar-alt"></i>
-                  11月 23
+                  8月 08
                 </span>
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
-                  13 min
+                  4 min
                 </span>
               </span>
             </div>
@@ -1975,7 +1998,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-09-10
+      2026-09-12
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -2059,7 +2082,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "نتيجة",
+    search_result: "result",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -2105,7 +2128,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1789026486766"></script>
+<script src="../js/password-protect.js?v=1789145309747"></script>
 
     <script>
       // 移动端菜单切换
