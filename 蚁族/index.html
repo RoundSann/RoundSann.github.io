@@ -7,7 +7,7 @@
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="A simple dark Hexo theme inspired by code.">
-  <meta name="keywords" content="rimworld,种族,原版向,精品">
+  <meta name="keywords" content="rimworld,种族,精品,原版向">
   <meta name="author" content="Round">
   <link rel="canonical" href="https://RoundSann.github.io">
 
@@ -62,7 +62,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1789411664239">
+  <link rel="stylesheet" href="../css/post.css?v=1789424226139">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -77,7 +77,7 @@
 
   <script defer src="../js/explorer.js"></script>
   <script defer src="../js/code-enhance.js"></script>
-<meta name="generator" content="Hexo 8.1.1"></head>
+<meta name="generator" content="Hexo 8.1.1"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/node-tikzjax@latest/css/fonts.css" /><style>.tikzjax { display: block; text-align: center; user-select: none; }</style></head>
 
   <body>
     <div class="wrapper">
@@ -264,14 +264,14 @@
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../tags/%E5%8E%9F%E7%89%88%E5%90%91/">原版向</a>
-            <span class="count">(7)</span>
+            <a href="../tags/%E7%B2%BE%E5%93%81/">精品</a>
+            <span class="count">(10)</span>
           </div>
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../tags/%E7%B2%BE%E5%93%81/">精品</a>
-            <span class="count">(10)</span>
+            <a href="../tags/%E5%8E%9F%E7%89%88%E5%90%91/">原版向</a>
+            <span class="count">(7)</span>
           </div>
         
       </div>
@@ -552,6 +552,74 @@
 <li>刚出生就是儿童,成长阶段为1/2/3,有3.5倍的成长点数获取速度,没有年龄工作/近战/射击惩罚,除了研究需要3岁以外其他工作出生就能干</li>
 <li>带有如下特殊抗性:酸/强酸子弹伤×80% 免疫各种非子弹奇葩酸伤 免疫破城炮伤 火焰伤烧伤×150% 原版酸伤×50%</li>
 </ul>
+<p>蚁族的各项数值设置的都十分极端,820的基础价值配上-3的魅力,基本就是人均只值100银,社交相关能力除了教化能力都被锁了0%(或10%),预期寿命仅有30年,导致其获得老年疾病的时间也会提前,甚至6岁就可获得动脉阻塞和癌症,我未对此进行深究,可以参考下面ai扒取的内容.年龄真没啥好的解决方式了,蚁族战狂开局几乎无法获得超凡基因,基本只能时间吞噬或者等一个野生的血族,但血族还得吸血死眠,我选择不管等他出病了就时间吞噬</p>
+<details>
+<summary>点击查看AI扒取疾病相关</summary>
+<p>以下按默认配置、没有额外延寿或疾病免疫、对应天然器官完好计算：</p>
+<table>
+<thead>
+<tr>
+<th>疾病</th>
+<th style="text-align:right">首次出现非零概率的生日</th>
+<th style="text-align:right">21岁生日时的触发概率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>哮喘</td>
+<td style="text-align:right">1岁</td>
+<td style="text-align:right">0.1344%</td>
+</tr>
+<tr>
+<td>动脉阻塞</td>
+<td style="text-align:right">6岁</td>
+<td style="text-align:right">0.16%</td>
+</tr>
+<tr>
+<td>癌症</td>
+<td style="text-align:right">6岁</td>
+<td style="text-align:right">0.11%</td>
+</tr>
+<tr>
+<td>阿尔茨海默症</td>
+<td style="text-align:right">9岁</td>
+<td style="text-align:right">0.20%</td>
+</tr>
+<tr>
+<td>慢性脊椎病</td>
+<td style="text-align:right">11岁</td>
+<td style="text-align:right">1.86%</td>
+</tr>
+<tr>
+<td>白内障</td>
+<td style="text-align:right">13岁</td>
+<td style="text-align:right">1.1045%</td>
+</tr>
+<tr>
+<td>听力损失</td>
+<td style="text-align:right">13岁</td>
+<td style="text-align:right">1.1045%</td>
+</tr>
+<tr>
+<td>虚弱</td>
+<td style="text-align:right">14岁</td>
+<td style="text-align:right">2.604%</td>
+</tr>
+<tr>
+<td>痴呆</td>
+<td style="text-align:right">18岁</td>
+<td style="text-align:right">3.0225%</td>
+</tr>
+</tbody>
+</table>
+<p>这些是每次生日的随机判定,到达起始年龄并不保证患病.若尚未患有上述疾病且都满足施加条件,21岁生日获得至少一种的概率约9.89%;30岁生日约15.83%,其中痴呆的单项概率已升至9.3%</p>
+<p>另外,源码中有三点区别：</p>
+<ul>
+<li>心脏病发作另算.<code>HediffGiver_RandomAgeCurved</code> 使用“生物年龄÷30”,没有套用0.7.24岁时平均触发间隔为2500游戏天,30岁及以上为300游戏天;后者折合每60天约18.1%的触发机会.玩家殖民地还要求至少有2名自由殖民者,并满足心脏部位条件.</li>
+<li>年龄也会降低免疫增长速度.这里同样按30年计算：24岁时年龄倍率为95%,30岁为90%,会让感染类疾病更难熬过去.</li>
+<li>新生成人物可能自带年龄疾病.生成代码会回溯过去的生日,但这条路径只使用基础寿命30年,没有应用0.7系数,因此与入场后正常过生日的判定不同.</li>
+</ul>
+</details>
 <h3 id="身体部位">身体部位</h3>
 <p>蚁族大幅修改了小人的身体树结构,具体如下</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs text">名称                        血量 内外 覆盖率    命中率<br>胸外骨骼                     1HP  OS    100        8.5%<br>├─ 胸部                     28HP  IS     20        6.6%<br>│  ├─ 胸椎                  18HP  IS     12        2.4%<br>│  ├─ 肋骨                  21HP  IS     18        3.6%<br>│  ├─ 胸骨                  14HP  IS     12        2.4%<br>│  └─ 骨盆                  18HP  IS     25          5%<br>├─ 颈部                     18HP  OS     10          1%<br>│  └─ 头外骨骼               1HP  OS     90        7.2%<br>│     └─ 头                 18HP  IS     20      0.846%<br>│        ├─ 颅骨            18HP  IS     10      0.108%<br>│        │  └─ 大脑          7HP  IS     40      0.072%<br>│        ├─ 左/右复眼        7HP  IS      7      0.126%<br>│        ├─ 左/右触角        9HP  OS      7      0.126%<br>│        ├─ 鼻               7HP  IS     10       0.18%<br>│        └─ 下颌            14HP  IS      5       0.09%<br>├─ 腹外骨骼                  1HP  OS     13       8.19%<br>│  └─ 腹部                  25HP  IS     37    4.05483%<br>│     ├─ 腹外骨骼附加槽1     1HP   IS    0.1    0.00481%<br>│     ├─ 腹外骨骼附加槽2     1HP   IS    0.1    0.00481%<br>│     ├─ 胃                 14HP  IS    2.5    0.12025%<br>│     ├─ 心脏               11HP  IS      2     0.0962%<br>│     ├─ 左/右肺            11HP  IS    2.5    0.12025%<br>│     ├─ 左/右肾            11HP  IS    1.7    0.08177%<br>│     ├─ 肝                 14HP  IS    2.5    0.12025%<br>│     └─ 腹柄               25HP  IS    0.1    0.00481%<br>├─ 左/右臂外骨骼             1HP  OS     13        1.3%<br>│  └─ 左/右肩               21HP  IS     90      7.605%<br>│     └─ 左/右臂            21HP  IS     35     2.7027%<br>│        ├─ 左/右肱骨       18HP  IS     10     0.4095%<br>│        ├─ 左/右桡骨       14HP  IS     10     0.4095%<br>│        └─ 左/右手         14HP  IS     14   0.366912%<br>│           ├─ 左/右尾指     6HP  IS      6   0.034398%<br>│           ├─ 左/右无名指   6HP  IS      7   0.040131%<br>│           ├─ 左/右中指     6HP  IS      8   0.045864%<br>│           ├─ 左/右食指     6HP  IS      7   0.040131%<br>│           └─ 左/右拇指     6HP  IS      8   0.045864%<br>├─ 腹椎                     18HP  IS    0.5        0.5%<br>└─ 左/右腿外骨骼             1HP  OS     11       7.15%<br>   └─ 左/右腿               21HP  IS     35      2.695%<br>      ├─ 左/右股骨          18HP  IS     10      0.385%<br>      ├─ 左/右胫骨          18HP  IS     10      0.385%<br>      └─ 左/右足            18HP  IS     10    0.23485%<br>         ├─ 左/右小趾        6HP  IS      6     0.0231%<br>         ├─ 左/右次小趾      6HP  IS      7    0.02695%<br>         ├─ 左/右三趾        6HP  IS      8     0.0308%<br>         ├─ 左/右二趾        6HP  IS      9    0.03465%<br>         └─ 左/右大拇趾      6HP  IS      9    0.03465%<br></code></pre></td></tr></table></figure>
@@ -688,7 +756,7 @@
 <ul>
 <li>繁殖蚁卵=1营养果冻+734工作量 在5~50℃下存放10天孵化</li>
 <li>繁殖异种蚁卵=1营养果冻+734工作量 在5~50℃下存放9天孵化</li>
-<li>繁殖变种蚁卵=1蚁卵+5转变红基质+834工作量 在-20~120℃下存放10天孵化</li>
+<li>繁殖变种蚁卵=1蚁卵+5转变红基质+834工作量 使用烹饪速度 在-20~120℃下存放10天孵化</li>
 <li>繁殖红蚁虫卵 5红蚁虫卵=5已受精蚁虫卵+1转变红基质+167工作量 在-20~80℃下存放3天孵化</li>
 <li>孵化时生成0~1岁且无技能等级和兴趣的对应蚁族,并添加90天的&quot;好奇心&quot;状态,全局学习系数+150%(随时间衰减但作用不大就不扒了),红蚁虫为动物</li>
 </ul>
@@ -708,7 +776,7 @@
 <p>信息素合成表非常的恶心,这玩意用的是烹饪速度且仅有蚁族可制作,蚁族全员烹饪无能,还有复眼给烹饪速度×0.3,普通蚁族的烹饪速度结算为42%,搓16个信息素要11.4h;蚁后的烹饪速度结算为75%,搓16个信息素要6.4h,和蚁卵不同,信息素是要持续制作的消耗品,你说这玩意怎么不用蚁卵繁殖速度呢,这要是改成蚁卵繁殖速度那阿根廷蚁直接翻身了<br>
 战斗信息素是近战用的成瘾品,移动能力+25%叠兵蚁之后来到了7.8移速,再叠细足捷蚁后直接来到了13.5移速,但蚁族移速本身已经略微溢出了,这玩意还会瞄准时间+50%,除了拿来和自爆信息素配合以外我想不出来有啥用<br>
 射击信息素是远程用的成瘾品,瞄准时间-50%的含金量有懂的吗?叠个射击命令直接10%瞄准时间了,搭配兵蚁自带的视觉能力加成,直接白嫖了6射击精度,移速惩罚则正好和兵蚁的移动能力加成抵消,四舍五入就是白嫖瞄准时间和射击精度,毫无疑问的神中神<br>
-自爆信息素就更恐怖了,你知道什么叫大范围无视承伤的350点伤害吗?而且蚁族自带自爆伤害免疫,一个自爆上去直接给机械族全融化了,甚至自爆完还给个麻醉状态保命.打满自爆伤害的条件非常苛刻,但没找到输出环境是我的问题而不是自爆信息素的问题,整个细足捷蚁吃一个战斗信息素再嗑个自爆信息素直接变板载,什么心灵飞船机械集群简直不值一提</p>
+自爆信息素就更恐怖了,你知道什么叫大范围无视承伤的350点伤害吗?而且蚁族自带自爆伤害免疫,一个自爆上去直接给机械族全融化了,甚至自爆完还给个麻醉状态保命.打满自爆伤害的条件非常苛刻,但没找到输出环境是我的问题而不是自爆信息素的问题,整个细足捷蚁吃一个战斗信息素再嗑个自爆信息素直接变板载,什么心灵飞船机械集群简直不值一提.特别地,自爆信息素可以拿来坑商队(虽然蚁族战族开局无商队可坑)</p>
 <h3 id="建筑-材料">建筑&amp;材料</h3>
 <p><strong>杂项建筑</strong></p>
 <ul>
@@ -762,6 +830,7 @@
 </ul>
 <p>想必之前看建筑的时候你也发现了,蚁族的近乎所有建筑都会用到蚁族智能核心,这玩意在前期只能用尸体和心脏制作,这就需要我们多和敌人说点掏心窝子话了<br>
 特别地,三个蚁族智能核心和尸体提取的产出数量为屠宰效率×产量并向上取整.只要屠宰效率高于1,我们每次就能产出2个蚁族智能核心,虽然分解者基因给了120%的屠宰效率,但蚁族烹饪无能,0级烹饪的蚁族仅有90%的屠宰效率,想要不提升等级把这玩意堆到1以上就需要提高操作能力,114%以上的操作能力就能把屠宰效率堆到1,这恰好高于单个仿生臂,所以理论来说兵蚁+单个仿生臂就能让蚁族智能核心倍产量.当然,更好的方式是虏一个其他种族煮饭婆专门来搓蚁族智能核心<br>
+从尸体提取果糖液基本是赔本买卖,尸体产出的肉搓成营养膏所带来的营养值提升会更高<br>
 复制零部件是非常重要的零部件获取渠道,蚁族战狂开局与几乎所有派系永久敌对,没法贸易意味着你搞不到零部件且爬科技速度大幅降低,复制零部件就是跑出精密装配前获得零部件的几乎唯一方式了</p>
 <p>植入物&amp;手术</p>
 <ul>
@@ -789,7 +858,7 @@
 带有永久的&quot;???“状态,疼痛×10% 意识最大80% 承伤×270% 愈合系数×15% 生育能力×0% 心灵敏感度×10%<br>
 带有”???&quot;技能,5s前摇,使用后造成2半径0%穿甲的7点酸伤,为自身施加150%的酸分解状态直接死亡,并生成5个派系为&quot;野生&quot;的蚁虫</li>
 </ul>
-<p>蚁虫屁用没有,红蚁虫不吃限流,一格可以无限堆叠,理论来说可以作为无敌输出,但是4s的后摇还是别想这玩意了,傀儡算是彩蛋类型的玩意吧,反正这仨都没啥用,不再赘述</p>
+<p>蚁虫前期可以当个不能征兆的近战用用,阵地起来之后就屁用没有了,红蚁虫不吃限流,一格可以无限堆叠,理论来说可以作为无敌输出,但是4s的后摇还是别想这玩意了,傀儡算是彩蛋类型的玩意吧,反正这仨都没啥用,不再赘述</p>
 <img src="/images/蚁族/蚁族-科技.png" style="max-width: 65em">
 <p>蚁族的科技树非常的蛋疼,原因在于进阶酸性武器的多元分析仪需求,正如之前剧本部分所说,蚁族会在黄金和玻璃钢部分卡很久,自然也会因为多元分析仪卡很久科技</p>
 <h2 id="武器">武器</h2>
@@ -845,6 +914,7 @@
 酸弹发射器子弹有较大的延迟爆炸,非常难用.战斗用胶发射器理论来说可凭借超高的射程和极强的控制在前期野战时进一步为差速做出贡献,但作者把他的科技树放到了多元分析仪之后,甚至还要一个高级零部件,那这个东西就从前期控制之王跌落至后期小玩具了.虽然他的控制非常强力,但能直接打伤害了谁还控速啊,基本就是给绝活哥玩了<br>
 强酸武器玩的就更花哨了,强酸线步枪是穿甲更高但精度更低的酸性线步枪,在传奇级12距离精度仅有45%,有40.2dps但仅有18dpsa,如果你能解决精度问题那他就是酸性线步枪的上位替代,否则他就是辣鸡.除了强酸伤害有更高的部位溶解以外没别的值得替换的点,除非你的敌人的钝防高到你需要补钝器穿甲,否则完全用不上这把枪,毕竟穿甲花里胡哨dpsa才是王道<br>
 强酸步枪dps并不高但小范围伤害;强酸集束步枪更是极端的范围伤害,他有优秀的射程和伤害,期望上每次可以造成7半径的12.8伤,但他的六秒乌龟后摇实在是无药可救,再加上流弹生成时会有一秒多的延迟,他的实际表现并不亮眼;红基质烟雾喷射器就是纯幽默了,这把枪的作用竟然是为身边的生物附加55%掩体,请问你和红基质烟雾包的关系是什么</p>
+<p>综上所述,去码头整点酸性线步枪</p>
 <h3 id="特化武器">特化武器</h3>
 <p>添加的奥德赛词条</p>
 <ul>
@@ -941,7 +1011,7 @@
 蚁族防弹头盔+原版防弹背心+防弹夹克+蚁族职业军装+附加装甲(89.7;130;71.5;52.3;114.4) 在20%穿甲下护甲承伤为40.7%<br>
 蚁族防弹头盔+板甲+蚁族职业军装+附加装甲(89.7;105.3;52.3;114.4) 在20%穿甲下护甲承伤为30.6%<br>
 Man!What can i say?!防弹套out!下图为板甲套装所对应的穿甲-护甲承伤曲线</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs tikz">\begin&#123;document&#125;<br>    \begin&#123;tikzpicture&#125;[<br>        declare function=&#123;<br>            eff(\a,\p)=min(max((\a-\p)/100,0),2);<br>            armorMult(\a,\p)=1 - 0.75*min(eff(\a,\p),1) - 0.25*max(eff(\a,\p)-1,0);<br>            damage(\p)=0.0000962+0.01*(armorMult(105.3,\p)*armorMult(52.3,\p))+0.285*(armorMult(105.3,\p)*armorMult(52.3,\p))+0.026*(armorMult(105.3,\p)*armorMult(52.3,\p))+0.222534*(armorMult(105.3,\p)*armorMult(52.3,\p))+0.011466*(armorMult(52.3,\p))+0.2123*(armorMult(105.3,\p)*armorMult(52.3,\p))+0.0077*(armorMult(52.3,\p))+0.08226*(armorMult(89.7,\p))+0.00252*(1)+0.00252*(armorMult(89.7,\p))+0.0018*(1)+0.0009*(1)+0.1348557*(armorMult(114.4,\p))+0.0000481*(1);<br>        &#125;<br>    ]<br>        \draw[-&gt;] (0,0) -- (10.5,0) node[right] &#123;Armor Penetration (\%)&#125;;<br>        \draw[-&gt;] (0,0) -- (0,9) node[above] &#123;Damage Multiplier&#125;;<br>        \draw (0.00,0) -- (0.00,-0.1) node[below] &#123;0&#125;;<br>        \draw (2.50,0) -- (2.50,-0.1) node[below] &#123;20&#125;;<br>        \draw (5.00,0) -- (5.00,-0.1) node[below] &#123;40&#125;;<br>        \draw (7.50,0) -- (7.50,-0.1) node[below] &#123;60&#125;;<br>        \draw (10.00,0) -- (10.00,-0.1) node[below] &#123;80&#125;;<br>        \draw (0,0.00) -- (-0.1,0.00) node[left] &#123;0.00&#125;;<br>        \draw (0,2.00) -- (-0.1,2.00) node[left] &#123;0.25&#125;;<br>        \draw (0,4.00) -- (-0.1,4.00) node[left] &#123;0.50&#125;;<br>        \draw (0,6.00) -- (-0.1,6.00) node[left] &#123;0.75&#125;;<br>        \draw (0,8.00) -- (-0.1,8.00) node[left] &#123;1.00&#125;;<br>        \draw[blue, thick] plot[domain=0:5.3, samples=14, smooth, variable=\p] (&#123;(\p-0)*0.125&#125;, &#123;damage(\p)*8&#125;);<br>        \draw[blue, thick] plot[domain=5.3:14.4, samples=24, smooth, variable=\p] (&#123;(\p-0)*0.125&#125;, &#123;damage(\p)*8&#125;);<br>        \draw[blue, thick] plot[domain=14.4:20, samples=15, smooth, variable=\p] (&#123;(\p-0)*0.125&#125;, &#123;damage(\p)*8&#125;);<br>        \draw[blue, thick] plot[domain=20:52.3, samples=82, smooth, variable=\p] (&#123;(\p-0)*0.125&#125;, &#123;damage(\p)*8&#125;);<br>        \draw[blue, thick] plot[domain=52.3:80, samples=70, smooth, variable=\p] (&#123;(\p-0)*0.125&#125;, &#123;damage(\p)*8&#125;);<br>        \pgfmathsetmacro&#123;\markedX&#125;&#123;(20-0)*0.125&#125;<br>        \pgfmathsetmacro&#123;\markedY&#125;&#123;damage(20)*8&#125;<br>        \pgfmathsetmacro&#123;\markedDamage&#125;&#123;damage(20)&#125;<br>        \draw[gray, dashed] (\markedX,0) -- (\markedX,\markedY);<br>        \draw[gray, dashed] (0,\markedY) -- (\markedX,\markedY);<br>        \fill[red] (\markedX,\markedY) circle (0.045);<br>        \node[below] at (\markedX,\markedY) &#123;20\%, \pgfmathprintnumber[fixed, precision=3]&#123;\markedDamage&#125;&#125;;<br>    \end&#123;tikzpicture&#125;<br>\end&#123;document&#125;<br></code></pre></td></tr></table></figure>
+<p><span class="tikzjax"><svg xmlns="http://www.w3.org/2000/svg" width="603.456" height="383.98" viewBox="-72 -72 452.592 287.985"><g stroke="#000" stroke-miterlimit="10" stroke-width=".4"><path fill="none" d="M-27.742 199.56H270.55"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width=".32" d="M269.351 197.96c.1.6 1.2 1.5 1.5 1.6-.3.1-1.4 1-1.5 1.6"/><g stroke="none" font-family="cmr10" font-size="10"><text x="-27.742" y="199.56" transform="translate(302.287 2.5)">Armor</text><text x="4.258" y="199.56" transform="translate(302.287 2.5)">P</text><text x="10.785" y="199.56" transform="translate(302.287 2.5)">enetration</text><text x="58.591" y="199.56" transform="translate(302.287 2.5)">(%)</text></g><path fill="none" d="M-27.742 199.56V-56.055"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width=".32" d="M-29.342-54.855c.6-.1 1.5-1.2 1.6-1.5.1.3 1 1.4 1.6 1.5"/><g stroke="none" font-family="cmr10" font-size="10"><text x="-27.742" y="199.56" transform="translate(-41.195 -261.552)">Damage</text><text x="11.008" y="199.56" transform="translate(-41.195 -261.552)">Multiplier</text></g><path fill="none" d="M-27.742 199.56v2.845"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-2.5 12.823)">0</text><path fill="none" d="M43.39 199.56v2.845"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(66.132 12.823)">20</text><path fill="none" d="M114.521 199.56v2.845"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(137.264 12.823)">40</text><path fill="none" d="M185.653 199.56v2.845"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(208.396 12.823)">60</text><path fill="none" d="M256.785 199.56v2.845"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(279.527 12.823)">80</text><path fill="none" d="M-27.742 199.56h-2.846"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-24.156 3.222)">0.00</text><path fill="none" d="M-27.742 142.654h-2.846"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-24.156 -53.683)">0.25</text><path fill="none" d="M-27.742 85.749h-2.846"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-24.156 -110.589)">0.50</text><path fill="none" d="M-27.742 28.843h-2.846"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-24.156 -167.494)">0.75</text><path fill="none" d="M-27.742-28.062h-2.846"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-24.156 -224.4)">1.00</text><path fill="none" stroke="#00f" stroke-width=".8" d="M-27.742 158.068s1.047-.242 1.45-.337c.401-.094 1.047-.25 1.45-.343.402-.094 1.047-.237 1.45-.33.402-.093 1.047-.247 1.45-.34.402-.094 1.047-.24 1.449-.334s1.048-.257 1.45-.351c.402-.095 1.048-.236 1.45-.33.403-.094 1.048-.255 1.45-.35.403-.097 1.048-.245 1.45-.341s1.048-.255 1.45-.351 1.048-.244 1.45-.34 1.048-.258 1.45-.355 1.45-.34 1.45-.34M-8.893 153.626l1.407-.563c.39-.154 1.017-.395 1.407-.552s1.017-.417 1.408-.576a875 875 0 0 1 2.814-1.143c.39-.158 1.017-.407 1.407-.566.39-.16 1.017-.421 1.407-.584l1.407-.587c.39-.162 1.017-.417 1.407-.58s1.017-.427 1.408-.59c.39-.163 1.017-.42 1.407-.584s1.017-.435 1.407-.6l1.407-.595c.39-.165 1.017-.434 1.407-.6l1.407-.601 1.408-.608 1.407-.611c.39-.17 1.016-.438 1.407-.608.39-.17 1.017-.447 1.407-.618.39-.172 1.017-.443 1.407-.615s1.017-.453 1.407-.625c.39-.173 1.017-.446 1.408-.619l1.407-.628M23.472 139.973l1.423-.698 1.423-.705c.394-.197 1.028-.517 1.422-.712.395-.196 1.028-.503 1.423-.699.394-.195 1.027-.514 1.422-.712s1.028-.513 1.423-.712 1.028-.52 1.423-.719c.394-.198 1.027-.512 1.422-.712s1.028-.523 1.423-.726 1.028-.529 1.422-.732c.395-.204 1.028-.531 1.423-.733s1.028-.52 1.422-.723c.395-.203 1.028-.535 1.423-.74l1.423-.732M43.39 129.918s1.024-.544 1.417-.75c.394-.207 1.025-.531 1.419-.737l1.418-.747 1.418-.75 1.418-.75c.394-.208 1.025-.541 1.418-.75l1.419-.757 1.418-.765 1.418-.764c.394-.212 1.025-.55 1.418-.764.394-.213 1.025-.56 1.418-.774l1.419-.771 1.418-.778c.394-.215 1.025-.555 1.418-.771.394-.217 1.025-.57 1.418-.789l1.419-.785 1.418-.792 1.418-.788c.394-.22 1.025-.57 1.418-.792.394-.221 1.025-.58 1.419-.802l1.418-.8 1.418-.801 1.418-.81c.394-.224 1.025-.58 1.419-.806.393-.226 1.024-.596 1.418-.823s1.024-.582 1.418-.809c.393-.226 1.024-.596 1.418-.823.393-.228 1.025-.587 1.418-.816.394-.23 1.025-.608 1.419-.837.393-.23 1.024-.587 1.418-.817s1.024-.608 1.418-.84l1.418-.834c.394-.231 1.025-.603 1.418-.837.394-.233 1.025-.613 1.419-.847.393-.234 1.024-.604 1.418-.837l1.418-.848c.394-.235 1.025-.614 1.418-.85l1.418-.855c.394-.237 1.025-.613 1.419-.851.393-.238 1.025-.626 1.418-.865.394-.239 1.025-.618 1.418-.858.394-.24 1.025-.63 1.418-.872.394-.24 1.025-.623 1.418-.864a773 773 0 0 0 2.837-1.747l1.418-.88 1.419-.878 1.418-.882 1.418-.886c.393-.247 1.025-.648 1.418-.896.394-.248 1.025-.64 1.418-.889.394-.248 1.025-.65 1.419-.9l1.418-.9 1.418-.902c.393-.25 1.025-.648 1.418-.9.394-.251 1.025-.66 1.419-.913.393-.253 1.024-.653 1.418-.907.393-.253 1.024-.665 1.418-.92.394-.256 1.024-.666 1.418-.92l1.418-.917 1.419-.924c.393-.258 1.024-.677 1.418-.935.393-.257 1.024-.663 1.418-.92a467 467 0 0 0 2.836-1.869c.394-.26 1.025-.684 1.419-.944.393-.261 1.024-.673 1.418-.935s1.024-.692 1.418-.955 1.025-.678 1.418-.941c.394-.263 1.025-.69 1.418-.955l1.419-.955 1.418-.955c.394-.266 1.025-.691 1.418-.96.394-.267 1.025-.703 1.419-.972.393-.268 1.024-.696 1.417-.965l1.419-.973 1.418-.972 1.418-.976c.394-.27 1.025-.7 1.419-.973.393-.272 1.024-.716 1.418-.99l1.418-.979M158.267 60.057s1.032-.494 1.428-.68 1.031-.48 1.427-.664 1.032-.485 1.428-.67l1.428-.667 1.428-.67 1.428-.671c.396-.185 1.032-.479 1.428-.663l1.427-.667 1.428-.67 1.428-.667c.396-.186 1.031-.488 1.428-.674l1.428-.667 1.427-.67 1.428-.67 1.428-.668 1.427-.663c.397-.185 1.032-.484 1.428-.67l1.428-.67c.396-.187 1.032-.489 1.428-.674s1.032-.479 1.428-.664l1.427-.67 1.428-.667 1.428-.667 1.428-.667 1.427-.667c.397-.185 1.032-.483 1.428-.67l1.428-.674c.396-.185 1.032-.478 1.428-.663l1.427-.67 1.428-.667c.397-.186 1.032-.488 1.428-.674l1.428-.667c.396-.184 1.031-.475 1.428-.66l1.427-.67c.396-.188 1.032-.495 1.428-.681s1.032-.475 1.428-.66 1.031-.485 1.428-.67c.396-.185 1.031-.478 1.427-.664.397-.185 1.032-.487 1.428-.673l1.428-.67 1.428-.671c.396-.185 1.031-.478 1.427-.664.397-.185 1.032-.487 1.428-.673l1.428-.667 1.428-.667c.396-.185 1.031-.478 1.428-.663.396-.185 1.031-.485 1.428-.67l1.427-.671 1.428-.674 1.427-.667 1.428-.667c.397-.185 1.032-.484 1.428-.67l1.428-.67 1.428-.664 1.428-.667c.396-.184 1.031-.476 1.427-.663s1.032-.497 1.428-.684 1.031-.48 1.428-.664l1.428-.663c.396-.185 1.031-.48 1.428-.667.396-.186 1.03-.492 1.427-.677.396-.186 1.032-.475 1.428-.66l1.428-.67 1.427-.667c.397-.186 1.032-.488 1.428-.674l1.428-.67 1.428-.664 1.428-.667 1.427-.663"/><path fill="none" stroke="gray" stroke-dasharray="3.0,3.0" d="M43.39 199.56v-69.642M-27.742 129.918h71.131"/><path fill="red" stroke="none" d="M44.67 129.918a1.28 1.28 0 1 0-2.56 0 1.28 1.28 0 0 0 2.56 0m-1.28 0"/><g stroke="none" font-size="10"><text x="-27.742" y="199.56" font-family="cmr10" transform="translate(47.52 -58.609)">20%,</text><text x="-3.298" y="199.56" font-family="cmr10" transform="translate(47.52 -58.609)">0</text><text x="1.702" y="199.56" font-family="cmmi10" transform="translate(47.52 -58.609)">:</text><text x="4.48" y="199.56" font-family="cmr10" transform="translate(47.52 -58.609)">306</text></g></g></svg></span></p>
 <p><strong>动力甲</strong></p>
 <ul>
 <li>所有动力甲配件都带有易燃性-50%(装甲为易燃性-100%) 毒素抗性+100% 有毒环境抗性+40% 真空抗性+35%(尼氏蚁真空抗性分别为25/25/45)</li>
@@ -969,11 +1039,11 @@ Man!What can i say?!防弹套out!下图为板甲套装所对应的穿甲-护甲�
 恐猛蚁套就很牛逼了,这是肉装动力甲,135的利防比骑士甲都高,大师品质就可以叠到将近200%利防,还附赠个承伤-25%,正由于蚁族移速溢出,这套动力甲的移速-1.05完全可以接受,穿了全套恐猛蚁的兵蚁仍有5.19的移速,我依旧是世一速.他的技能还能给一个临时的小范围承伤归零,依旧无敌是最好的名片<br>
 尼氏蚁套则是机械师动力甲,头盔+装甲只加了11带宽,完全不如原版机械领主套24带宽加的多,蚁族也完全可以承受原版机械领主套的移速减益,如果你是想玩机械师,就别用尼氏蚁套了.他的三防甚至不如沙蚁套,技能也略微诡异,什么叫20s cd的2s隐身?2s隐身能干什么,转移仇恨吗?激光制导加承伤,或许能拿来打一些boss,但我依旧觉得没啥用.附加装甲的止血气体释放可以让4半径内人失血×75%,还是很舒服的</p>
 <p>沙蚁套/子弹蚁套+蚁族职业军装在极佳品质下护甲值为(143;117;149.5;52.3),在20%穿甲下护甲承伤为21.7%<br>
-恐猛蚁套+蚁族职业军装在极佳品质下护甲值为(175.5;175.5;182;52.3),在20%穿甲下护甲承伤为8.8%<br>
+恐猛蚁套+蚁族职业军装在极佳品质下护甲值为(175.5;175.5;182;52.3),在20%穿甲下护甲承伤为8.8%,如果换成传奇级,更是在20%穿甲把护甲承伤压缩到3.5%<br>
 尼氏蚁套在极佳品质下护甲值为(117;123.5;117),在20%穿甲下护甲承伤为24.8%</p>
 <p>综上所述,穿恐猛蚁套得了,其他仨动力甲没比板甲优秀多少,只有恐猛蚁套是真的质变,其穿甲-护甲承伤曲线如下图<br>
 另外值得一提的是,这四套动力甲的热防都很高,原版烧伤均为0%穿甲,只要能把热防叠到200%就能免烧伤</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs tikz">\begin&#123;document&#125;<br>    \begin&#123;tikzpicture&#125;[<br>        declare function=&#123;<br>            eff(\a,\p)=min(max((\a-\p)/100,0),2);<br>            armorMult(\a,\p)=1 - 0.75*min(eff(\a,\p),1) - 0.25*max(eff(\a,\p)-1,0);<br>            damage(\p)=0.0000962+0.01*(armorMult(175.5,\p)*armorMult(52.3,\p))+0.285*(armorMult(175.5,\p)*armorMult(52.3,\p))+0.026*(armorMult(175.5,\p)*armorMult(52.3,\p))+0.222534*(armorMult(175.5,\p)*armorMult(52.3,\p))+0.011466*(armorMult(175.5,\p)*armorMult(52.3,\p))+0.2123*(armorMult(175.5,\p)*armorMult(52.3,\p))+0.0077*(armorMult(175.5,\p)*armorMult(52.3,\p))+0.08226*(armorMult(175.5,\p))+0.00252*(armorMult(175.5,\p))+0.00252*(armorMult(175.5,\p))+0.0018*(armorMult(175.5,\p))+0.0009*(armorMult(175.5,\p))+0.1348557*(armorMult(182,\p))+0.0000481*(1);<br>        &#125;<br>    ]<br>        \draw[-&gt;] (0,0) -- (10.5,0) node[right] &#123;Armor Penetration (\%)&#125;;<br>        \draw[-&gt;] (0,0) -- (0,9) node[above] &#123;Damage Multiplier&#125;;<br>        \draw (0.00,0) -- (0.00,-0.1) node[below] &#123;0&#125;;<br>        \draw (2.50,0) -- (2.50,-0.1) node[below] &#123;20&#125;;<br>        \draw (5.00,0) -- (5.00,-0.1) node[below] &#123;40&#125;;<br>        \draw (7.50,0) -- (7.50,-0.1) node[below] &#123;60&#125;;<br>        \draw (10.00,0) -- (10.00,-0.1) node[below] &#123;80&#125;;<br>        \draw (0,0.00) -- (-0.1,0.00) node[left] &#123;0.00&#125;;<br>        \draw (0,2.00) -- (-0.1,2.00) node[left] &#123;0.25&#125;;<br>        \draw (0,4.00) -- (-0.1,4.00) node[left] &#123;0.50&#125;;<br>        \draw (0,6.00) -- (-0.1,6.00) node[left] &#123;0.75&#125;;<br>        \draw (0,8.00) -- (-0.1,8.00) node[left] &#123;1.00&#125;;<br>        \draw[blue, thick] plot[domain=0:20, samples=51, smooth, variable=\p] (&#123;(\p-0)*0.125&#125;, &#123;damage(\p)*8&#125;);<br>        \draw[blue, thick] plot[domain=20:52.3, samples=82, smooth, variable=\p] (&#123;(\p-0)*0.125&#125;, &#123;damage(\p)*8&#125;);<br>        \draw[blue, thick] plot[domain=52.3:75.5, samples=59, smooth, variable=\p] (&#123;(\p-0)*0.125&#125;, &#123;damage(\p)*8&#125;);<br>        \draw[blue, thick] plot[domain=75.5:80, samples=12, smooth, variable=\p] (&#123;(\p-0)*0.125&#125;, &#123;damage(\p)*8&#125;);<br>        \pgfmathsetmacro&#123;\markedX&#125;&#123;(20-0)*0.125&#125;<br>        \pgfmathsetmacro&#123;\markedY&#125;&#123;damage(20)*8&#125;<br>        \pgfmathsetmacro&#123;\markedDamage&#125;&#123;damage(20)&#125;<br>        \draw[gray, dashed] (\markedX,0) -- (\markedX,\markedY);<br>        \draw[gray, dashed] (0,\markedY) -- (\markedX,\markedY);<br>        \fill[red] (\markedX,\markedY) circle (0.045);<br>        \node[below] at (\markedX,\markedY) &#123;20\%, \pgfmathprintnumber[fixed, precision=3]&#123;\markedDamage&#125;&#125;;<br>    \end&#123;tikzpicture&#125;<br>\end&#123;document&#125;<br></code></pre></td></tr></table></figure>
+<p><span class="tikzjax"><svg xmlns="http://www.w3.org/2000/svg" width="603.456" height="383.98" viewBox="-72 -72 452.592 287.985"><g stroke="#000" stroke-miterlimit="10" stroke-width=".4"><path fill="none" d="M-27.742 199.56H270.55"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width=".32" d="M269.351 197.96c.1.6 1.2 1.5 1.5 1.6-.3.1-1.4 1-1.5 1.6"/><g stroke="none" font-family="cmr10" font-size="10"><text x="-27.742" y="199.56" transform="translate(302.287 2.5)">Armor</text><text x="4.258" y="199.56" transform="translate(302.287 2.5)">P</text><text x="10.785" y="199.56" transform="translate(302.287 2.5)">enetration</text><text x="58.591" y="199.56" transform="translate(302.287 2.5)">(%)</text></g><path fill="none" d="M-27.742 199.56V-56.055"/><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width=".32" d="M-29.342-54.855c.6-.1 1.5-1.2 1.6-1.5.1.3 1 1.4 1.6 1.5"/><g stroke="none" font-family="cmr10" font-size="10"><text x="-27.742" y="199.56" transform="translate(-41.195 -261.552)">Damage</text><text x="11.008" y="199.56" transform="translate(-41.195 -261.552)">Multiplier</text></g><path fill="none" d="M-27.742 199.56v2.845"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-2.5 12.823)">0</text><path fill="none" d="M43.39 199.56v2.845"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(66.132 12.823)">20</text><path fill="none" d="M114.521 199.56v2.845"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(137.264 12.823)">40</text><path fill="none" d="M185.653 199.56v2.845"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(208.396 12.823)">60</text><path fill="none" d="M256.785 199.56v2.845"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(279.527 12.823)">80</text><path fill="none" d="M-27.742 199.56h-2.846"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-24.156 3.222)">0.00</text><path fill="none" d="M-27.742 142.654h-2.846"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-24.156 -53.683)">0.25</text><path fill="none" d="M-27.742 85.749h-2.846"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-24.156 -110.589)">0.50</text><path fill="none" d="M-27.742 28.843h-2.846"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-24.156 -167.494)">0.75</text><path fill="none" d="M-27.742-28.062h-2.846"/><text x="-27.742" y="199.56" stroke="none" font-family="cmr10" font-size="10" transform="translate(-24.156 -224.4)">1.00</text><path fill="none" stroke="#00f" stroke-width=".8" d="M-27.742 190.345s1.027-.13 1.422-.184 1.028-.151 1.423-.205c.394-.054 1.027-.132 1.422-.184a475 475 0 0 0 2.845-.386l1.423-.201 1.423-.201 1.422-.202c.395-.055 1.028-.14 1.423-.194l1.422-.202 1.423-.201c.395-.056 1.028-.141 1.423-.198s1.027-.155 1.422-.212c.395-.058 1.028-.145 1.423-.202l1.423-.205c.394-.057 1.028-.154 1.422-.211.395-.058 1.028-.144 1.423-.202.394-.058 1.028-.157 1.422-.215.395-.058 1.028-.147 1.423-.205s1.028-.156 1.423-.215c.395-.06 1.027-.154 1.422-.212l1.423-.209c.395-.059 1.028-.158 1.423-.219l1.422-.218 1.423-.22 1.422-.214c.395-.06 1.028-.155 1.423-.216s1.028-.164 1.423-.226l1.422-.218 1.423-.22c.395-.06 1.028-.162 1.422-.225l1.423-.226 1.422-.225c.395-.063 1.028-.165 1.423-.226.395-.062 1.028-.155 1.423-.22.395-.063 1.028-.175 1.423-.239.394-.064 1.027-.159 1.422-.222s1.028-.17 1.423-.233c.394-.063 1.028-.158 1.422-.222.395-.064 1.028-.174 1.423-.24l1.422-.236 1.423-.24 1.423-.232 1.423-.236c.394-.065 1.027-.167 1.422-.233s1.028-.177 1.423-.243c.394-.067 1.028-.17 1.422-.236.395-.066 1.028-.169 1.423-.237s1.028-.185 1.422-.253c.395-.069 1.423-.24 1.423-.24M43.39 179.484s1.024-.179 1.417-.246c.394-.068 1.025-.173 1.419-.24.393-.067 1.024-.174 1.418-.243.393-.07 1.024-.185 1.418-.254s1.025-.174 1.418-.243c.394-.068 1.025-.181 1.418-.25l1.419-.246c.393-.07 1.025-.188 1.418-.258.394-.069 1.025-.172 1.418-.243.394-.07 1.025-.192 1.418-.264l1.418-.25c.394-.07 1.025-.186 1.419-.257l1.418-.253 1.418-.257 1.418-.257 1.419-.257c.393-.073 1.024-.195 1.418-.268l1.418-.257 1.418-.26c.394-.074 1.025-.195 1.419-.268.393-.072 1.024-.181 1.418-.253a245 245 0 0 0 1.418-.268l1.418-.274c.394-.075 1.025-.192 1.419-.268.393-.075 1.024-.202 1.418-.277s1.024-.192 1.418-.264 1.024-.186 1.418-.26c.393-.076 1.025-.202 1.418-.279l1.419-.274c.393-.076 1.024-.194 1.418-.271s1.024-.208 1.418-.285 1.025-.192 1.418-.267c.394-.076 1.025-.201 1.418-.278.394-.077 1.025-.196 1.419-.274.393-.079 1.024-.21 1.418-.289l1.418-.278c.394-.077 1.025-.199 1.418-.277.394-.079 1.025-.21 1.418-.289.394-.078 1.025-.198 1.419-.274.393-.077 1.025-.198 1.418-.278.394-.08 1.025-.217 1.418-.299l1.418-.288 1.418-.285c.394-.08 1.025-.211 1.419-.292.393-.08 1.025-.207 1.418-.288.394-.08 1.025-.214 1.418-.295.394-.081 1.025-.212 1.419-.292.393-.08 1.024-.204 1.418-.285s1.024-.216 1.418-.298c.393-.083 1.025-.215 1.418-.296.394-.08 1.025-.202 1.418-.284.394-.082 1.025-.222 1.419-.306.393-.084 1.024-.216 1.418-.299l1.418-.298 1.418-.303 1.419-.302c.393-.083 1.024-.212 1.418-.295s1.024-.22 1.418-.306 1.024-.23 1.418-.316 1.025-.218 1.418-.302l1.419-.302c.393-.084 1.024-.217 1.418-.302l1.418-.31c.394-.085 1.025-.221 1.418-.308.394-.088 1.025-.233 1.418-.32.394-.087 1.025-.222 1.419-.309.393-.087 1.024-.23 1.418-.316.393-.087 1.024-.223 1.418-.31.394-.085 1.025-.22 1.418-.308.394-.088 1.025-.234 1.418-.323.394-.09 1.025-.233 1.419-.32.393-.087 1.025-.22 1.418-.309.394-.088 1.025-.237 1.418-.326.394-.09 1.025-.228 1.419-.317.393-.088 1.024-.232 1.417-.323l1.419-.326 1.418-.327c.394-.089 1.025-.226 1.418-.316.394-.089 1.025-.235 1.419-.326l1.418-.33 1.418-.33M158.267 156.349l1.423-.222c.395-.063 1.028-.169 1.423-.233l1.422-.23c.395-.063 1.028-.166 1.423-.228.394-.063 1.027-.161 1.422-.223.395-.061 1.028-.159 1.423-.222s1.028-.168 1.422-.233c.395-.064 1.028-.17 1.423-.232.395-.063 1.028-.156 1.423-.22.394-.062 1.028-.173 1.422-.235.395-.063 1.028-.153 1.423-.216.394-.063 1.028-.175 1.422-.24.395-.064 1.028-.163 1.423-.225l1.423-.226c.395-.063 1.027-.162 1.422-.226s1.028-.173 1.423-.236 1.028-.157 1.423-.219c.394-.061 1.028-.162 1.422-.225l1.423-.23 1.422-.225 1.423-.23c.395-.064 1.028-.17 1.423-.232.395-.064 1.027-.16 1.422-.223s1.028-.17 1.423-.232c.395-.063 1.028-.157 1.423-.22.394-.061 1.028-.164 1.422-.228.395-.065 1.028-.17 1.423-.233.394-.064 1.027-.163 1.422-.226l1.423-.226 1.423-.229 1.422-.233 1.423-.225 1.422-.226c.395-.064 1.028-.17 1.423-.233.395-.062 1.028-.153 1.422-.215.395-.063 1.028-.173 1.423-.236.395-.064 1.028-.16 1.423-.223.395-.062 1.028-.166 1.423-.229l1.422-.226 1.423-.229 1.422-.23 1.423-.221 1.422-.226c.395-.064 1.028-.17 1.423-.233s1.028-.162 1.423-.226 1.028-.172 1.423-.236c.394-.064 1.027-.163 1.422-.226l1.423-.225 1.422-.226c.395-.063 1.028-.165 1.423-.23.395-.064 1.028-.173 1.422-.235.395-.063 1.028-.154 1.423-.216s1.028-.165 1.423-.23c.395-.063 1.028-.166 1.423-.228.394-.063 1.027-.16 1.422-.223.395-.062 1.028-.164 1.423-.229.394-.064 1.027-.172 1.422-.236s1.423-.222 1.423-.222M240.78 143.147l1.455-.632c.404-.176 1.051-.463 1.455-.639s1.051-.453 1.455-.629c.404-.175 1.051-.458 1.455-.635l1.455-.64 1.455-.635 1.455-.635c.403-.177 1.051-.464 1.455-.64.404-.175 1.051-.452 1.455-.628s1.05-.462 1.455-.64l1.455-.635"/><path fill="none" stroke="gray" stroke-dasharray="3.0,3.0" d="M43.39 199.56v-20.076M-27.742 179.484h71.131"/><path fill="red" stroke="none" d="M44.67 179.484a1.28 1.28 0 1 0-2.56 0 1.28 1.28 0 0 0 2.56 0m-1.28 0"/><g stroke="none" font-size="10"><text x="-27.742" y="199.56" font-family="cmr10" transform="translate(47.52 -9.042)">20%,</text><text x="-3.298" y="199.56" font-family="cmr10" transform="translate(47.52 -9.042)">0</text><text x="1.702" y="199.56" font-family="cmmi10" transform="translate(47.52 -9.042)">:</text><text x="4.48" y="199.56" font-family="cmr10" transform="translate(47.52 -9.042)">088</text></g></g></svg></span></p>
 <h2 id="变种蚁族">变种蚁族</h2>
 <p><strong>转变红基质</strong> 是后期变种蚁族的重要材料,可以使用5营养果冻+250红基质来制作一个实验性转变红基质(这玩意除了没法进合成表以外和普通转变红基质一模一样),其会每秒钟为3半径内的蚁族施加2.5%的&quot;转变红基质刺激&quot;状态;可右键让蚁族食用转变红基质,使其腹部添加100%的&quot;转变红基质&quot;状态</p>
 <p>转变红基质刺激状态每天自然衰减30%,包扎后每天自然衰减530%,</p>
@@ -1707,7 +1777,7 @@ Man!What can i say?!防弹套out!下图为板甲套装所对应的穿甲-护甲�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 原版向
+                  rimworld, 种族, 精品
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1748,7 +1818,7 @@ Man!What can i say?!防弹套out!下图为板甲套装所对应的穿甲-护甲�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 原版向
+                  rimworld, 种族, 精品
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1789,7 +1859,7 @@ Man!What can i say?!防弹套out!下图为板甲套装所对应的穿甲-护甲�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 阿尔法系列, 原版向
+                  rimworld, 精品, 阿尔法系列
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1812,6 +1882,47 @@ Man!What can i say?!防弹套out!下图为板甲套装所对应的穿甲-护甲�
       </div>
     
       <div class="vs-recommended-item" data-index="3" tabindex="0">
+        <a href="../%E5%A2%A8%E8%AF%BA%E7%81%B5/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>墨诺灵</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              很新的种族目前内容量也没有很大,玩法机制都很新颖 强度高的同时财富值也很高,算是一种变相平衡吧
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 正义, 种族
+                  
+                    <span class="vs-more-tags">+1</span>
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  7月 28
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  6 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="4" tabindex="0">
         <a href="../%E6%BA%AA%E8%B0%B7%E8%81%94%E9%82%A6/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -1850,7 +1961,7 @@ Man!What can i say?!防弹套out!下图为板甲套装所对应的穿甲-护甲�
         </a>
       </div>
     
-      <div class="vs-recommended-item" data-index="4" tabindex="0">
+      <div class="vs-recommended-item" data-index="5" tabindex="0">
         <a href="../%E7%8E%9B%E9%B2%81/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -1882,47 +1993,6 @@ Man!What can i say?!防弹套out!下图为板甲套装所对应的穿甲-护甲�
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
                   4 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="5" tabindex="0">
-        <a href="../%E5%A2%A8%E8%AF%BA%E7%81%B5/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>墨诺灵</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              很新的种族目前内容量也没有很大,玩法机制都很新颖 强度高的同时财富值也很高,算是一种变相平衡吧
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-                <span class="vs-tags-preview">
-                  <i class="fas fa-tags"></i>
-                  rimworld, 种族, 精品
-                  
-                    <span class="vs-more-tags">+1</span>
-                  
-                </span>
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  7月 28
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  6 min
                 </span>
               </span>
             </div>
@@ -2178,7 +2248,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "نتيجة",
+    search_result: "Ergebnis",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -2224,7 +2294,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1789411664239"></script>
+<script src="../js/password-protect.js?v=1789424226140"></script>
 
     <script>
       // 移动端菜单切换
