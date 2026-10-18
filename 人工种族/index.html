@@ -8,7 +8,7 @@
   <!-- SEO Meta Tags -->
   <meta name="description" content="全力之作!对aya人工种族的种族/技能/BOSS/光之奴/获取方式等的全面介绍
 很有趣的系列mod,强度相当高,但是整体还算是自洽的.正义度毫无疑问神仙斗法了">
-  <meta name="keywords" content="rimworld,种族,神仙斗法,精品">
+  <meta name="keywords" content="rimworld,种族,精品,神仙斗法">
   <meta name="author" content="Round">
   <link rel="canonical" href="https://RoundSann.github.io">
 
@@ -65,7 +65,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1791717145699">
+  <link rel="stylesheet" href="../css/post.css?v=1792321388843">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -202,6 +202,11 @@
         
           <div class="file">
             <i class="fas fa-file-code"></i>
+            <a href="../%E9%BE%99%E4%BA%BA/">龙人</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
             <a href="../%E8%94%9A%E8%93%9D%E6%A1%A3%E6%A1%88%E6%96%B0%E4%B8%96%E7%95%8C-%E4%BB%85ai%E6%89%92%E5%8F%96/">蔚蓝档案新世界-仅AI扒取</a>
           </div>
         
@@ -235,11 +240,6 @@
             <a href="../%E4%BA%BA%E5%B7%A5%E7%A7%8D%E6%97%8F%E9%87%8D%E5%B9%B3%E8%A1%A1%E8%A1%A5%E4%B8%81/">人工种族重平衡补丁</a>
           </div>
         
-          <div class="file">
-            <i class="fas fa-file-code"></i>
-            <a href="../ai%E9%80%9A%E7%94%A8%E6%8F%90%E7%A4%BA%E8%AF%8D/">AI通用提示词</a>
-          </div>
-        
       </div>
     </div>
     
@@ -256,25 +256,25 @@
           <div class="tag-item">
             <i class="fas fa-tag"></i>
             <a href="../tags/rimworld/">rimworld</a>
-            <span class="count">(24)</span>
+            <span class="count">(25)</span>
           </div>
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
             <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
-            <span class="count">(13)</span>
-          </div>
-        
-          <div class="tag-item">
-            <i class="fas fa-tag"></i>
-            <a href="../tags/%E7%A5%9E%E4%BB%99%E6%96%97%E6%B3%95/">神仙斗法</a>
-            <span class="count">(2)</span>
+            <span class="count">(14)</span>
           </div>
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
             <a href="../tags/%E7%B2%BE%E5%93%81/">精品</a>
             <span class="count">(10)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E7%A5%9E%E4%BB%99%E6%96%97%E6%B3%95/">神仙斗法</a>
+            <span class="count">(2)</span>
           </div>
         
       </div>
@@ -303,7 +303,7 @@
             
             <span class="updated-date">
               <i class="fas fa-sync-alt"></i>
-              更新于 2026-08-16
+              更新于 2026-10-16
             </span>
                         
               <span class="categories">
@@ -5438,7 +5438,7 @@
 <li>停滞者:1h cd,4释放半径2爆炸半径的aoe伤害技能,对范围内生物造成20点割伤[穿],并施加&quot;停滞者&quot;状态,持续8h<br>
 移动操作视觉听觉能力-20% 承伤系数+20% 近战闪避率×50% 双防×70% 打架几率系数×3</li>
 <li>使徒:3天cd的强化技能,为自己添加&quot;使徒&quot;状态,持续12h<br>
-意识+100% 移速+5 双防+60% 热防+100% 近战命中闪避+30 毒素抗性+100% 愈合系数+50% 承伤系数×80% 易燃性×0% 近战护甲穿透×150% 瞄准时间×80% 远程冷却时间×80% 死亡后复活且清除该buff</li>
+意识+100% 移速+5 双防+60% 热防+100% 近战命中闪避+30 毒素抗性+100% 愈合系数+50% 承伤系数×80% 易燃性×0% 近战护甲穿透×150% 瞄准时间×80% 远程冷却时间×80% 死亡后复活且清除该状态,拥有&quot;金言使者&quot;状态时,复活五次后清除状态</li>
 <li>堤福俄斯:20s cd,21释放半径的大跳技能,注意是大跳不是瞬移</li>
 <li>血流:20s cd,11释放半径的aoe伤害技能,向释放点释放90°扇形冲击波,将所有生物一格一格击退到释放点以外,每次击退都造成10割伤[穿]和4s眩晕</li>
 <li>提西福涅:1天cd的强化技能,为自身添加&quot;提西福涅&quot;状态,持续6h<br>
@@ -5469,6 +5469,9 @@
 <li>6级及以上时,当与攻击者距离介于6~21且&quot;堤福俄斯&quot;计数器≤0时,若自身携带非近战武器,则进行随机大跳,并将计数器重置为20.若携带近战武器,则大跳到攻击者所在格(不重置计数器)</li>
 <li>7级及以上时,当与攻击者距离≤11且&quot;血流&quot;计数器≤0时,向攻击者释放&quot;血流&quot;,并将计数器重置为8</li>
 <li>9级及以上时,当&quot;急袭猛禽&quot;计数器≤0时,在自身6半径内寻找尸体并向该尸体释放&quot;急袭猛禽&quot;,并将计数器重置为8,若未找到尸体,则将计数器重置为2</li>
+<li>远域者生成时自带武器成长值,近战武器有(5~9)×(人工种族等级-1)的初始额外攻击力</li>
+<li>生成袭击时候固定带有一个混沌之家干部,10级的&quot;混沌之家干部&quot;固定装备一般品质的&quot;悖论之裙&quot;,“悖论之黑曜石&quot;和&quot;亚玻伦”,并附带永久的&quot;金言使者&quot;状态,生成时会在20半径内生成一个1×2大小2000耐久的&quot;虚空之祭坛&quot;建筑,该建筑每3小时生成10个敌对远域者,摧毁后掉落10命运装置<br>
+意识+300% 移动操作视觉听觉能力+300% 三防+500% 近战命中闪避+120 近战穿甲+2000%[不生效] 毒素抗性+300% 愈合系数+150% 承伤×30% 瞄准时间×20% 远程冷却时间×20%[不生效] 拥有该状态时,&quot;使徒&quot;状态改为可复活五次</li>
 </ul>
 <p>一技能就是一个重量级,第一次被4距离以内的人攻击到时就会释放,伤害不高,但是5%失血实在是太酷辣,触发13次就能给你一个人干倒地,我哪怕你每次都给对面秒掉,那13个人也能换倒你一个主力近战,恐怖,无需多言<br>
 七技能血流也是重量级,强制眩晕你,而且这个技能可以破封闭阵地(虽然你玩人工种族了应该用不到阵地),强制击退强制眩晕.<br>
@@ -5481,7 +5484,7 @@
 <p><strong>Mod其余内容</strong>:</p>
 <ul>
 <li>专属派系: 混沌之家 太空科技等级的永久敌对隐藏派系,在45天后解锁袭击</li>
-<li>添加了材料 命运装置:仅能通过专属事件&quot;运输员经过&quot;获取,打至跪地后掉落20个命运装置<br>
+<li>添加了材料 命运装置:可通过专属事件&quot;运输员经过&quot;获取,打至跪地后掉落20个命运装置;也可摧毁袭击中的&quot;虚空之祭坛&quot;建筑获得,每次掉落10命运装置<br>
 耐久度上限800% 三防150% 利器钝器伤害系数<eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>350</mn><mi mathvariant="normal">%</mi><mo>×</mo><mn>200</mn><mi mathvariant="normal">%</mi><mo>=</mo><mn>700</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">350\%\times 200\%=700\%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.0833em;"></span><span class="mord">350%</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">200%</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">700%</span></span></span></span></eq> 近战冷却时间90% 工作量3000% 易燃性0% 美观度7000%</li>
 <li>添加的医疗品配方:
 <ul>
@@ -5497,6 +5500,8 @@
 <li>兽之炎:30玻璃钢+50钢铁+3魔鬼素+3高级零部件 18射程5半径的毒气手雷,落点产生15~25s毒气,每秒对范围内生物添加2%毒素(无视体型毒抗)</li>
 <li>兽之铳:30玻璃钢+50钢铁+3魔鬼素+3高级零部件 1s前摇0.8s后摇32射程6×7伤80%穿甲的枪,四距离精度全50,传奇级dpsa21.1,叠1%瞄准时间为39.4.每点实际伤害附加0.7%毒素(受体型,毒素抗性影响)</li>
 <li>兽之加农:30玻璃钢+50钢铁+3魔鬼素+3高级零部件 3.5s前摇1.5s后摇50射程35伤80%穿甲的狙,四距离精度20/30/90/95,传奇级dpsa7.1,叠1%瞄准时间为23.3.每点实际伤害附加0.7%毒素(受体型,毒抗影响)</li>
+<li>不灭:伽蓝洞的残骸专属结局获得 25伤/0.7s,无视护甲,击杀任何生物后伤害永久+0.05 对生物造成伤害后对自身6半径内的所有敌人造成一次近战伤害(不可闪避),并造成1s眩晕</li>
+<li>亚玻伦:10级混沌之家干部专属 25伤/0.3s,无视护甲,击杀任何生物后伤害永久+0.05 对生物造成伤害后对自身3半径内的所有敌人造成同等伤害,并扣除其10%饥饿度给攻击者</li>
 </ul>
 </li>
 <li>添加的衣物,全是[专]属服装:
@@ -5508,8 +5513,10 @@
 <li>极恶装具:50金属 瞄准时间-10% 远程冷却时间-0.1</li>
 <li>极恶正装:600皮革或纤维 全局普通工作速度+30%</li>
 <li>极恶外套ABCDE:70皮革或纤维 110%材料效果乘数</li>
-<li>破败之盔:100玻璃钢+25铀+2高级零部件 100%双防 300%热防 承伤-10% 瞄准时间-10% 远程冷却时间-0.1 最高最低舒适温度±25℃ 易燃性-50% 全局普通工作速度+20%</li>
-<li>破败铠甲:100玻璃钢+25铀+2高级零部件 100%双防 300%热防 承伤-10% 瞄准时间-10% 远程冷却时间-0.1 最高最低舒适温度±25℃ 易燃性-50%</li>
+<li>破败之盔:100玻璃钢+25铀+2高级零部件 100%双防 200%热防 承伤-10% 瞄准时间-10% 远程冷却时间-0.1 最高最低舒适温度±25℃ 易燃性-50% 全局普通工作速度+20%</li>
+<li>破败铠甲:100玻璃钢+25铀+2高级零部件 100%双防 200%热防 承伤-10% 瞄准时间-10% 远程冷却时间-0.1 最高最低舒适温度±25℃ 易燃性-50%</li>
+<li>悖论之黑曜石:500命运装置+2500玻璃钢 200%三防 全局普通工作速度+80% 承伤-45% 瞄准时间-40% 远程冷却时间-0.4[不生效] 最高最低舒适温度±25℃ 易燃性-2000%</li>
+<li>悖论之裙:500命运装置+2500玻璃钢 200%三防 承伤-45% 瞄准时间-50% 远程冷却时间-0.5[不生效] 最高最低舒适温度±500℃ 易燃性-1000%</li>
 </ul>
 </li>
 <li>添加的事件:<code>HAR_OT_Incident_a/b/c/d/e</code>
@@ -5522,7 +5529,7 @@
 累计兑换1000尸体后进入30天的启动仪式,期间每25h触发一次袭击,结束后在如下选项中二选一并进入结束动画,并在殖民地边缘生成&quot;灾厄空洞&quot;雕像,7×7大小,320000美观度:
 <ol>
 <li>删除&quot;混沌之家&quot;派系,所有派系好感+100</li>
-<li>让一个小人获得永久的&quot;神知&quot;状态<br>
+<li>让一个小人获得永久的&quot;神知&quot;状态,并获得传奇级不灭<br>
 意识+200% 移速+5 双防+120% 热甲+200% 近战命中闪避+60 毒素抗性+200% 愈合系数+150% 真空抗性+200% 承伤系数×30% 易燃性×0% 近战护甲穿透×200% 瞄准时间×30% 远程冷却时间×30%<br>
 禁用心情以及所有原版需求.死亡后无限复活,每次死亡+20%&quot;苏生片刻&quot;状态,每天自动下降100%,达到100%时强制最大移动能力0%(直接倒地)</li>
 </ol>
@@ -11618,7 +11625,7 @@ aya在各种buff远程冷却时间中定义的全都是<code>RangedWeapon_Cooldo
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 原版向
+                  rimworld, 种族, 精品
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -11659,7 +11666,7 @@ aya在各种buff远程冷却时间中定义的全都是<code>RangedWeapon_Cooldo
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 原版向
+                  rimworld, 种族, 精品
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -11700,7 +11707,7 @@ aya在各种buff远程冷却时间中定义的全都是<code>RangedWeapon_Cooldo
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 正义
+                  rimworld, 正义, 种族
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -11741,7 +11748,7 @@ aya在各种buff远程冷却时间中定义的全都是<code>RangedWeapon_Cooldo
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 种族
+                  rimworld, 种族, 微正义
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -11782,7 +11789,7 @@ aya在各种buff远程冷却时间中定义的全都是<code>RangedWeapon_Cooldo
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 正义
+                  rimworld, 正义, 种族
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -11823,7 +11830,7 @@ aya在各种buff远程冷却时间中定义的全都是<code>RangedWeapon_Cooldo
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 原版向
+                  rimworld, 种族, 精品
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -12009,7 +12016,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-10-11
+      2026-10-18
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -12139,7 +12146,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1791717145699"></script>
+<script src="../js/password-protect.js?v=1792321388843"></script>
 
     <script>
       // 移动端菜单切换

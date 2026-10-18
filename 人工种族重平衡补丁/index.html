@@ -65,7 +65,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1791717145688">
+  <link rel="stylesheet" href="../css/post.css?v=1792321388833">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -202,6 +202,11 @@
         
           <div class="file">
             <i class="fas fa-file-code"></i>
+            <a href="../%E9%BE%99%E4%BA%BA/">龙人</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
             <a href="../%E8%94%9A%E8%93%9D%E6%A1%A3%E6%A1%88%E6%96%B0%E4%B8%96%E7%95%8C-%E4%BB%85ai%E6%89%92%E5%8F%96/">蔚蓝档案新世界-仅AI扒取</a>
           </div>
         
@@ -235,11 +240,6 @@
             <a href="../ai%E9%80%9A%E7%94%A8%E6%8F%90%E7%A4%BA%E8%AF%8D/">AI通用提示词</a>
           </div>
         
-          <div class="file">
-            <i class="fas fa-file-code"></i>
-            <a href="../%E5%8E%9F%E7%89%88%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">原版相关内容</a>
-          </div>
-        
       </div>
     </div>
     
@@ -256,13 +256,13 @@
           <div class="tag-item">
             <i class="fas fa-tag"></i>
             <a href="../tags/rimworld/">rimworld</a>
-            <span class="count">(24)</span>
+            <span class="count">(25)</span>
           </div>
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
             <a href="../tags/%E6%AD%A3%E4%B9%89/">正义</a>
-            <span class="count">(5)</span>
+            <span class="count">(6)</span>
           </div>
         
           <div class="tag-item">
@@ -297,7 +297,7 @@
             
             <span class="updated-date">
               <i class="fas fa-sync-alt"></i>
-              更新于 2026-10-11
+              更新于 2026-10-18
             </span>
                         
               <span class="categories">
@@ -1249,6 +1249,7 @@
 <li>崩溃临界值20%-&gt;25%</li>
 <li>移除受伤上限,移除无视地形减速无视受伤减速</li>
 <li>人工种族效果修改为 失血量系数30% 三防+50% 疼痛休克阈值+100% 毒素抗性+100% 移速+2.4 近战命中闪避+10 最高最低舒适温度±30℃ 全局普通工作速度×1.25% 愈合系数×150% 承伤系数×75% 易燃性×10% 瞄准时间×50%</li>
+<li>干部hediff修改为 意识移动操作视觉听觉能力+20% 三防+40% 近战命中闪避+4 毒素抗性+300% 愈合系数+150% 承伤×75% 瞄准时间×75%</li>
 </ul>
 <p>技能修改</p>
 <ul>
@@ -1268,15 +1269,16 @@
 三防+10/30/50% 移速+0.5/1/1.5 近战命中闪避+3/4/5 承伤系数×90/80/70% 瞄准时间×90/80/70%</li>
 <li>卵壳修改为15天cd,附加状态修改为<br>
 全能力+50% 移速+1 最高最低舒适温度±50℃ 承伤系数×50%<br>
-&quot;卵壳&quot;状态下,拦截部分新的负面状态(已有的不会清除),并使所有部位耐久度暂时翻二倍,结束状态时,所有伤口严重度降低为50%,并变回正常耐久度.</li>
+&quot;卵壳&quot;状态下,拦截部分新的负面状态(已有的不会清除),并使所有部位耐久度暂时翻二倍,结束状态时,所有伤口严重度降低为50%,并变回正常耐久度</li>
 </ol>
 <p>武器修改</p>
 <ul>
 <li>近战武器制作成本修改为120钢铁+30玻璃钢</li>
 <li>远程武器制作成本修改为80玻璃钢+3魔鬼素</li>
-<li>三把近战武器伤害修改为13伤/s,移除附加效果(保留击杀增伤)</li>
+<li>三把近战武器伤害修改为13伤/s,移除附加效果(保留击杀增伤),现在受到利器护甲影响</li>
 <li>兽之铳穿甲改为25%</li>
-<li>不灭改为18伤/0.7s,保留击杀增伤,降低价值,耐久度降低为500</li>
+<li>不灭改为18伤/0.7s,保留击杀增伤,降低价值,耐久度降低为500,眩晕改为0.2s</li>
+<li>亚玻伦改为10伤/0.5s,保留击杀增伤,耐久度降低为500</li>
 </ul>
 <p>衣物修改</p>
 <ul>
@@ -1286,7 +1288,7 @@
 <li>极恶耳机附加效果改为 全局工作速度+10% 普通工作速度+10%</li>
 <li>极恶装具修改为 瞄准时间-20%</li>
 <li>破败套修改为海军套,附加效果修改为 易燃性-50% 承伤系数-5% 瞄准时间-5% 真空抗性+100%</li>
-<li>新装甲修改为骑士套+20命运装置,附加效果修改为 易燃性-100% 承伤-10% 瞄准时间-10% 真空抗性+100%</li>
+<li>悖论套修改为骑士套+2命运装置,附加效果修改为 易燃性-100% 承伤-10% 瞄准时间-10% 真空抗性+100%</li>
 </ul>
 <p>其余修改</p>
 <ul>
@@ -1295,8 +1297,9 @@
 <li>最终状态&quot;神知&quot;修改为:意识+80% 移速+3 三防+120% 近战命中闪避+15 毒素抗性+200% 愈合系数+150% 真空抗性+200% 承伤系数×30% 易燃性×0% 瞄准时间×50% 远程冷却时间×50%</li>
 <li>每次死亡+2苏生片刻,每天下降1点</li>
 <li>命运装置 把实际不生效的值删除,修改为 13价值 耐久度上限300% 三防100%/100%/100% 近战冷却时间90% 利器钝器伤害140% 工作量100% 易燃性0% 美观度100%</li>
+<li>远域者生成时自带的武器成长值降低为(0~2)×(人工种族等级-1),允许小鼠;虚空之祭坛改为3小时生成5远域者;拥有&quot;金言使者&quot;状态时,&quot;使徒&quot;由减少20%严重度改为减少50%严重度(五次复活改为两次复活)</li>
+<li>武器研究改为1500点数</li>
 </ul>
-<p>武器研究改为1500点数</p>
 <p>派系修改(若开启<code>修改AyaRace袭击</code>)</p>
 <ul>
 <li>袭击频率改为1</li>
@@ -1497,6 +1500,7 @@
 <li>兼容CanaanIntellect</li>
 <li>兼容CanaanIntellect更新的技能.残虐利刃穿甲伤害硬编码在c#</li>
 <li>兼容了CanaanIntellect更新的圣餐</li>
+<li>兼容了远域者新更新的武器和机制</li>
 </ol>
 <p>V1.0 初始版本<br>
 V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
@@ -1577,7 +1581,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 正义
+                  rimworld, 正义, 种族
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1618,7 +1622,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 正义
+                  rimworld, 正义, 种族
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1659,7 +1663,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 微正义, 种族
+                  rimworld, 种族, 微正义
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1700,7 +1704,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 负正义, 正义
+                  rimworld, 正义, 负正义
                   
                 </span>
               
@@ -1778,7 +1782,7 @@ V1.1 兼容CanaanIntellect,小修虎鲸甲和各种券价值</p>
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 原版向, 精品
+                  rimworld, 精品, 原版向
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -1964,7 +1968,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="status-item">
       <i class="fas fa-clock"></i>
-      2026-10-11
+      2026-10-18
     </div>
     <div class="status-item">
       Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
@@ -2094,7 +2098,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1791717145689"></script>
+<script src="../js/password-protect.js?v=1792321388833"></script>
 
     <script>
       // 移动端菜单切换
