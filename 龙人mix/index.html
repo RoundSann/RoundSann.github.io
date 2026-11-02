@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>龙人Mix | 缘神</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="A simple dark Hexo theme inspired by code.">
+  <meta name="keywords" content="rimworld,种族,正义,负正义">
+  <meta name="author" content="Round">
+  <link rel="canonical" href="https://RoundSann.github.io">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="龙人Mix | 缘神">
+  <meta property="og:description" content="A simple dark Hexo theme inspired by code.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://RoundSann.github.io">
+  <meta property="og:site_name" content="缘神">
+  <meta property="article:published_time" content="2026-10-17T07:57:08.000Z">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="龙人Mix | 缘神">
+  <meta name="twitter:description" content="A simple dark Hexo theme inspired by code.">
+
+  <!-- Favicon 配置 -->
+  
+    
+      <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    
+    
+      <link rel="icon" type="image/png" sizes="16x16" href="../favicon.ico">
+    
+    
+      <link rel="icon" type="image/png" sizes="32x32" href="../favicon.ico">
+    
+    
+      <link rel="icon" type="image/png" sizes="192x192" href="../favicon.ico">
+    
+    
+      <link rel="apple-touch-icon" sizes="180x180" href="../favicon.ico">
+    
+  
+
+  <!-- 外部样式 - 统一使用 jsdelivr CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- 代码高亮样式 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-dark.min.css" crossorigin="anonymous">
+
+  <!-- Mermaid.js 库 (defer加载) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" crossorigin="anonymous"></script>
+
+  <!-- 主题样式 -->
+  <link rel="stylesheet" href="../css/theme-colors.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/code.css">
+  <link rel="stylesheet" href="../css/code-custom.css">
+  <link rel="stylesheet" href="../css/code-languages.css">
+  <link rel="stylesheet" href="../css/mermaid.css">
+
+  <link rel="stylesheet" href="../css/vs-code.css">
+  <link rel="stylesheet" href="../css/post.css?v=1793614761553">
+  <link rel="stylesheet" href="../css/tag.css">
+  <link rel="stylesheet" href="../css/categories.css">
+  <link rel="stylesheet" href="../css/archive.css">
+  <link rel="stylesheet" href="../css/search.css">
+  <link rel="stylesheet" href="../css/mobile.css">  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/elements.css">
+
+  <!-- 添加 JetBrains Mono 字体 -->  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Add any custom head content here -->
+
+  <script defer src="../js/explorer.js"></script>
+  <script defer src="../js/code-enhance.js"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+    <div class="wrapper">
+      <div class="mobile-menu-toggle" aria-label="Toggle sidebar menu" role="button" tabindex="0">
+        <i class="fas fa-bars"></i>
+      </div>
+      <!-- 移动端侧边栏遮罩层 -->
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+      <header class="vs-header">
+  <nav class="vs-nav">
+    <div class="nav-left">
+      <a href="/" class="nav-brand">
+        <i class="fas fa-terminal"></i>
+        缘神
+      </a>
+    </div>
+    
+    <div class="nav-right">
+      <a href="/" class="nav-item ">
+        <i class="fas fa-home"></i>
+        <span>首页</span>
+      </a>
+      <a href="/archives/" class="nav-item ">
+        <i class="fas fa-archive"></i>
+        <span>归档</span>
+      </a>
+      <a href="/categories/" class="nav-item ">
+        <i class="fas fa-folder"></i>
+        <span>分类</span>
+      </a>
+      <a href="/tags/" class="nav-item ">
+        <i class="fas fa-tags"></i>
+        <span>标签</span>
+      </a>
+      <a href="/search/" class="nav-item ">
+        <i class="fas fa-search"></i>
+        <span>搜索</span>
+      </a>
+      <a href="/about/" class="nav-item ">
+        <i class="fas fa-info-circle"></i>
+        <span>关于</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  function smoothScroll(event, target) {
+    event.preventDefault();
+    const targetId = target.substring(target.indexOf('#') + 1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 50, // 调整偏移量
+        behavior: 'smooth'
+      });
+    } else {
+      window.location.href = target;
+    }
+  }
+
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.vs-header');
+    const nav = document.querySelector('.vs-nav');
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    
+    nav.style.setProperty('--scroll-percent', `${scrollPercent}%`);
+    
+    if (window.scrollY > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // 添加标签页切换动画
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      const ripple = document.createElement('span');
+      ripple.classList.add('nav-ripple');
+      this.appendChild(ripple);
+      
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      setTimeout(() => ripple.remove(), 1000);
+    });
+  });
+</script>
+
+
+<div class="vscode-container">
+  <!-- 左侧资源管理器 -->
+  <div class="sidebar-explorer">
+    <!-- TOC导航 -->
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-list"></i>
+        <span>目录</span>
+      </div>
+      <div class="section-content">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%8D%E6%97%8F%E6%9C%AC%E4%BD%93"><span class="toc-text">种族本体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%91%E6%8A%80%E4%B8%8E%E5%89%A7%E6%9C%AC"><span class="toc-text">科技与剧本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-text">元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E9%BE%99%E7%8F%A0"><span class="toc-text">特殊龙珠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A6%E5%99%A8"><span class="toc-text">武器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%91%E6%88%98%E6%AD%A6%E5%99%A8"><span class="toc-text">近战武器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BE%99%E5%B0%BE"><span class="toc-text">龙尾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%AD%A6%E5%99%A8"><span class="toc-text">远程武器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A3%E7%89%A9"><span class="toc-text">衣物</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B4%BE%E7%B3%BB"><span class="toc-text">派系</span></a></li></ol>
+      </div>
+    </div>
+
+    <!-- 同分类文章 -->
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-folder"></i>
+        <span>同分类文章</span>
+      </div>
+      <div class="section-content">
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E9%BE%99%E4%BA%BA/">龙人</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E8%94%9A%E8%93%9D%E6%A1%A3%E6%A1%88%E6%96%B0%E4%B8%96%E7%95%8C-%E4%BB%85ai%E6%89%92%E5%8F%96/">蔚蓝档案新世界-仅AI扒取</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E8%9A%81%E6%97%8F/">蚁族</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E5%A2%A8%E8%AF%BA%E7%81%B5/">墨诺灵</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E7%BE%8E%E7%8B%90%E6%89%A9%E5%B1%95-%E6%98%9F%E7%8E%AF-%E4%BB%85ai%E6%89%92%E5%8F%96/">美狐扩展-星环-仅ai扒取</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E7%BE%8E%E7%8B%90/">美狐</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E7%BB%AE%E7%BD%97/">绮罗</a>
+          </div>
+        
+          <div class="file">
+            <i class="fas fa-file-code"></i>
+            <a href="../%E4%BA%BA%E5%B7%A5%E7%A7%8D%E6%97%8F%E9%87%8D%E5%B9%B3%E8%A1%A1%E8%A1%A5%E4%B8%81/">人工种族重平衡补丁</a>
+          </div>
+        
+      </div>
+    </div>
+    
+    
+    <!-- 标签列表 -->
+    
+    <div class="explorer-section">
+      <div class="section-header">
+        <i class="fas fa-tags"></i>
+        <span>文章标签</span>
+      </div>
+      <div class="section-content">
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/rimworld/">rimworld</a>
+            <span class="count">(26)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
+            <span class="count">(15)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E6%AD%A3%E4%B9%89/">正义</a>
+            <span class="count">(6)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E8%B4%9F%E6%AD%A3%E4%B9%89/">负正义</a>
+            <span class="count">(4)</span>
+          </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- 主要内容区域 -->
+  <div class="editor-content">
+    <div class="tab-bar">
+      <div class="tab active">
+        <i class="fas fa-file-alt"></i>
+        <span>龙人Mix.md</span>
+      </div>
+    </div>
+    
+    <div class="content-area">
+      <article class="post-content">
+        <div class="post-header">
+          <h1>龙人Mix</h1>
+          <div class="post-meta">
+            <span class="date">
+              <i class="fas fa-calendar-alt"></i>
+              2026-10-17
+            </span>
+            
+            <span class="updated-date">
+              <i class="fas fa-sync-alt"></i>
+              更新于 2026-10-31
+            </span>
+                        
+              <span class="categories">
+                <i class="fas fa-folder"></i>
+                <div class="categories-list">
+                  <ul class="category-item-post-list"><li class="category-item-post-list-item"><a class="category-item-post-list-link" href="../categories/rimworld/">rimworld</a></li></ul>
+                </div>
+              </span>
+            
+            
+              <span class="tags">
+                <i class="fas fa-tags"></i>
+                <div class="tags-list">
+                  <ul class="tag-item-post-list" itemprop="keywords"><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/rimworld/" rel="tag">rimworld</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E6%AD%A3%E4%B9%89/" rel="tag">正义</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E7%A7%8D%E6%97%8F/" rel="tag">种族</a></li><li class="tag-item-post-list-item"><a class="tag-item-post-list-link" href="../tags/%E8%B4%9F%E6%AD%A3%E4%B9%89/" rel="tag">负正义</a></li></ul>
+                </div>
+              </span>
+            
+          </div>
+        </div>
+        
+        <div class="post-body vscode-markdown">
+          <h3 id="种族本体">种族本体</h3>
+<ul>
+<li>移除龙人背景故事的工作禁用,部分背景故事会强制附带特性</li>
+<li>移除屠宰产出龙珠,并将龙珠改为内部器官,命中率1%,不影响任何能力,可使用10玻璃钢安装玻璃龙珠(安了也没用)</li>
+<li>野生龙人有30%概率带有特殊龙尾,派系的龙人黑龙人比例为85:15</li>
+<li>冰霜吐息技能改为100%穿甲的20点急速冷却伤</li>
+<li>火焰吐息技能改为0%穿甲的10点护甲熔解伤</li>
+</ul>
+<h3 id="科技与剧本">科技与剧本</h3>
+<img src="/images/龙人Mix/龙人Mix-科技.png" style="max-width: 65em">
+<p>添加了新的科技树,并将原版龙人的相关科技并入&quot;龙娘科技&quot;研究内</p>
+<p>将原版龙娘剧本初始研究由部落改为迫降,并添加了新的剧本 龙娘新窝</p>
+<ul>
+<li>3龙人开局,中世纪科技,初始完成迫降研究,与帝国永久敌对</li>
+<li>开局物品:极佳龙娘手枪,极佳龙娘线膛燧发枪,3龙珠,100布,400原木</li>
+<li>每10天触发一次野人出现</li>
+</ul>
+<h2 id="元素">元素</h2>
+<p>爆炸类型都不会伤害携带者(被自爆的那个人)</p>
+<ul>
+<li>护甲熔解:热防判定,命中时可点燃目标,每点实际伤害累计2%护甲熔解状态值,每天自然下降400%<br>
+状态值≥20%(较轻) 热防-15% 烧伤灼伤受伤×2<br>
+状态值≥35%(中等) 热防-35% 烧伤灼伤受伤×3.5<br>
+状态值≥50%(严重) 热防-65% 烧伤灼伤受伤×4.5<br>
+状态值≥65%(极重) 热防-80% 烧伤灼伤受伤×6<br>
+状态值≥85%(完全) 热防-200% 烧伤灼伤受伤×8</li>
+<li>高压触电:热防判定,命中时可点燃目标,每点实际伤害累计2%高压触电状态值,每天自然下降400%,持续期间每40tick受到1~5点emp伤<br>
+状态值≥20%(较轻) 移动操作能力-20%<br>
+状态值≥35%(中等) 移动操作能力-40%<br>
+状态值≥50%(严重) 移动操作能力-60%<br>
+状态值≥65%(极重) 移动操作能力-80%<br>
+状态值≥85%(完全) 移动操作能力最大0%</li>
+<li>急速冷却:热防判定,每点实际伤害累计1%急速冷却状态值,每天自然下降600%,持续期间每1.5s受到1~2点眩晕<br>
+状态值≥20%(2/8) 意识-10% 最低舒适温度+40℃<br>
+状态值≥35%(3/8) 意识-20% 最低舒适温度+80℃<br>
+状态值≥50%(4/8) 意识-20% 最低舒适温度+120℃<br>
+状态值≥65%(5/8) 意识-30% 最低舒适温度+160℃<br>
+状态值≥85%(6/8) 意识-30% 最低舒适温度+200℃<br>
+状态值≥125%(7/8) 意识-50% 最低舒适温度+500℃<br>
+状态值≥250%(8/8) 意识-50% 最低舒适温度+1000℃</li>
+<li>FrostCoverd:热防判定,每点实际伤害累计1%FrostCoverd状态值(受体型缩放),2s后爆炸,造成4半径10%穿甲的5点急速冷却伤,并生成4半径的冻雾<br>
+状态值≥20%(较轻) 移动能力-10%<br>
+状态值≥35%(中等) 移动能力-20%<br>
+状态值≥50%(严重) 移动能力-30%<br>
+状态值≥65%(极重) 移动能力-40%<br>
+状态值≥85%(完全) 移动能力-50%</li>
+<li>冷冻摧毁机制:使用急速冷却或FrostCoverd伤害类型对带有&quot;急速冷却&quot;状态的目标造成伤害时,若单次伤害达到目标受击部位最大生命的指定比例,则有25%概率直接摧毁该部位<br>
+状态值≥20%(2/8) 需造成该部位最大生命80%伤害<br>
+状态值≥35%(3/8) 需造成该部位最大生命65%伤害<br>
+状态值≥50%(4/8) 需造成该部位最大生命50%伤害<br>
+状态值≥65%(5/8) 需造成该部位最大生命35%伤害<br>
+状态值≥85%(6/8) 需造成该部位最大生命15%伤害<br>
+状态值≥125%(7/8) 需造成该部位最大生命1%伤害<br>
+状态值≥250%(8/8) 需造成该部位最大生命0.1%伤害</li>
+<li>酸性沾染:利防判定,每点实际伤害累计1%酸性沾染状态值,每天自然下降400%,最长30s,持续期间每40tick受到1~5点无视护甲的酸性腐蚀伤 使用承伤减益</li>
+<li>酸雾沾染:利防判定,每点实际伤害累计1%酸性沾染和酸雾沾染状态值,2s后爆炸,造成2半径10%穿甲的5点酸性腐蚀伤,并有10%概率生成一格酸雾<br>
+状态值≥20%(较轻) 承伤×125%<br>
+状态值≥35%(中等) 承伤×175%<br>
+状态值≥50%(严重) 承伤×235%<br>
+状态值≥65%(极重) 承伤×285%<br>
+状态值≥85%(完全) 承伤×325%</li>
+<li>酸性腐蚀:利防判定,每点实际伤害累计1%酸性腐蚀状态值,每天自然下降400%,最长30s<br>
+状态值≥20%(较轻) 利防-15% 钝防-10%<br>
+状态值≥35%(中等) 利防-35% 钝防-30%<br>
+状态值≥50%(严重) 利防-65% 钝防-60%<br>
+状态值≥65%(极重) 利防-80% 钝防-75% 承伤×285%<br>
+状态值≥85%(完全) 双防-200%</li>
+<li>黏菌附着:利防判定,每点实际伤害累计1%黏菌附着状态值(受体型缩放),3.3s后爆炸,造成3半径10%穿甲的30点炸伤 使用移动能力减益</li>
+<li>黏菌附着(小):利防判定,每点实际伤害累计1%黏菌附着(小)状态值(受体型缩放),1.7s后爆炸,造成2半径10%穿甲的5点炸伤 使用移动能力减益<br>
+状态值≥20%(较轻) 移动能力-10%<br>
+状态值≥35%(中等) 移动能力-20%<br>
+状态值≥50%(严重) 移动能力-30%<br>
+状态值≥65%(极重) 移动能力-40%<br>
+状态值≥85%(完全) 移动能力-50%</li>
+<li>死灵病毒:无视护甲承伤,每点实际伤害累计4%死灵病毒状态值,每天自然下降400%,持续期间死亡直接变为敌对派系蹒跚怪<br>
+状态值≤50%(潜伏期) 平均5天呕吐一次<br>
+状态值≥50%(活跃期) 疼痛×150% 平均每天呕吐一次<br>
+状态值≥75%(终末期) 意识最大70% 疼痛×200% 平均0.5天猝死一次<br>
+状态值≥95%(终末期) 死亡</li>
+</ul>
+<p>护甲熔解是一个完全没用的元素,降低热防效果较为一般,易伤效果则完全没用,它只对原版的烧伤灼伤有易伤效果,你好歹是给护甲熔解伤加易伤啊,鉴定为NPC<br>
+高压触电就很强了,虽然emp数值低下,但状态强力,只需42.5伤就能让敌人移动能力归零强制倒地,目标是成为肾肺心大师,综合给到夯爆了<br>
+急速冷却也相当强力,他每1.5s会造成0.5s~1s眩晕,全宇宙最强的控制,当敌对龙人对你使出冰霜吐息时,你就会了解这个眩晕机制是多么恶心的存在.除此之外还有一个存在感略低的冷冻摧毁机制,综合给到夯爆了<br>
+FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强力的急速冷却状态,其主要问题在于冻雾是不分敌我的aoe技能,对于龙人这样一个近战为主的种族,冻雾同时会对己方施加急速冷却状态进而造成眩晕,考虑到使用得当可以对敌人造成很强力的眩晕,综合给到人上人<br>
+酸性沾染数值平庸,每40tick受1~5点酸性腐蚀伤,折合4.5的dps,给到平平无奇的NPC<br>
+酸雾沾染存在感也相当低,但同样由于是不分敌我的aoe,其对己方的影响可能大于对敌方的影响,给到拉完了<br>
+酸性腐蚀更诡异了,减双防本身只对生物自身的防御有效,承伤增加竟然只在极重时生效,在完全时候竟然就没了<br>
+黏菌附着则是史上第二的骗局,表面上是大范围aoe,实则是对己方的大范围aoe,如果你列装了黏菌附着武器,你会惊人地发现,怎么自家龙人受到的伤害全tm是炸伤<br>
+死灵病毒更是史上最大的骗局,死亡变成蹒跚怪是好事,等等,什么叫tm敌对蹒跚怪?你的意思是我杀死敌人一次之后还得杀他第二次,甚至宰掉之后会直接腐烂不给吃肉?给到唯一的拉完了</p>
+<p>气体:仅对非机械体生物生效,受毒素抗性影响</p>
+<ul>
+<li>恐惧毒气:持续30~50s,每2s施加1%~100%的恐惧毒气状态</li>
+<li>酸雾:持续30~50s,每4s施加1%~10%的酸性沾染状态</li>
+<li>冻雾:持续5~10s,每4s施加1%~10%的急速冷却状态</li>
+<li>霜雾:持续5~10s,每4s施加1%~10%的FrostCoverd状态</li>
+</ul>
+<h2 id="特殊龙珠">特殊龙珠</h2>
+<p>特殊龙珠不可制作,只能任务获得或作为仿生体在商队或据点刷新,除酸解龙珠为400银外均为1000银,且植入龙珠手术一定成功</p>
+<ul>
+<li>穿戴或植入龙珠造成伤害时(无论近战远程),额外对受伤部位造成10%穿甲,20%×实际伤害值的特定元素伤害(最低0.5伤),若穿戴一个龙珠植入一个龙珠,元素附伤可叠加</li>
+<li>植入龙珠时,还会有额外技能,龙珠额外技能还会作为心灵训练器出售,每个100银</li>
+</ul>
+<p>龙珠的附伤并不如想象中那么强力,首先基础伤害会过一遍护甲和承伤作为实际伤害,而附伤是20%的实际伤害,且附伤也要过一遍护甲和承伤,折合下来附伤相当于要过两次护甲和承伤,同时附伤均为10%穿甲,可以说面对中高甲的情况下几乎没有附加伤害.尤其是使用几个热防判定的伤害类型攻击200%热防的机械族时,可以说是近乎可以忽略附加伤害</p>
+<p>具体龙珠如下</p>
+<ul>
+<li>火炎龙珠:附伤为护甲熔解伤.植入时额外获得如下两个技能<br>
+火焰喷射:0.5s前摇30s cd,23释放半径13°扇形范围,30熵4%精神力消耗,对范围内生物造成45%穿甲的30点护甲熔解伤<br>
+火焰爆发:1.5s前摇1天cd,13爆炸半径,30熵4%精神力消耗,对范围内生物(包括自身)造成120%穿甲的80点护甲熔解伤</li>
+<li>雷光龙珠:附伤为高压触电伤.植入时额外获得如下两个技能<br>
+雷电招来:1s前摇30s cd,25释放半径5爆炸半径,35熵4%精神力消耗,对范围内生物造成100%穿甲的45点高压触电伤<br>
+闪电风暴:1s前摇1天cd,30释放半径13爆炸半径,50熵8%精神力消耗,同原版闪电风暴,伤害被替换为100%穿甲的45点高压触电伤</li>
+<li>冰结龙珠:附伤为FrostCoverd伤.植入时额外获得如下技能<br>
+冰淞云雾:1s前摇1天cd,25释放半径7爆炸半径,25熵4%精神力消耗,对范围内生物造成50%穿甲的20点FrostCoverd伤,并在范围内生成霜雾和致盲烟雾</li>
+<li>酸解龙珠:附伤为酸性沾染伤,植入时额外获得如下两个技能,植入且死亡时溶解所有装备,并对7半径的生物造成0%穿甲的40点酸性沾染伤<br>
+酸液喷吐:0.5s前摇30s cd,23释放半径4爆炸半径(残缺),25熵3%精神力消耗,对范围内生物造成80%穿甲的30点酸性沾染伤<br>
+酸性云雾:1s前摇1天cd,25释放半径10爆炸半径,20熵3%精神力消耗,对范围内生物造成50%穿甲的25点酸性沾染伤,并在范围内生成酸雾和致盲烟雾</li>
+<li>毒素龙珠:附伤为原版毒击,植入时额外获得如下技能<br>
+释放有毒气体:1s前摇1天cd,25释放半径10爆炸半径,20熵3%精神力消耗,生成10半径的原版毒气</li>
+<li>死灵龙珠:附伤为死灵病毒伤,植入时额外获得如下技能<br>
+死灵尘雾:1s前摇1天cd,25释放半径10爆炸半径,35熵5%精神力消耗,生成10半径的原版死灵尘</li>
+<li>超再生珠:植入时,愈疗100耐久/天,并获得如下技能<br>
+超再生爆发:0.5s前摇1天cd,15熵3%精神力消耗,为自身施加150s的&quot;超再生爆发&quot;状态,愈疗1000耐久/天,疼痛×10%</li>
+<li>硬化龙珠:植入时 双防+70%/50%</li>
+<li>末影龙珠:植入时获得如下两个技能<br>
+折跃:0.25s前摇30s cd,31释放半径,25熵2%精神力消耗,同原版折跃<br>
+远距离折跃:5s前摇1天cd,40熵3%精神力消耗,同原版远距离折跃</li>
+</ul>
+<p>火炎龙珠作为装备较为一般,毕竟护甲熔解状态本身一般<br>
+火焰喷射是平平无奇的aoe技能,伤害尚可但范围诡异,相比于其他超模的龙人技能,就显得很垃圾了<br>
+火焰爆发就很奇葩了,13半径120%穿甲80伤,但会伤到自己,属于是局限性较大的技能,解决自伤问题后这个数值就相当狂暴了,折跃进场直接开大,能直接单刷1w点人类袭击<br>
+雷光龙珠很适合作为装备,高压触电高贵的强制移动能力归零<br>
+雷电招来强度优秀,5半径100%穿甲45点高压触电,45点高压触电伤害如果打满足以让范围内生物全部倒地<br>
+闪电风暴就十分幽默了,幽默雷电速度幽默判定但严肃伤害,伤害惊人但打不中人,你和原版闪电风暴坐一桌去<br>
+酸解龙珠作为装备也较为优秀,白送的4.5dps谁不想要呢<br>
+酸液喷吐完全是雷电招来的下位替代,虽说也是大范围高伤害aoe,但范围穿甲伤害都比雷电招来低一些<br>
+酸性云雾路边一条,在其他大招都在直接秒人的时候,酸解的大招竟然是给敌人施加低伤害自爆buff,真是野狗<br>
+毒素龙珠更是幽默,原版毒伤都来了,毒吃多了该吃尸体腐败肺瘟喽,千万别植入毒素龙珠<br>
+释放有毒气体真是给我整笑了,释放原版毒气都来了,喜欢毒气阵地的宝宝们有福了<br>
+死灵龙珠由于逆天的死灵病毒复活成敌人,给到拉中拉<br>
+死灵尘雾的高强度源于死灵尘本身的高强度,直接生成大范围死灵尘,这谁不怕啊,只可惜其他技能都能直接秒一切了,所以这个技能也只能沦为路边的野狗了<br>
+超再生珠没有任何穿戴作用,作为植入物时每天有100点愈疗效果,本身相当强力,但奈何超再生爆发这个技能</p>
+<p>除此之外还有一个技能,仅能用技能训练器获得</p>
+<ul>
+<li>
+<p>恐惧毒雾:1s前摇1天cd,25释放半径10爆炸半径,20熵3%精神力消耗,生成10半径的恐惧毒气<br>
+状态值&lt;200%(较轻) 视觉能力-30% 呼吸能力-15% 崩溃临界值+14%<br>
+状态值≥200%(中等) 视觉能力-60% 呼吸能力-30% 崩溃临界值+42% 疼痛×120%<br>
+状态值≥300%(严重) 视觉能力最大0% 呼吸能力-60% 崩溃临界值+100% 疼痛×200%</p>
+</li>
+<li>
+<p>护盾龙珠:植入后获得100点个人护盾,每秒回复0.3盾,吸收任何伤害(包括近战伤害)且可正常射击,受到emp伤时破碎<br>
+若单次伤害大于击破前剩余护盾的2倍且剩余护盾低于上限一半,则该次伤害穿透;否则该次伤害仍被完全吸收<br>
+破碎后5秒重置,重置时从0开始恢复</p>
+</li>
+<li>
+<p>护盾赤色充能源石=15玻璃钢+40铀+1黄金+2零部件+8手工 护盾上限+100 回复+0.6/s 护盾重置时间+5s</p>
+</li>
+<li>
+<p>护盾橙色充能源石=15玻璃钢+40铀+1黄金+2高级零部件+8手工 护盾上限+200 回复+1.2/s 护盾重置时间+5s</p>
+</li>
+<li>
+<p>护盾适应源石=15玻璃钢+40铀+1黄金+2高级零部件+8手工 护盾重置时间+5s 受到与上一次相同类型的伤害时,护盾消耗依次为×1.0/0.8/0.6/0.4/0.2(连续同类最低×0.2),换成新伤害类型时为×1.2并重新计数 与缓冲冲突</p>
+</li>
+<li>
+<p>护盾缓冲源石=15玻璃钢+40铀+1黄金+2高级零部件+8手工 护盾重置时间+5s 每次受伤最多扣除10点护盾(不防emp),护盾上限减半 与适应冲突</p>
+</li>
+</ul>
+<h2 id="武器">武器</h2>
+<h3 id="近战武器">近战武器</h3>
+<img src="/images/龙人Mix/龙人Mix-近战武器.png" style="max-width: 65em">
+<p>修改了原版龙人武器的伤害类型</p>
+<ul>
+<li>寒冰锤:无法制作的人格武器 22钝击+20FrostCoverd伤+11眩晕伤/3.35s 龙部件(近战)+20 有-11制冷能力(等价于蒸发制冷器),移除附加低温症</li>
+<li>炽热大剑:无法制作的人格武器 19(割伤,拆除,横扫攻击)/1.38s 龙部件(近战)+20 选中横扫攻击时,转为对目标及其身后的2×3范围造成100%穿甲的40点护甲熔解伤 环境温度高于80℃时有11制热能力</li>
+</ul>
+<p>添加了四种新近战武器</p>
+<ul>
+<li>战锤:80金属+40钢铁+5零部件+40龙人毛发 21钝击+7高压触电伤+15emp伤/3s 17捅伤+5emp伤/2s 龙部件(远程)+1 钝击权重翻10倍</li>
+<li>爆碎锤矛:80金属+40钢铁+5零部件+40龙人毛发 20(钝击,拆除)+20黏菌附着伤+6眩晕伤/4s 8捅伤/2s 龙部件(远程)+1 钝击拆除权重翻10倍</li>
+<li>Δ轰雷战锤:400金属+400龙人毛发+1人格核心+5高级零部件 人格武器 25钝击+14高压触电伤+15emp伤/2.5s 17捅伤+5emp伤/1.5s 钝击权重翻10倍<br>
+使用钝击命中敌人时,额外对被攻击者6半径内的至多5个敌人造成-100%穿甲的25点高压触电伤(无法触发龙珠附伤)<br>
+使用钝击命中敌人时,为自身添加0.5的&quot;唤醒心灵&quot;状态,最大持续30s,状态值增加时刷新时间</li>
+<li>Δ爆碎战锤:400金属+400龙人毛发+1人格核心+5高级零部件 人格武器 20钝击+20黏菌附着伤+11眩晕伤/2.5s 17捅伤/1.5s 钝击权重翻10倍<br>
+使用钝击命中敌人时,额外对被攻击者4半径内的至多3个敌人造成-100%穿甲的20点黏菌附着伤(无法触发龙珠附伤)<br>
+使用钝击命中敌人时,为自身添加0.5的&quot;唤醒心灵&quot;状态,最大持续30s,状态值增加时刷新时间<br>
+状态值&gt;0 近战伤害系数+20%<br>
+状态值≥4 近战伤害系数+40% 近战冷却时间-20%<br>
+状态值≥8 近战伤害系数+60% 近战冷却时间-40%<br>
+状态值≥12 近战伤害系数+80% 近战冷却时间-60%<br>
+状态值≥16 近战伤害系数+100% 近战冷却时间-80%</li>
+</ul>
+<h3 id="龙尾">龙尾</h3>
+<p>添加了两种普通龙尾仿生体和五中攻击龙尾仿生体,后者均为100%效率且不可制作,只能任务获得或作为仿生体在商队或据点刷新,除斩龙尾为300银外均为500银,均为100%效率,且带有移动能力-8%</p>
+<ul>
+<li>假龙尾:85布 35%效率</li>
+<li>仿生尾:15玻璃钢+4高级零部件 125%效率</li>
+<li>斩龙尾:40割伤/3s</li>
+<li>焚斩尾:30割伤+20护甲熔解伤/3s</li>
+<li>酸斩尾:30割伤+20酸性沾染伤/3s</li>
+<li>碎斩尾:30钝击+15黏菌附着伤+15眩晕伤/3s</li>
+<li>霜斩尾:30割伤+20FrostCoverd伤/3s</li>
+</ul>
+<h3 id="远程武器">远程武器</h3>
+<img src="/images/龙人Mix/龙人Mix-远程武器.png" style="max-width: 65em">
+<ul>
+<li>线膛燧发枪:60钢铁+3零部件 <strong>图片显示dps有问题,实际为5颗弹丸,dps乘5</strong> 龙部件(远程)+1 使用刺伤</li>
+<li>手枪:30钢铁+2零部件 <strong>图片显示dps有问题,实际为3颗弹丸,dps乘3</strong> 龙部件(远程)+1</li>
+<li>飞矛:80金属+20龙人毛发+10手工 龙部件(远程)+1</li>
+<li>集束飞矛:80金属+20龙人毛发 <strong>图片显示dps有问题,实际为3颗弹丸,dps乘3</strong> 龙部件(远程)+1</li>
+<li>链式飞矛:80金属+20龙人毛发 龙部件(远程)+1</li>
+<li>浸酸飞矛:80金属+20龙人毛发 龙部件(远程)+1 伤害类型为酸性沾染</li>
+<li>爆碎链式飞矛:80金属+20龙人毛发 龙部件(远程)+1 伤害类型为黏菌附着(小)</li>
+<li>酸雾大弓:80金属+40龙人毛发+40钢铁+5零部件 无需视线 龙部件(远程)+1 攻击生物时必定命中目标,对落点造成2半径的5点酸雾沾染伤(受品质影响)和3半径的5点酸雾沾染伤,并在落点6半径内随机3处造成2半径的5点酸雾沾染伤</li>
+<li>气震法杖:80金属+40龙人毛发+40钢铁+5零部件 无需视线 心灵敏感度+50% 心灵熵消散速率+0.083 龙部件(远程)+1 攻击生物时必定命中目标,造成4爆炸半径的两次10共振伤(第一次伤害受品质影响)</li>
+<li>恐惧法杖:80金属+40龙人毛发+40钢铁+5零部件 心灵敏感度+50% 心灵熵消散速率+0.083 龙部件(远程)+1 生成6半径的恐惧毒气,吸入获得&quot;恐惧毒气&quot;状态,<br>
+每天自然下降3000%,平均每天狂暴一次<br>
+状态值≥0% 视觉能力-30% 呼吸能力-15% 崩溃临界值+14%<br>
+状态值≥200% 视觉能力-60% 呼吸能力-30% 崩溃临界值+42% 疼痛×120%<br>
+状态值≥300% 视觉能力最大0% 呼吸能力-60% 崩溃临界值+100% 疼痛×200%</li>
+<li>电弧法杖:80金属+40龙人毛发+40钢铁+5零部件 心灵敏感度+50% 心灵熵消散速率+0.083 龙部件(远程)+1 6s前摇无后摇,攻击时,对40°扇形内最多4个非友方且站立的单位造成100%穿甲的15点高压触电伤(伤害穿甲受品质影响)和20点emp伤</li>
+<li>火焰法杖:80金属+40龙人毛发+40钢铁+5零部件 心灵敏感度+50% 心灵熵消散速率+0.083 无前摇1.7s后摇,每0.5s对指定格造成1半径0%穿甲的5点护甲熔解伤和2半径0%穿甲的5点护甲熔解伤</li>
+<li>光束法杖:80金属+40龙人毛发+40钢铁+5零部件 心灵敏感度+50% 心灵熵消散速率+0.083 无前摇1.7s后摇,每0.5s对指定格造成1半径0%穿甲的2.5点FrostCoverd伤和2半径0%穿甲的2.5点FrostCoverd伤</li>
+</ul>
+<p>特别地,这些武器的武器特性是固定的,且没有实际效果(仅用于描述武器性质)</p>
+<h3 id="衣物">衣物</h3>
+<ul>
+<li>制式战盔C/D型号:25钢铁 92/40/46三防</li>
+<li>制式战衣:100钢铁+40龙人毛发 92/40/46三防 装备时附带&quot;骑士之力&quot;状态,抑止时间乘数×0%</li>
+</ul>
+<h2 id="派系">派系</h2>
+<p>添加了两个派系</p>
+<ul>
+<li>龙之谷:默认中立的中世纪科技等级派系,商队为原版批发贸易商,作战补给商,稀有品贸易商.据点固定售卖50~500龙人毛发</li>
+<li>恶龙咆哮:默认敌对的太空科技等级派系,商队为原版批发贸易商,作战补给商,稀有品贸易商.据点固定售卖50~500龙人毛发</li>
+</ul>
+<p>添加了如下头衔,头衔无卧室要求,荣誉点数仅能任务获得</p>
+<ul>
+<li>陌生人:8点数,授予1许可,总计8点数</li>
+<li>知名者:12点数,授予2许可,总计20点数</li>
+<li>可信者:24点数,授予3许可,总计44点数</li>
+<li>龙娘酋长/龙娘公主:不可获得</li>
+</ul>
+<p>添加了如下许可</p>
+<ul>
+<li>请求开心小礼包:最低陌生人,20天cd,4再使用消耗 空投250钢铁+5零部件+20包装生存食物+500白银</li>
+<li>请求药物:最低陌生人,20天cd,8再使用消耗 空投20草药</li>
+<li>请求衣物:最低陌生人,20天cd,8再使用消耗 空投3件龙人毛发基本连衣裙</li>
+<li>请求龙娘毛发:最低陌生人,20天cd,8再使用消耗 空投100龙人毛发</li>
+<li>呼叫龙娘工程队:最低知名者,40天cd,4再使用消耗 帝国穿梭机送来4个龙人村民工作4天</li>
+<li>呼叫龙娘卫队:最低知名者,40天cd,6再使用消耗 召唤4个近战龙人友军</li>
+<li>呼叫龙娘骑兵队:最低知名者,40天cd,6再使用消耗 召唤4个远程龙人友军</li>
+<li>呼叫龙娘承包商:最低可信者,升级自工程队,60天cd,8再使用消耗 帝国穿梭机送来8个龙人村民工作4天</li>
+<li>呼叫龙娘皇家近卫队:最低可信者,升级自卫队,40天cd,8再使用消耗 召唤6个近战龙人友军</li>
+<li>呼叫龙娘骑兵团:最低可信者,升级自骑兵队,40天cd,8再使用消耗 召唤6个远程龙人友军</li>
+</ul>
+<p>描述说友军重甲,但其实完全没甲</p>
+<p>AI扒取趣事</p>
+<ul>
+<li>把本该加给&quot;龙人 巨型弓&quot;的研究前置错误地加到了&quot;龙人 灵质权杖&quot;上,结果:巨型弓无任何研究要求;灵质权杖需要&quot;龙娘远程武器+龙娘附魔武器&quot;(且会报重复节点红字)</li>
+<li>“龙娘 碎斩尾&quot;被拆除时掉落的物品是&quot;龙娘 酸斩尾”</li>
+<li>“酸解龙珠&quot;在被手术拆除时掉落的物品错误配置为&quot;硬化龙珠”</li>
+</ul>
+
+        </div>
+        
+        <!-- 文章导航 - 只在同分类有多篇文章时显示 -->
+        
+        
+        
+        <nav class="post-nav">
+          
+          
+            <a class="next" href="../%E9%BE%99%E4%BA%BA/">
+              龙人
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          
+        </nav>
+        
+        
+        <!-- 推荐文章 -->
+        
+
+
+<div class="vs-recommended-posts">
+  <div class="vs-recommended-header">
+    <div class="section-header">
+      <i class="fas fa-lightbulb"></i>
+      <span>相关文章</span>
+    </div>
+  </div>
+  
+  <div class="vs-recommended-grid">
+    
+      <div class="vs-recommended-item" data-index="0" tabindex="0">
+        <a href="../%E5%BC%82%E8%B1%A1%E6%89%A9%E5%B1%95/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>异象扩展</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              这个是真恶心👎🤮 绝大部分内容都是原版等级强度的,但有一两个强度极高 仅包含了血肉内容的表格
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 正义, 负正义
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 03
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  1 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="1" tabindex="0">
+        <a href="../%E5%A2%A8%E8%AF%BA%E7%81%B5/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>墨诺灵</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              很新的种族目前内容量也没有很大,玩法机制都很新颖 强度高的同时财富值也很高,算是一种变相平衡吧
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 正义
+                  
+                    <span class="vs-more-tags">+1</span>
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  7月 28
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  6 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="2" tabindex="0">
+        <a href="../%E7%B1%B3%E8%8E%89%E5%AE%89/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>米莉安</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              大名鼎鼎的米莉拉…的米莉安的介绍,比较古早 不包含米帝国等扩展,只有纯米. 整体来说,作为玩家时是微正义的,无法做到单刷袭击,但是作为敌对那就遭了罪了,使用链式阵地可能解决都较为困难
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 负正义
+                  
+                    <span class="vs-more-tags">+1</span>
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  9月 23
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  3 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="3" tabindex="0">
+        <a href="../%E7%BE%8E%E7%8B%90/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>美狐</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              有一点点正义的美狐,整体来说还是很原版的 护甲武器 前期贴近原版,后期半轮椅 灵能获取难度大幅降低,美狐法师成型快 灵能技能强力但不如狂暴脉冲轮椅
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 正义
+                  
+                    <span class="vs-more-tags">+1</span>
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  6月 26
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  9 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="4" tabindex="0">
+        <a href="../%E8%90%8C%E8%9E%88/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>萌螈</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              萌螈的技能效果及其书籍效果 不考虑流派技能的话整体很贴近原版,奈何流派技能(尤其是百花)实在是强而有力,只能给到正义了
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 正义
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  11月 21
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  2 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="5" tabindex="0">
+        <a href="../%E9%BE%99%E4%BA%BA/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>龙人</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              种族本体 数值概览 属性 智人种 龙娘 生命值系数 100% 195% 基础价值 1750 5800 荣誉点数 3 5 重量 60 80 体型 1 0.9 肉量 140 45 移动速度 4.6 5.2 携带能力 75 150 最低舒适温度 ...
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 种族, 微正义
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  10月 17
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  2 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+  </div>
+  
+  <!-- 查看更多 -->
+  <div class="vs-recommended-footer">
+    <a href="../archives/" class="vs-view-more">
+      <i class="fas fa-folder-open"></i>
+      <span>查看更多文章</span>
+      <i class="fas fa-chevron-right"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+// 键盘导航支持
+document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.vs-recommended-item');
+  let currentIndex = -1;
+  
+  // 键盘事件
+  document.addEventListener('keydown', function(e) {
+    if (!items.length) return;
+    
+    if (e.key === 'Tab') {
+      // Tab键导航由浏览器处理
+      return;
+    }
+    
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      
+      // 移除当前高亮
+      if (currentIndex >= 0) {
+        items[currentIndex].classList.remove('vs-focused');
+      }
+      
+      // 更新索引
+      if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % items.length;
+      } else {
+        currentIndex = currentIndex <= 0 ? items.length - 1 : currentIndex - 1;
+      }
+      
+      // 添加新高亮
+      items[currentIndex].classList.add('vs-focused');
+      items[currentIndex].focus();
+    }
+    
+    if (e.key === 'Enter' && currentIndex >= 0) {
+      const link = items[currentIndex].querySelector('a');
+      if (link) link.click();
+    }
+  });
+  
+  // 鼠标悬停时更新当前索引
+  items.forEach((item, index) => {
+    item.addEventListener('mouseenter', function() {
+      currentIndex = index;
+      items.forEach(i => i.classList.remove('vs-focused'));
+      item.classList.add('vs-focused');
+    });
+  });
+});
+</script>
+
+        
+        <!-- 评论区 -->
+        
+  <div class="vs-comments-section">
+    <div class="section-header">
+      <i class="fas fa-comments"></i>
+      <span>评论</span>
+    </div>
+    
+    
+      <!-- Waline 评论系统 -->
+      <div id="waline"></div>
+      <script>
+        // 加载 Waline CSS
+        const walineCSS = document.createElement('link');
+        walineCSS.rel = 'stylesheet';
+        walineCSS.href = 'https://unpkg.com/@waline/client@v3/dist/waline.css';
+        document.head.appendChild(walineCSS);
+        
+        // 加载 Waline JS
+        const walineScript = document.createElement('script');
+        walineScript.type = 'module';
+        walineScript.onload = function() {
+          // 确保 Waline 加载后再初始化
+          import('https://unpkg.com/@waline/client@v3/dist/waline.js').then(({ init }) => {
+            const waline = init({
+              el: '#waline',
+              serverURL: 'https://blog-vercel-waline.vercel.app/',
+              lang: 'zh-CN',
+              locale: {},
+              emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus"],
+              requiredMeta: [],
+              login: 'disable',
+              wordLimit: 0,
+              pageSize: 10,
+              imageUploader: false,
+              highlighter: true,
+              texRenderer: false,
+              search: false,
+              pageview: false,
+              comment: true,
+              copyright: false,
+              
+              // 自动适配主题
+              dark: document.documentElement.getAttribute('data-theme') === 'dark' ? 'auto' : false,
+              
+              // 评论框占位符
+              placeholder: '欢迎留言，无需登录即可评论~',
+              
+              // 元数据配置
+              meta: ['nick', 'mail', 'link'],
+              
+              // 表情配置
+              emojiCDN: 'https://unpkg.com/@waline/emojis@1.2.0/',
+            });
+            
+            // 监听主题变化
+            const observer = new MutationObserver((mutations) => {
+              mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                  // Waline 会自动处理主题切换
+                  if (waline) {
+                    waline.update({ dark: isDark ? 'auto' : false });
+                  }
+                }
+              });
+            });
+            
+            observer.observe(document.documentElement, {
+              attributes: true,
+              attributeFilter: ['data-theme']
+            });
+          });
+        };
+        walineScript.src = 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+        document.body.appendChild(walineScript);
+      </script>
+    
+    
+  </div>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <footer class="footer">
+  <div class="status-bar">
+    <div class="status-item">
+      <i class="fas fa-code-branch"></i>
+      master
+    </div>
+    <div class="status-item">
+      <i class="fas fa-sync"></i>
+      Round
+    </div>
+    <div class="status-item">
+      <i class="fas fa-clock"></i>
+      2026-11-02
+    </div>
+    <div class="status-item">
+      Designed By&nbsp; <a href="https://github.com/B143KC47" target="_blank"> BlackCat</a>
+    </div>
+    <div class="status-item github">
+      <a href="#" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- 搜索专用配置 (HEXO_CONFIG 在 scripts.ejs 中统一定义) -->
+    <script>
+      window.VSC4T_SEARCH = {
+        root: "/"
+      };
+    </script>
+
+    <!-- 外部脚本 - 统一使用 cdnjs CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" crossorigin="anonymous"></script>
+    <script>if(typeof hljs !== 'undefined') hljs.highlightAll();</script>
+    <!-- 这里可以放置自定义脚本 -->
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Apply smooth scroll to non-TOC anchor links
+  document.querySelectorAll('a[href^="#"]:not(.toc-link)').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      // Check if querySelector is valid before using it
+      try {
+        const targetSelector = this.getAttribute('href');
+        // Basic check for potentially invalid selectors (though not exhaustive)
+        if (targetSelector && targetSelector.length > 1) { 
+          const targetElement = document.querySelector(targetSelector);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          } else {
+            console.warn('Smooth scroll target not found:', targetSelector);
+          }
+        } else {
+           console.warn('Invalid href for smooth scroll:', targetSelector);
+        }
+      } catch (error) {
+        console.error('Error during smooth scroll:', error, 'Selector:', this.getAttribute('href'));
+        // Fallback or alternative behavior if needed
+        // For example, try getElementById if it's just an ID
+        const targetId = this.getAttribute('href').slice(1);
+        try {
+            const targetElementById = document.getElementById(decodeURIComponent(targetId));
+            if (targetElementById) {
+                targetElementById.scrollIntoView({ behavior: 'smooth' });
+            }
+        } catch (idError) {
+             console.error('Fallback getElementById also failed:', idError);
+        }
+      }
+    });
+  });
+});
+</script>
+
+<!-- Scripts -->
+<script>
+  // 全局配置 - 包含 i18n 字符串和主题配置
+  window.HEXO_CONFIG = {
+    language: "zh-CN",
+    root: "/",
+    
+    theme_switch: {
+      enabled: false,
+      light_start: "06:00",
+      light_end: "18:00"
+    },
+    
+    // Search i18n strings
+    search_placeholder: "输入关键词搜索...",
+    search_no_results: "未找到相关结果",
+    search_result: "نتيجة",
+    search_results: "搜索结果",
+    search_results_found: "找到 undefined 个结果",
+    search_in: "搜索范围",
+    search_in_title: "标题",
+    search_in_content: "内容",
+    search_in_tags: "标签",
+    search_in_categories: "分类",
+    search_filters: "搜索过滤器",
+    search_recent: "最近搜索",
+    search_clear: "清除",
+    search_loading: "加载中...",
+    search_error: "加载搜索数据时出错",
+    // Encryption i18n strings
+    encrypt_badge: "受保护",
+    encrypt_title: "受保护的内容",
+    encrypt_description: "请输入密码以解锁本文，密码会在本设备本地保存，直到你选择重新加密。",
+    encrypt_label: "密码",
+    encrypt_placeholder: "输入密码解锁内容",
+    encrypt_button: "解锁",
+    encrypt_button_loading: "解锁中...",
+    encrypt_hint: "按 Enter 提交，密码会在本设备上记住。",
+    encrypt_success: "内容解锁成功！",
+    encrypt_unlocked_note: "内容已解锁，可随时重新加密。",
+    encrypt_again: "重新加密",
+    encrypt_wrong_password: "密码错误，请重试。",
+    encrypt_show_password: "显示密码",
+    encrypt_hide_password: "隐藏密码",
+    // Sidebar i18n strings
+    sidebar_about: "关于",
+    sidebar_categories: "分类",
+    sidebar_tags: "标签",
+    // Post page i18n strings
+    post_toc: "目录",
+    post_category_posts: "同分类文章",
+    post_article_tags: "文章标签"
+  };
+</script>
+
+
+
+<!-- 添加所有需要的脚本 -->
+<script src="../js/search.js"></script>
+<script src="../js/theme-switch.js"></script>
+
+<script src="../js/table-sticky-header.js"></script>
+<script src="../js/password-protect.js?v=1793614761553"></script>
+
+    <script>
+      // 移动端菜单切换
+      $(document).ready(function() {
+        var $body = $('body');
+        var $sidebar = $('.sidebar-explorer');
+        var $overlay = $('.sidebar-overlay');
+        var $toggle = $('.mobile-menu-toggle');
+
+        function openSidebar() {
+          $sidebar.addClass('show');
+          $overlay.addClass('show');
+          $toggle.addClass('active');
+          $body.addClass('sidebar-open');
+        }
+
+        function closeSidebar() {
+          $sidebar.removeClass('show');
+          $overlay.removeClass('show');
+          $toggle.removeClass('active');
+          $body.removeClass('sidebar-open');
+        }
+
+        // 汉堡按钮点击切换
+        $toggle.on('click', function(e) {
+          e.stopPropagation();
+          if ($sidebar.hasClass('show')) {
+            closeSidebar();
+          } else {
+            openSidebar();
+          }
+        });
+
+        // 点击遮罩层关闭
+        $overlay.on('click', function() {
+          closeSidebar();
+        });
+
+        // ESC 键关闭
+        $(document).on('keydown', function(e) {
+          if (e.key === 'Escape' && $sidebar.hasClass('show')) {
+            closeSidebar();
+          }
+        });
+
+        // 点击侧边栏内的链接时自动关闭侧边栏，确保锚点跳转正常
+        $sidebar.on('click', 'a', function() {
+          closeSidebar();
+        });
+      });
+    </script>
+  </body>
+</html>
