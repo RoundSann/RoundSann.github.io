@@ -7,7 +7,7 @@
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="A simple dark Hexo theme inspired by code.">
-  <meta name="keywords" content="rimworld,种族,负正义,正义">
+  <meta name="keywords" content="rimworld,负正义,正义,种族">
   <meta name="author" content="Round">
   <link rel="canonical" href="https://RoundSann.github.io">
 
@@ -62,7 +62,7 @@
   <link rel="stylesheet" href="../css/mermaid.css">
 
   <link rel="stylesheet" href="../css/vs-code.css">
-  <link rel="stylesheet" href="../css/post.css?v=1793914116405">
+  <link rel="stylesheet" href="../css/post.css?v=1793918365353">
   <link rel="stylesheet" href="../css/tag.css">
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/archive.css">
@@ -219,12 +219,12 @@
         
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../%E7%BE%8E%E7%8B%90%E6%89%A9%E5%B1%95-%E6%98%9F%E7%8E%AF-%E4%BB%85ai%E6%89%92%E5%8F%96/">美狐扩展-星环-仅ai扒取</a>
+            <a href="../%E7%BE%8E%E7%8B%90/">美狐</a>
           </div>
         
           <div class="file">
             <i class="fas fa-file-code"></i>
-            <a href="../%E7%BE%8E%E7%8B%90/">美狐</a>
+            <a href="../%E7%BE%8E%E7%8B%90%E6%89%A9%E5%B1%95-%E6%98%9F%E7%8E%AF-%E4%BB%85ai%E6%89%92%E5%8F%96/">美狐扩展-星环-仅ai扒取</a>
           </div>
         
           <div class="file">
@@ -258,12 +258,6 @@
         
           <div class="tag-item">
             <i class="fas fa-tag"></i>
-            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
-            <span class="count">(15)</span>
-          </div>
-        
-          <div class="tag-item">
-            <i class="fas fa-tag"></i>
             <a href="../tags/%E8%B4%9F%E6%AD%A3%E4%B9%89/">负正义</a>
             <span class="count">(4)</span>
           </div>
@@ -272,6 +266,12 @@
             <i class="fas fa-tag"></i>
             <a href="../tags/%E6%AD%A3%E4%B9%89/">正义</a>
             <span class="count">(6)</span>
+          </div>
+        
+          <div class="tag-item">
+            <i class="fas fa-tag"></i>
+            <a href="../tags/%E7%A7%8D%E6%97%8F/">种族</a>
+            <span class="count">(15)</span>
           </div>
         
       </div>
@@ -406,7 +406,7 @@ FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强�
 <ul>
 <li>移除龙人背景故事的工作禁用,部分背景故事会强制附带特性</li>
 <li>移除屠宰产出龙珠,并将龙珠改为内部器官,命中率1%,不影响任何能力,可使用10玻璃钢安装玻璃龙珠(安了也没用)</li>
-<li>野生龙人有30%概率带有特殊龙尾,新增派系的龙人黑龙人比例为85:15</li>
+<li>野生龙人有30%概率带有特殊龙尾,新增派系的龙人和黑龙人比例为85:15</li>
 <li>冰霜吐息技能改为100%穿甲的20点急速冷却伤</li>
 <li>火焰吐息技能改为0%穿甲的10点护甲熔解伤</li>
 </ul>
@@ -451,9 +451,10 @@ FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强�
 死灵尘雾:1s前摇1天cd,25释放半径10爆炸半径,35熵5%精神力消耗,生成10半径的原版死灵尘</li>
 <li>该技能仅能使用心灵训练器获得<br>
 恐惧毒雾:1s前摇1天cd,25释放半径10爆炸半径,20熵3%精神力消耗,生成10半径的恐惧毒气<br>
-状态值&lt;200%(较轻) 视觉能力-30% 呼吸能力-15% 崩溃临界值+14%<br>
-状态值≥200%(中等) 视觉能力-60% 呼吸能力-30% 崩溃临界值+42% 疼痛×120%<br>
-状态值≥300%(严重) 视觉能力最大0% 呼吸能力-60% 崩溃临界值+100% 疼痛×200%</li>
+每天自然下降3000%,平均每天狂暴一次<br>
+状态值≥0% 视觉能力-30% 呼吸能力-15% 崩溃临界值+14%<br>
+状态值≥200% 视觉能力-60% 呼吸能力-30% 崩溃临界值+42% 疼痛×120%<br>
+状态值≥300% 视觉能力最大0% 呼吸能力-60% 崩溃临界值+100% 疼痛×200%</li>
 </ul>
 <p>先对龙珠的附伤效果进行评级<br>
 雷光龙珠就很强了,除了伤害还能顺带控制,高贵的强制移动能力归零,直接T0<br>
@@ -551,7 +552,7 @@ FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强�
 <li>爆碎链式飞矛:80金属+20龙人毛发 龙部件(远程)+1 伤害类型为黏菌附着(小)</li>
 <li>酸雾大弓:80金属+40龙人毛发+40钢铁+5零部件 无需视线 龙部件(远程)+1 攻击生物时必定命中目标,对落点造成2半径的5点酸雾沾染伤(受品质影响)和3半径的5点酸雾沾染伤,并在落点6半径内随机3处造成2半径的5点酸雾沾染伤</li>
 <li>气震法杖:80金属+40龙人毛发+40钢铁+5零部件 无需视线 心灵敏感度+50% 心灵熵消散速率+0.083 龙部件(远程)+1 攻击生物时必定命中目标,造成4爆炸半径的两次10共振伤(第一次伤害受品质影响)</li>
-<li>恐惧法杖:80金属+40龙人毛发+40钢铁+5零部件 心灵敏感度+50% 心灵熵消散速率+0.083 龙部件(远程)+1 生成6半径的恐惧毒气,吸入获得&quot;恐惧毒气&quot;状态,<br>
+<li>恐惧法杖:80金属+40龙人毛发+40钢铁+5零部件 心灵敏感度+50% 心灵熵消散速率+0.083 龙部件(远程)+1 生成6半径的恐惧毒气,吸入获得&quot;恐惧毒气&quot;状态<br>
 每天自然下降3000%,平均每天狂暴一次<br>
 状态值≥0% 视觉能力-30% 呼吸能力-15% 崩溃临界值+14%<br>
 状态值≥200% 视觉能力-60% 呼吸能力-30% 崩溃临界值+42% 疼痛×120%<br>
@@ -698,7 +699,7 @@ FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 微正义
+                  rimworld, 微正义, 负正义
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -721,6 +722,45 @@ FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强�
       </div>
     
       <div class="vs-recommended-item" data-index="2" tabindex="0">
+        <a href="../%E8%90%8C%E8%9E%88/" class="vs-recommended-link">
+          <!-- 文章信息 -->
+          <div class="vs-recommended-content">
+            <div class="vs-recommended-title">
+              <i class="fas fa-file-code"></i>
+              <span>萌螈</span>
+            </div>
+            
+            <div class="vs-recommended-excerpt">
+              萌螈的技能效果及其书籍效果 不考虑流派技能的话整体很贴近原版,奈何流派技能(尤其是百花)实在是强而有力,只能给到正义了
+            </div>
+            
+            <div class="vs-recommended-meta">
+              
+              
+              
+                <span class="vs-tags-preview">
+                  <i class="fas fa-tags"></i>
+                  rimworld, 正义, 种族
+                  
+                </span>
+              
+              
+              <span class="vs-meta-info">
+                <span class="vs-date">
+                  <i class="fas fa-calendar-alt"></i>
+                  11月 21
+                </span>
+                <span class="vs-reading-time">
+                  <i class="fas fa-clock"></i>
+                  2 min
+                </span>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      <div class="vs-recommended-item" data-index="3" tabindex="0">
         <a href="../%E5%A2%A8%E8%AF%BA%E7%81%B5/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -739,7 +779,7 @@ FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 正义
+                  rimworld, 正义, 种族
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -761,7 +801,7 @@ FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强�
         </a>
       </div>
     
-      <div class="vs-recommended-item" data-index="3" tabindex="0">
+      <div class="vs-recommended-item" data-index="4" tabindex="0">
         <a href="../%E7%BE%8E%E7%8B%90/" class="vs-recommended-link">
           <!-- 文章信息 -->
           <div class="vs-recommended-content">
@@ -780,7 +820,7 @@ FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 正义
+                  rimworld, 正义, 种族
                   
                     <span class="vs-more-tags">+1</span>
                   
@@ -795,45 +835,6 @@ FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强�
                 <span class="vs-reading-time">
                   <i class="fas fa-clock"></i>
                   9 min
-                </span>
-              </span>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-      <div class="vs-recommended-item" data-index="4" tabindex="0">
-        <a href="../%E8%90%8C%E8%9E%88/" class="vs-recommended-link">
-          <!-- 文章信息 -->
-          <div class="vs-recommended-content">
-            <div class="vs-recommended-title">
-              <i class="fas fa-file-code"></i>
-              <span>萌螈</span>
-            </div>
-            
-            <div class="vs-recommended-excerpt">
-              萌螈的技能效果及其书籍效果 不考虑流派技能的话整体很贴近原版,奈何流派技能(尤其是百花)实在是强而有力,只能给到正义了
-            </div>
-            
-            <div class="vs-recommended-meta">
-              
-              
-              
-                <span class="vs-tags-preview">
-                  <i class="fas fa-tags"></i>
-                  rimworld, 种族, 正义
-                  
-                </span>
-              
-              
-              <span class="vs-meta-info">
-                <span class="vs-date">
-                  <i class="fas fa-calendar-alt"></i>
-                  11月 21
-                </span>
-                <span class="vs-reading-time">
-                  <i class="fas fa-clock"></i>
-                  2 min
                 </span>
               </span>
             </div>
@@ -860,7 +861,7 @@ FrostCoverd甚至没有翻译,其主要贡献是产生冻雾可以给附加强�
               
                 <span class="vs-tags-preview">
                   <i class="fas fa-tags"></i>
-                  rimworld, 种族, 微正义
+                  rimworld, 微正义, 种族
                   
                 </span>
               
@@ -1128,7 +1129,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Search i18n strings
     search_placeholder: "输入关键词搜索...",
     search_no_results: "未找到相关结果",
-    search_result: "resultado",
+    search_result: "Ergebnis",
     search_results: "搜索结果",
     search_results_found: "找到 undefined 个结果",
     search_in: "搜索范围",
@@ -1174,7 +1175,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 <script src="../js/theme-switch.js"></script>
 
 <script src="../js/table-sticky-header.js"></script>
-<script src="../js/password-protect.js?v=1793914116405"></script>
+<script src="../js/password-protect.js?v=1793918365353"></script>
 
     <script>
       // 移动端菜单切换
